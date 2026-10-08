@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="O que é a Missão Olimpíadas, para as famílias: sem conta, sem coleta de dados, e como usar no celular.">
+<title>Missão Olimpíadas — Nota às famílias</title>
+<style>
+  /* build:tokens largura="720px" corpo="16px" campo="16px" primaria="var(--blue)" */
+  /* Paleta e medidas do shell. Fonte única: este arquivo é injetado nos três HTMLs pelo build.
+     Não edite o bloco gerado dentro do HTML — edite aqui e rode `python3 scripts/build.py`. */
+  :root{
+    /* `only` nos dois temas: é ele que impede o "tema escuro para sites" do Chrome no Android de
+       inverter a pintura por cima da nossa (o painel Hoje sumia no fundo, ouro e verde viravam cinza).
+       `light` sozinho não opta por sair — testado. O tema escuro não é uma inversão do navegador:
+       é a segunda coluna de cada token, logo abaixo. */
+    color-scheme:only light;
+    --bg:#F3F5F9; --surface:#FFFFFF; --ink:#12213F; --muted:#626D88;
+    --line:#DDE2EC; --field-line:#8790A6; --blue:#1F5EFF; --blue-ink:#1B52E0; --blue-soft:#E4ECFF;
+    --gold:#D69B0A; --gold-soft:#FFF4D6; --gold-ink:#7A5600;
+    --green:#167A4C; --green-soft:#E1F5EA; --red:#B3261E; --red-soft:#FBE7E5;
+  }
+  /* Par escuro de cada token, na mesma linha do claro: os dois nunca saem de sincronia e não existe
+     um segundo bloco de paleta para esquecer. Navegador sem light-dark() ignora estas linhas e fica
+     no claro — e o boot lá embaixo não oferece o seletor onde ele não funcionaria.
+     Escuro é marinho dessaturado, não cinza: a página continua sendo papel azulado, à noite. */
+  :root{
+    --bg:light-dark(#F3F5F9,#0E1626);           /* papel */
+    --surface:light-dark(#FFFFFF,#172032);      /* ficha sobre o papel, e a barra do topo */
+    --ink:light-dark(#12213F,#E9EDF6);          /* 13,9:1 sobre a ficha */
+    --muted:light-dark(#626D88,#9AA7C2);        /* 6,7:1 — o mais escuro que ainda lê como secundário */
+    --line:light-dark(#DDE2EC,#2C3750);
+    --field-line:light-dark(#8790A6,#7987A8);   /* 4,5:1 sobre a ficha (SC 1.4.11 pede 3) */
+    --blue:light-dark(#1F5EFF,#6D97FF);         /* azul elétrico não sobrevive ao escuro: sobe dois degraus */
+    --blue-ink:light-dark(#1B52E0,#A9C4FF);
+    --blue-soft:light-dark(#E4ECFF,#1C2A4B);
+    --gold:light-dark(#D69B0A,#D9A62A);
+    --gold-soft:light-dark(#FFF4D6,#3A2D0B);
+    --gold-ink:light-dark(#7A5600,#EFC35E);     /* no escuro o par vira o claro: 8,1:1 sobre ouro suave */
+    --green:light-dark(#167A4C,#4FC894);
+    --green-soft:light-dark(#E1F5EA,#10301F);
+    --red:light-dark(#B3261E,#FF8C82);
+    --red-soft:light-dark(#FBE7E5,#3B1A17);
+    /* sombra e backdrop: marinho com alfa no claro, um marinho quase apagado no escuro — nunca #000 */
+    --shadow:light-dark(rgba(18,33,63,.25),rgba(5,9,18,.6));
+    --scrim:light-dark(rgba(18,33,63,.45),rgba(5,9,18,.72));
+  }
+  /* Painel Hoje. No claro ele é a única superfície escura da tela; no escuro a tela inteira é escura,
+     então ele passa a ser a única superfície *saturada*: azul-comando, 1,7:1 acima do papel. A tinta
+     dele é branca nos dois temas — por isso os alfas de branco do painel continuam valendo. */
+  :root{
+    --hoje:light-dark(#12213F,#1B3A86);
+    --hoje-ink:#FFFFFF;
+    --hoje-line:light-dark(rgba(255,255,255,.45),rgba(255,255,255,.55)); /* 3:1 sobre o painel e sobre a pílula de 8% */
+    /* opacidades da linha do tempo: o azul-comando é mais claro que o marinho, então branco a 70%/55%
+       cairia para 4,1:1 nele. 85%/66% devolve o mesmo degrau visual com 6,6:1 e 4,8:1. */
+    --tl:light-dark(.7,.85);
+    --dim:light-dark(.55,.66);
+    /* Medidas do shell. --shell é a altura da barra fixa: entra no padding do body e no
+       scroll-margin-top das âncoras, então mudar aqui move tudo junto. --wide é a largura útil
+       desta tela, e a barra usa a mesma do <main> para os dois alinharem. */
+    --shell:52px;
+    /* --footer é a altura total da barra fixa de baixo, fio de 1px incluído, e serve ao mesmo
+       propósito: entra no padding do body e no quanto o toast sobe para não pousar sobre ela. */
+    --footer:28px;
+    --wide:720px;
+    /* Medidas que mudam de tela para tela. Antes eram divergências que só quem já conhecia o código
+       sabia de cor (campo de 16px no aluno e de 15px no orientador); agora cada arquivo as declara
+       no próprio marcador do build, e o CSS compartilhado lê a variável. */
+    --corpo:16px;        /* corpo de texto da tela */
+    --campo:16px;        /* campo de formulário: nunca herda os 12px do rótulo .f */
+    --primaria:var(--blue);  /* fundo do botão primário: azul elétrico no aluno, marinho no orientador */
+    /* A segunda família tipográfica, e a única outra: a da folha de redação. A largura da folha é um
+       número de caracteres, e só em fonte monoespaçada caractere vira largura na tela — a margem direita
+       é uma linha, a linha cheia parece cheia e o recuo ocupa o que conta. Só pilha de sistema, sem
+       webfont (ADR-009 de folha-de-redacao-e-noticias). A contagem nunca depende dela: num aparelho
+       cujo monospace não seja de passo fixo, só a margem desenhada sai torta. */
+    --mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Consolas,"DejaVu Sans Mono",Menlo,monospace;
+  }
+  /* Celular deitado: 52px de barra comeriam um oitavo da altura. As duas continuam fixas, mais baixas. */
+  @media (max-height:480px){:root{--shell:44px;--footer:24px}}
+  :root[data-tema="escuro"]{color-scheme:only dark}
+  /* Papel é branco: imprimir no escuro sairia tinta clara sobre nada. */
+  @media print{:root,:root[data-tema="escuro"]{color-scheme:only light}}
+  /* /build:tokens */
+  /* build:base */
+  /* Camada de design system: o que o DESIGN.md declara obrigatoriamente igual nas três telas.
+     Fonte única — editar aqui muda os três arquivos. O CSS de cada tela (o painel Hoje e o herói do
+     aluno, a grade do orientador, a prosa do Escolha) continua morando junto do markup dela, porque
+     58% das regras são exclusivas de uma tela e ali estar perto do HTML é qualidade, não defeito. */
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:var(--corpo);line-height:1.45}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  p{margin:0}
+  a{color:var(--blue);text-underline-offset:2px}
+  .muted{color:var(--muted);font-size:13px}
+  .mt{margin-top:10px}
+  .f{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
+  button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 12px}
+  /* um acento forte por card: o primário do aluno é azul elétrico, o do orientador é marinho tinta */
+  button.primary{background:var(--primaria);color:var(--surface);border-color:var(--primaria)}
+  button.quiet{background:transparent;border-color:transparent;color:var(--muted)}
+  button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible,h2:focus-visible,h3:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  /* campo nunca herda os 12px do rótulo .f, e --campo nunca desce de 16px onde há iPhone: abaixo disso ele dá zoom */
+  /* campo vazio só se enxerga pela borda: --field-line dá 3:1 sobre branco (SC 1.4.11). Card e botão
+     continuam em --line: lá o rótulo e a superfície já identificam o elemento. */
+  input,textarea,select{font:inherit;font-size:var(--campo);padding:8px;border:1px solid var(--field-line);border-radius:8px;width:100%;background:var(--surface);color:var(--ink);caret-color:var(--blue)}
+  textarea{resize:vertical}
+  /* textarea com teto rola por dentro: a barra é do sistema, como o caret (--field-line dá 3:1 sobre branco) */
+  textarea{scrollbar-width:thin;scrollbar-color:var(--field-line) transparent}
+  /* textareas que crescem com o texto não têm alça: a alça brigaria com o crescimento automático */
+  textarea[data-grow]{resize:none}
+  textarea.code{font-size:13px;min-height:120px;overflow-wrap:anywhere}
+  /* o cinza de placeholder do navegador não é o nosso: --muted é o mais claro que ainda dá 4,5:1 */
+  ::placeholder{color:var(--muted);opacity:1}
+  ::selection{background:var(--blue-soft);color:var(--ink)}
+
+  /* Fila que rola de lado (navegação e abas). Enquanto sobrar item fora da tela, a borda esmaece e
+     uma seta "›" fica sobre a parte já limpa da máscara: o esmaecido diz que há mais, a seta diz para onde. */
+  .fila{position:relative}
+  .fila::after{content:"\203A";position:absolute;right:0;top:0;bottom:0;width:26px;display:none;align-items:center;justify-content:flex-end;font-size:22px;line-height:1;color:var(--muted);pointer-events:none}
+  .fila.more::after{display:flex}
+  /* as abas têm padding em cima e embaixo: a seta acompanha para ficar no meio das pílulas */
+  .fila.abas::after{top:4px;bottom:8px}
+
+  /* Diálogo e toast: os únicos elementos que flutuam, e por isso os únicos com sombra. No escuro a
+     sombra não desenha nada sobre fundo escuro, e o recorte volta a ser o fio de 1px de todo card. */
+  dialog{border:1px solid light-dark(transparent,var(--line));border-radius:14px;padding:0;max-width:560px;width:calc(100% - 32px);max-height:calc(100vh - 32px);overflow:auto;background:var(--surface);color:var(--ink);box-shadow:0 20px 60px var(--shadow)}
+  @supports (height:1dvh){dialog{max-height:calc(100dvh - 32px)}}
+  dialog::backdrop{background:var(--scrim)}
+  dialog .dh{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 18px 8px}
+  dialog .dh h2{margin:0;font-size:17px}
+  dialog .db{padding:0 18px 18px;font-size:14px;line-height:1.55}
+  dialog .db p{margin:8px 0}
+  dialog .db ul{margin:6px 0;padding-left:18px}
+  dialog .db li{margin:4px 0}
+  dialog .db code{background:var(--bg);padding:1px 6px;border-radius:6px;font-size:13px}
+
+  /* O toast pousa acima da barra de baixo, não sobre ela: --footer já é a altura toda dela. */
+  .toast{position:fixed;left:0;right:0;bottom:calc(var(--footer) + 16px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100vw - 32px);margin:0 auto;background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:99px;font-size:14px;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s;z-index:3}
+  .toast.show{opacity:1}
+  .toast b{font-weight:700}
+  @media (prefers-reduced-motion:reduce){.toast{transition:none}}
+  /* toast com Desfazer: só depois de apagar (zerar, apagar repertório); some em 8 s */
+  .toast.act{pointer-events:auto}
+  .toast button{margin-left:10px;padding:4px 10px;font-size:13px;font-weight:700;background:var(--surface);color:var(--ink);border-color:var(--surface);border-radius:99px}
+  /* toque: o Desfazer desenha 37px (a linha de 13px tem 18,85, mais 8px de padding e a borda) e acerta 44
+     pela área invisível, que cresce para cima e para baixo dentro dos 10px de padding da pílula — o
+     desenho não muda. O `padding:8px 12px` sozinho, copiado à mão nos dois apps, dava 37,8: padding é
+     conta de métrica de fonte, e a área se mede do tamanho, como a do `?`. */
+  @media (pointer:coarse){.toast button{position:relative;padding:8px 12px}.toast button::after{content:"";position:absolute;inset:calc((100% - 44px)/2) 0;border-radius:99px}}
+
+  .help{width:26px;height:26px;padding:0;border-radius:99px;font-size:14px;font-weight:700;color:var(--blue-ink);border-color:var(--blue-soft);background:var(--blue-soft);flex:0 0 auto;line-height:1}
+  @media (hover:hover){.help:hover{background:var(--blue);color:var(--surface)}}
+  /* toque: o `?` desenha 26px (22 no subtítulo) e acerta 44 pela área invisível. O ::after se mede da
+     caixa de PADDING, que não tem a borda de 1px do botão, e por isso o recuo sai do tamanho e não de
+     um número fixo: o `inset:-9px` de antes, copiado à mão nos dois apps, dava 42 no de 26 e 38 no de 22. */
+  @media (pointer:coarse){.help{position:relative}.help::after{content:"";position:absolute;inset:calc((100% - 44px)/2);border-radius:99px}}
+  /* vermelho só para erro e alerta, nunca em botão */
+  .err{color:var(--red);font-size:13px;margin:8px 0 0}
+  .alert{background:var(--red-soft);color:var(--red);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.4}
+
+  /* A faixa de atualização (#updateBanner). As regras moram aqui porque a peça é obrigatoriamente
+     idêntica nos dois apps — e até 18/09/2026 elas existiam em TRIPLICATA, copiadas à mão nos três
+     arquivos, inclusive no Escolha, que não tem faixa nenhuma.
+
+     Azul e não vermelho: versão nova não é falha, e vermelho ali leria como "alguma coisa quebrou".
+     Mas azul suave sobre o papel azulado dá 1,1:1. Dentro de um card o mesmo recurso funciona — é o
+     que .promo e .flag fazem, sobre branco —; na PÁGINA ele desaparece, e a faixa lia como mais um
+     card num quadro cheio de cards. Quem separa é o fio de 1px em azul elétrico: é o único bloco da
+     tela com contorno de acento, e um fio basta. Filete grosso à esquerda seria o carimbo genérico de
+     "callout", que é o oposto de uma decisão — e o ouro do .flag já ocupa esse gesto no orientador. */
+  .alert.info{background:var(--blue-soft);color:var(--blue-ink);border:1px solid var(--blue)}
+  #updateBanner{margin:0 0 12px}
+  #updateBanner p{margin:0}
+  #updateBanner .actions{margin-top:8px;align-items:center}
+  /* Os dois botões são `quiet`, que nasce em --muted: cinza-neblina sobre azul suave é cinza fora do
+     tom da superfície, e no escuro chega perto de parecer desabilitado. Sobre superfície colorida o
+     secundário se tinge da própria cor, nunca de cinza — e --blue-ink é o par escuro que a paleta já
+     reserva para pousar sobre --blue-soft. O `quiet` continua `quiet`: sem fundo, sem fio, sem acento.
+     Nenhuma das duas saídas é a certa, e a Regra do Um Acento continua valendo aqui. */
+  #updateBanner button.quiet{color:var(--blue-ink)}
+  /* A barra do download. O trilho não pode ser --blue-soft, que aqui é o fundo da própria faixa: usa
+     --surface, que no claro sobe (branco sobre azul suave) e no escuro afunda (#172032 sobre #1C2A4B)
+     — nos dois casos lê como sulco. `appearance:none` é o que tira o desenho do sistema operacional,
+     que não conhece a nossa paleta e ignora o tema. */
+  #updateProg{display:block;width:100%;height:6px;margin-top:8px;border:0;border-radius:99px;background:var(--surface);appearance:none;-webkit-appearance:none}
+  #updateProg::-webkit-progress-bar{background:transparent;border-radius:99px}
+  #updateProg::-webkit-progress-value{background:var(--blue);border-radius:99px}
+  #updateProg::-moz-progress-bar{background:var(--blue);border-radius:99px}
+  /* O link herda a cor da faixa: azul tinta sobre azul suave já é o contraste da peça, e um segundo
+     azul ali brigaria com ele. */
+  #updateBanner a{color:inherit;font-size:14px;text-underline-offset:2px}
+  /* Ela aparece NO MEIO da sessão, quando o download termina, e é aí que a atenção importa: a entrada
+     é o aviso. Um momento só, com a mesma curva da promoção de patente — o outro anúncio do sistema
+     que aparece sozinho. De cima para baixo porque ela empurra a página, e não surge por baixo dela. */
+  @media (prefers-reduced-motion:no-preference){
+    #updateBanner:not([hidden]){animation:faixa .45s cubic-bezier(.16,1,.3,1) both}
+    @keyframes faixa{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  }
+  /* Em alto contraste o fundo e o fio somem: sem isto a faixa vira texto solto no meio da página. */
+  @media (forced-colors:active){.alert.info{outline:2px solid CanvasText}}
+  /* Aviso de tela: some no papel. Uma folha impressa hoje não tem como reiniciar app nenhum, e a
+     linha sobreviveria ao arquivo. */
+  @media print{#updateBanner{display:none}}
+  /* A folha de redação (.sheet): linhas numeradas e pautadas, desenhadas por folhaHTML() a partir de
+     folhaLinhas() — a mesma lista que dá a contagem, então a folha e o número não discordam. Mora aqui
+     porque é o mesmo componente nos dois apps (o rascunho dele, a referência do passar a limpo, a folha
+     no painel do pai). --cols é a largura dele, posta inline no <ol>; a coluna do texto mede
+     exatamente --cols caracteres e a margem é o fio à direita dela. Pauta em --line, como todo fio de
+     card; a margem em --field-line, porque ela é o exercício e precisa se ver. Nenhum estado é
+     vermelho: a folha nunca julga o que ele escreveu.
+     Linhas: .out (depois da 30ª, abaixo do corte "fora da folha"), .past (passou da largura dele, numa
+     semana em que a folha segue o papel: aviso neutro, pontilhado) e .full (a linha do passar a limpo
+     que chegou ao máximo: a margem escurece, e é só isso que a recusa silenciosa mostra).
+     A folha não encolhe para caber: em tela estreita o .sheet-wrap rola de lado por dentro e a página
+     não. Encolher foi medido e recusado (para 68 colunas caberem num celular de 375 px a letra iria a
+     6,8 px). Enquanto sobra linha à direita, o .sheet-wrap leva .more: a borda some em degradê, como
+     na .fila, e não corta a palavra a seco. Com toque, a .sheet-hint acima da folha diz o que fazer —
+     deitado, 55 e 68 colunas cabem inteiras em todo celular medido. Sem toque ela não aparece: numa
+     janela estreita de computador "deite o celular" seria instrução para outro aparelho.
+     A largura do <ol> é a conta das colunas (número, intervalo, texto) e não max-content, e cada linha
+     leva content-visibility:auto: o rascunho é redesenhado a cada tecla, e com um texto várias vezes
+     maior que a folha medir a linha mais larga obrigava o navegador a diagramar todas — numa redação de
+     20.000 palavras eram 2.500 linhas e mais de 100 ms por tecla. Assim só as linhas visíveis custam. */
+  .sheet-wrap{max-width:100%;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--field-line) transparent}
+  /* impeccable-disable-next-line design-system-color: #000 aqui é canal de máscara (alfa), não cor visível */
+  .sheet-wrap.more{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 32px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 32px),transparent)}
+  .sheet-hint{display:none;margin:10px 0 4px;font-size:12px;color:var(--muted)}
+  .sheet-hint + *{margin-top:10px}
+  @media (pointer:coarse){.sheet-hint:not([hidden]){display:block}.sheet-hint:not([hidden]) + *{margin-top:0}}
+  .sheet{list-style:none;margin:0;padding:0;width:calc((var(--cols) + 4.5) * 1ch);min-width:100%;background:var(--surface);color:var(--ink);font-family:var(--mono);font-size:13px;line-height:24px}
+  .sheet li{display:grid;grid-template-columns:3ch calc(var(--cols) * 1ch);column-gap:1.5ch;min-height:25px;border-bottom:1px solid var(--line);content-visibility:auto;contain-intrinsic-block-size:auto 25px}
+  .sheet .sheet-n{color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;user-select:none}
+  .sheet .sheet-t{min-width:0;white-space:pre;border-right:1px solid var(--field-line)}
+  .sheet input.sheet-t{font:inherit;line-height:inherit;height:24px;padding:0;border:0;border-right:1px solid var(--field-line);border-radius:0;background:transparent;width:auto}
+  .sheet .full .sheet-t{border-right-color:var(--ink)}
+  .sheet .past .sheet-t{text-decoration:underline dotted var(--field-line);text-underline-offset:5px}
+  /* "passou da sua largura" é para leitor de tela: o pontilhado é desenho e não se lê. O aluno não tem
+     .vh, e a folha não depende do CSS de tela nenhuma. */
+  .sheet .sheet-vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .sheet .out{background:var(--bg);color:var(--muted)}
+  .sheet li:not(.out) + .out::before{content:"fora da folha";grid-column:1 / -1;font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:12px;color:var(--muted);border-top:2px dashed var(--field-line);padding-left:4.5ch}
+  /* Carimbo do build: mora na barra fixa de baixo (.shell-footer, em shell.css), pequeno e fora do
+     caminho, mas legível de qualquer ponto da página quando o pai pergunta "que versão aparece aí
+     embaixo?". Sai também no papel — folha impressa sem versão não dá para conferir depois. */
+  .versao{margin:0;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+  /* /build:base */
+  /* build:shell-css */
+  /* Barra do topo: a casca comum aos três arquivos. Fixa — o conteúdo passa por baixo dela, e é por
+     isso que o <body> ganha padding-top e o <html> o scroll-padding (nunca em pixels soltos).
+     Chrome é superfície, não papel: fundo --surface e um fio de 1px embaixo. Aqui a sombra da barra
+     fixa não serve, porque no tema escuro sombra escura sobre fundo escuro não desenha nada. */
+  .shell{position:fixed;top:0;left:0;right:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+  .shell .in{display:flex;align-items:center;gap:10px;height:calc(var(--shell) - 1px);max-width:var(--wide);margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+  /* O nome da tela é o item que encolhe: numa tela estreita ele abrevia, e os botões da direita não —
+     quem chega na barra já sabe em que tela está, e os controles precisam continuar clicáveis inteiros. */
+  .shell .telas{flex:1 1 auto;min-width:0}
+  .shell h1{margin:0;font-size:15px;font-weight:600;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* O user menu entra aqui dentro, depois do tema. Não crie div vazia para reservar o lugar. */
+  .shell .acts{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+
+  /* Menus da barra: o nome da tela abre a lista de telas, o nome do tema abre a lista de temas.
+     Um componente só, usado duas vezes. O tema era um toggle de três pílulas e comia 176px dos 358
+     que sobram em 390px — quase metade da barra para uma preferência que se ajusta uma vez. Como
+     dropdown ele mostra a escolha atual em ~78px, e o nome da tela deixa de ser espremido.
+     <details> e não a Popover API: o popover traria fechar-ao-clicar-fora e Esc de graça, mas onde
+     ele não existe o menu simplesmente não abre — e aqui isso seria perder o caminho entre os dois
+     arquivos do Arthur. As poucas linhas de JS são o preço de funcionar em todo lugar. */
+  .menu{position:relative;min-width:0}
+  .telas .menu{margin-left:-8px}  /* o texto do título volta a alinhar com o conteúdo da página */
+  .acts .menu{margin-right:-8px}
+  .menu > summary{display:flex;align-items:center;gap:5px;min-width:0;padding:4px 8px;border-radius:8px;cursor:pointer;list-style:none}
+  .menu > summary::-webkit-details-marker{display:none}
+  .menu > summary > span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .menu > summary::after{content:"\25BE";font-size:11px;line-height:1;color:var(--muted);flex:0 0 auto;transition:transform .15s}
+  .menu[open] > summary::after{transform:rotate(180deg)}
+  @media (prefers-reduced-motion:reduce){.menu > summary::after{transition:none}}
+  .menu > summary:focus-visible{outline:3px solid var(--blue);outline-offset:1px}
+  @media (hover:hover){.menu > summary:hover{background:var(--bg)}}
+  .tema > summary{font-size:13px;color:var(--muted)}
+  .menu .pop{position:absolute;top:calc(100% + 7px);left:0;z-index:1;min-width:190px;display:flex;flex-direction:column;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px var(--shadow)}
+  .acts .menu .pop{left:auto;right:0}  /* encostado na direita: é lá que o botão está */
+  .menu .pop > a,.menu .pop > span,.menu .pop > label,.menu .pop > button{display:block;padding:9px 10px;border-radius:8px;font-size:14px;color:var(--ink);text-decoration:none;white-space:nowrap;cursor:pointer}
+  /* o botão do user menu é um item de lista, não um botão: sem fio, sem fundo, largura inteira e o
+     texto alinhado com os vizinhos. Sem isto ele herdaria a borda e o padding de base.css e ficaria
+     uma pílula dentro da lista, do lado de itens que não têm nenhuma. */
+  .menu .pop > button{width:100%;text-align:left;background:transparent;border:0;font:inherit}
+  /* o item marcado usa a linguagem do chip marcado: a tela onde você está, o tema que está valendo */
+  .menu .pop > [aria-current],.menu .pop > label:has(input:checked){background:var(--blue-soft);color:var(--blue-ink);font-weight:700}
+  @media (hover:hover){.menu .pop > a:hover,.menu .pop > label:hover,.menu .pop > button:hover{background:var(--bg)}}
+  .menu .pop > a:focus-visible,.menu .pop > button:focus-visible,.menu .pop > label:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:-1px}
+  .menu .pop input{position:absolute;opacity:0;width:1px;height:1px}
+  @media (pointer:coarse){
+    .menu > summary{min-height:44px;padding:4px 8px}
+    .menu .pop > a,.menu .pop > span,.menu .pop > label,.menu .pop > button{min-height:44px;display:flex;align-items:center;padding:0 10px}
+    .menu .pop input{padding:0}
+  }
+  @media (forced-colors:active){
+    .menu .pop input{position:static;opacity:1;width:16px;height:16px}
+    .menu .pop > label{display:flex;align-items:center;gap:6px}
+    .menu .pop > [aria-current],.menu .pop > label:has(input:checked){outline:2px solid CanvasText}
+  }
+  /* o seletor só existe onde light-dark() existe: quem aplica o data-escolha é o boot no <head> */
+  .shell .tema{display:none}
+  :root[data-escolha] .shell .tema{display:block}
+
+  /* Barra de baixo: a outra ponta da mesma casca. Existe para hospedar o carimbo do build, que
+     antes ficava no fim do <main> — e no fim do <main> só se lê depois de rolar o app inteiro, que é
+     justamente o que não dá para pedir por telefone ("que versão aparece aí embaixo?"). Fixa, ela
+     responde na hora, de qualquer ponto da página.
+     Mesmo desenho da barra do topo, espelhado: superfície, fio de 1px em cima (não sombra — no tema
+     escuro sombra escura sobre fundo escuro não desenha nada) e o mesmo --wide, para o conteúdo dela
+     alinhar com o do <main>. O carimbo fica à direita, que é onde se procura número de versão; a
+     esquerda fica vazia de propósito, para o que o rodapé vier a hospedar.
+     28px e não 44: aqui não há alvo de toque, é texto de 11px que se lê e não se clica. */
+  .shell-footer{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+  .shell-footer .in{display:flex;align-items:center;justify-content:flex-end;gap:10px;height:calc(var(--footer) - 1px);max-width:var(--wide);margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+
+  /* Faixa informativa: o mesmo componente do .alert de base.css (vermelho, que é erro) em azul.
+     O aviso de versão nova não é falha nenhuma — vermelho ali leria como "alguma coisa quebrou". */
+  .alert.info{background:var(--blue-soft);color:var(--blue-ink)}
+
+  /* A faixa da atualização (#updateBanner) tem o mesmo markup nos dois apps, então o layout dela mora
+     aqui e não no CSS de cada tela: duas cópias de uma peça só é exatamente o que este arquivo existe
+     para evitar. O link herda a cor da faixa — azul tinta sobre azul suave já é o contraste da peça,
+     e um segundo azul ali brigaria com ele. */
+  #updateBanner{margin:0 0 12px}
+  #updateBanner p{margin:0}
+  #updateBanner .actions{margin-top:8px;align-items:center}
+  #updateBanner a{color:inherit;font-size:14px;text-underline-offset:2px}
+
+  /* As duas barras são fixas: o conteúdo começa abaixo de uma e termina acima da outra. --shell e
+     --footer são as alturas totais, fio de 1px incluído. */
+  body{padding-top:calc(var(--shell) + env(safe-area-inset-top));padding-bottom:calc(var(--footer) + env(safe-area-inset-bottom))}
+  /* E o navegador precisa saber delas: ao levar o foco do teclado a um controle fora da tela, ele o encosta na
+     borda da janela — que é onde as barras pintam por cima. O scroll-padding desconta as duas de toda rolagem
+     até um elemento (foco, âncora, scrollIntoView). Por isso o scroll-margin-top de quem quer folga diz só a
+     folga (12px), sem --shell: com a barra nos dois, ela contaria duas vezes. */
+  html{scroll-padding:calc(var(--shell) + env(safe-area-inset-top)) 0 calc(var(--footer) + env(safe-area-inset-bottom))}
+  @media print{
+    /* A faixa da atualização é aviso de tela e some no papel: uma folha impressa hoje não tem como
+       reiniciar app nenhum, e a linha sobreviveria ao arquivo. */
+    #updateBanner{display:none}
+    .menu > summary::after,.menu .pop{display:none}
+    .shell{position:static;background:none;border:0;padding:0}
+    .shell .in{height:auto;max-width:none;padding:0;margin-bottom:10px}
+    .shell .acts{display:none}
+    /* no papel o rodapé volta a ser o que era: uma linha no fim do documento. Folha sem versão não
+       dá para conferir depois, então ele imprime — só deixa de ser barra. */
+    .shell-footer{position:static;background:none;border:0;padding:0}
+    .shell-footer .in{height:auto;max-width:none;padding:0;margin-top:10px}
+    body{padding-top:0;padding-bottom:0}
+  }
+
+  /* Sobrou aqui, quando o seletor de tema deixou de ser uma cápsula de três pílulas e virou um .menu,
+     o CSS da cápsula. Ele não era decorativo: `.tema{border;border-radius:99px;padding:2px}` ainda casava
+     com o <details> e deixava o botão de tema como a única peça da barra desenhada como pílula com fio,
+     enquanto o menu de telas ao lado não tem nenhum; e `.tema label::after{inset:-10px 0}` em ponteiro
+     grosso dava aos itens do menu um alvo invisível que passava 10px por cima do vizinho — o dedo que
+     mira "Escuro" caindo em "Sistema". Quem desenha o controle agora é .menu / .menu .pop, acima.
+     As regras vivas do tema são `.tema > summary` e o par `.shell .tema` de display. */
+  /* /build:shell-css */
+  /* A nota às famílias (US-064): estática, sem script de tela, e uma página A4 impressa (EC-1). Os
+     blocos são os seis do US-064 mais o contato; cada um é um h2 curto e um parágrafo. Medida de texto
+     em 68ch: a nota é lida inteira, de cima a baixo, como uma carta. */
+  main{max-width:var(--wide);margin:0 auto;padding:20px 16px 32px}
+  .nota{max-width:68ch}
+  .nota .abre{font-size:18px;line-height:1.5;margin:0 0 16px}
+  .nota h2{font-size:16px;margin:20px 0 4px}
+  .nota p{margin:0 0 8px;line-height:1.55}
+  .nota ol{margin:0 0 8px;padding-left:22px;line-height:1.55}
+  .nota a{color:var(--blue-ink);text-underline-offset:2px;overflow-wrap:anywhere}
+  .nota .fim{margin-top:20px;padding-top:12px;border-top:1px solid var(--line)}
+  @media print{
+    main{padding:0}
+    .nota{max-width:none;font-size:11.5pt}
+    .nota .abre{font-size:12.5pt;margin-bottom:8px}
+    .nota h2{font-size:11.5pt;margin:10px 0 2px}
+    .nota p,.nota ol{margin-bottom:4px;line-height:1.4}
+    .nota a{color:inherit}
+    .nota .fim{margin-top:10px;padding-top:6px}
+  }
+</style>
+<!-- build:boot -->
+<script>
+/* Tema, antes da primeira pintura: qualquer coisa mais tarde pisca claro e só depois escurece.
+   Mora numa chave própria, fora do estado de cada tela e fora do código de backup — é preferência
+   deste aparelho. A chave é a mesma nos três arquivos: no mesmo navegador, todos abrem igual. */
+(function(){
+  var K = "missao-olimpiadas-tema", r = document.documentElement;
+  // Sem light-dark() a paleta escura não existe: fica tudo claro e o seletor nem aparece.
+  if(!(window.CSS && CSS.supports && CSS.supports("color","light-dark(#fff,#000)"))) return;
+  var mq = window.matchMedia("(prefers-color-scheme: dark)");
+  function lido(){ try{ var v = localStorage.getItem(K); return (v==="claro"||v==="escuro") ? v : "sistema"; }catch(e){ return "sistema"; } }
+  function aplica(escolha){
+    r.dataset.escolha = escolha;
+    r.dataset.tema = escolha==="sistema" ? (mq.matches ? "escuro" : "claro") : escolha;
+  }
+  aplica(lido());
+  // O aparelho virou o tema durante a noite, ou outra aba trocou a escolha: os dois seguem.
+  function segue(){ aplica(lido()); window.dispatchEvent(new Event("tema")); }
+  mq.addEventListener ? mq.addEventListener("change", segue) : mq.addListener(segue);
+  window.addEventListener("storage", function(e){ if(e.key===K) segue(); });
+  window.setTema = function(v){ try{ localStorage.setItem(K, v); }catch(e){} aplica(v); };
+})();
+</script>
+<!-- /build:boot -->
+<body>
+<!-- build:bar telaid="" tela="Nota às famílias" -->
+<header class="shell" data-tela="">
+  <div class="in">
+    <div class="telas"><h1>Nota às famílias</h1></div>
+    <div class="acts">
+      <details class="menu tema" id="tema">
+        <summary id="temaSum"><span id="temaAtual">Sistema</span></summary>
+        <div class="pop" role="radiogroup" aria-label="Tema">
+          <label><input type="radio" name="tema" value="claro"><span>Claro</span></label>
+          <label><input type="radio" name="tema" value="escuro"><span>Escuro</span></label>
+          <label><input type="radio" name="tema" value="sistema"><span>Sistema</span></label>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<!-- /build:bar -->
+<main>
+  <article class="nota">
+    <p class="abre">A Missão Olimpíadas é um treino para a Olimpíada Mirim com as provas antigas, feito no papel. Este bilhete conta o que o app é, o que não é e como usar.</p>
+
+    <h2 id="oque">O que é</h2>
+    <p>Um app de estudo gratuito no endereço <a href="https://diogodomanski.github.io/missao-olimpiadas-releases/">diogodomanski.github.io/missao-olimpiadas-releases</a>. A criança imprime uma prova antiga, resolve no papel com lápis e tempo marcado, e depois marca as letras no app. O app corrige, mostra os assuntos que mais pedem treino e traz de volta, em outros dias, as questões que ficaram erradas, com dicas.</p>
+
+    <h2 id="oficial">Não é oficial</h2>
+    <p>Não é um app oficial e não tem ligação com o IMPA, com a OBMEP nem com a escola. Nenhum deles organiza, revisa ou recomenda o app. As provas e as soluções são as publicadas pela organização da olimpíada; o app não as copia, só leva aos PDFs oficiais.</p>
+
+    <h2 id="dados">Sem conta, nada sai do aparelho</h2>
+    <p>Não há cadastro, propaganda nem contador de visitas. O nome que a criança escolhe e o treino ficam guardados só no navegador do aparelho; o site não recebe nada disso e só serve os próprios arquivos. Se o navegador limpar os dados do site, o treino se perde: no app, em Dados, dá para baixar um arquivo de backup.</p>
+
+    <h2 id="links">Os links são para usar com um adulto</h2>
+    <p>Os PDFs das provas e os materiais de estudo ficam em sites de fora, que abrem em outra aba. Abra esses links junto com a criança.</p>
+
+    <h2 id="imprimir">Como imprimir as provas</h2>
+    <ol>
+      <li>No app, abra Provas e escolha uma prova.</li>
+      <li>Toque em PDF oficial da prova e imprima em folha A4, de preferência sem as soluções.</li>
+      <li>Se quiser, imprima também a folha de respostas do app (Imprimir folha de respostas).</li>
+    </ol>
+
+    <h2 id="celular">No celular, na tela inicial</h2>
+    <p>Abra o endereço uma vez com internet. No Android, no Chrome: menu ⋮ e Instalar app (ou Adicionar à tela inicial). No iPhone, no Safari: Compartilhar e Adicionar à Tela de Início. O app passa a abrir em tela cheia e funciona sem internet.</p>
+
+    <p class="fim" id="contato"><b>Contato.</b> Dúvidas, um gabarito ou uma dica com erro: escreva para <a href="mailto:diogo.domanski@gmail.com?subject=Miss%C3%A3o%20Olimp%C3%ADadas">diogo.domanski@gmail.com</a>, que prepara o conteúdo do app.</p>
+  </article>
+</main>
+<!-- build:footer -->
+<footer class="shell-footer">
+  <!-- O lugar vazio à esquerda é de propósito: é onde entra o que a barra vier a hospedar.
+       Não crie div vazia para reservá-lo. -->
+  <div class="in"><p class="versao">versão 13 · 08/10/2026 · obmep-mirim-2 v5</p></div>
+</footer>
+<!-- /build:footer -->
+<script>
+  /* build:shell-js */
+  // Fechar os menus da barra. <details> não fecha sozinho ao clicar fora nem no Esc, e com dois menus
+  // na mesma barra o clique em um tem de fechar o outro — senão ficam os dois abertos por cima do
+  // conteúdo. Um handler só resolve as duas coisas: o menu que contém o clique sobrevive.
+  document.addEventListener("click", e => {
+    document.querySelectorAll(".shell .menu[open]").forEach(d => { if(!d.contains(e.target)) d.open = false; });
+  });
+  document.addEventListener("keydown", e => {
+    if(e.key !== "Escape") return;
+    const aberto = document.querySelector(".shell .menu[open]");
+    if(aberto){ aberto.open = false; aberto.querySelector("summary").focus(); }
+  });
+
+  // As duas telas que o Arthur alterna. O painel do orientador não entra de propósito: é a ferramenta
+  // do pai, não uma tela do filho — e vice-versa. Quem não está nesta lista mostra só o título.
+  // `web` é o caminho da mesma tela na versão hospedada (etapa 2), onde cada uma é uma pasta.
+  const TELAS = [
+    {id:"missao",  nome:"Missão ENEM",      arq:"Missao_ENEM_Arthur.html",  web:"../aluno/"},
+    {id:"escolha", nome:"Escolha de curso", arq:"Escolha_Curso_Arthur.html", web:"../escolha/"},
+  ];
+
+  // Menu de telas. Todo file:// divide o mesmo localStorage no Chrome — entre pastas diferentes e sem
+  // precisar de flag (testado). Então cada tela carimba onde ela está e a vizinha linka para o caminho
+  // real, não para um nome relativo: é o que faz o link sobreviver ao "Escolha_Curso_Arthur (1).html"
+  // que o navegador cria quando o Arthur baixa o arquivo de novo, ou às duas telas em pastas diferentes.
+  (function(){
+    const barra = document.querySelector(".shell"), aqui = barra.dataset.tela;
+    if(!TELAS.some(t => t.id === aqui)) return; // tela sozinha: o título continua sendo só título
+    const CHAVE = "missao-olimpiadas-telas";
+    let onde = {};
+    try{ const v = JSON.parse(localStorage.getItem(CHAVE)); if(v && typeof v === "object" && !Array.isArray(v)) onde = v; }catch(e){}
+    onde[aqui] = location.href;
+    try{ localStorage.setItem(CHAVE, JSON.stringify(onde)); }catch(e){}
+
+    const cont = barra.querySelector(".telas"), titulo = cont.querySelector("h1").textContent;
+    const itens = TELAS.map(t => t.id === aqui
+      ? `<span aria-current="page">${t.nome}</span>`
+      : `<a href="${String(onde[t.id] || (/^https?:$/.test(location.protocol) ? t.web : t.arq)).replace(/"/g,"&quot;")}">${t.nome}</a>`).join("");
+    cont.innerHTML = `<details class="menu"><summary><h1>${titulo}</h1></summary><div class="pop">${itens}</div></details>`;
+  })();
+
+  // Seletor de tema. Quem sabe e quem grava é o boot no <head> (ele roda antes da primeira pintura);
+  // aqui só marcamos a opção que está valendo e escrevemos o nome dela no botão — inclusive quando o
+  // aparelho vira o tema sozinho. O botão mostra a escolha, não o tema resolvido: "Sistema" precisa
+  // continuar legível como "acompanha o aparelho".
+  (function(){
+    const g = document.getElementById("tema"), radios = [...g.querySelectorAll("input")];
+    const NOME = {claro:"Claro", escuro:"Escuro", sistema:"Sistema"};
+    const marca = ()=>{
+      const e = document.documentElement.dataset.escolha;
+      radios.forEach(i=>{ i.checked = i.value===e; });
+      document.getElementById("temaAtual").textContent = NOME[e] || NOME.sistema;
+      document.getElementById("temaSum").setAttribute("aria-label", `Tema: ${(NOME[e] || NOME.sistema).toLowerCase()}`);
+    };
+    g.addEventListener("change", e=>{
+      if(window.setTema && e.target.value) window.setTema(e.target.value);
+      marca(); // setTema não dispara o evento `tema` (esse é para mudança vinda de fora)
+      g.open = false; // escolheu: o menu fecha, e a tela repintada é o próprio aviso (não rende toast)
+    });
+    window.addEventListener("tema", marca);
+    marca();
+  })();
+
+  // User menu: só existe no app (ADR-006). É o ocupante do lugar que a barra guardava vazio, depois do
+  // tema — e continua sem placeholder nenhum no markup: no navegador `window.desktop` não existe e o
+  // <details> nunca é criado. O nome no botão, o nome e o e-mail na lista, e "Trocar de usuário", que
+  // é o único caminho de volta para a pergunta "Quem está usando?" (ADR-002/US-031).
+  // O texto vai por textContent, nunca por innerHTML: o nome e o e-mail são digitados pelo usuário.
+  (function(){
+    if(!window.desktop) return;
+    const acts = document.querySelector(".shell .acts");
+    if(!acts) return;
+    const profile = window.desktop.profile || {};
+    const menu = document.createElement("details");
+    menu.className = "menu user";
+    menu.id = "user";
+    const summary = document.createElement("summary");
+    const label = document.createElement("span");
+    label.textContent = profile.name || "Usuário";
+    summary.setAttribute("aria-label", `Usuário: ${label.textContent}`);
+    summary.appendChild(label);
+    const pop = document.createElement("div");
+    pop.className = "pop";
+    const name = document.createElement("span");
+    name.textContent = label.textContent;
+    const swap = document.createElement("button");
+    swap.type = "button";
+    swap.id = "switchRole";
+    swap.textContent = "Trocar de usuário";
+    swap.addEventListener("click", ()=>{ menu.open = false; window.desktop.switchRole(); });
+    pop.appendChild(name);
+    if(profile.email){ // sem e-mail não entra linha vazia: seria um item de menu em branco
+      const mail = document.createElement("span");
+      mail.className = "muted";
+      mail.textContent = profile.email;
+      pop.appendChild(mail);
+    }
+    pop.appendChild(swap);
+    menu.append(summary, pop);
+    acts.appendChild(menu);
+  })();
+  /* /build:shell-js */
+</script>
+</body>
+</html>

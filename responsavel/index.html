@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Página do responsável da Missão Olimpíadas: perfis, códigos de aparelho e progresso.">
+<title>Missão Olimpíadas — Responsável</title>
+<style>
+  /* build:tokens largura="720px" corpo="16px" campo="16px" primaria="var(--blue)" */
+  /* Paleta e medidas do shell. Fonte única: este arquivo é injetado nos três HTMLs pelo build.
+     Não edite o bloco gerado dentro do HTML — edite aqui e rode `python3 scripts/build.py`. */
+  :root{
+    /* `only` nos dois temas: é ele que impede o "tema escuro para sites" do Chrome no Android de
+       inverter a pintura por cima da nossa (o painel Hoje sumia no fundo, ouro e verde viravam cinza).
+       `light` sozinho não opta por sair — testado. O tema escuro não é uma inversão do navegador:
+       é a segunda coluna de cada token, logo abaixo. */
+    color-scheme:only light;
+    --bg:#F3F5F9; --surface:#FFFFFF; --ink:#12213F; --muted:#626D88;
+    --line:#DDE2EC; --field-line:#8790A6; --blue:#1F5EFF; --blue-ink:#1B52E0; --blue-soft:#E4ECFF;
+    --gold:#D69B0A; --gold-soft:#FFF4D6; --gold-ink:#7A5600;
+    --green:#167A4C; --green-soft:#E1F5EA; --red:#B3261E; --red-soft:#FBE7E5;
+  }
+  /* Par escuro de cada token, na mesma linha do claro: os dois nunca saem de sincronia e não existe
+     um segundo bloco de paleta para esquecer. Navegador sem light-dark() ignora estas linhas e fica
+     no claro — e o boot lá embaixo não oferece o seletor onde ele não funcionaria.
+     Escuro é marinho dessaturado, não cinza: a página continua sendo papel azulado, à noite. */
+  :root{
+    --bg:light-dark(#F3F5F9,#0E1626);           /* papel */
+    --surface:light-dark(#FFFFFF,#172032);      /* ficha sobre o papel, e a barra do topo */
+    --ink:light-dark(#12213F,#E9EDF6);          /* 13,9:1 sobre a ficha */
+    --muted:light-dark(#626D88,#9AA7C2);        /* 6,7:1 — o mais escuro que ainda lê como secundário */
+    --line:light-dark(#DDE2EC,#2C3750);
+    --field-line:light-dark(#8790A6,#7987A8);   /* 4,5:1 sobre a ficha (SC 1.4.11 pede 3) */
+    --blue:light-dark(#1F5EFF,#6D97FF);         /* azul elétrico não sobrevive ao escuro: sobe dois degraus */
+    --blue-ink:light-dark(#1B52E0,#A9C4FF);
+    --blue-soft:light-dark(#E4ECFF,#1C2A4B);
+    --gold:light-dark(#D69B0A,#D9A62A);
+    --gold-soft:light-dark(#FFF4D6,#3A2D0B);
+    --gold-ink:light-dark(#7A5600,#EFC35E);     /* no escuro o par vira o claro: 8,1:1 sobre ouro suave */
+    --green:light-dark(#167A4C,#4FC894);
+    --green-soft:light-dark(#E1F5EA,#10301F);
+    --red:light-dark(#B3261E,#FF8C82);
+    --red-soft:light-dark(#FBE7E5,#3B1A17);
+    /* sombra e backdrop: marinho com alfa no claro, um marinho quase apagado no escuro — nunca #000 */
+    --shadow:light-dark(rgba(18,33,63,.25),rgba(5,9,18,.6));
+    --scrim:light-dark(rgba(18,33,63,.45),rgba(5,9,18,.72));
+  }
+  /* Painel Hoje. No claro ele é a única superfície escura da tela; no escuro a tela inteira é escura,
+     então ele passa a ser a única superfície *saturada*: azul-comando, 1,7:1 acima do papel. A tinta
+     dele é branca nos dois temas — por isso os alfas de branco do painel continuam valendo. */
+  :root{
+    --hoje:light-dark(#12213F,#1B3A86);
+    --hoje-ink:#FFFFFF;
+    --hoje-line:light-dark(rgba(255,255,255,.45),rgba(255,255,255,.55)); /* 3:1 sobre o painel e sobre a pílula de 8% */
+    /* opacidades da linha do tempo: o azul-comando é mais claro que o marinho, então branco a 70%/55%
+       cairia para 4,1:1 nele. 85%/66% devolve o mesmo degrau visual com 6,6:1 e 4,8:1. */
+    --tl:light-dark(.7,.85);
+    --dim:light-dark(.55,.66);
+    /* Medidas do shell. --shell é a altura da barra fixa: entra no padding do body e no
+       scroll-margin-top das âncoras, então mudar aqui move tudo junto. --wide é a largura útil
+       desta tela, e a barra usa a mesma do <main> para os dois alinharem. */
+    --shell:52px;
+    /* --footer é a altura total da barra fixa de baixo, fio de 1px incluído, e serve ao mesmo
+       propósito: entra no padding do body e no quanto o toast sobe para não pousar sobre ela. */
+    --footer:28px;
+    --wide:720px;
+    /* Medidas que mudam de tela para tela. Antes eram divergências que só quem já conhecia o código
+       sabia de cor (campo de 16px no aluno e de 15px no orientador); agora cada arquivo as declara
+       no próprio marcador do build, e o CSS compartilhado lê a variável. */
+    --corpo:16px;        /* corpo de texto da tela */
+    --campo:16px;        /* campo de formulário: nunca herda os 12px do rótulo .f */
+    --primaria:var(--blue);  /* fundo do botão primário: azul elétrico no aluno, marinho no orientador */
+    /* A segunda família tipográfica, e a única outra: a da folha de redação. A largura da folha é um
+       número de caracteres, e só em fonte monoespaçada caractere vira largura na tela — a margem direita
+       é uma linha, a linha cheia parece cheia e o recuo ocupa o que conta. Só pilha de sistema, sem
+       webfont (ADR-009 de folha-de-redacao-e-noticias). A contagem nunca depende dela: num aparelho
+       cujo monospace não seja de passo fixo, só a margem desenhada sai torta. */
+    --mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Consolas,"DejaVu Sans Mono",Menlo,monospace;
+  }
+  /* Celular deitado: 52px de barra comeriam um oitavo da altura. As duas continuam fixas, mais baixas. */
+  @media (max-height:480px){:root{--shell:44px;--footer:24px}}
+  :root[data-tema="escuro"]{color-scheme:only dark}
+  /* Papel é branco: imprimir no escuro sairia tinta clara sobre nada. */
+  @media print{:root,:root[data-tema="escuro"]{color-scheme:only light}}
+  /* /build:tokens */
+  /* build:base */
+  /* Camada de design system: o que o DESIGN.md declara obrigatoriamente igual nas três telas.
+     Fonte única — editar aqui muda os três arquivos. O CSS de cada tela (o painel Hoje e o herói do
+     aluno, a grade do orientador, a prosa do Escolha) continua morando junto do markup dela, porque
+     58% das regras são exclusivas de uma tela e ali estar perto do HTML é qualidade, não defeito. */
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:var(--corpo);line-height:1.45}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  p{margin:0}
+  a{color:var(--blue);text-underline-offset:2px}
+  .muted{color:var(--muted);font-size:13px}
+  .mt{margin-top:10px}
+  .f{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
+  button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 12px}
+  /* um acento forte por card: o primário do aluno é azul elétrico, o do orientador é marinho tinta */
+  button.primary{background:var(--primaria);color:var(--surface);border-color:var(--primaria)}
+  button.quiet{background:transparent;border-color:transparent;color:var(--muted)}
+  button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible,h2:focus-visible,h3:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  /* campo nunca herda os 12px do rótulo .f, e --campo nunca desce de 16px onde há iPhone: abaixo disso ele dá zoom */
+  /* campo vazio só se enxerga pela borda: --field-line dá 3:1 sobre branco (SC 1.4.11). Card e botão
+     continuam em --line: lá o rótulo e a superfície já identificam o elemento. */
+  input,textarea,select{font:inherit;font-size:var(--campo);padding:8px;border:1px solid var(--field-line);border-radius:8px;width:100%;background:var(--surface);color:var(--ink);caret-color:var(--blue)}
+  textarea{resize:vertical}
+  /* textarea com teto rola por dentro: a barra é do sistema, como o caret (--field-line dá 3:1 sobre branco) */
+  textarea{scrollbar-width:thin;scrollbar-color:var(--field-line) transparent}
+  /* textareas que crescem com o texto não têm alça: a alça brigaria com o crescimento automático */
+  textarea[data-grow]{resize:none}
+  textarea.code{font-size:13px;min-height:120px;overflow-wrap:anywhere}
+  /* o cinza de placeholder do navegador não é o nosso: --muted é o mais claro que ainda dá 4,5:1 */
+  ::placeholder{color:var(--muted);opacity:1}
+  ::selection{background:var(--blue-soft);color:var(--ink)}
+
+  /* Fila que rola de lado (navegação e abas). Enquanto sobrar item fora da tela, a borda esmaece e
+     uma seta "›" fica sobre a parte já limpa da máscara: o esmaecido diz que há mais, a seta diz para onde. */
+  .fila{position:relative}
+  .fila::after{content:"\203A";position:absolute;right:0;top:0;bottom:0;width:26px;display:none;align-items:center;justify-content:flex-end;font-size:22px;line-height:1;color:var(--muted);pointer-events:none}
+  .fila.more::after{display:flex}
+  /* as abas têm padding em cima e embaixo: a seta acompanha para ficar no meio das pílulas */
+  .fila.abas::after{top:4px;bottom:8px}
+
+  /* Diálogo e toast: os únicos elementos que flutuam, e por isso os únicos com sombra. No escuro a
+     sombra não desenha nada sobre fundo escuro, e o recorte volta a ser o fio de 1px de todo card. */
+  dialog{border:1px solid light-dark(transparent,var(--line));border-radius:14px;padding:0;max-width:560px;width:calc(100% - 32px);max-height:calc(100vh - 32px);overflow:auto;background:var(--surface);color:var(--ink);box-shadow:0 20px 60px var(--shadow)}
+  @supports (height:1dvh){dialog{max-height:calc(100dvh - 32px)}}
+  dialog::backdrop{background:var(--scrim)}
+  dialog .dh{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 18px 8px}
+  dialog .dh h2{margin:0;font-size:17px}
+  dialog .db{padding:0 18px 18px;font-size:14px;line-height:1.55}
+  dialog .db p{margin:8px 0}
+  dialog .db ul{margin:6px 0;padding-left:18px}
+  dialog .db li{margin:4px 0}
+  dialog .db code{background:var(--bg);padding:1px 6px;border-radius:6px;font-size:13px}
+
+  /* O toast pousa acima da barra de baixo, não sobre ela: --footer já é a altura toda dela. */
+  .toast{position:fixed;left:0;right:0;bottom:calc(var(--footer) + 16px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100vw - 32px);margin:0 auto;background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:99px;font-size:14px;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s;z-index:3}
+  .toast.show{opacity:1}
+  .toast b{font-weight:700}
+  @media (prefers-reduced-motion:reduce){.toast{transition:none}}
+  /* toast com Desfazer: só depois de apagar (zerar, apagar repertório); some em 8 s */
+  .toast.act{pointer-events:auto}
+  .toast button{margin-left:10px;padding:4px 10px;font-size:13px;font-weight:700;background:var(--surface);color:var(--ink);border-color:var(--surface);border-radius:99px}
+  /* toque: o Desfazer desenha 37px (a linha de 13px tem 18,85, mais 8px de padding e a borda) e acerta 44
+     pela área invisível, que cresce para cima e para baixo dentro dos 10px de padding da pílula — o
+     desenho não muda. O `padding:8px 12px` sozinho, copiado à mão nos dois apps, dava 37,8: padding é
+     conta de métrica de fonte, e a área se mede do tamanho, como a do `?`. */
+  @media (pointer:coarse){.toast button{position:relative;padding:8px 12px}.toast button::after{content:"";position:absolute;inset:calc((100% - 44px)/2) 0;border-radius:99px}}
+
+  .help{width:26px;height:26px;padding:0;border-radius:99px;font-size:14px;font-weight:700;color:var(--blue-ink);border-color:var(--blue-soft);background:var(--blue-soft);flex:0 0 auto;line-height:1}
+  @media (hover:hover){.help:hover{background:var(--blue);color:var(--surface)}}
+  /* toque: o `?` desenha 26px (22 no subtítulo) e acerta 44 pela área invisível. O ::after se mede da
+     caixa de PADDING, que não tem a borda de 1px do botão, e por isso o recuo sai do tamanho e não de
+     um número fixo: o `inset:-9px` de antes, copiado à mão nos dois apps, dava 42 no de 26 e 38 no de 22. */
+  @media (pointer:coarse){.help{position:relative}.help::after{content:"";position:absolute;inset:calc((100% - 44px)/2);border-radius:99px}}
+  /* vermelho só para erro e alerta, nunca em botão */
+  .err{color:var(--red);font-size:13px;margin:8px 0 0}
+  .alert{background:var(--red-soft);color:var(--red);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.4}
+
+  /* A faixa de atualização (#updateBanner). As regras moram aqui porque a peça é obrigatoriamente
+     idêntica nos dois apps — e até 18/09/2026 elas existiam em TRIPLICATA, copiadas à mão nos três
+     arquivos, inclusive no Escolha, que não tem faixa nenhuma.
+
+     Azul e não vermelho: versão nova não é falha, e vermelho ali leria como "alguma coisa quebrou".
+     Mas azul suave sobre o papel azulado dá 1,1:1. Dentro de um card o mesmo recurso funciona — é o
+     que .promo e .flag fazem, sobre branco —; na PÁGINA ele desaparece, e a faixa lia como mais um
+     card num quadro cheio de cards. Quem separa é o fio de 1px em azul elétrico: é o único bloco da
+     tela com contorno de acento, e um fio basta. Filete grosso à esquerda seria o carimbo genérico de
+     "callout", que é o oposto de uma decisão — e o ouro do .flag já ocupa esse gesto no orientador. */
+  .alert.info{background:var(--blue-soft);color:var(--blue-ink);border:1px solid var(--blue)}
+  #updateBanner{margin:0 0 12px}
+  #updateBanner p{margin:0}
+  #updateBanner .actions{margin-top:8px;align-items:center}
+  /* Os dois botões são `quiet`, que nasce em --muted: cinza-neblina sobre azul suave é cinza fora do
+     tom da superfície, e no escuro chega perto de parecer desabilitado. Sobre superfície colorida o
+     secundário se tinge da própria cor, nunca de cinza — e --blue-ink é o par escuro que a paleta já
+     reserva para pousar sobre --blue-soft. O `quiet` continua `quiet`: sem fundo, sem fio, sem acento.
+     Nenhuma das duas saídas é a certa, e a Regra do Um Acento continua valendo aqui. */
+  #updateBanner button.quiet{color:var(--blue-ink)}
+  /* A barra do download. O trilho não pode ser --blue-soft, que aqui é o fundo da própria faixa: usa
+     --surface, que no claro sobe (branco sobre azul suave) e no escuro afunda (#172032 sobre #1C2A4B)
+     — nos dois casos lê como sulco. `appearance:none` é o que tira o desenho do sistema operacional,
+     que não conhece a nossa paleta e ignora o tema. */
+  #updateProg{display:block;width:100%;height:6px;margin-top:8px;border:0;border-radius:99px;background:var(--surface);appearance:none;-webkit-appearance:none}
+  #updateProg::-webkit-progress-bar{background:transparent;border-radius:99px}
+  #updateProg::-webkit-progress-value{background:var(--blue);border-radius:99px}
+  #updateProg::-moz-progress-bar{background:var(--blue);border-radius:99px}
+  /* O link herda a cor da faixa: azul tinta sobre azul suave já é o contraste da peça, e um segundo
+     azul ali brigaria com ele. */
+  #updateBanner a{color:inherit;font-size:14px;text-underline-offset:2px}
+  /* Ela aparece NO MEIO da sessão, quando o download termina, e é aí que a atenção importa: a entrada
+     é o aviso. Um momento só, com a mesma curva da promoção de patente — o outro anúncio do sistema
+     que aparece sozinho. De cima para baixo porque ela empurra a página, e não surge por baixo dela. */
+  @media (prefers-reduced-motion:no-preference){
+    #updateBanner:not([hidden]){animation:faixa .45s cubic-bezier(.16,1,.3,1) both}
+    @keyframes faixa{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  }
+  /* Em alto contraste o fundo e o fio somem: sem isto a faixa vira texto solto no meio da página. */
+  @media (forced-colors:active){.alert.info{outline:2px solid CanvasText}}
+  /* Aviso de tela: some no papel. Uma folha impressa hoje não tem como reiniciar app nenhum, e a
+     linha sobreviveria ao arquivo. */
+  @media print{#updateBanner{display:none}}
+  /* A folha de redação (.sheet): linhas numeradas e pautadas, desenhadas por folhaHTML() a partir de
+     folhaLinhas() — a mesma lista que dá a contagem, então a folha e o número não discordam. Mora aqui
+     porque é o mesmo componente nos dois apps (o rascunho dele, a referência do passar a limpo, a folha
+     no painel do pai). --cols é a largura dele, posta inline no <ol>; a coluna do texto mede
+     exatamente --cols caracteres e a margem é o fio à direita dela. Pauta em --line, como todo fio de
+     card; a margem em --field-line, porque ela é o exercício e precisa se ver. Nenhum estado é
+     vermelho: a folha nunca julga o que ele escreveu.
+     Linhas: .out (depois da 30ª, abaixo do corte "fora da folha"), .past (passou da largura dele, numa
+     semana em que a folha segue o papel: aviso neutro, pontilhado) e .full (a linha do passar a limpo
+     que chegou ao máximo: a margem escurece, e é só isso que a recusa silenciosa mostra).
+     A folha não encolhe para caber: em tela estreita o .sheet-wrap rola de lado por dentro e a página
+     não. Encolher foi medido e recusado (para 68 colunas caberem num celular de 375 px a letra iria a
+     6,8 px). Enquanto sobra linha à direita, o .sheet-wrap leva .more: a borda some em degradê, como
+     na .fila, e não corta a palavra a seco. Com toque, a .sheet-hint acima da folha diz o que fazer —
+     deitado, 55 e 68 colunas cabem inteiras em todo celular medido. Sem toque ela não aparece: numa
+     janela estreita de computador "deite o celular" seria instrução para outro aparelho.
+     A largura do <ol> é a conta das colunas (número, intervalo, texto) e não max-content, e cada linha
+     leva content-visibility:auto: o rascunho é redesenhado a cada tecla, e com um texto várias vezes
+     maior que a folha medir a linha mais larga obrigava o navegador a diagramar todas — numa redação de
+     20.000 palavras eram 2.500 linhas e mais de 100 ms por tecla. Assim só as linhas visíveis custam. */
+  .sheet-wrap{max-width:100%;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--field-line) transparent}
+  /* impeccable-disable-next-line design-system-color: #000 aqui é canal de máscara (alfa), não cor visível */
+  .sheet-wrap.more{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 32px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 32px),transparent)}
+  .sheet-hint{display:none;margin:10px 0 4px;font-size:12px;color:var(--muted)}
+  .sheet-hint + *{margin-top:10px}
+  @media (pointer:coarse){.sheet-hint:not([hidden]){display:block}.sheet-hint:not([hidden]) + *{margin-top:0}}
+  .sheet{list-style:none;margin:0;padding:0;width:calc((var(--cols) + 4.5) * 1ch);min-width:100%;background:var(--surface);color:var(--ink);font-family:var(--mono);font-size:13px;line-height:24px}
+  .sheet li{display:grid;grid-template-columns:3ch calc(var(--cols) * 1ch);column-gap:1.5ch;min-height:25px;border-bottom:1px solid var(--line);content-visibility:auto;contain-intrinsic-block-size:auto 25px}
+  .sheet .sheet-n{color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;user-select:none}
+  .sheet .sheet-t{min-width:0;white-space:pre;border-right:1px solid var(--field-line)}
+  .sheet input.sheet-t{font:inherit;line-height:inherit;height:24px;padding:0;border:0;border-right:1px solid var(--field-line);border-radius:0;background:transparent;width:auto}
+  .sheet .full .sheet-t{border-right-color:var(--ink)}
+  .sheet .past .sheet-t{text-decoration:underline dotted var(--field-line);text-underline-offset:5px}
+  /* "passou da sua largura" é para leitor de tela: o pontilhado é desenho e não se lê. O aluno não tem
+     .vh, e a folha não depende do CSS de tela nenhuma. */
+  .sheet .sheet-vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .sheet .out{background:var(--bg);color:var(--muted)}
+  .sheet li:not(.out) + .out::before{content:"fora da folha";grid-column:1 / -1;font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:12px;color:var(--muted);border-top:2px dashed var(--field-line);padding-left:4.5ch}
+  /* Carimbo do build: mora na barra fixa de baixo (.shell-footer, em shell.css), pequeno e fora do
+     caminho, mas legível de qualquer ponto da página quando o pai pergunta "que versão aparece aí
+     embaixo?". Sai também no papel — folha impressa sem versão não dá para conferir depois. */
+  .versao{margin:0;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+  /* /build:base */
+  /* build:shell-css */
+  /* Barra do topo: a casca comum aos três arquivos. Fixa — o conteúdo passa por baixo dela, e é por
+     isso que o <body> ganha padding-top e o <html> o scroll-padding (nunca em pixels soltos).
+     Chrome é superfície, não papel: fundo --surface e um fio de 1px embaixo. Aqui a sombra da barra
+     fixa não serve, porque no tema escuro sombra escura sobre fundo escuro não desenha nada. */
+  .shell{position:fixed;top:0;left:0;right:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+  .shell .in{display:flex;align-items:center;gap:10px;height:calc(var(--shell) - 1px);max-width:var(--wide);margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+  /* O nome da tela é o item que encolhe: numa tela estreita ele abrevia, e os botões da direita não —
+     quem chega na barra já sabe em que tela está, e os controles precisam continuar clicáveis inteiros. */
+  .shell .telas{flex:1 1 auto;min-width:0}
+  .shell h1{margin:0;font-size:15px;font-weight:600;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* O user menu entra aqui dentro, depois do tema. Não crie div vazia para reservar o lugar. */
+  .shell .acts{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+
+  /* Menus da barra: o nome da tela abre a lista de telas, o nome do tema abre a lista de temas.
+     Um componente só, usado duas vezes. O tema era um toggle de três pílulas e comia 176px dos 358
+     que sobram em 390px — quase metade da barra para uma preferência que se ajusta uma vez. Como
+     dropdown ele mostra a escolha atual em ~78px, e o nome da tela deixa de ser espremido.
+     <details> e não a Popover API: o popover traria fechar-ao-clicar-fora e Esc de graça, mas onde
+     ele não existe o menu simplesmente não abre — e aqui isso seria perder o caminho entre os dois
+     arquivos do Arthur. As poucas linhas de JS são o preço de funcionar em todo lugar. */
+  .menu{position:relative;min-width:0}
+  .telas .menu{margin-left:-8px}  /* o texto do título volta a alinhar com o conteúdo da página */
+  .acts .menu{margin-right:-8px}
+  .menu > summary{display:flex;align-items:center;gap:5px;min-width:0;padding:4px 8px;border-radius:8px;cursor:pointer;list-style:none}
+  .menu > summary::-webkit-details-marker{display:none}
+  .menu > summary > span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .menu > summary::after{content:"\25BE";font-size:11px;line-height:1;color:var(--muted);flex:0 0 auto;transition:transform .15s}
+  .menu[open] > summary::after{transform:rotate(180deg)}
+  @media (prefers-reduced-motion:reduce){.menu > summary::after{transition:none}}
+  .menu > summary:focus-visible{outline:3px solid var(--blue);outline-offset:1px}
+  @media (hover:hover){.menu > summary:hover{background:var(--bg)}}
+  .tema > summary{font-size:13px;color:var(--muted)}
+  .menu .pop{position:absolute;top:calc(100% + 7px);left:0;z-index:1;min-width:190px;display:flex;flex-direction:column;gap:2px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px var(--shadow)}
+  .acts .menu .pop{left:auto;right:0}  /* encostado na direita: é lá que o botão está */
+  .menu .pop > a,.menu .pop > span,.menu .pop > label,.menu .pop > button{display:block;padding:9px 10px;border-radius:8px;font-size:14px;color:var(--ink);text-decoration:none;white-space:nowrap;cursor:pointer}
+  /* o botão do user menu é um item de lista, não um botão: sem fio, sem fundo, largura inteira e o
+     texto alinhado com os vizinhos. Sem isto ele herdaria a borda e o padding de base.css e ficaria
+     uma pílula dentro da lista, do lado de itens que não têm nenhuma. */
+  .menu .pop > button{width:100%;text-align:left;background:transparent;border:0;font:inherit}
+  /* o item marcado usa a linguagem do chip marcado: a tela onde você está, o tema que está valendo */
+  .menu .pop > [aria-current],.menu .pop > label:has(input:checked){background:var(--blue-soft);color:var(--blue-ink);font-weight:700}
+  @media (hover:hover){.menu .pop > a:hover,.menu .pop > label:hover,.menu .pop > button:hover{background:var(--bg)}}
+  .menu .pop > a:focus-visible,.menu .pop > button:focus-visible,.menu .pop > label:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:-1px}
+  .menu .pop input{position:absolute;opacity:0;width:1px;height:1px}
+  @media (pointer:coarse){
+    .menu > summary{min-height:44px;padding:4px 8px}
+    .menu .pop > a,.menu .pop > span,.menu .pop > label,.menu .pop > button{min-height:44px;display:flex;align-items:center;padding:0 10px}
+    .menu .pop input{padding:0}
+  }
+  @media (forced-colors:active){
+    .menu .pop input{position:static;opacity:1;width:16px;height:16px}
+    .menu .pop > label{display:flex;align-items:center;gap:6px}
+    .menu .pop > [aria-current],.menu .pop > label:has(input:checked){outline:2px solid CanvasText}
+  }
+  /* o seletor só existe onde light-dark() existe: quem aplica o data-escolha é o boot no <head> */
+  .shell .tema{display:none}
+  :root[data-escolha] .shell .tema{display:block}
+
+  /* Barra de baixo: a outra ponta da mesma casca. Existe para hospedar o carimbo do build, que
+     antes ficava no fim do <main> — e no fim do <main> só se lê depois de rolar o app inteiro, que é
+     justamente o que não dá para pedir por telefone ("que versão aparece aí embaixo?"). Fixa, ela
+     responde na hora, de qualquer ponto da página.
+     Mesmo desenho da barra do topo, espelhado: superfície, fio de 1px em cima (não sombra — no tema
+     escuro sombra escura sobre fundo escuro não desenha nada) e o mesmo --wide, para o conteúdo dela
+     alinhar com o do <main>. O carimbo fica à direita, que é onde se procura número de versão; a
+     esquerda fica vazia de propósito, para o que o rodapé vier a hospedar.
+     28px e não 44: aqui não há alvo de toque, é texto de 11px que se lê e não se clica. */
+  .shell-footer{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+  .shell-footer .in{display:flex;align-items:center;justify-content:flex-end;gap:10px;height:calc(var(--footer) - 1px);max-width:var(--wide);margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+
+  /* Faixa informativa: o mesmo componente do .alert de base.css (vermelho, que é erro) em azul.
+     O aviso de versão nova não é falha nenhuma — vermelho ali leria como "alguma coisa quebrou". */
+  .alert.info{background:var(--blue-soft);color:var(--blue-ink)}
+
+  /* A faixa da atualização (#updateBanner) tem o mesmo markup nos dois apps, então o layout dela mora
+     aqui e não no CSS de cada tela: duas cópias de uma peça só é exatamente o que este arquivo existe
+     para evitar. O link herda a cor da faixa — azul tinta sobre azul suave já é o contraste da peça,
+     e um segundo azul ali brigaria com ele. */
+  #updateBanner{margin:0 0 12px}
+  #updateBanner p{margin:0}
+  #updateBanner .actions{margin-top:8px;align-items:center}
+  #updateBanner a{color:inherit;font-size:14px;text-underline-offset:2px}
+
+  /* As duas barras são fixas: o conteúdo começa abaixo de uma e termina acima da outra. --shell e
+     --footer são as alturas totais, fio de 1px incluído. */
+  body{padding-top:calc(var(--shell) + env(safe-area-inset-top));padding-bottom:calc(var(--footer) + env(safe-area-inset-bottom))}
+  /* E o navegador precisa saber delas: ao levar o foco do teclado a um controle fora da tela, ele o encosta na
+     borda da janela — que é onde as barras pintam por cima. O scroll-padding desconta as duas de toda rolagem
+     até um elemento (foco, âncora, scrollIntoView). Por isso o scroll-margin-top de quem quer folga diz só a
+     folga (12px), sem --shell: com a barra nos dois, ela contaria duas vezes. */
+  html{scroll-padding:calc(var(--shell) + env(safe-area-inset-top)) 0 calc(var(--footer) + env(safe-area-inset-bottom))}
+  @media print{
+    /* A faixa da atualização é aviso de tela e some no papel: uma folha impressa hoje não tem como
+       reiniciar app nenhum, e a linha sobreviveria ao arquivo. */
+    #updateBanner{display:none}
+    .menu > summary::after,.menu .pop{display:none}
+    .shell{position:static;background:none;border:0;padding:0}
+    .shell .in{height:auto;max-width:none;padding:0;margin-bottom:10px}
+    .shell .acts{display:none}
+    /* no papel o rodapé volta a ser o que era: uma linha no fim do documento. Folha sem versão não
+       dá para conferir depois, então ele imprime — só deixa de ser barra. */
+    .shell-footer{position:static;background:none;border:0;padding:0}
+    .shell-footer .in{height:auto;max-width:none;padding:0;margin-top:10px}
+    body{padding-top:0;padding-bottom:0}
+  }
+
+  /* Sobrou aqui, quando o seletor de tema deixou de ser uma cápsula de três pílulas e virou um .menu,
+     o CSS da cápsula. Ele não era decorativo: `.tema{border;border-radius:99px;padding:2px}` ainda casava
+     com o <details> e deixava o botão de tema como a única peça da barra desenhada como pílula com fio,
+     enquanto o menu de telas ao lado não tem nenhum; e `.tema label::after{inset:-10px 0}` em ponteiro
+     grosso dava aos itens do menu um alvo invisível que passava 10px por cima do vizinho — o dedo que
+     mira "Escuro" caindo em "Sistema". Quem desenha o controle agora é .menu / .menu .pop, acima.
+     As regras vivas do tema são `.tema > summary` e o par `.shell .tema` de display. */
+  /* /build:shell-css */
+  /* A página do responsável (ADR-003, ADR-010 §3). Só existe no endereço do site e só com sessão: sem
+     ela, o <main> fica escondido e o diálogo #conta é a única coisa da página (BR-31). */
+  main{max-width:var(--wide);margin:0 auto;padding:20px 16px 32px}
+  h2,h3,h4{margin:0}
+  .topo{margin:4px 0 4px}
+  .topo h2{font-size:22px;line-height:1.25;overflow-wrap:anywhere}
+  .topo p{margin:4px 0 0;overflow-wrap:anywhere}
+  .sec{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:14px;scroll-margin-top:12px}
+  .sec > h2{font-size:18px;display:flex;align-items:center;gap:8px}
+  .sec > p{margin:8px 0 0}
+  .filho{border-top:1px solid var(--line);padding:14px 0 6px}
+  .filho:first-child{border-top:0;padding-top:6px}
+  .filho h3{font-size:18px;overflow-wrap:anywhere}
+  .filho h3 .ano{font-weight:400;color:var(--muted)}
+  .filho h4{font-size:14px;margin-top:14px;color:var(--muted);font-weight:600}
+  .fatos{margin-top:8px;font-size:15px;line-height:1.5}
+  .fatos p{margin:0;overflow-wrap:anywhere}
+  .fatos .passo{font-weight:700;margin-top:6px}
+  .descartado{margin:8px 0 0;font-size:14px;overflow-wrap:anywhere}
+  .lista{list-style:none;margin:6px 0 0;padding:0}
+  .lista li{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:8px 0;border-top:1px solid var(--line)}
+  .lista li:first-child{border-top:0}
+  .lista li > span{min-width:0;overflow-wrap:anywhere}
+  .lista li > .muted{flex:1 1 220px}
+  .codigo{font-family:var(--mono);font-size:18px;letter-spacing:.08em;font-weight:700}
+  .filho .actions,.sec .actions{margin-top:10px}
+  .filho form{margin-top:10px}
+  .filho form .f,.sec form .f{margin-top:8px;font-size:14px}
+  label.chk{display:flex;align-items:center;gap:10px;min-height:44px;margin-top:8px;cursor:pointer}
+  label.chk input{width:20px;height:20px;margin:0;flex:0 0 auto}
+  .destaque{outline:3px solid var(--gold);outline-offset:3px;border-radius:10px;padding:4px 10px;background:var(--gold-soft);color:var(--gold-ink)}
+  #conta .db{overflow-wrap:anywhere}
+  #conta ul{padding-left:18px}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media (pointer:coarse){
+    button{min-height:44px}
+    input:not([type=checkbox]):not([type=radio]){min-height:44px}
+  }
+  @media print{.actions,dialog,.toast{display:none !important}}
+</style>
+<!-- build:boot -->
+<script>
+/* Tema, antes da primeira pintura: qualquer coisa mais tarde pisca claro e só depois escurece.
+   Mora numa chave própria, fora do estado de cada tela e fora do código de backup — é preferência
+   deste aparelho. A chave é a mesma nos três arquivos: no mesmo navegador, todos abrem igual. */
+(function(){
+  var K = "missao-olimpiadas-tema", r = document.documentElement;
+  // Sem light-dark() a paleta escura não existe: fica tudo claro e o seletor nem aparece.
+  if(!(window.CSS && CSS.supports && CSS.supports("color","light-dark(#fff,#000)"))) return;
+  var mq = window.matchMedia("(prefers-color-scheme: dark)");
+  function lido(){ try{ var v = localStorage.getItem(K); return (v==="claro"||v==="escuro") ? v : "sistema"; }catch(e){ return "sistema"; } }
+  function aplica(escolha){
+    r.dataset.escolha = escolha;
+    r.dataset.tema = escolha==="sistema" ? (mq.matches ? "escuro" : "claro") : escolha;
+  }
+  aplica(lido());
+  // O aparelho virou o tema durante a noite, ou outra aba trocou a escolha: os dois seguem.
+  function segue(){ aplica(lido()); window.dispatchEvent(new Event("tema")); }
+  mq.addEventListener ? mq.addEventListener("change", segue) : mq.addListener(segue);
+  window.addEventListener("storage", function(e){ if(e.key===K) segue(); });
+  window.setTema = function(v){ try{ localStorage.setItem(K, v); }catch(e){} aplica(v); };
+})();
+</script>
+<!-- /build:boot -->
+<script src="../online.js" data-role="guardian"></script>
+<body>
+<!-- build:bar telaid="" tela="Responsável" -->
+<header class="shell" data-tela="">
+  <div class="in">
+    <div class="telas"><h1>Responsável</h1></div>
+    <div class="acts">
+      <details class="menu tema" id="tema">
+        <summary id="temaSum"><span id="temaAtual">Sistema</span></summary>
+        <div class="pop" role="radiogroup" aria-label="Tema">
+          <label><input type="radio" name="tema" value="claro"><span>Claro</span></label>
+          <label><input type="radio" name="tema" value="escuro"><span>Escuro</span></label>
+          <label><input type="radio" name="tema" value="sistema"><span>Sistema</span></label>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<!-- /build:bar -->
+<main>
+  <p id="soNoSite" hidden>Esta página só funciona no endereço do site da Missão Olimpíadas.</p>
+  <p id="painelFechado" hidden>O modo conectado ainda não está disponível neste endereço. O app da criança funciona completo sem conta.</p>
+  <div id="pagina" hidden>
+    <section class="topo" aria-labelledby="ola">
+      <h2 id="ola">Olá.</h2>
+      <p class="muted" id="quemEmail"></p>
+      <p class="muted" id="semRede" role="status" hidden></p>
+    </section>
+
+    <section class="sec" id="filhos" aria-labelledby="filhosTitulo">
+      <h2 id="filhosTitulo">Perfis<button class="help" data-help="filhos" aria-label="Ajuda: perfis">?</button></h2>
+      <div id="listaFilhos"></div>
+    </section>
+
+    <section class="sec" id="adicionar" aria-labelledby="adicionarTitulo">
+      <h2 id="adicionarTitulo">Novo perfil<button class="help" data-help="adicionar" aria-label="Ajuda: novo perfil">?</button></h2>
+      <p class="muted">Um perfil por criança. O nome aparece na tela da criança; o ano escolar separa dois nomes iguais.</p>
+      <div class="actions"><button class="primary" id="adicionarFilho">Adicionar filho</button></div>
+      <form id="novoForm" novalidate hidden>
+        <label class="f">Nome da criança<input id="novoNome" maxlength="40" autocomplete="off" autocapitalize="words" spellcheck="false"></label>
+        <label class="f">Ano escolar<input id="novoAno" maxlength="20" list="anos" autocomplete="off"></label>
+        <datalist id="anos"><option value="3º ano"><option value="4º ano"><option value="5º ano"><option value="6º ano"></datalist>
+        <p class="err" id="novoErr" role="alert" hidden></p>
+        <div class="actions"><button class="primary" type="submit" id="novoSalvar">Salvar perfil</button><button type="button" class="quiet" id="novoCancelar">Cancelar</button></div>
+      </form>
+    </section>
+
+    <section class="sec" id="email" aria-labelledby="emailTitulo">
+      <h2 id="emailTitulo">E-mail de segunda<button class="help" data-help="email" aria-label="Ajuda: e-mail de segunda">?</button></h2>
+      <p id="emailEstado"></p>
+    </section>
+
+    <section class="sec" id="conta-acoes" aria-labelledby="acoesTitulo">
+      <h2 id="acoesTitulo">Conta<button class="help" data-help="conta" aria-label="Ajuda: conta">?</button></h2>
+      <p class="muted">Os dados guardados ficam num servidor no Brasil. Baixe tudo quando quiser; excluir a conta apaga tudo do servidor.</p>
+      <div class="actions"><button id="baixarDados">Baixar meus dados</button><button id="excluirConta">Excluir conta</button><button class="quiet" id="sair">Sair</button></div>
+      <p class="err" id="acoesErr" role="alert" hidden></p>
+    </section>
+  </div>
+</main>
+<!-- build:footer -->
+<footer class="shell-footer">
+  <!-- O lugar vazio à esquerda é de propósito: é onde entra o que a barra vier a hospedar.
+       Não crie div vazia para reservá-lo. -->
+  <div class="in"><p class="versao">versão 13 · 08/10/2026 · obmep-mirim-2 v5</p></div>
+</footer>
+<!-- /build:footer -->
+<!-- A entrada, o consentimento e a exclusão, por passos. Sem sessão este diálogo é a página inteira, e
+     não fecha nem pelo Esc (BR-31). -->
+<dialog id="conta" aria-labelledby="contaTitulo"><div class="dh"><h2 id="contaTitulo">Entrar</h2></div><div class="db">
+  <form class="contaPasso" data-passo="email" novalidate>
+    <p id="contaIntro">Esta página é de quem é responsável pela criança. Entre com o seu e-mail: mandamos um código para esse endereço.</p>
+    <p class="alert info" id="embreve" hidden>Em breve: o modo conectado abre depois da revisão. O app da criança já funciona completo sem conta.</p>
+    <label class="f">Seu e-mail<input type="email" id="contaEmail" autocomplete="email" maxlength="200" spellcheck="false"></label>
+    <div class="actions"><button class="primary" type="submit">Continuar</button></div>
+  </form>
+  <form class="contaPasso" data-passo="codigo" novalidate hidden>
+    <p>Mandamos um código de 6 dígitos para <b id="contaPara"></b>. O código vale 10 minutos.</p>
+    <p class="muted">Não chegou? Olhe também na pasta de spam.</p>
+    <label class="f">Código<input id="contaCodigo" inputmode="numeric" autocomplete="one-time-code" maxlength="16" spellcheck="false"></label>
+    <div class="actions"><button class="primary" type="submit">Entrar</button><button type="button" id="contaReenviar">Reenviar código</button><button type="button" class="quiet" id="contaCorrigir">Corrigir e-mail</button></div>
+  </form>
+  <form class="contaPasso" data-passo="nome" novalidate hidden>
+    <p>Primeira vez por aqui. Qual nome aparece nesta página e no e-mail de segunda?</p>
+    <label class="f">Seu nome<input id="contaNome" autocomplete="name" maxlength="120"></label>
+    <label class="chk"><input type="checkbox" id="contaAdulto">Tenho 18 anos ou mais</label>
+    <div class="actions"><button class="primary" type="submit" id="contaNomeOk" disabled>Continuar</button></div>
+  </form>
+  <form class="contaPasso" data-passo="consentimento" novalidate hidden>
+    <p><b>Antes do primeiro perfil, o que fica guardado sobre cada criança:</b></p>
+    <ul>
+      <li><b>O quê:</b> o nome e o ano escolar, as respostas de cada prova, o caderno de questões, as etapas do mapa e o personagem.</li>
+      <li><b>Onde:</b> num servidor no Brasil (São Paulo).</li>
+      <li><b>Quem vê:</b> só você, nesta página e no e-mail de segunda. A tela da criança mostra só que o aparelho está ligado.</li>
+      <li><b>Como apagar:</b> Remover apaga um perfil; Excluir conta apaga tudo. Os dois a qualquer hora, nesta página.</li>
+    </ul>
+    <label class="chk destaque"><input type="checkbox" id="consentOk">Li o que fica guardado e concordo</label>
+    <div class="actions"><button class="primary" type="submit" id="consentConcordo" disabled>Concordo</button><button type="button" class="quiet" id="consentAgoraNao">Agora não</button></div>
+  </form>
+  <form class="contaPasso" data-passo="excluir" novalidate hidden>
+    <p>Mandamos um código de 6 dígitos para <b id="excluirPara"></b>. Digite o código para excluir a conta: é o que confirma que é você.</p>
+    <label class="f">Código<input id="excluirCodigo" inputmode="numeric" autocomplete="one-time-code" maxlength="16" spellcheck="false"></label>
+    <div class="actions"><button class="primary" type="submit">Excluir a conta</button><button type="button" class="quiet" id="excluirVoltar">Voltar</button></div>
+  </form>
+  <p class="err" id="contaErr" role="alert" hidden></p>
+</div></dialog>
+<dialog id="help" aria-labelledby="helpTitle"><div class="dh"><h2 id="helpTitle"></h2><button id="helpClose" aria-label="Fechar">Fechar</button></div><div class="db" id="helpBody"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // A derivação (olimpiadas/src/derive.mjs), a mesma da tela da criança e do e-mail de segunda (ADR-009).
+  /* build:derive */
+  // A derivação da Missão Olimpíadas (ADR-009 de missao-obmep-mirim): o progresso é uma lista de
+  // eventos que só cresce, e esta função pura calcula tudo o que a tela da criança, a página do
+  // responsável e o e-mail semanal mostram. Nada aqui é guardado: o que se vê é sempre recalculado.
+  //
+  // Este arquivo é a fonte das cópias idênticas, conferidas pelo check:olimp caractere a caractere
+  // (descontado o `export` do começo da linha):
+  //   olimpiadas/src/derive.mjs                     o módulo (esta fonte), para o Node e o motor
+  //   olimpiadas/Missao_Olimpiadas.html             o trecho build:derive, sem `export`
+  //   olimpiadas/Responsavel.html                   o mesmo trecho, para o progresso de cada perfil
+  //   supabase/functions/_shared/derive.mjs         a cópia do e-mail semanal, escrita pelo build
+  // Mudou aqui, rode `npm run build:olimp`; não edite as outras.
+  //
+  // Tudo mora dentro de uma função que devolve só o que é público: no HTML o trecho é um <script>
+  // comum, e assim só esses nomes viram globais da página.
+  //
+  // O evento: { id, at, day:"AAAA-MM-DD", t, ... } com
+  //   name { name }            character { character }      wear { slot, item | null }
+  //   confirm { exam, answers, keys, cycle? }               correct { exam, answers, cycle? }
+  //   retry { exam, q, letter, shown, cycle? }              reset {}
+  // `at` só ordena (relógio do aparelho, em ms); toda conta de calendário lê `day`, o dia local do
+  // gesto. `cycle` (de cycleOf(pack)) diz a que ciclo uma sessão pertence: o mapa recomeça a cada ciclo
+  // (olimpíada × edição), o personagem e os itens não (BR-19). Sessão sem `cycle` é do ciclo atual.
+  const { derive, mergeEvents, addDays, cycleOf, NEUTRAL_STORY } = (() => {
+    const TYPES = ["name", "character", "wear", "confirm", "correct", "retry", "reset"];
+    const NAME_MAX = 40;
+    const NOTEBOOK_WRONG = 2;
+    const NOTEBOOK_RIGHT = 7;
+    const LEARNED_AFTER = 2;
+    // O mapa neutro, para o pacote sem história (US-033): 24 etapas e um final, curtos e sem
+    // personagem, falando com a criança na segunda pessoa.
+    const NEUTRAL_STORY = Object.freeze({
+      stages: 24,
+      fragments: Object.freeze([
+        "Você chegou ao começo da trilha. O mapa está aberto.",
+        "A primeira ponte ficou para trás.",
+        "Uma placa aponta para o morro. Você segue.",
+        "No alto do morro dá para ver o rio lá embaixo.",
+        "Você acha pedras lisas para atravessar o rio.",
+        "Do outro lado do rio começa uma floresta.",
+        "As árvores são altas, e a trilha continua entre elas.",
+        "Uma clareira com sol. Hora de respirar.",
+        "Você encontra um mapa menor dentro de uma caixa.",
+        "O mapa menor mostra um atalho pela caverna.",
+        "Na caverna, cada passo ecoa duas vezes.",
+        "Uma luz no fim da caverna. Você sai do outro lado.",
+        "Um campo de flores amarelas até onde a vista alcança.",
+        "Você sobe numa pedra grande e enxerga o caminho todo.",
+        "Começa a ventar. Você segura firme e segue.",
+        "O vento passa e deixa o céu limpo.",
+        "Uma ponte de cordas balança, mas aguenta.",
+        "Do outro lado da ponte há uma torre antiga.",
+        "Você sobe a escada da torre, degrau por degrau.",
+        "Lá de cima, o fim do mapa já aparece.",
+        "A descida é rápida. Você quase corre.",
+        "Um último rio, agora estreito. Um pulo resolve.",
+        "Falta pouco. A trilha fica plana e larga.",
+        "Você chegou à última etapa do mapa.",
+      ]),
+      finale: "Chegou o dia da prova. A trilha inteira ficou para trás, e cada etapa foi você que andou.",
+    });
+    const DAY = /^\d{4}-\d{2}-\d{2}$/;
+    const isDay = s => {
+      if (typeof s !== "string" || !DAY.test(s)) return false;
+      const [y, m, d] = s.split("-").map(Number);
+      const t = new Date(Date.UTC(y, m - 1, d));
+      return t.getUTCFullYear() === y && t.getUTCMonth() === m - 1 && t.getUTCDate() === d;
+    };
+    const isText = s => typeof s === "string" && s.length > 0;
+    const isObj = x => !!x && typeof x === "object" && !Array.isArray(x);
+    const list = x => (Array.isArray(x) ? x : []);
+    const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+    const atOf = e => (Number.isFinite(e.at) ? e.at : 0);
+    const byAtId = (a, b) => atOf(a) - atOf(b) || cmp(a.id, b.id);
+
+    // Aritmética de calendário: os componentes da data local contados em UTC, sem fuso nem horário
+    // de verão no meio. Dia inválido devolve null.
+    function addDays(day, n) {
+      if (!isDay(day) || !Number.isInteger(n)) return null;
+      const [y, m, d] = day.split("-").map(Number);
+      const t = new Date(Date.UTC(y, m - 1, d + n));
+      const yy = t.getUTCFullYear();
+      if (yy < 1000 || yy > 9999) return null;
+      return `${yy}-${String(t.getUTCMonth() + 1).padStart(2, "0")}-${String(t.getUTCDate()).padStart(2, "0")}`;
+    }
+    const daysBetween = (a, b) => {
+      if (!isDay(a) || !isDay(b)) return null;
+      const u = s => Date.UTC(...s.split("-").map((x, i) => Number(x) - (i === 1 ? 1 : 0)));
+      return Math.round((u(b) - u(a)) / 86400000);
+    };
+
+    // O ciclo de um pacote: a olimpíada e a edição. O aparelho grava isto em cada sessão.
+    function cycleOf(pack) {
+      if (!isObj(pack)) return null;
+      const ed = isObj(pack.olympiad) ? pack.olympiad.edition : null;
+      return `${pack.id}@${ed}`;
+    }
+
+    // A junção de duas listas de eventos: a união pelo id, em ordem de (at, id). Comutativa e
+    // idempotente; dois eventos com o mesmo id e conteúdos diferentes (não acontece: o id nasce no
+    // aparelho) resolvem pelo texto, para a ordem dos argumentos não mudar o resultado.
+    function mergeEvents(a, b) {
+      const by = new Map();
+      for (const e of [...list(a), ...list(b)]) {
+        if (!isObj(e) || !isText(e.id)) continue;
+        const prev = by.get(e.id);
+        if (!prev || (prev !== e && JSON.stringify(e) < JSON.stringify(prev))) by.set(e.id, e);
+      }
+      return [...by.values()].sort(byAtId);
+    }
+
+    // O nome: aparado, até 40 caracteres, com pelo menos uma letra; senão, nenhum (a tela diz "você").
+    const normName = s => {
+      const t = Array.from(s.trim()).slice(0, NAME_MAX).join("").trim();
+      return /\p{L}/u.test(t) ? t : null;
+    };
+
+    const storyOf = pack => {
+      const s = pack && pack.story;
+      if (isObj(s) && Array.isArray(s.fragments) && s.fragments.length) {
+        const stages = Number.isInteger(s.stages) && s.stages > 0 ? s.stages : s.fragments.length;
+        return { neutral: false, stages, fragments: s.fragments.slice(0, stages), finale: typeof s.finale === "string" ? s.finale : "" };
+      }
+      return { neutral: true, stages: NEUTRAL_STORY.stages, fragments: NEUTRAL_STORY.fragments.slice(), finale: NEUTRAL_STORY.finale };
+    };
+
+    // As fases válidas do pacote, na ordem dele; a do final é a marcada com finale:true, ou a última.
+    const phasesOf = pack => list(pack && pack.phases).filter(p => isObj(p) && isDay(p.date));
+    const finalePhase = phases => phases.find(p => p.finale === true) || phases[phases.length - 1] || null;
+
+    function emptyView(pack) {
+      return {
+        name: null, character: null, worn: {}, exams: {}, best: null,
+        topics: { perExam: {}, cumulative: [], train: [] },
+        notebook: { entries: [], due: [], learned: [], nextDue: null },
+        stages: [], items: [], finale: false, next: null,
+        discarded: [], ignored: [], examOrder: [], story: storyOf(pack),
+      };
+    }
+
+    // O próximo passo, na ordem do contrato: dia de prova, edição encerrada, caderno, prova, descanso.
+    // A folha aberta ("continuar") é da tela: aqui não há estado local.
+    function nextStep(phases, today, dueCount, notDone) {
+      const ahead = phases.filter(p => p.date >= today);
+      const target = ahead.length ? ahead[0] : phases[phases.length - 1] || null;
+      const phase = target ? { ...target } : null;
+      const days = target ? daysBetween(today, target.date) : null;
+      const base = { phase, days };
+      const last = phases.reduce((m, p) => (!m || p.date > m.date ? p : m), null);
+      if (isDay(today) && phases.some(p => p.date === today)) return { k: "rest", ...base };
+      if (isDay(today) && last && today > last.date) return { k: "after", ...base };
+      if (dueCount > 0) return { k: "notebook", n: dueCount, ...base };
+      if (notDone.length) return { k: "exam", exam: notDone[0], ...base };
+      return { k: "rest-or-learned", ...base };
+    }
+
+    function run(events, pack, today) {
+      const view = emptyView(pack);
+      const ignore = (e, reason) => {
+        const r = { id: isObj(e) && isText(e.id) ? e.id : null, t: isObj(e) && typeof e.t === "string" ? e.t : null, reason };
+        if (isObj(e) && typeof e.exam === "string") r.exam = e.exam;
+        view.ignored.push(r);
+      };
+      const fmt = isObj(pack.format) ? pack.format : {};
+      const options = list(fmt.options).filter(isText);
+      const N = Number.isInteger(fmt.questions) && fmt.questions > 0 ? fmt.questions : 0;
+      const examDefs = new Map(pack.exams.filter(x => isObj(x) && isText(x.id)).map(x => [x.id, x]));
+      const topicOf = (exam, q) => {
+        const qq = list(examDefs.get(exam).questions).find(x => isObj(x) && x.n === q);
+        return qq && isText(qq.topic) ? qq.topic : null;
+      };
+      const slotIds = new Set([
+        ...list(pack.slots).filter(s => isObj(s) && isText(s.id)).map(s => s.id),
+        ...list(pack.characters).filter(isObj).flatMap(c => list(c.slots).filter(isText)),
+      ]);
+      const cycle = cycleOf(pack);
+
+      // 1. Só eventos bem formados entram na ordem; os outros são listados e saem.
+      const valid = [];
+      for (const e of events) {
+        if (isObj(e) && isText(e.id) && Number.isFinite(e.at) && isDay(e.day)) valid.push(e);
+        else ignore(e, "event");
+      }
+      valid.sort(byAtId);
+      const seenIds = new Set();
+      let ordered = valid.filter(e => (seenIds.has(e.id) ? false : (seenIds.add(e.id), true)));
+      // 2. O último reset apaga tudo o que veio antes, nos aparelhos todos (US-040).
+      let cut = -1;
+      ordered.forEach((e, i) => { if (e.t === "reset") cut = i; });
+      ordered = ordered.slice(cut + 1);
+
+      // 3. Os eventos em ordem.
+      let name = null, character = null;
+      const wear = {};
+      const conf = new Map();
+      const firstConfirm = new Set();
+      const entries = new Map();
+      let entrySeq = 0;
+      const sessions = [];
+      const retryDays = new Set();
+      const letterOk = l => l === "" || options.includes(l);
+      const normAnswers = a => Array.from({ length: N }, (_, i) => (typeof a[i] === "string" && options.includes(a[i]) ? a[i] : ""));
+      const newEntry = (exam, q, day, orig, at) => {
+        entries.set(`${exam}:${q}`, {
+          exam, q, topic: topicOf(exam, q), due: addDays(day, NOTEBOOK_WRONG), count: 0, learned: false,
+          history: [], seq: entrySeq++, orig: orig || null, lastWrong: null, at,
+        });
+      };
+      const session = (e, source) => sessions.push({ source, exam: e.exam, day: e.day, at: e.at, current: e.cycle === undefined || e.cycle === cycle });
+
+      for (const e of ordered) {
+        switch (e.t) {
+          case "name":
+            if (typeof e.name !== "string") { ignore(e, "payload"); break; }
+            name = normName(e.name);
+            break;
+          case "character":
+            if (!isText(e.character)) { ignore(e, "payload"); break; }
+            character = e.character;
+            break;
+          case "wear":
+            if (!isText(e.slot) || !(e.item === null || isText(e.item))) { ignore(e, "payload"); break; }
+            if (!slotIds.has(e.slot)) { ignore(e, "slot"); break; }
+            wear[e.slot] = e.item;
+            break;
+          case "confirm": {
+            if (!isText(e.exam) || !Array.isArray(e.answers) || !Array.isArray(e.keys)) { ignore(e, "payload"); break; }
+            if (!examDefs.has(e.exam)) {
+              ignore(e, "exam");
+              // a sessão conta pelo evento, não pelo pacote: a prova que saiu do pacote não tira a etapa
+              if (!firstConfirm.has(e.exam)) { firstConfirm.add(e.exam); session(e, "exam"); }
+              break;
+            }
+            if (e.keys.length !== N || !e.keys.every(k => options.includes(k)) || !e.answers.every(a => typeof a === "string")) { ignore(e, "payload"); break; }
+            if (conf.has(e.exam)) {
+              view.discarded.push({ id: e.id, exam: e.exam, answers: e.answers.slice(), at: e.at, day: e.day });
+              break;
+            }
+            firstConfirm.add(e.exam);
+            const answers = normAnswers(e.answers);
+            const keys = e.keys.slice();
+            conf.set(e.exam, { at: e.at, day: e.day, answers, keys, corrected: false });
+            keys.forEach((k, i) => { if (answers[i] !== k) newEntry(e.exam, i + 1, e.day, answers[i], e.at); });
+            session(e, "exam");
+            break;
+          }
+          case "correct": {
+            if (!isText(e.exam) || !Array.isArray(e.answers) || !e.answers.every(a => typeof a === "string")) { ignore(e, "payload"); break; }
+            if (!examDefs.has(e.exam)) { ignore(e, "exam"); break; }
+            const c = conf.get(e.exam);
+            if (!c) { ignore(e, "unconfirmed"); break; }
+            const answers = normAnswers(e.answers);
+            // A correção reconcilia o caderno (BR-09): errada que virou certa sai se nunca foi refeita;
+            // certa que virou errada entra, a dois dias da correção. Nunca rende etapa.
+            c.keys.forEach((k, i) => {
+              const key = `${e.exam}:${i + 1}`;
+              const was = c.answers[i] === k, now = answers[i] === k;
+              const en = entries.get(key);
+              if (!was && now && en && !en.history.length) entries.delete(key);
+              else if (was && !now && !en) newEntry(e.exam, i + 1, e.day, answers[i], e.at);
+              else if (!now && en && answers[i]) en.orig = answers[i];
+            });
+            c.answers = answers;
+            c.corrected = true;
+            break;
+          }
+          case "retry": {
+            if (!isText(e.exam) || typeof e.letter !== "string") { ignore(e, "payload"); break; }
+            if (!examDefs.has(e.exam)) {
+              ignore(e, "exam");
+              if (!retryDays.has(e.day)) { retryDays.add(e.day); session(e, "notebook"); }
+              break;
+            }
+            if (!Number.isInteger(e.q) || e.q < 1 || e.q > N) { ignore(e, "q"); break; }
+            if (!letterOk(e.letter) || e.letter === "") { ignore(e, "payload"); break; }
+            const c = conf.get(e.exam);
+            const en = entries.get(`${e.exam}:${e.q}`);
+            if (!c || !en) { ignore(e, "entry"); break; }
+            if (!retryDays.has(e.day)) { retryDays.add(e.day); session(e, "notebook"); }
+            // aprendida não volta sozinha e não muda mais de agenda (BR-15)
+            if (en.learned) break;
+            const key = c.keys[e.q - 1];
+            const shown = e.shown === true;
+            const prev = en.lastWrong || en.orig;
+            const same = !!prev && e.letter === prev;
+            const ok = !shown && e.letter === key && !same;
+            const dup = en.history.some(h => h.day === e.day && !h.dup);
+            en.history.push({ day: e.day, letter: e.letter, ok, shown, same, dup });
+            // a segunda resposta do mesmo dia (outro aparelho) fica no histórico e não muda nada
+            if (dup) break;
+            if (e.letter !== key) en.lastWrong = e.letter;
+            if (ok) {
+              en.count += 1;
+              if (en.count >= LEARNED_AFTER) { en.learned = true; en.learnedDay = e.day; }
+              else en.due = addDays(e.day, NOTEBOOK_RIGHT);
+            } else {
+              en.count = 0;
+              en.due = addDays(e.day, NOTEBOOK_WRONG);
+            }
+            break;
+          }
+          default:
+            ignore(e, "t");
+        }
+      }
+
+      // 4. O aluno: o personagem do pacote veste só os encaixes que tem; o resto continua ganho.
+      view.name = name;
+      view.character = character;
+      const ch = list(pack.characters).find(c => isObj(c) && c.id === character);
+      const can = ch && Array.isArray(ch.slots) ? new Set(ch.slots) : null;
+      for (const [slot, item] of Object.entries(wear)) if (item && (!can || can.has(slot))) view.worn[slot] = item;
+
+      // 5. As provas, na ordem em que foram confirmadas.
+      const topicIdx = new Map(list(pack.topics).filter(isObj).map((t, i) => [t.id, i]));
+      const order = (a, b) => (b.total - b.right) - (a.total - a.right)
+        || (topicIdx.has(a.topic) ? topicIdx.get(a.topic) : 1e9) - (topicIdx.has(b.topic) ? topicIdx.get(b.topic) : 1e9)
+        || cmp(a.topic, b.topic);
+      const cumul = new Map();
+      for (const [id, c] of conf) {
+        const rows = c.keys.map((k, i) => ({ n: i + 1, letter: c.answers[i], key: k, r: c.answers[i] === "" ? "blank" : c.answers[i] === k ? "ok" : "wrong" }));
+        const score = rows.filter(r => r.r === "ok").length;
+        view.exams[id] = { answers: c.answers.slice(), confirmedAt: c.at, day: c.day, score, rows, corrected: c.corrected };
+        if (!view.best || score > view.best.score) view.best = { score, exam: id };
+        // os assuntos contam a primeira tentativa (com as correções), nunca o caderno (BR-16)
+        const per = new Map();
+        rows.forEach(r => {
+          const topic = topicOf(id, r.n);
+          if (!topic) return;
+          for (const m of [per, cumul]) {
+            const row = m.get(topic) || { topic, right: 0, total: 0 };
+            row.total += 1;
+            if (r.r === "ok") row.right += 1;
+            m.set(topic, row);
+          }
+        });
+        view.topics.perExam[id] = [...per.values()].sort(order);
+      }
+      view.topics.cumulative = [...cumul.values()].map(r => ({ ...r })).sort(order);
+      view.topics.train = view.topics.cumulative.filter(r => r.right < r.total).slice(0, 3).map(r => r.topic);
+
+      // 6. O caderno.
+      const all = [...entries.values()].sort((a, b) => a.seq - b.seq);
+      const out = en => {
+        const o = { exam: en.exam, q: en.q, topic: en.topic, due: en.due, count: en.count, learned: en.learned, history: en.history.map(h => ({ ...h })) };
+        if (en.learned) o.learnedDay = en.learnedDay;
+        return o;
+      };
+      const open = all.filter(en => !en.learned);
+      view.notebook.entries = all.map(out);
+      view.notebook.due = open.filter(en => isDay(today) && en.due <= today)
+        .sort((a, b) => cmp(a.due, b.due) || a.at - b.at || a.seq - b.seq).map(out);
+      view.notebook.learned = all.filter(en => en.learned).sort((a, b) => cmp(a.learnedDay, b.learnedDay) || a.seq - b.seq).map(out);
+      const future = open.map(en => en.due).filter(d => isDay(today) && d > today).sort();
+      view.notebook.nextDue = future.length ? future[0] : null;
+
+      // 7. Etapas e itens (BR-04, BR-17, BR-18): cada sessão dá o próximo item enquanto houver; as do
+      // ciclo atual avançam o mapa até a última etapa. Os itens são do aluno e atravessam os ciclos.
+      const items = list(pack.items).filter(x => isObj(x) && isText(x.id));
+      const given = new Set();
+      let k = 0;
+      sessions.forEach((s, i) => {
+        const item = i < items.length ? items[i].id : null;
+        if (item && !given.has(item)) { given.add(item); view.items.push(item); }
+        if (!s.current || k >= view.story.stages) return;
+        k += 1;
+        const st = { k, source: s.source, day: s.day, at: s.at, fragment: view.story.fragments[k - 1] || null, item };
+        if (s.exam !== undefined) st.exam = s.exam;
+        view.stages.push(st);
+      });
+
+      // 8. O final, a lista de provas e o próximo passo.
+      const phases = phasesOf(pack);
+      const fp = finalePhase(phases);
+      view.finale = !!fp && isDay(today) && today >= fp.date;
+      const ids = [...examDefs.keys()];
+      const notDone = ids.filter(id => !conf.has(id));
+      view.examOrder = [...notDone, ...ids.filter(id => conf.has(id))];
+      view.next = nextStep(phases, isDay(today) ? today : "", view.notebook.due.length, notDone);
+      return view;
+    }
+
+    // A derivação inteira. Nunca lança: entrada que não serve dá a vista vazia, e evento que não serve
+    // vai para `ignored` com o motivo. Não muda o que recebe.
+    function derive(events, pack, today) {
+      if (!Array.isArray(events) || !isObj(pack) || !Array.isArray(pack.exams)) {
+        const view = emptyView(isObj(pack) ? pack : null);
+        const phases = phasesOf(isObj(pack) ? pack : null);
+        view.next = nextStep(phases, isDay(today) ? today : "", 0, []);
+        return view;
+      }
+      try {
+        return run(events, pack, today);
+      } catch (err) {
+        const view = emptyView(pack);
+        view.ignored.push({ id: null, t: null, reason: "derive" });
+        return view;
+      }
+    }
+
+    return { derive, mergeEvents, addDays, cycleOf, NEUTRAL_STORY };
+  })();
+  /* /build:derive */
+
+  // ---------- a página do responsável. Fala com o motor só por SYNC (window.sync, papel "guardian"),
+  // e o progresso de cada perfil é o mesmo derive() da tela da criança e do e-mail de segunda (ADR-009).
+  const $ = id => document.getElementById(id);
+  const WEB = /^https?:$/.test(location.protocol) && !!window.sync;
+  const SYNC = WEB ? window.sync : null;
+  const syncOn = (ev, cb) => { if (SYNC) SYNC.on(ev, cb); };
+  const ONLINE = !!SYNC && !!SYNC.status().available;
+  // A última vista desenhada, para a página reabrir sem rede (US-061: some no Sair e no Excluir conta).
+  const RESP = "missao-olimpiadas-resp";
+
+  const isObj = x => !!x && typeof x === "object" && !Array.isArray(x);
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const pad2 = n => String(n).padStart(2, "0");
+  const plural = (n, um, varios) => `${n} ${n === 1 ? um : varios}`;
+  const ms = v => (typeof v === "number" ? v : v == null || v === "" ? null : Date.parse(v));
+  const diaDe = t => { const d = new Date(t); return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`; };
+  function hoje(){ return diaDe(Date.now()); }
+  const ehDia = d => typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d);
+  const dm = d => (ehDia(d) ? `${d.slice(8, 10)}/${d.slice(5, 7)}` : "");
+  const dma = d => (ehDia(d) ? `${dm(d)}/${d.slice(0, 4)}` : "");
+  const hora = t => { const d = new Date(t); return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`; };
+  const quando = t => (t == null || !Number.isFinite(t) ? "" : `${dm(diaDe(t))} às ${hora(t)}`);
+  const DIA = 864e5;
+
+  // ---------- os fatos da semana: o mesmo texto do e-mail de segunda (supabase/functions/weekly-report/
+  // compose.ts, a função section() sem a linha do nome), calculado agora, sobre a semana de hoje. A suíte
+  // confere linha a linha contra o composeWeekly() (E2E-052, IT-064).
+  function segundaDepois(dia){
+    const [y, m, d] = dia.split("-").map(Number);
+    const dow = new Date(Date.UTC(y, m - 1, d)).getUTCDay();
+    return addDays(dia, ((8 - dow) % 7) || 7);
+  }
+  const semanaDe = segunda => ({ from: addDays(segunda, -7), to: addDays(segunda, -1) });
+  const naSemana = (dia, w) => typeof dia === "string" && dia >= w.from && dia <= w.to;
+  const provaDe = id => (PACK ? PACK.exams.find(e => e && e.id === id) : null) || null;
+  const nomeProva = id => { const e = provaDe(id); return e ? `${e.edition}, ${e.phase}` : id; };
+  const itemProva = id => { const e = provaDe(id); return e ? `${e.edition} ${e.phase}` : id; };
+  const assuntoAdulto = id => { const t = (PACK.topics || []).find(x => x && x.id === id); return t && t.adult ? t.adult : id; };
+  function ativa(v, segunda){
+    const w = semanaDe(segunda);
+    if (Object.values(v.exams || {}).some(e => naSemana(e.day, w))) return true;
+    return v.notebook.entries.some(en => en.history.some(h => !h.dup && naSemana(h.day, w)));
+  }
+  function proximoPasso(v){
+    const p = v.next || { k: "rest-or-learned", phase: null };
+    const fase = p.phase && p.phase.name ? p.phase.name : "prova";
+    switch (p.k) {
+      case "rest": return `o dia da ${fase}`;
+      case "after": return `a ${fase} já passou; o caderno e as provas continuam abertos`;
+      case "notebook": return `${plural(v.notebook.due.length, "questão", "questões")} para refazer`;
+      case "exam": return Object.keys(v.exams).length ? `a prova ${nomeProva(p.exam || "")}` : `a primeira prova (${nomeProva(p.exam || "")})`;
+      default: return v.notebook.learned.length ? "descanso, ou refazer uma aprendida por gosto" : "descanso";
+    }
+  }
+  function edicaoAcabou(segunda){
+    const datas = (PACK.phases || []).map(p => p && p.date).filter(ehDia).sort();
+    return datas.length > 0 && segunda > datas[datas.length - 1];
+  }
+  function pendente(v, segunda){
+    const out = [], due = v.notebook.due;
+    if (due.length) {
+      const velha = due.map(e => e.due).sort()[0];
+      out.push(due.length === 1 ? `1 questão do caderno vencida (de ${dm(velha)})` : `${due.length} questões do caderno vencidas (a mais antiga de ${dm(velha)})`);
+    }
+    if (!edicaoAcabou(segunda)) {
+      const faltam = PACK.exams.filter(e => e && !v.exams[e.id]).map(e => e.id);
+      if (faltam.length) out.push(`${plural(faltam.length, "prova", "provas")} por fazer: ${faltam.map(itemProva).join(", ")}`);
+    }
+    return out;
+  }
+  function feito(v, segunda){
+    const w = semanaDe(segunda), out = [];
+    const feitas = Object.entries(v.exams).filter(([, e]) => naSemana(e.day, w)).sort((a, b) => a[1].confirmedAt - b[1].confirmedAt);
+    for (const [id, e] of feitas) out.push(`${nomeProva(id)} · ${e.score} de ${e.rows.length} · ${dm(e.day)}${e.corrected ? " · lançamento corrigido" : ""}`);
+    if (v.best) out.push(`melhor até agora: ${v.best.score}`);
+    if (v.topics.train.length) out.push(`assuntos com mais erros: ${v.topics.train.slice(0, 3).map(assuntoAdulto).join(", ")}`);
+    const refeitas = v.notebook.entries.reduce((n, en) => n + en.history.filter(h => !h.dup && naSemana(h.day, w)).length, 0);
+    const aprendidas = v.notebook.learned.filter(en => en.learnedDay && naSemana(en.learnedDay, w)).length;
+    out.push(`caderno: ${plural(refeitas, "refeita", "refeitas")} · ${plural(aprendidas, "aprendida", "aprendidas")}`);
+    out.push(`etapas: ${v.stages.length}`);
+    return out;
+  }
+  function fatos(nome, v, segunda){
+    const L = [], quieta = !ativa(v, segunda);
+    if (quieta) L.push("Nesta semana não houve prova nem questão do caderno.");
+    else L.push("Feito:", ...feito(v, segunda).map(l => `- ${l}`));
+    const p = pendente(v, segunda);
+    if (p.length) L.push("Pendente:", ...p.map(l => `- ${l}`));
+    else L.push("Pendente: nada pendente.");
+    L.push(`Próximo passo: ${proximoPasso(v)}`);
+    if (quieta) L.push(`Se puder, sente com ${nome} para o próximo passo.`);
+    return L;
+  }
+
+  // ---------- o pacote: o publicado do site, que o service worker guarda. Sem ele não há como contar.
+  let PACK = null;
+  async function carregaPacote(){
+    try { const r = await fetch("../pack.json", { cache: "no-store" }); const p = r.ok ? await r.json() : null; if (isObj(p) && Array.isArray(p.exams)) PACK = p; } catch (e) {}
+  }
+
+  // ---------- estado da página (nada disto é gravado, salvo a cópia para reabrir sem rede)
+  let st = ONLINE ? SYNC.status() : null;
+  let trancado = WEB;
+  let kids = [];                   // olimp_status().kids, por nome
+  const progresso = new Map();     // perfil → {events, devices}
+  let correio = null;              // a última linha de kid_mail, ou null
+  let semRedeDesde = null;         // a vista na tela é a guardada (sem rede)
+  let contaPasso = "email", contaEmail = "", contaBloqueia = true, depoisDoConsentimento = null;
+  const renomeando = new Set();
+
+  // ---------- toast
+  let toastTimer = null;
+  function toast(msg){
+    const t = $("toast");
+    clearTimeout(toastTimer);
+    t.textContent = msg;
+    t.classList.add("show");
+    toastTimer = setTimeout(() => t.classList.remove("show"), Math.min(6000, Math.max(2000, msg.length * 45)));
+  }
+  async function copia(txt){
+    try { if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(txt); return true; } } catch (e) {}
+    const antes = document.activeElement;
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = txt; ta.setAttribute("readonly", ""); ta.style.cssText = "position:fixed;top:0;left:0;width:1px;height:1px;opacity:0";
+      document.body.appendChild(ta); ta.select();
+      const ok = document.execCommand("copy");
+      ta.remove();
+      return !!ok;
+    } catch (e) { return false; }
+    finally { if (antes && antes.isConnected && document.activeElement !== antes) antes.focus({ preventScroll: true }); }
+  }
+  function baixa(nome, texto){
+    const url = URL.createObjectURL(new Blob([texto], { type: "application/json;charset=utf-8" }));
+    const a = document.createElement("a");
+    a.href = url; a.download = nome; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }
+
+  // ---------- o diálogo #conta, por passos. Toda recusa vai para #contaErr, nunca para um toast (o toast
+  // ficaria atrás do fundo do diálogo).
+  const conta = $("conta");
+  const ERROS = {
+    bad_email: "Esse e-mail não parece completo. Confira e tente de novo.",
+    offline: "Precisa de internet. Confira a conexão e tente de novo.",
+    code_wrong: "Código errado. Confira e tente de novo.",
+    code_expired: "Esse código venceu. Peça outro em Reenviar código.",
+    wrong_role: "Esta página é para responsáveis. Esta conta é de aluno da Missão ENEM.",
+    not_adult: "Para continuar, confirme que tem 18 anos ou mais.",
+    consent_needed: "O texto do que fica guardado mudou. Leia de novo e concorde para continuar.",
+  };
+  function contaErro(msg){ $("contaErr").textContent = msg || ""; $("contaErr").hidden = !msg; }
+  function abreConta(passo, { bloqueia = trancado } = {}){
+    contaPasso = passo;
+    contaBloqueia = bloqueia;
+    const titulos = { email: "Entrar", codigo: "Entrar", nome: "Entrar", consentimento: "O que fica guardado", excluir: "Excluir conta" };
+    $("contaTitulo").textContent = titulos[passo] || "Entrar";
+    conta.querySelectorAll(".contaPasso").forEach(el => { el.hidden = el.dataset.passo !== passo; });
+    $("consentAgoraNao").hidden = bloqueia;
+    contaErro("");
+    if (!conta.open) conta.showModal();
+    const alvo = [...conta.querySelectorAll(`.contaPasso[data-passo="${passo}"] input`)].find(el => !el.disabled && el.offsetParent !== null);
+    if (alvo) alvo.focus();
+  }
+  function fechaConta(){ if (conta.open) conta.close(); }
+  // Esc nunca fecha este diálogo: sem sessão ele é a página inteira (BR-31), e com sessão cada passo tem
+  // o seu botão de sair.
+  conta.addEventListener("cancel", e => e.preventDefault());
+
+  async function pedeCodigo(email){
+    const r = await SYNC.requestCode(email);
+    if (r.ok) return null;
+    if (r.error === "resend_wait") return `Já foram três códigos em 10 minutos. Espere ${r.seconds || 60} s para pedir outro.`;
+    return ERROS[r.error] || "Não deu para mandar o código agora. Tente de novo.";
+  }
+  conta.querySelectorAll("form.contaPasso").forEach(fm => fm.addEventListener("submit", async e => {
+    e.preventDefault();
+    const passo = fm.dataset.passo, botao = fm.querySelector('button[type="submit"]');
+    botao.disabled = true;
+    try { await enviaPasso(passo); }
+    finally { botao.disabled = passo === "nome" ? !$("contaAdulto").checked : passo === "consentimento" ? !$("consentOk").checked : false; }
+  }));
+  async function enviaPasso(passo){
+    contaErro("");
+    if (passo === "email") {
+      const email = $("contaEmail").value.trim();
+      const erro = await pedeCodigo(email);
+      if (erro) { contaErro(erro); return; }
+      contaEmail = email.toLowerCase();
+      $("contaPara").textContent = contaEmail;
+      $("contaCodigo").value = "";
+      $("embreve").hidden = true;
+      abreConta("codigo");
+      return;
+    }
+    if (passo === "codigo") {
+      const r = await SYNC.verifyCode($("contaCodigo").value.trim());
+      if (!r.ok) {
+        if (r.error === "wrong_role") { voltaAoEmail(ERROS.wrong_role); return; }
+        contaErro(r.error === "code_wrong" && r.message ? "Código errado de novo. Peça outro em Reenviar código." : ERROS[r.error] || "Não deu para entrar agora. Tente de novo.");
+        return;
+      }
+      if (r.data && r.data.needsProfile) { $("contaNome").value = ""; $("contaAdulto").checked = false; $("contaNomeOk").disabled = true; abreConta("nome"); return; }
+      await entrou();
+      return;
+    }
+    if (passo === "nome") {
+      if (!$("contaAdulto").checked) { contaErro(ERROS.not_adult); return; }
+      const r = await SYNC.verifyCode("", { name: $("contaNome").value.trim(), adult: true });
+      if (!r.ok) {
+        // O portão legal ainda fechado (ADR-007): "em breve", e a página volta ao começo.
+        if (r.error === "not_open") { voltaAoEmail(""); $("embreve").hidden = false; return; }
+        if (r.error === "wrong_role") { voltaAoEmail(ERROS.wrong_role); return; }
+        contaErro(ERROS[r.error] || "Não deu para entrar agora. Tente de novo.");
+        return;
+      }
+      await entrou();
+      return;
+    }
+    if (passo === "consentimento") {
+      if (!$("consentOk").checked) return;
+      const r = await SYNC.consent();
+      if (!r.ok) { contaErro(ERROS[r.error] || "Não deu para guardar agora. Tente de novo."); return; }
+      st = SYNC.status();
+      fechaConta();
+      const depois = depoisDoConsentimento;
+      depoisDoConsentimento = null;
+      if (depois) depois(); else carrega();
+      return;
+    }
+    if (passo === "excluir") {
+      const r = await SYNC.deleteAccount($("excluirCodigo").value.trim());
+      if (!r.ok) { contaErro(r.error === "offline" ? "Excluir a conta precisa de internet." : ERROS[r.error] || "Não deu para excluir agora. Tente de novo."); return; }
+      limpaLocal();
+      st = SYNC.status();
+      portao();
+      toast("Conta excluída");
+    }
+  }
+  function voltaAoEmail(msg){
+    $("contaCodigo").value = "";
+    abreConta("email", { bloqueia: true });
+    contaErro(msg);
+  }
+  async function entrou(){
+    st = SYNC.status();
+    portao();
+  }
+  $("contaReenviar").addEventListener("click", async () => {
+    const erro = await pedeCodigo(contaEmail);
+    contaErro(erro || "");
+    if (!erro) toast("Código reenviado");
+  });
+  $("contaCorrigir").addEventListener("click", () => { abreConta("email", { bloqueia: true }); $("contaEmail").value = contaEmail; });
+  $("contaAdulto").addEventListener("change", () => { $("contaNomeOk").disabled = !$("contaAdulto").checked; });
+  $("consentOk").addEventListener("change", () => { $("consentConcordo").disabled = !$("consentOk").checked; });
+  $("consentAgoraNao").addEventListener("click", () => { depoisDoConsentimento = null; fechaConta(); });
+  $("excluirVoltar").addEventListener("click", fechaConta);
+
+  // ---------- o portão: sem sessão de responsável, nada da conta existe na página (BR-31, E2E-061)
+  function portao(){
+    const dentro = !!(st && st.session && st.session.role === "guardian");
+    if (dentro && trancado) {
+      trancado = false;
+      $("pagina").hidden = false;
+      if (conta.open && ["email", "codigo", "nome"].includes(contaPasso)) fechaConta();
+      leCache();
+      render();
+      carrega();
+    } else if (!dentro && !trancado) {
+      // Sem sessão (Sair, conta excluída, sessão encerrada): nada da conta fica na página nem no
+      // navegador (US-061 AC-2).
+      trancado = true;
+      limpaLocal();
+      semRedeDesde = null;
+      $("listaFilhos").innerHTML = "";
+      $("ola").textContent = "Olá.";
+      $("quemEmail").textContent = "";
+      $("emailEstado").textContent = "";
+      $("pagina").hidden = true;
+      abreConta("email", { bloqueia: true });
+    } else if (!dentro && !conta.open) {
+      abreConta("email", { bloqueia: true });
+    }
+  }
+
+  // ---------- a cópia para reabrir sem rede: só os fatos que a página desenhou da última vez
+  function guardaCache(){
+    try { localStorage.setItem(RESP, JSON.stringify({ at: Date.now(), kids, prog: Object.fromEntries(progresso), correio })); } catch (e) {}
+  }
+  function leCache(){
+    try {
+      const c = JSON.parse(localStorage.getItem(RESP));
+      if (!isObj(c) || !Array.isArray(c.kids)) return;
+      kids = c.kids;
+      progresso.clear();
+      for (const [k, v] of Object.entries(isObj(c.prog) ? c.prog : {})) progresso.set(k, v);
+      correio = c.correio || null;
+      semRedeDesde = ms(c.at);
+    } catch (e) {}
+  }
+  function limpaLocal(){
+    try { localStorage.removeItem(RESP); } catch (e) {}
+    kids = []; progresso.clear(); correio = null;
+  }
+
+  // ---------- a volta da página: perfis, o progresso de cada um e o último e-mail
+  let carregando = null, deNovo = false;
+  function carrega(){
+    if (carregando) { deNovo = true; return carregando; }
+    carregando = (async () => {
+      try { do { deNovo = false; await carregaUmaVez(); } while (deNovo && !trancado); }
+      finally { carregando = null; }
+    })();
+    return carregando;
+  }
+  async function carregaUmaVez(){
+    if (trancado) return;
+    if (!PACK) await carregaPacote();
+    const r = await SYNC.listKids();
+    if (trancado) return;
+    if (!r.ok) {
+      if (r.error === "offline") { if (semRedeDesde == null) semRedeDesde = Date.now(); render(); }
+      return;
+    }
+    kids = Array.isArray(r.data) ? r.data : [];
+    st = SYNC.status();
+    // A política mudou e já há perfis: o consentimento vem antes de qualquer leitura (US-043 EC-1).
+    if (st.consentNeeded && kids.length) { semRedeDesde = null; render(); abreConta("consentimento", { bloqueia: true }); return; }
+    const vivos = new Set(kids.map(k => String(k.id)));
+    for (const k of [...progresso.keys()]) if (!vivos.has(k)) progresso.delete(k);
+    for (const k of kids) {
+      if (st.consentNeeded) break;
+      const p = await SYNC.progress(k.id);
+      if (trancado) return;
+      if (p.ok) progresso.set(String(k.id), p.data);
+    }
+    const m = await SYNC.lastMail();
+    if (trancado) return;
+    if (m.ok) correio = m.data || null;
+    semRedeDesde = null;
+    guardaCache();
+    render();
+  }
+
+  // ---------- desenho
+  function render(){
+    if (trancado) return;
+    const s = st && st.session;
+    $("ola").textContent = s && s.name ? `Olá, ${s.name}.` : "Olá.";
+    $("quemEmail").textContent = s && s.email ? s.email : "";
+    $("semRede").hidden = semRedeDesde == null;
+    $("semRede").textContent = semRedeDesde == null ? "" : `Sem internet agora: os dados mostrados são de ${quando(semRedeDesde)}.`;
+    const lista = $("listaFilhos");
+    const foco = document.activeElement && document.activeElement.closest && document.activeElement.closest("[data-kid]") ? { kid: document.activeElement.closest("[data-kid]").dataset.kid, f: document.activeElement.dataset.f } : null;
+    lista.innerHTML = kids.length ? kids.map(cartao).join("") : `<p class="muted">Nenhum perfil ainda. Use Adicionar filho, logo abaixo.</p>`;
+    if (foco && foco.f) { const el = lista.querySelector(`[data-kid="${CSS.escape(foco.kid)}"] [data-f="${CSS.escape(foco.f)}"]`); if (el) el.focus({ preventScroll: true }); }
+    $("emailEstado").textContent = estadoEmail();
+  }
+  function cartao(k){
+    const id = String(k.id), p = progresso.get(id);
+    const nome = String(k.name || ""), ano = String(k.school_year || "");
+    const evs = p && Array.isArray(p.events) ? p.events : [];
+    const aparelhos = p && Array.isArray(p.devices) ? p.devices : Array.isArray(k.devices) ? k.devices : [];
+    let corpo = "";
+    if (!aparelhos.length && !evs.length) {
+      corpo = `<p class="muted fatos">Nenhum aparelho ligado ainda. Gere um código e digite no app da criança, em Dados.</p>`;
+    } else if (!PACK) {
+      corpo = `<p class="muted fatos">O progresso aparece quando a página carregar o pacote de provas.</p>`;
+    } else {
+      const v = derive(evs, PACK, hoje());
+      const linhas = fatos(nome, v, segundaDepois(hoje()));
+      corpo = `<div class="fatos">${linhas.map(l => `<p${l.startsWith("Próximo passo:") ? ' class="passo"' : ""}>${esc(l)}</p>`).join("")}</div>`;
+      if (v.discarded.length) {
+        corpo += `<p class="descartado"><b>${plural(v.discarded.length, "lançamento descartado", "lançamentos descartados")}</b>: ${v.discarded.map(d =>
+          `${esc(nomeProva(d.exam))} · lançado em ${esc(dm(d.day))} com ${esc(d.answers.map((a, i) => `${i + 1}${a || "–"}`).join(" "))}`).join("; ")}. A prova já tinha sido lançada antes em outro aparelho, e o primeiro lançamento é o que vale.</p>`;
+      }
+    }
+    const devs = aparelhos.length ? `<h4>Aparelhos</h4><ul class="lista aparelhos">${aparelhos.map(d => aparelho(d)).join("")}</ul>` : "";
+    const codigos = (Array.isArray(k.codes) ? k.codes : []).filter(c => ms(c.expires_at) > Date.now());
+    const cods = codigos.length ? `<h4>Códigos</h4><ul class="lista codigos">${codigos.map(c =>
+      `<li data-code="${esc(c.code)}"><span>Código para ${esc(nome)}: <span class="codigo">${esc(c.code)}</span></span><span class="muted">vale até ${esc(dma(diaDe(ms(c.expires_at))))} · serve uma vez</span><button data-acao="copiar" data-f="copiar:${esc(c.code)}" data-code="${esc(c.code)}">Copiar</button></li>`).join("")}</ul>` : "";
+    const ren = renomeando.has(id) ? `<form data-acao="renomear-form" novalidate>
+        <label class="f">Nome<input data-campo="nome" maxlength="40" value="${esc(nome)}" autocomplete="off"></label>
+        <label class="f">Ano escolar<input data-campo="ano" maxlength="20" value="${esc(ano)}" list="anos" autocomplete="off"></label>
+        <div class="actions"><button class="primary" type="submit" data-f="salvar-nome">Salvar</button><button type="button" class="quiet" data-acao="renomear-cancelar" data-f="cancelar-nome">Cancelar</button></div></form>` : "";
+    return `<article class="filho" data-kid="${esc(id)}" aria-labelledby="k-${esc(id)}">
+      <h3 id="k-${esc(id)}">${esc(nome)}${ano ? ` <span class="ano">· ${esc(ano)}</span>` : ""}</h3>
+      ${corpo}${devs}${cods}
+      <div class="actions"><button data-acao="codigo" data-f="codigo">Gerar código</button><button data-acao="renomear" data-f="renomear">Renomear</button><button class="quiet" data-acao="remover" data-f="remover">Remover</button></div>
+      ${ren}
+      <p class="err" data-erro role="alert" hidden></p>
+    </article>`;
+  }
+  function aparelho(d){
+    const linked = ms(d.linked_at), sync = ms(d.last_sync_at), fora = ms(d.unlinked_at);
+    const partes = [`ligado em ${dma(diaDe(linked))}`];
+    if (fora != null) partes.push(d.unlinked_by === "device" ? "desligado pelo aparelho" : d.unlinked_by === "removal" ? "desligado" : "desligado por você");
+    else {
+      partes.push(sync != null ? `último envio ${quando(sync)}` : "ainda não enviou nada");
+      // Sete dias ou mais sem enviar: o que a página mostra é de antes (US-059 EC-1).
+      if (sync != null && Date.now() - sync >= 7 * DIA) partes.push(`dados de ${dm(diaDe(sync))}`);
+    }
+    return `<li data-device="${esc(d.id)}"><span>${esc(d.label || "Aparelho")}</span><span class="muted">${esc(partes.join(" · "))}</span>${fora == null
+      ? `<button data-acao="desligar" data-f="desligar:${esc(d.id)}" data-device="${esc(d.id)}">Desligar</button>` : ""}</li>`;
+  }
+  // A segunda-feira mais recente até hoje: o dia do envio que a página espera ver registrado.
+  function ultimaSegunda(dia){
+    const [y, m, d] = dia.split("-").map(Number);
+    const dow = new Date(Date.UTC(y, m - 1, d)).getUTCDay();
+    return addDays(dia, -((dow + 6) % 7));
+  }
+  function estadoEmail(){
+    const ligado = kids.some(k => k.has_linked);
+    const seg = ultimaSegunda(hoje());
+    let txt;
+    if (!correio) txt = ligado ? "Nenhum e-mail ainda: o primeiro sai na próxima segunda-feira." : "O e-mail de segunda começa quando um aparelho for ligado.";
+    else if (correio.state === "sent") txt = `Último e-mail: enviado em ${quando(ms(correio.sent_at)) || dm(correio.monday)}.`;
+    else if (correio.state === "failed") txt = `Último e-mail: falhou em ${dm(correio.monday)}. Uma nova tentativa sai uma hora depois.`;
+    else txt = "Último e-mail: pausado: 8 semanas sem atividade. Volta sozinho na semana em que houver prova ou caderno.";
+    // Uma segunda sem linha nenhuma (o servidor parado, por exemplo): a página diz que aquele não saiu.
+    if (ligado && hoje() > seg && (!correio || correio.monday < seg)) txt += ` O e-mail de segunda, ${dm(seg)}, não saiu.`;
+    return txt;
+  }
+
+  // ---------- os gestos dos cartões
+  function erroDoCartao(art, msg){ const p = art.querySelector("[data-erro]"); p.textContent = msg || ""; p.hidden = !msg; }
+  const ERRO_GESTO = { offline: "Precisa de internet. Confira a conexão e tente de novo.", bad_name: "O nome precisa ter pelo menos uma letra.", too_many_kids: "Esta conta já tem 20 perfis, o máximo." };
+  $("listaFilhos").addEventListener("click", async e => {
+    const b = e.target.closest("[data-acao]");
+    const art = e.target.closest("[data-kid]");
+    if (!b || !art || b.tagName === "FORM") return;
+    const id = art.dataset.kid, k = kids.find(x => String(x.id) === id);
+    if (!k) return;
+    erroDoCartao(art, "");
+    switch (b.dataset.acao) {
+      case "codigo": {
+        b.disabled = true;
+        const r = await SYNC.createCode(id);
+        b.disabled = false;
+        if (!r.ok) { erroDoCartao(art, ERRO_GESTO[r.error] || "Não deu para gerar o código agora. Tente de novo."); return; }
+        const c = { code: r.data.code, expires_at: r.data.expiresAt };
+        k.codes = [...(Array.isArray(k.codes) ? k.codes : []).filter(x => x.code !== c.code), c];
+        render();
+        const novo = $("listaFilhos").querySelector(`[data-kid="${CSS.escape(id)}"] [data-f="copiar:${CSS.escape(c.code)}"]`);
+        if (novo) novo.focus();
+        toast(`Código para ${k.name}: ${c.code}`);
+        carrega();
+        return;
+      }
+      case "copiar": toast(await copia(b.dataset.code) ? "Código copiado" : `Copie à mão: ${b.dataset.code}`); return;
+      case "renomear": renomeando.add(id); render(); { const i = $("listaFilhos").querySelector(`[data-kid="${CSS.escape(id)}"] [data-campo="nome"]`); if (i) i.focus(); } return;
+      case "renomear-cancelar": renomeando.delete(id); render(); return;
+      case "remover": {
+        const msg = `Remover o perfil de ${k.name}?\n\nSai do servidor: as provas, o caderno, as etapas e o personagem de ${k.name}, os aparelhos ligados e os códigos.\nContinua em cada aparelho: o treino que já está nele, que passa a funcionar sem conta.\n\nRemover agora?`;
+        if (!confirm(msg)) return;
+        const r = await SYNC.removeKid(id);
+        if (!r.ok) { erroDoCartao(art, ERRO_GESTO[r.error] || "Não deu para remover agora. Tente de novo."); return; }
+        kids = kids.filter(x => String(x.id) !== id);
+        progresso.delete(id);
+        render();
+        toast(`Perfil de ${k.name} removido`);
+        carrega();
+        return;
+      }
+      case "desligar": {
+        const p = progresso.get(id), d = (p && p.devices || k.devices || []).find(x => String(x.id) === b.dataset.device);
+        const msg = `Desligar ${d && d.label ? d.label : "este aparelho"} da conta?\n\nO aparelho para de enviar e mostra que foi desligado.\nContinua nele: todo o treino que já está lá.\n\nDesligar agora?`;
+        if (!confirm(msg)) return;
+        const r = await SYNC.unlinkDevice(b.dataset.device);
+        if (!r.ok) { erroDoCartao(art, ERRO_GESTO[r.error] || "Não deu para desligar agora. Tente de novo."); return; }
+        toast("Aparelho desligado");
+        carrega();
+      }
+    }
+  });
+  $("listaFilhos").addEventListener("submit", async e => {
+    const fm = e.target.closest('[data-acao="renomear-form"]'), art = e.target.closest("[data-kid]");
+    if (!fm || !art) return;
+    e.preventDefault();
+    const id = art.dataset.kid;
+    const r = await SYNC.renameKid(id, fm.querySelector('[data-campo="nome"]').value.trim(), fm.querySelector('[data-campo="ano"]').value.trim());
+    if (!r.ok) { erroDoCartao(art, ERRO_GESTO[r.error] || "Não deu para renomear agora. Tente de novo."); return; }
+    renomeando.delete(id);
+    const k = kids.find(x => String(x.id) === id);
+    if (k && r.data && r.data.kid) Object.assign(k, { name: r.data.kid.name, school_year: r.data.kid.school_year });
+    render();
+    toast("Perfil renomeado");
+    carrega();
+  });
+
+  // ---------- novo perfil: o consentimento vem antes do primeiro (US-043)
+  function abreNovo(){
+    $("novoForm").hidden = false;
+    $("novoErr").hidden = true;
+    $("novoNome").focus();
+  }
+  $("adicionarFilho").addEventListener("click", () => {
+    st = SYNC.status();
+    if (st.consentNeeded) { depoisDoConsentimento = abreNovo; $("consentOk").checked = false; $("consentConcordo").disabled = true; abreConta("consentimento", { bloqueia: false }); return; }
+    abreNovo();
+  });
+  $("novoCancelar").addEventListener("click", () => { $("novoForm").hidden = true; $("novoNome").value = ""; $("novoAno").value = ""; $("adicionarFilho").focus(); });
+  $("novoForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const nome = $("novoNome").value.trim(), ano = $("novoAno").value.trim();
+    const err = msg => { $("novoErr").textContent = msg; $("novoErr").hidden = !msg; };
+    if (!/\p{L}/u.test(nome)) { err(ERRO_GESTO.bad_name); $("novoNome").focus(); return; }
+    $("novoSalvar").disabled = true;
+    const r = await SYNC.createKid(nome, ano);
+    $("novoSalvar").disabled = false;
+    if (!r.ok) {
+      if (r.error === "consent_needed") { depoisDoConsentimento = () => $("novoForm").requestSubmit(); abreConta("consentimento", { bloqueia: false }); return; }
+      err(ERRO_GESTO[r.error] || "Não deu para criar o perfil agora. Tente de novo.");
+      return;
+    }
+    err("");
+    $("novoForm").hidden = true;
+    $("novoNome").value = ""; $("novoAno").value = "";
+    if (r.data && r.data.kid) kids = [...kids, { ...r.data.kid, devices: [], codes: [], has_linked: false }].sort((a, b) => String(a.name).localeCompare(String(b.name), "pt-BR") || String(a.school_year).localeCompare(String(b.school_year), "pt-BR"));
+    render();
+    toast(`Perfil de ${nome} criado`);
+    carrega();
+  });
+
+  // ---------- a conta: os dados, a exclusão e a saída
+  function acoesErro(msg){ $("acoesErr").textContent = msg || ""; $("acoesErr").hidden = !msg; }
+  $("baixarDados").addEventListener("click", async () => {
+    acoesErro("");
+    const r = await SYNC.exportAll();
+    if (!r.ok) { acoesErro(r.error === "offline" ? "Baixar os dados precisa de internet." : "Não deu para baixar agora. Tente de novo."); return; }
+    baixa(`missao-olimpiadas-dados-${hoje()}.json`, JSON.stringify(r.data, null, 2));
+    toast("Dados baixados");
+  });
+  $("excluirConta").addEventListener("click", async () => {
+    acoesErro("");
+    const nomes = kids.map(k => k.name);
+    const msg = `Excluir a conta?\n\nSai do servidor: a conta, ${nomes.length ? `os perfis (${nomes.join(", ")}), ` : ""}os aparelhos ligados, os códigos e todo o progresso guardado.\nContinua em cada aparelho: o treino que já está nele, que passa a funcionar sem conta.\n\nPara confirmar, mandamos um código novo para o seu e-mail.`;
+    if (!confirm(msg)) return;
+    const email = st && st.session ? st.session.email : "";
+    const erro = await pedeCodigo(email);
+    if (erro) { acoesErro(/internet/.test(erro) ? "Excluir a conta precisa de internet." : erro); return; }
+    $("excluirPara").textContent = email;
+    $("excluirCodigo").value = "";
+    abreConta("excluir", { bloqueia: false });
+  });
+  $("sair").addEventListener("click", async () => {
+    acoesErro("");
+    const r = await SYNC.signOut();
+    limpaLocal();
+    if (!r.ok) acoesErro("Não deu para sair agora. Tente de novo.");
+    st = SYNC.status();
+    portao();
+  });
+
+  // ---------- a ajuda
+  const HELP = {
+    filhos:{t:"Perfis", b:`<p>Cada perfil mostra o que a criança fez nesta semana, o que está pendente e o próximo passo: os mesmos fatos do e-mail de segunda, contados agora.</p><p><b>Gerar código</b> cria um código de 8 letras e números que vale 7 dias e serve uma vez. Digite o código no app da criança, em Dados, Tenho um código.</p><p><b>Desligar</b> para o envio de um aparelho; o treino que está nele continua lá. <b>Remover</b> apaga o perfil do servidor.</p>`},
+    adicionar:{t:"Novo perfil", b:`<p>Só o nome e o ano escolar. Antes do primeiro perfil, a página mostra o que fica guardado e pede o seu acordo.</p>`},
+    email:{t:"E-mail de segunda", b:`<p>Toda segunda-feira sai um e-mail com o que cada criança fez na semana e o que está pendente. Depois de 8 semanas sem atividade, o envio pausa sozinho.</p>`},
+    conta:{t:"Conta", b:`<p><b>Baixar meus dados</b> baixa um arquivo com tudo o que está guardado. <b>Excluir conta</b> apaga tudo do servidor, depois de um código novo no e-mail. <b>Sair</b> apaga deste navegador a cópia da página.</p>`},
+  };
+  const help = $("help");
+  document.querySelectorAll("[data-help]").forEach(b => b.addEventListener("click", () => {
+    const h = HELP[b.dataset.help];
+    $("helpTitle").textContent = h.t;
+    $("helpBody").innerHTML = h.b;
+    help.showModal();
+  }));
+  $("helpClose").addEventListener("click", () => help.close());
+
+  // ---------- a abertura
+  if (!WEB) {
+    $("soNoSite").hidden = false;
+  } else if (!ONLINE) {
+    $("painelFechado").hidden = false;
+  } else {
+    // O primeiro retrato pode chegar antes de o IndexedDB abrir: o portão espera o motor dizer.
+    syncOn("sync-status", s => {
+      st = s;
+      portao();
+      if (!trancado && s.phase === "idle" && semRedeDesde != null) carrega();
+    });
+    // Um aparelho enviou, ou um aparelho ligou ou desligou: o cartão se refaz (E2E-052).
+    syncOn("sync-data", () => carrega());
+    syncOn("sync-notice", n => { if (n && n.kind === "session-ended") { limpaLocal(); st = SYNC.status(); portao(); } });
+    portao();
+    addEventListener("online", () => { if (!trancado) carrega(); });
+  }
+
+
+  /* build:shell-js */
+  // Fechar os menus da barra. <details> não fecha sozinho ao clicar fora nem no Esc, e com dois menus
+  // na mesma barra o clique em um tem de fechar o outro — senão ficam os dois abertos por cima do
+  // conteúdo. Um handler só resolve as duas coisas: o menu que contém o clique sobrevive.
+  document.addEventListener("click", e => {
+    document.querySelectorAll(".shell .menu[open]").forEach(d => { if(!d.contains(e.target)) d.open = false; });
+  });
+  document.addEventListener("keydown", e => {
+    if(e.key !== "Escape") return;
+    const aberto = document.querySelector(".shell .menu[open]");
+    if(aberto){ aberto.open = false; aberto.querySelector("summary").focus(); }
+  });
+
+  // As duas telas que o Arthur alterna. O painel do orientador não entra de propósito: é a ferramenta
+  // do pai, não uma tela do filho — e vice-versa. Quem não está nesta lista mostra só o título.
+  // `web` é o caminho da mesma tela na versão hospedada (etapa 2), onde cada uma é uma pasta.
+  const TELAS = [
+    {id:"missao",  nome:"Missão ENEM",      arq:"Missao_ENEM_Arthur.html",  web:"../aluno/"},
+    {id:"escolha", nome:"Escolha de curso", arq:"Escolha_Curso_Arthur.html", web:"../escolha/"},
+  ];
+
+  // Menu de telas. Todo file:// divide o mesmo localStorage no Chrome — entre pastas diferentes e sem
+  // precisar de flag (testado). Então cada tela carimba onde ela está e a vizinha linka para o caminho
+  // real, não para um nome relativo: é o que faz o link sobreviver ao "Escolha_Curso_Arthur (1).html"
+  // que o navegador cria quando o Arthur baixa o arquivo de novo, ou às duas telas em pastas diferentes.
+  (function(){
+    const barra = document.querySelector(".shell"), aqui = barra.dataset.tela;
+    if(!TELAS.some(t => t.id === aqui)) return; // tela sozinha: o título continua sendo só título
+    const CHAVE = "missao-olimpiadas-telas";
+    let onde = {};
+    try{ const v = JSON.parse(localStorage.getItem(CHAVE)); if(v && typeof v === "object" && !Array.isArray(v)) onde = v; }catch(e){}
+    onde[aqui] = location.href;
+    try{ localStorage.setItem(CHAVE, JSON.stringify(onde)); }catch(e){}
+
+    const cont = barra.querySelector(".telas"), titulo = cont.querySelector("h1").textContent;
+    const itens = TELAS.map(t => t.id === aqui
+      ? `<span aria-current="page">${t.nome}</span>`
+      : `<a href="${String(onde[t.id] || (/^https?:$/.test(location.protocol) ? t.web : t.arq)).replace(/"/g,"&quot;")}">${t.nome}</a>`).join("");
+    cont.innerHTML = `<details class="menu"><summary><h1>${titulo}</h1></summary><div class="pop">${itens}</div></details>`;
+  })();
+
+  // Seletor de tema. Quem sabe e quem grava é o boot no <head> (ele roda antes da primeira pintura);
+  // aqui só marcamos a opção que está valendo e escrevemos o nome dela no botão — inclusive quando o
+  // aparelho vira o tema sozinho. O botão mostra a escolha, não o tema resolvido: "Sistema" precisa
+  // continuar legível como "acompanha o aparelho".
+  (function(){
+    const g = document.getElementById("tema"), radios = [...g.querySelectorAll("input")];
+    const NOME = {claro:"Claro", escuro:"Escuro", sistema:"Sistema"};
+    const marca = ()=>{
+      const e = document.documentElement.dataset.escolha;
+      radios.forEach(i=>{ i.checked = i.value===e; });
+      document.getElementById("temaAtual").textContent = NOME[e] || NOME.sistema;
+      document.getElementById("temaSum").setAttribute("aria-label", `Tema: ${(NOME[e] || NOME.sistema).toLowerCase()}`);
+    };
+    g.addEventListener("change", e=>{
+      if(window.setTema && e.target.value) window.setTema(e.target.value);
+      marca(); // setTema não dispara o evento `tema` (esse é para mudança vinda de fora)
+      g.open = false; // escolheu: o menu fecha, e a tela repintada é o próprio aviso (não rende toast)
+    });
+    window.addEventListener("tema", marca);
+    marca();
+  })();
+
+  // User menu: só existe no app (ADR-006). É o ocupante do lugar que a barra guardava vazio, depois do
+  // tema — e continua sem placeholder nenhum no markup: no navegador `window.desktop` não existe e o
+  // <details> nunca é criado. O nome no botão, o nome e o e-mail na lista, e "Trocar de usuário", que
+  // é o único caminho de volta para a pergunta "Quem está usando?" (ADR-002/US-031).
+  // O texto vai por textContent, nunca por innerHTML: o nome e o e-mail são digitados pelo usuário.
+  (function(){
+    if(!window.desktop) return;
+    const acts = document.querySelector(".shell .acts");
+    if(!acts) return;
+    const profile = window.desktop.profile || {};
+    const menu = document.createElement("details");
+    menu.className = "menu user";
+    menu.id = "user";
+    const summary = document.createElement("summary");
+    const label = document.createElement("span");
+    label.textContent = profile.name || "Usuário";
+    summary.setAttribute("aria-label", `Usuário: ${label.textContent}`);
+    summary.appendChild(label);
+    const pop = document.createElement("div");
+    pop.className = "pop";
+    const name = document.createElement("span");
+    name.textContent = label.textContent;
+    const swap = document.createElement("button");
+    swap.type = "button";
+    swap.id = "switchRole";
+    swap.textContent = "Trocar de usuário";
+    swap.addEventListener("click", ()=>{ menu.open = false; window.desktop.switchRole(); });
+    pop.appendChild(name);
+    if(profile.email){ // sem e-mail não entra linha vazia: seria um item de menu em branco
+      const mail = document.createElement("span");
+      mail.className = "muted";
+      mail.textContent = profile.email;
+      pop.appendChild(mail);
+    }
+    pop.appendChild(swap);
+    menu.append(summary, pop);
+    acts.appendChild(menu);
+  })();
+  /* /build:shell-js */
+</script>
+</body>
+</html>

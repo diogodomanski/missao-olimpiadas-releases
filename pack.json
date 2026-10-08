@@ -1,0 +1,1673 @@
+{
+  "schema": 1,
+  "id": "obmep-mirim-2",
+  "version": 5,
+  "publishedAt": "2026-10-08",
+  "olympiad": {
+    "name": "Olimpíada Mirim",
+    "org": "IMPA / OBMEP",
+    "level": "Mirim 2",
+    "levelLabel": "4º e 5º anos",
+    "edition": 2026
+  },
+  "phases": [
+    {
+      "id": "f1",
+      "name": "1ª fase",
+      "date": "2026-08-25"
+    },
+    {
+      "id": "f2",
+      "name": "2ª fase",
+      "date": "2026-11-10"
+    }
+  ],
+  "format": {
+    "type": "multiple-choice",
+    "questions": 15,
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "minutes": 90
+  },
+  "vocabulary": {
+    "exam": "prova",
+    "phase": "fase",
+    "question": "questão"
+  },
+  "topics": [
+    {
+      "id": "numeros",
+      "child": "Números e contas",
+      "adult": "Aritmética e sistema de numeração"
+    },
+    {
+      "id": "logica",
+      "child": "Pensar com pistas",
+      "adult": "Raciocínio lógico"
+    },
+    {
+      "id": "espaco",
+      "child": "Ver no espaço",
+      "adult": "Visualização espacial"
+    },
+    {
+      "id": "geometria",
+      "child": "Formas e figuras",
+      "adult": "Geometria plana"
+    },
+    {
+      "id": "medidas",
+      "child": "Tempo, dinheiro e tamanho",
+      "adult": "Grandezas e medidas"
+    },
+    {
+      "id": "contagem",
+      "child": "Contar de quantos jeitos",
+      "adult": "Contagem e combinatória"
+    },
+    {
+      "id": "padroes",
+      "child": "Descobrir o padrão",
+      "adult": "Sequências e padrões"
+    },
+    {
+      "id": "fracoes",
+      "child": "Partes de um inteiro",
+      "adult": "Frações e proporção"
+    },
+    {
+      "id": "dados",
+      "child": "Ler tabelas e gráficos",
+      "adult": "Tratamento da informação"
+    }
+  ],
+  "links": [],
+  "exams": [
+    {
+      "id": "2026-1",
+      "edition": 2026,
+      "phase": "1ª fase",
+      "pdf": "https://drive.google.com/file/d/19fCUoa4npfj-5soyg5qA2kNBBveI3sbz/view",
+      "solution": "https://drive.google.com/file/d/12jtZyvXNrUPml3FcKqort1yIObR_fl8G/view",
+      "questions": [
+        {
+          "n": 1,
+          "key": "C",
+          "topic": "numeros",
+          "hints": [
+            "Contar uma cadeira de cada vez cansa e confunde. Primeiro olhe como as cadeiras estão arrumadas na sala.",
+            "Elas estão em fileiras. Quantas fileiras têm o mesmo número de cadeiras? E quantas cadeiras há em cada uma dessas?",
+            "Junte as fileiras iguais e depois some a fileira que é diferente. Volte à figura e confira se não esqueceu nenhuma."
+          ],
+          "explanation": "Quatro fileiras são iguais, e cada uma tem 6 cadeiras: 6 + 6 + 6 + 6 = 24. Sobra uma fileira mais curta, com 4. Juntando: 24 + 4 = 28 cadeiras."
+        },
+        {
+          "n": 2,
+          "key": "C",
+          "topic": "numeros",
+          "hints": [
+            "São duas tarefas: descobrir o menor número e descobrir o maior. Faça uma de cada vez e só some no final.",
+            "Os dois algarismos têm que ser diferentes. O 11 vale? E o 99?",
+            "Comece pelo 10 e veja se os algarismos são diferentes. Para o maior, comece do 99 e vá descendo até achar um que sirva."
+          ],
+          "explanation": "O 10 já serve como o menor: 1 e 0 são algarismos diferentes. O 99 não serve, porque repete o 9; o maior que serve é o 98. A conta é 10 + 98 = 108."
+        },
+        {
+          "n": 3,
+          "key": "B",
+          "topic": "espaco",
+          "hints": [
+            "Para levar todos de uma vez, o braço tem que ficar dentro de todos os bambolês ao mesmo tempo.",
+            "Escolha uma letra e pergunte: este pedaço está dentro de quais bambolês? Faça isso com cada letra.",
+            "Passe o dedo pela borda de um bambolê só e anote as letras que ficam dentro. Repita com os outros. Procure a letra que aparece em todas as listas."
+          ],
+          "explanation": "Só a região B fica dentro dos três bambolês ao mesmo tempo. Em qualquer outra letra, pelo menos um bambolê não envolve o braço e fica para trás."
+        },
+        {
+          "n": 4,
+          "key": "D",
+          "topic": "espaco",
+          "hints": [
+            "Edu só pode tirar a peça que está mais em cima. Descubra qual peça sai primeiro, qual sai em segundo, e assim por diante.",
+            "A primeira peça que sai vai direto para o chão. Cada peça seguinte vai para o chão ou para cima de uma que já saiu.",
+            "A peça mais de baixo é a última a ser tirada: quando chega a vez dessa peça, as outras já estão no lugar novo. Onde essa peça pode ficar?"
+          ],
+          "explanation": "Edu tira as peças de cima para baixo. A ordem de saída é: retângulo pequeno, trapézio, retângulo grande e a peça comprida. Cada uma vai para o chão ou para cima de uma que já saiu, então a peça comprida, que sai por último, termina por cima de tudo, e o retângulo pequeno fica no chão."
+        },
+        {
+          "n": 5,
+          "key": "E",
+          "topic": "numeros",
+          "hints": [
+            "Não precisa adivinhar: faça cada uma das cinco contas você mesmo, num papel.",
+            "Comece pelas unidades. Quando a soma das unidades passa de 9, o que acontece com as dezenas?",
+            "Olhe com atenção as contas em que as unidades somam mais do que 9. Numa delas, alguém esqueceu de levar 1 para as dezenas."
+          ],
+          "explanation": "Fazendo as cinco contas, quatro dão certo. Na que está errada, 3 + 8 = 11 nas unidades: fica o 1 e vai 1 para as dezenas. Então 33 + 18 = 51, e não 41."
+        },
+        {
+          "n": 6,
+          "key": "C",
+          "topic": "logica",
+          "hints": [
+            "Faça uma fila com as cinco meninas, da mais nova para a mais velha. Você já sabe a idade da primeira e da última.",
+            "Todas têm idades diferentes. Que idades podem ficar entre 8 e 12 anos?",
+            "Conte: entre 8 e 12 existem exatamente três idades. Quantas meninas faltam colocar na fila? Agora confira cada frase das alternativas."
+          ],
+          "explanation": "A idade mais baixa da fila é 8 e a mais alta é 12. As outras três meninas têm idades diferentes entre essas duas, e só sobram 9, 10 e 11. Então com certeza alguém tem 10 anos."
+        },
+        {
+          "n": 7,
+          "key": "D",
+          "topic": "espaco",
+          "hints": [
+            "Olhe para a pirâmide e conte as faces: quantas são quadradas e quantas são triângulos?",
+            "Ao desdobrar, nenhuma face some e nenhuma aparece: a figura aberta tem as mesmas faces da pirâmide.",
+            "Os triângulos ficam presos nos lados do quadrado, um em cada lado. Procure a figura em que isso acontece."
+          ],
+          "explanation": "A pirâmide tem embaixo um quadrado e, em volta, quatro triângulos que se encontram na ponta. Aberta, a pirâmide vira um quadrado com um triângulo grudado em cada lado. As figuras com dois quadrados, ou com triângulos de menos, não fecham essa pirâmide."
+        },
+        {
+          "n": 8,
+          "key": "C",
+          "topic": "numeros",
+          "hints": [
+            "O primeiro número tem três algarismos iguais, como 222 ou 555. O segundo tem dois iguais, como 33 ou 77.",
+            "A soma deu 199, que é menos do que 200. O número de três algarismos pode começar com 2 ou mais?",
+            "Descubra primeiro o número de três algarismos. Depois pense: quanto falta para chegar a 199? Esse número tem os dois algarismos iguais?"
+          ],
+          "explanation": "Como a soma é 199, o número com três algarismos repetidos não chega a 200: só pode ser 111. Falta 199 − 111 = 88 para completar, e 88 tem os dois algarismos iguais. A diferença entre os dois é 111 − 88 = 23."
+        },
+        {
+          "n": 9,
+          "key": "D",
+          "topic": "espaco",
+          "hints": [
+            "Cada alternativa mostra o começo de um caminho. Qual desses começos dá para continuar até visitar cada sala uma vez?",
+            "Siga cada caminho com o dedo até onde a linha termina. Dali, para quais salas ainda dá para ir?",
+            "Procure salas que ficaram isoladas: para entrar nelas, seria preciso passar de novo por uma sala já visitada. O caminho que não deixa nenhuma sala assim é o que serve."
+          ],
+          "explanation": "Em quatro caminhos, alguma sala fica presa: para chegar até essa sala seria preciso repetir uma sala por onde o caminho já passou. Só um dos começos deixa as salas que faltam numa sequência que dá para percorrer até o fim, uma vez cada."
+        },
+        {
+          "n": 10,
+          "key": "E",
+          "topic": "padroes",
+          "hints": [
+            "Escreva os dias da semana em fila, começando no domingo em que os dois se encontraram.",
+            "Marque os dias de Antônio: um dia vai, um dia não. Com outra cor, marque os de Marina: um dia vai, dois dias não.",
+            "Procure o primeiro dia, depois do domingo, que ficou com as duas marcas."
+          ],
+          "explanation": "Antônio vai de dois em dois dias: domingo, terça, quinta, sábado. Marina vai de três em três: domingo, quarta, sábado. O primeiro dia das duas listas depois do domingo é o sábado, 6 dias depois. E 6 é o primeiro número que se alcança contando tanto de 2 em 2 quanto de 3 em 3."
+        },
+        {
+          "n": 11,
+          "key": "C",
+          "topic": "numeros",
+          "hints": [
+            "Os dois números dos dados, multiplicados, dão 18. Cada face de um dado tem de 1 a 6 pontos.",
+            "Escreva todas as multiplicações que dão 18. Quais delas usam só números que aparecem num dado?",
+            "Achou a multiplicação que funciona? Agora veja qual das faces das alternativas faz parte dela."
+          ],
+          "explanation": "18 pode ser 1 × 18, 2 × 9 ou 3 × 6. O dado não tem 18 nem 9, então os dois lançamentos só podem ter dado 3 e 6. Das faces que aparecem nas alternativas, só a de 3 pontos está nessa conta."
+        },
+        {
+          "n": 12,
+          "key": "C",
+          "topic": "medidas",
+          "hints": [
+            "O passarinho só canta quando o relógio marca uma hora completa, como 3 horas em ponto.",
+            "Escreva as horas em ponto que ficam entre o começo e o fim do horário da pergunta. Cuidado: o horário começa um pouquinho depois das 2.",
+            "Em cada hora em ponto da sua lista, o passarinho canta o número da hora. Some tudo."
+          ],
+          "explanation": "O horário começa às 2 e 5, quando o cuco das 2 já cantou, e termina às 5 e 50, antes das 6. No meio ficam as 3, as 4 e as 5 em ponto. Somando: 3 + 4 + 5 = 12 cantos."
+        },
+        {
+          "n": 13,
+          "key": "E",
+          "topic": "dados",
+          "hints": [
+            "Anita fez quatro retiradas, cada uma com uma bolinha de letra e uma de número. Você não sabe quais saíram juntas: pode escolher a combinação que dá mais dinheiro.",
+            "Na tabela, procure os pares que valem mais. Quais pares de 10 reais dá para formar com essas bolinhas?",
+            "Cada bolinha só pode ser usada uma vez. Forme o máximo de pares de 10 reais e veja quanto os pares que sobram podem valer, no máximo."
+          ],
+          "explanation": "As letras são A, A, B e C; os números são 1, 2, 2 e 3. Os pares de 10 reais usam o 3 ou o B com 2. Como só há um 3 e um B, dá para fazer no máximo dois: A com 3 e B com 2. Sobram A, C, 1 e 2: A com 1 vale 5 e C com 2 vale 5. Total: 10 + 10 + 5 + 5 = 30 reais."
+        },
+        {
+          "n": 14,
+          "key": "C",
+          "topic": "numeros",
+          "hints": [
+            "Em vez de fazer contas difíceis, teste os números das alternativas, um de cada vez, no papel.",
+            "Somar 8 e depois tirar 4: dá para trocar essas duas contas por uma só?",
+            "Depois de somar 4, o número tem que dar o dobro do número do começo. Qual número faz isso?"
+          ],
+          "explanation": "Somar 8 e tirar 4 dá na mesma que somar 4 de uma vez. Como dividir por 2 traz de volta o número do começo, o número mais 4 tem que ser o dobro do número. Testando: 4 + 4 = 8, que é o dobro de 4. Na calculadora: 4 + 8 = 12, 12 − 4 = 8 e 8 ÷ 2 = 4."
+        },
+        {
+          "n": 15,
+          "key": "C",
+          "topic": "logica",
+          "hints": [
+            "Pense num grupo de 3 balas só. No mínimo 2 delas são de chocolate, e no mínimo 2 não têm açúcar.",
+            "Num grupo de 3 balas, dá para ter 2 de chocolate e 2 sem açúcar sem que nenhuma bala seja as duas coisas? Tente desenhar.",
+            "Descubra quantas balas que são de chocolate e também não têm açúcar precisa haver, no mínimo, em cada grupo. Depois lembre que são quatro grupos."
+          ],
+          "explanation": "Num grupo de 3 balas há pelo menos 2 de chocolate e 2 sem açúcar: são 4 marcas para só 3 balas, então pelo menos uma bala recebe as duas. Como são 4 grupos, o total é de no mínimo 4 dessas balas. E 4 pode acontecer: em cada grupo, uma de chocolate com açúcar, uma sem açúcar e sem chocolate, e uma de chocolate sem açúcar."
+        }
+      ]
+    },
+    {
+      "id": "2025-2",
+      "edition": 2025,
+      "phase": "2ª fase",
+      "pdf": "https://drive.google.com/file/d/1Iueijq6EsIa41Nq6ocGJ_uwXi_A8rQ17/view",
+      "solution": "https://drive.google.com/file/d/1KOl6Urwp_RBvt6HcjX0xW9jUVtvzXNyF/view",
+      "questions": [
+        {
+          "n": 1,
+          "key": "C",
+          "topic": "espaco",
+          "hints": [
+            "Faça com as suas mãos! Com caneta lavável, ou com papeizinhos colados, ponha nos seus dedos os mesmos números da primeira figura.",
+            "Agora vire as mãos e cruze os braços igual à segunda figura. Repare: a mão que aparece de cada lado é qual das suas mãos?",
+            "Com os braços cruzados, compare cada dedo dobrado da figura com o mesmo dedo das suas mãos. Qual número está em cada um? Some os dois."
+          ],
+          "explanation": "Com as mãos viradas e os braços cruzados, a mão que aparece de um lado é a do outro lado do corpo. No desenho, quem está dobrado é o anelar de uma mão, que tem o 4, e o dedo do meio da outra, que tem o 8. Somando: 4 + 8 = 12."
+        },
+        {
+          "n": 2,
+          "key": "C",
+          "topic": "numeros",
+          "hints": [
+            "Escreva a lista inteira, do 10 até o 30. Não tenha pressa.",
+            "A pergunta é sobre algarismos 1, e não sobre números que têm 1. Tem número na lista com dois algarismos 1?",
+            "Separe em dois grupos: do 10 ao 19, e do 20 ao 30. Conte os 1 em cada grupo e não esqueça do 11."
+          ],
+          "explanation": "Do 10 ao 19 são 10 números, e todos começam com 1; o 11 ainda tem um segundo 1. Isso dá 11 algarismos 1. Do 20 ao 30, só o 21 tem o algarismo 1. Total: 11 + 1 = 12."
+        },
+        {
+          "n": 3,
+          "key": "C",
+          "topic": "espaco",
+          "hints": [
+            "Uma volta inteira demora 10 segundos. 5 segundos é que pedaço da volta?",
+            "Em meia volta, um carrinho que está de um lado da pista vai parar do lado oposto. Siga cada carrinho com o dedo, no sentido da seta.",
+            "Veja também para onde cada carrinho fica virado e quem fica na frente de quem: os carrinhos andam igual, então ninguém passa ninguém."
+          ],
+          "explanation": "Em 5 segundos cada carrinho dá meia volta. O verde, que está numa curva, vai para a curva do outro lado, agora virado para o lado contrário. O amarelo e o vermelho, que estão na reta de baixo, vão para a reta de cima, andando para o outro lado, e o amarelo continua na frente do vermelho."
+        },
+        {
+          "n": 4,
+          "key": "B",
+          "topic": "logica",
+          "hints": [
+            "Desenhe quatro lugares em fila e marque qual é o primeiro e qual é o último.",
+            "Ponha Ana no último lugar. Duda fica ao lado de Ana e também ao lado de Bia: onde Duda e Bia podem ficar?",
+            "Depois de colocar Ana, Duda e Bia, só sobra um lugar para Carla. Quem ficou nos dois primeiros lugares?"
+          ],
+          "explanation": "Ana é a última. Duda precisa estar ao lado de Ana, então fica em terceiro, e Bia, ao lado de Duda, fica em segundo. Sobra o primeiro lugar para Carla. A fila é Carla, Bia, Duda e Ana: as duas primeiras são Carla e Bia."
+        },
+        {
+          "n": 5,
+          "key": "D",
+          "topic": "contagem",
+          "hints": [
+            "Cada matéria fica com os seus dois livros lado a lado. Pense nos dois de Português como um bloco e nos dois de Matemática como outro bloco.",
+            "De quantos jeitos os dois blocos podem ficar na estante? Qual bloco vem primeiro?",
+            "Dentro de cada bloco, os dois livros ainda podem mudar de ordem. Para cada arrumação dos blocos, quantas arrumações por dentro existem?"
+          ],
+          "explanation": "Os blocos podem ficar em 2 ordens: Português primeiro ou Matemática primeiro. Dentro do bloco de Português os livros trocam de lugar de 2 jeitos, e no de Matemática também. Juntando tudo: 2 × 2 × 2 = 8 maneiras."
+        },
+        {
+          "n": 6,
+          "key": "D",
+          "topic": "numeros",
+          "hints": [
+            "Olhe o aquário e conte quantos animais há de cada tipo. Use a tabela para saber quanto cada um come.",
+            "Primeiro descubra quanto comem só os peixes, todos juntos. O polvo fica para o final.",
+            "O aquário inteiro precisa de 105 gramas por dia. Quanto falta, depois de alimentar os peixes?"
+          ],
+          "explanation": "No aquário há 2 peixes de 15 gramas, 1 de 20 gramas e 3 de 10 gramas. Os peixes comem 30 + 20 + 30, que dá 80 gramas. Para chegar a 105, falta 105 − 80 = 25: é isso que o polvo come."
+        },
+        {
+          "n": 7,
+          "key": "B",
+          "topic": "espaco",
+          "hints": [
+            "Imagine o cubo grande desmontado. Alguns cubinhos ficam nos cantos, outros no meio das arestas, outros no meio das faces, e um fica escondido lá dentro.",
+            "Um cubinho de canto tem quantas faces pintadas? E um do meio de uma aresta? E um do meio de uma face?",
+            "Só os cubinhos do centro de cada face têm uma face pintada. Quantas faces tem o cubo grande?"
+          ],
+          "explanation": "Os cubinhos dos cantos têm 3 faces pintadas, e os do meio das arestas têm 2. Só o cubinho do centro de cada face tem uma face pintada, e o cubo tem 6 faces: são 6 cubinhos. O cubinho bem do meio fica sem pintura nenhuma."
+        },
+        {
+          "n": 8,
+          "key": "A",
+          "topic": "logica",
+          "hints": [
+            "São 5 tipos de figura e há 2 de cada tipo. Faça uma tabela: para cada tipo, quantas já apareceram?",
+            "Se um tipo já apareceu duas vezes, Elisa não pode ter esse tipo.",
+            "Procure os tipos que apareceram uma vez só. Elisa ficou com o outro de cada um deles."
+          ],
+          "explanation": "Quadrados: um de Ana e um de Daniel. Círculos: um de Ana e um de Carla. Triângulos: um de Beto e um de Daniel. Esses três tipos acabaram. O coração apareceu uma vez, com Beto, e a estrela também, com Carla. As figuras que faltam são a outra estrela e o outro coração: são as de Elisa."
+        },
+        {
+          "n": 9,
+          "key": "B",
+          "topic": "espaco",
+          "hints": [
+            "Olhe as três posições do cubo. Em cada uma, quais letras você vê ao mesmo tempo?",
+            "Duas letras que aparecem juntas na mesma posição nunca estão em faces opostas: faces opostas não se veem ao mesmo tempo.",
+            "Acompanhe os giros: em cada um, pense em qual face foi para baixo e qual veio para cima. Assim você descobre dois pares de faces opostas. A letra que sobrar é a oposta da F."
+          ],
+          "explanation": "Rolando o cubo, dá para ver que C e D ficam em lados opostos, e depois que A e E também. Das seis letras, sobram B e F: então B fica do lado oposto ao da F."
+        },
+        {
+          "n": 10,
+          "key": "B",
+          "topic": "fracoes",
+          "hints": [
+            "Se Paulinho desse todo o dinheiro para Aninha, os dois dinheiros ficariam juntos. Quanto os dois têm, somando?",
+            "No segundo caso, Paulinho recebe só metade do dinheiro de Aninha e fica com 19. Compare com o 25: qual é a diferença entre as duas situações?",
+            "A diferença entre 25 e 19 é a metade do dinheiro de Aninha que não foi dada. Se metade é isso, quanto é o dinheiro todo de Aninha?"
+          ],
+          "explanation": "Juntos, Paulinho e Aninha têm 25 reais. Com metade do dinheiro de Aninha, Paulinho fica com 19. A outra metade é o que falta: 25 − 19 = 6. Se metade é 6, o dinheiro todo de Aninha é 12. Paulinho fica com o resto dos 25: 13 reais."
+        },
+        {
+          "n": 11,
+          "key": "D",
+          "topic": "geometria",
+          "hints": [
+            "Compare as duas figuras quadradinho por quadradinho. Só precisa virar o quadradinho que muda de cor de uma figura para a outra.",
+            "A figura da direita tem uma moldura branca em volta e um miolo preto no meio. Olhe as duas partes separadas.",
+            "Na moldura, conte os quadradinhos que são pretos na figura da esquerda. No miolo, conte os que são brancos. Some."
+          ],
+          "explanation": "Na figura da direita, a moldura é toda branca e o miolo é todo preto. Na figura da esquerda, a moldura tem 10 quadradinhos pretos, que precisam virar, e o miolo tem 8 quadradinhos brancos, que também precisam virar. São 10 + 8 = 18."
+        },
+        {
+          "n": 12,
+          "key": "E",
+          "topic": "padroes",
+          "hints": [
+            "Tirar miçangas pelas pontas é como comer as bolinhas das pontas de um espetinho: o que sobra continua na mesma ordem.",
+            "Escreva o colar com letras, uma para cada tipo de miçanga, na ordem em que aparecem. Depois faça o mesmo com cada alternativa.",
+            "O colar que sobrou tem 4 miçangas seguidas do colar original, na mesma ordem. Procure cada alternativa dentro da sua lista de letras. A pergunta quer a que não aparece."
+          ],
+          "explanation": "Com B para bolinha, E para estrela e C para coração, o colar é B E E C B C B E. O que sobra são 4 letras seguidas dessa fila. Depois de E E vem C e depois B; a alternativa com E E seguido de B e C não pode ter saído desse colar."
+        },
+        {
+          "n": 13,
+          "key": "E",
+          "topic": "logica",
+          "hints": [
+            "Leia as três regras com calma e teste cada alternativa, uma de cada vez.",
+            "Em cada alternativa, olhe cada cor escolhida e veja se alguma regra fala dessa cor. A regra foi cumprida?",
+            "Cuidado com a cinza: quem usa cinza tem que cumprir duas regras ao mesmo tempo. E com amarela, a branca fica proibida."
+          ],
+          "explanation": "Amarela e cinza não pode: com cinza é preciso usar branca. Branca, cinza e dourada não pode: cinza e dourada não vão juntas. Amarela e branca não pode, pela primeira regra. Cinza, dourada e amarela também junta cinza com dourada. Branca e dourada não quebra nenhuma regra."
+        },
+        {
+          "n": 14,
+          "key": "E",
+          "topic": "logica",
+          "hints": [
+            "São 6 doces e cada uma fica com a mesma quantidade. Quantos doces cada uma recebe?",
+            "Olhe a tabela: tem doce que Ana não gosta. Para quem esse doce precisa ir? E o doce que Bia não gosta?",
+            "Depois de entregar os doces que só uma das duas aceita, quantos sobram? Divida esses de um jeito que as duas fiquem com 3."
+          ],
+          "explanation": "Cada uma fica com 3 doces. Ana não gosta dos azuis, então os dois azuis vão para Bia. Bia não gosta dos rosa, então os dois rosa vão para Ana. Sobram os dois laranja: um para cada. Ana fica com laranja, rosa e rosa; Bia, com laranja, azul e azul."
+        },
+        {
+          "n": 15,
+          "key": "A",
+          "topic": "numeros",
+          "hints": [
+            "Anote num papel quantos chapéus e quantas varinhas o mágico tem, e faça uma troca de cada vez.",
+            "Com o que o mágico tem agora, dá para fazer qual troca? Faça e veja o que muda.",
+            "Continue trocando até não dar mais: até não haver 4 chapéus nem 4 varinhas."
+          ],
+          "explanation": "No começo: 3 chapéus, 7 varinhas. Trocando 4 varinhas por 1 chapéu, ficam 4 chapéus e 3 varinhas. Trocando os 4 chapéus por 1 varinha, fica nenhum chapéu e 4 varinhas. Trocando as 4 varinhas, sobra 1 chapéu e mais nada. Aí não há mais troca possível."
+        }
+      ]
+    },
+    {
+      "id": "2025-1",
+      "edition": 2025,
+      "phase": "1ª fase",
+      "pdf": "https://drive.google.com/file/d/1EuqwFpAWCRZJk0800wfZ01QRVuCjk7D9/view",
+      "solution": "https://drive.google.com/file/d/1oLR44Jt7fj5nANsbHH09P1vQIgmUOI-m/view",
+      "questions": [
+        {
+          "n": 1,
+          "key": "C",
+          "topic": "padroes",
+          "hints": []
+        },
+        {
+          "n": 2,
+          "key": "D",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 3,
+          "key": "C",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 4,
+          "key": "B",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 5,
+          "key": "E",
+          "topic": "contagem",
+          "hints": []
+        },
+        {
+          "n": 6,
+          "key": "A",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 7,
+          "key": "D",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 8,
+          "key": "D",
+          "topic": "padroes",
+          "hints": []
+        },
+        {
+          "n": 9,
+          "key": "A",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 10,
+          "key": "B",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 11,
+          "key": "D",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 12,
+          "key": "C",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 13,
+          "key": "A",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 14,
+          "key": "D",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 15,
+          "key": "D",
+          "topic": "logica",
+          "hints": []
+        }
+      ]
+    },
+    {
+      "id": "2024-2",
+      "edition": 2024,
+      "phase": "2ª fase",
+      "pdf": "https://drive.google.com/file/d/1YNNxDdoGyq43uggVSvsfGZ7HrKlLA1xy/view",
+      "solution": "https://drive.google.com/file/d/1dXudiWQMvNz81fRB6kFLBKTF7nOmuvFH/view",
+      "questions": [
+        {
+          "n": 1,
+          "key": "C",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 2,
+          "key": "D",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 3,
+          "key": "A",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 4,
+          "key": "C",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 5,
+          "key": "A",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 6,
+          "key": "C",
+          "topic": "dados",
+          "hints": []
+        },
+        {
+          "n": 7,
+          "key": "B",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 8,
+          "key": "C",
+          "topic": "contagem",
+          "hints": []
+        },
+        {
+          "n": 9,
+          "key": "B",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 10,
+          "key": "A",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 11,
+          "key": "D",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 12,
+          "key": "E",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 13,
+          "key": "B",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 14,
+          "key": "B",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 15,
+          "key": "C",
+          "topic": "geometria",
+          "hints": []
+        }
+      ]
+    },
+    {
+      "id": "2024-1",
+      "edition": 2024,
+      "phase": "1ª fase",
+      "pdf": "https://drive.google.com/file/d/1ZEIBhLQ-mWY7WuGWxhBGGmlHGnjDORe_/view",
+      "solution": "https://drive.google.com/file/d/1RGAMgf2SA4PAN-rvjyKZFjj6O1Nm1lKP/view",
+      "questions": [
+        {
+          "n": 1,
+          "key": "D",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 2,
+          "key": "D",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 3,
+          "key": "D",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 4,
+          "key": "E",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 5,
+          "key": "C",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 6,
+          "key": "D",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 7,
+          "key": "B",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 8,
+          "key": "B",
+          "topic": "contagem",
+          "hints": []
+        },
+        {
+          "n": 9,
+          "key": "B",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 10,
+          "key": "C",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 11,
+          "key": "C",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 12,
+          "key": "B",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 13,
+          "key": "E",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 14,
+          "key": "B",
+          "topic": "contagem",
+          "hints": []
+        },
+        {
+          "n": 15,
+          "key": "C",
+          "topic": "logica",
+          "hints": []
+        }
+      ]
+    },
+    {
+      "id": "2023-2",
+      "edition": 2023,
+      "phase": "2ª fase",
+      "pdf": "https://drive.google.com/file/d/1wSTt0DjtLDKVMDfHygu_RyarZL0kVpcB/view",
+      "solution": "https://drive.google.com/file/d/1m6nm69b7Up0D-VXVgdt9wd5YOAxXKpOY/view",
+      "questions": [
+        {
+          "n": 1,
+          "key": "E",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 2,
+          "key": "D",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 3,
+          "key": "C",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 4,
+          "key": "C",
+          "topic": "padroes",
+          "hints": []
+        },
+        {
+          "n": 5,
+          "key": "D",
+          "topic": "padroes",
+          "hints": []
+        },
+        {
+          "n": 6,
+          "key": "E",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 7,
+          "key": "B",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 8,
+          "key": "A",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 9,
+          "key": "E",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 10,
+          "key": "B",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 11,
+          "key": "A",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 12,
+          "key": "D",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 13,
+          "key": "B",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 14,
+          "key": "E",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 15,
+          "key": "C",
+          "topic": "logica",
+          "hints": []
+        }
+      ]
+    },
+    {
+      "id": "2023-1",
+      "edition": 2023,
+      "phase": "1ª fase",
+      "pdf": "https://drive.google.com/file/d/1X-y9ery4DhthT7vziMCtKq1E39oz0gFo/view",
+      "solution": "https://drive.google.com/file/d/1WQDbufgEPRy6OuCLO4wqedVJg6SlLYph/view",
+      "questions": [
+        {
+          "n": 1,
+          "key": "E",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 2,
+          "key": "A",
+          "topic": "padroes",
+          "hints": []
+        },
+        {
+          "n": 3,
+          "key": "C",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 4,
+          "key": "E",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 5,
+          "key": "D",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 6,
+          "key": "C",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 7,
+          "key": "D",
+          "topic": "fracoes",
+          "hints": []
+        },
+        {
+          "n": 8,
+          "key": "E",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 9,
+          "key": "D",
+          "topic": "contagem",
+          "hints": []
+        },
+        {
+          "n": 10,
+          "key": "D",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 11,
+          "key": "C",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 12,
+          "key": "E",
+          "topic": "dados",
+          "hints": []
+        },
+        {
+          "n": 13,
+          "key": "B",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 14,
+          "key": "C",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 15,
+          "key": "E",
+          "topic": "contagem",
+          "hints": []
+        }
+      ]
+    },
+    {
+      "id": "2022-2",
+      "edition": 2022,
+      "phase": "2ª fase",
+      "pdf": "https://drive.google.com/file/d/1-iBjSrp_U5EoepgzgjX_h7fxtnwAb0_R/view",
+      "solution": "https://drive.google.com/file/d/1w6wNNbHIPjkbCKSeYhiVKl4rDB4xb6Zz/view",
+      "questions": [
+        {
+          "n": 1,
+          "key": "C",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 2,
+          "key": "C",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 3,
+          "key": "C",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 4,
+          "key": "C",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 5,
+          "key": "D",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 6,
+          "key": "A",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 7,
+          "key": "D",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 8,
+          "key": "A",
+          "topic": "padroes",
+          "hints": []
+        },
+        {
+          "n": 9,
+          "key": "E",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 10,
+          "key": "C",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 11,
+          "key": "E",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 12,
+          "key": "B",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 13,
+          "key": "C",
+          "topic": "fracoes",
+          "hints": []
+        },
+        {
+          "n": 14,
+          "key": "B",
+          "topic": "logica",
+          "hints": []
+        },
+        {
+          "n": 15,
+          "key": "B",
+          "topic": "logica",
+          "hints": []
+        }
+      ]
+    },
+    {
+      "id": "2022-1",
+      "edition": 2022,
+      "phase": "1ª fase",
+      "pdf": "https://drive.google.com/file/d/1PfJNAM91orv-XsSuc6GzOtQY93i2356X/view",
+      "solution": "https://drive.google.com/file/d/1bTuH2iudsF9mLKh8e0o-fUaMg-rFIgOa/view",
+      "questions": [
+        {
+          "n": 1,
+          "key": "B",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 2,
+          "key": "B",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 3,
+          "key": "B",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 4,
+          "key": "A",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 5,
+          "key": "B",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 6,
+          "key": "B",
+          "topic": "medidas",
+          "hints": []
+        },
+        {
+          "n": 7,
+          "key": "C",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 8,
+          "key": "E",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 9,
+          "key": "B",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 10,
+          "key": "C",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 11,
+          "key": "E",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 12,
+          "key": "A",
+          "topic": "numeros",
+          "hints": []
+        },
+        {
+          "n": 13,
+          "key": "C",
+          "topic": "espaco",
+          "hints": []
+        },
+        {
+          "n": 14,
+          "key": "A",
+          "topic": "geometria",
+          "hints": []
+        },
+        {
+          "n": 15,
+          "key": "B",
+          "topic": "numeros",
+          "hints": []
+        }
+      ]
+    }
+  ],
+  "story": null,
+  "slots": [
+    {
+      "id": "cabeca",
+      "name": "Cabeça"
+    },
+    {
+      "id": "maos",
+      "name": "Mãos"
+    },
+    {
+      "id": "pes",
+      "name": "Pés"
+    },
+    {
+      "id": "costas",
+      "name": "Costas"
+    }
+  ],
+  "themes": [
+    {
+      "id": "animais",
+      "name": "Animais"
+    },
+    {
+      "id": "esportes",
+      "name": "Esportes"
+    },
+    {
+      "id": "transportes",
+      "name": "Transportes"
+    },
+    {
+      "id": "natureza",
+      "name": "Natureza"
+    },
+    {
+      "id": "espaco",
+      "name": "Espaço"
+    },
+    {
+      "id": "formas",
+      "name": "Formas"
+    }
+  ],
+  "characters": [
+    {
+      "id": "raposa",
+      "name": "Raposa",
+      "theme": "animais",
+      "slots": [
+        "cabeca",
+        "maos",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M22 18 L38 40 L62 40 L78 18 L74 56 Q50 78 26 56 Z\" fill=\"#E07B24\"/><path d=\"M36 58 Q50 72 64 58 Q50 64 36 58 Z\" fill=\"#FFF4D6\"/><circle cx=\"40\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><circle cx=\"60\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><circle cx=\"50\" cy=\"62\" r=\"3\" fill=\"#12213F\"/><ellipse cx=\"50\" cy=\"88\" rx=\"20\" ry=\"8\" fill=\"#E07B24\"/></svg>"
+    },
+    {
+      "id": "coruja",
+      "name": "Coruja",
+      "theme": "animais",
+      "slots": [
+        "cabeca",
+        "maos",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><ellipse cx=\"50\" cy=\"58\" rx=\"30\" ry=\"34\" fill=\"#8A6A4A\"/><ellipse cx=\"50\" cy=\"66\" rx=\"18\" ry=\"20\" fill=\"#E8D6B8\"/><circle cx=\"38\" cy=\"44\" r=\"11\" fill=\"#FFFFFF\"/><circle cx=\"62\" cy=\"44\" r=\"11\" fill=\"#FFFFFF\"/><circle cx=\"38\" cy=\"44\" r=\"5\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"44\" r=\"5\" fill=\"#12213F\"/><path d=\"M46 54 L54 54 L50 62 Z\" fill=\"#D69B0A\"/><path d=\"M26 24 L36 34 L28 36 Z M74 24 L64 34 L72 36 Z\" fill=\"#8A6A4A\"/></svg>"
+    },
+    {
+      "id": "tartaruga",
+      "name": "Tartaruga",
+      "theme": "animais",
+      "slots": [
+        "cabeca",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><ellipse cx=\"50\" cy=\"60\" rx=\"34\" ry=\"22\" fill=\"#167A4C\"/><path d=\"M30 60 L50 44 L70 60 L50 76 Z\" fill=\"#1E9A60\"/><circle cx=\"86\" cy=\"54\" r=\"10\" fill=\"#7DBF8E\"/><circle cx=\"89\" cy=\"51\" r=\"2\" fill=\"#12213F\"/><ellipse cx=\"30\" cy=\"82\" rx=\"8\" ry=\"5\" fill=\"#7DBF8E\"/><ellipse cx=\"70\" cy=\"82\" rx=\"8\" ry=\"5\" fill=\"#7DBF8E\"/></svg>"
+    },
+    {
+      "id": "onca",
+      "name": "Onça",
+      "theme": "animais",
+      "slots": [
+        "cabeca",
+        "maos",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"24\" cy=\"28\" r=\"11\" fill=\"#E8A23A\"/><circle cx=\"76\" cy=\"28\" r=\"11\" fill=\"#E8A23A\"/><circle cx=\"24\" cy=\"28\" r=\"5\" fill=\"#7A5600\"/><circle cx=\"76\" cy=\"28\" r=\"5\" fill=\"#7A5600\"/><circle cx=\"50\" cy=\"54\" r=\"33\" fill=\"#E8A23A\"/><circle cx=\"34\" cy=\"32\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"50\" cy=\"27\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"66\" cy=\"32\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"27\" cy=\"62\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"73\" cy=\"62\" r=\"3.5\" fill=\"#7A5600\"/><ellipse cx=\"50\" cy=\"69\" rx=\"15\" ry=\"11\" fill=\"#FFF4D6\"/><circle cx=\"38\" cy=\"48\" r=\"4\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"48\" r=\"4\" fill=\"#12213F\"/><path d=\"M45 63 L55 63 L50 69 Z\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "capivara",
+      "name": "Capivara",
+      "theme": "animais",
+      "slots": [
+        "cabeca",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"29\" cy=\"33\" r=\"7\" fill=\"#7E5535\"/><circle cx=\"71\" cy=\"33\" r=\"7\" fill=\"#7E5535\"/><rect x=\"17\" y=\"32\" width=\"66\" height=\"52\" rx=\"24\" fill=\"#9A6B45\"/><rect x=\"29\" y=\"58\" width=\"42\" height=\"26\" rx=\"13\" fill=\"#7E5535\"/><circle cx=\"38\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><ellipse cx=\"44\" cy=\"68\" rx=\"3\" ry=\"2\" fill=\"#12213F\"/><ellipse cx=\"56\" cy=\"68\" rx=\"3\" ry=\"2\" fill=\"#12213F\"/><circle cx=\"50\" cy=\"23\" r=\"9\" fill=\"#E07B24\"/><path d=\"M50 14 Q56 7 62 11 Q56 16 50 14 Z\" fill=\"#1E9A60\"/></svg>"
+    },
+    {
+      "id": "pinguim",
+      "name": "Pinguim",
+      "theme": "animais",
+      "slots": [
+        "cabeca",
+        "maos",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M24 50 Q12 70 24 80 Z\" fill=\"#3A4A6B\"/><path d=\"M76 50 Q88 70 76 80 Z\" fill=\"#3A4A6B\"/><ellipse cx=\"40\" cy=\"92\" rx=\"9\" ry=\"4\" fill=\"#E07B24\"/><ellipse cx=\"60\" cy=\"92\" rx=\"9\" ry=\"4\" fill=\"#E07B24\"/><ellipse cx=\"50\" cy=\"56\" rx=\"28\" ry=\"36\" fill=\"#3A4A6B\"/><ellipse cx=\"50\" cy=\"66\" rx=\"18\" ry=\"24\" fill=\"#FFFFFF\"/><circle cx=\"41\" cy=\"38\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"59\" cy=\"38\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"41\" cy=\"38\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"59\" cy=\"38\" r=\"3.5\" fill=\"#12213F\"/><path d=\"M44 47 L56 47 L50 55 Z\" fill=\"#D69B0A\"/></svg>"
+    },
+    {
+      "id": "tucano",
+      "name": "Tucano",
+      "theme": "animais",
+      "slots": [
+        "cabeca",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M30 82 L22 98 L42 90 Z\" fill=\"#3A4A6B\"/><ellipse cx=\"38\" cy=\"66\" rx=\"20\" ry=\"24\" fill=\"#3A4A6B\"/><ellipse cx=\"40\" cy=\"60\" rx=\"12\" ry=\"12\" fill=\"#FFF4D6\"/><circle cx=\"40\" cy=\"38\" r=\"18\" fill=\"#3A4A6B\"/><ellipse cx=\"42\" cy=\"50\" rx=\"11\" ry=\"6\" fill=\"#FFF4D6\"/><path d=\"M54 28 Q90 26 95 44 Q80 50 54 46 Z\" fill=\"#E07B24\"/><path d=\"M86 31 Q95 36 95 44 Q90 46 86 46 Z\" fill=\"#B3261E\"/><circle cx=\"45\" cy=\"35\" r=\"7.5\" fill=\"#1F5EFF\"/><circle cx=\"45\" cy=\"35\" r=\"3.5\" fill=\"#12213F\"/><ellipse cx=\"34\" cy=\"92\" rx=\"6\" ry=\"3\" fill=\"#D69B0A\"/><ellipse cx=\"46\" cy=\"92\" rx=\"6\" ry=\"3\" fill=\"#D69B0A\"/></svg>"
+    },
+    {
+      "id": "polvo",
+      "name": "Polvo",
+      "theme": "animais",
+      "slots": [
+        "cabeca",
+        "maos",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"21\" y=\"46\" width=\"12\" height=\"38\" rx=\"6\" fill=\"#8E5BD0\"/><rect x=\"36\" y=\"46\" width=\"12\" height=\"46\" rx=\"6\" fill=\"#8E5BD0\"/><rect x=\"52\" y=\"46\" width=\"12\" height=\"46\" rx=\"6\" fill=\"#8E5BD0\"/><rect x=\"67\" y=\"46\" width=\"12\" height=\"38\" rx=\"6\" fill=\"#8E5BD0\"/><circle cx=\"19\" cy=\"82\" r=\"6\" fill=\"#8E5BD0\"/><circle cx=\"81\" cy=\"82\" r=\"6\" fill=\"#8E5BD0\"/><circle cx=\"50\" cy=\"40\" r=\"26\" fill=\"#8E5BD0\"/><circle cx=\"37\" cy=\"25\" r=\"3.5\" fill=\"#B48BE6\"/><circle cx=\"63\" cy=\"27\" r=\"3\" fill=\"#B48BE6\"/><circle cx=\"55\" cy=\"18\" r=\"2.5\" fill=\"#B48BE6\"/><circle cx=\"40\" cy=\"44\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"60\" cy=\"44\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"40\" cy=\"44\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"60\" cy=\"44\" r=\"3.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "futebol",
+      "name": "Bola de futebol",
+      "theme": "esportes",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"#626D88\"/><circle cx=\"50\" cy=\"50\" r=\"37\" fill=\"#FFFFFF\"/><path d=\"M50 56 L59.5 62.9 L55.9 74.1 L44.1 74.1 L40.5 62.9 Z\" fill=\"#12213F\"/><path d=\"M21 43 L27.7 47.8 L25.1 55.7 L16.9 55.7 L14.3 47.8 Z\" fill=\"#12213F\"/><path d=\"M79 43 L85.7 47.8 L83.1 55.7 L74.9 55.7 L72.3 47.8 Z\" fill=\"#12213F\"/><path d=\"M50 14 L55.7 18.1 L53.5 24.9 L46.5 24.9 L44.3 18.1 Z\" fill=\"#12213F\"/><circle cx=\"40\" cy=\"42\" r=\"4\" fill=\"#12213F\"/><circle cx=\"60\" cy=\"42\" r=\"4\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "basquete",
+      "name": "Basquete",
+      "theme": "esportes",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"38\" fill=\"#E07B24\"/><path d=\"M12 50 H88 M50 12 V88 M24 22 Q40 50 24 78 M76 22 Q60 50 76 78\" fill=\"none\" stroke=\"#7A5600\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"38\" cy=\"38\" r=\"4.5\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"38\" r=\"4.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "peteca",
+      "name": "Peteca",
+      "theme": "esportes",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M44 66 Q18 32 24 12 Q38 30 48 66 Z\" fill=\"#FFD84D\"/><path d=\"M52 66 Q62 30 76 12 Q82 32 56 66 Z\" fill=\"#1E9A60\"/><path d=\"M46 66 Q44 26 50 6 Q56 26 54 66 Z\" fill=\"#1F5EFF\"/><rect x=\"32\" y=\"62\" width=\"36\" height=\"9\" rx=\"3\" fill=\"#7A5600\"/><path d=\"M33 70 Q33 92 50 92 Q67 92 67 70 Z\" fill=\"#B3261E\"/><circle cx=\"43\" cy=\"79\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"57\" cy=\"79\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"43\" cy=\"79\" r=\"3\" fill=\"#12213F\"/><circle cx=\"57\" cy=\"79\" r=\"3\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "skate",
+      "name": "Skate",
+      "theme": "esportes",
+      "slots": [
+        "cabeca",
+        "pes"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"20\" y=\"62\" width=\"12\" height=\"7\" rx=\"2\" fill=\"#626D88\"/><rect x=\"68\" y=\"62\" width=\"12\" height=\"7\" rx=\"2\" fill=\"#626D88\"/><rect x=\"6\" y=\"38\" width=\"88\" height=\"26\" rx=\"13\" fill=\"#1F5EFF\"/><path d=\"M70 42 L84 42 Q90 51 84 60 L70 60 Q76 51 70 42 Z\" fill=\"#D69B0A\"/><circle cx=\"26\" cy=\"76\" r=\"9\" fill=\"#D69B0A\"/><circle cx=\"74\" cy=\"76\" r=\"9\" fill=\"#D69B0A\"/><circle cx=\"26\" cy=\"76\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"74\" cy=\"76\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"36\" cy=\"51\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"54\" cy=\"51\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"36\" cy=\"51\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"54\" cy=\"51\" r=\"3.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "raquete",
+      "name": "Raquete",
+      "theme": "esportes",
+      "slots": [
+        "cabeca",
+        "maos"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M56 66 L64 60 L90 92 L82 98 Z\" fill=\"#7A5600\"/><ellipse cx=\"42\" cy=\"40\" rx=\"30\" ry=\"33\" fill=\"#167A4C\"/><ellipse cx=\"42\" cy=\"40\" rx=\"24\" ry=\"27\" fill=\"#E1F5EA\"/><path d=\"M30 20 V60 M42 14 V66 M54 20 V60 M20 30 H64 M18 42 H66 M20 54 H64\" fill=\"none\" stroke=\"#7DBF8E\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"34\" cy=\"40\" r=\"4\" fill=\"#12213F\"/><circle cx=\"50\" cy=\"40\" r=\"4\" fill=\"#12213F\"/><circle cx=\"82\" cy=\"22\" r=\"11\" fill=\"#C9DB3A\"/><path d=\"M74 15 Q82 22 76 31 M88 13 Q82 22 90 30\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+    },
+    {
+      "id": "onibus",
+      "name": "Ônibus",
+      "theme": "transportes",
+      "slots": [
+        "cabeca",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"24\" y=\"80\" width=\"12\" height=\"12\" rx=\"3\" fill=\"#3A4A6B\"/><rect x=\"64\" y=\"80\" width=\"12\" height=\"12\" rx=\"3\" fill=\"#3A4A6B\"/><rect x=\"16\" y=\"12\" width=\"68\" height=\"72\" rx=\"10\" fill=\"#D69B0A\"/><rect x=\"30\" y=\"16\" width=\"40\" height=\"6\" rx=\"2\" fill=\"#7A5600\"/><rect x=\"23\" y=\"26\" width=\"54\" height=\"26\" rx=\"4\" fill=\"#E4ECFF\"/><rect x=\"40\" y=\"62\" width=\"20\" height=\"12\" rx=\"2\" fill=\"#7A5600\"/><circle cx=\"29\" cy=\"68\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"71\" cy=\"68\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"29\" cy=\"68\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"71\" cy=\"68\" r=\"3.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "trem",
+      "name": "Trem",
+      "theme": "transportes",
+      "slots": [
+        "cabeca",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"29\" cy=\"14\" r=\"5\" fill=\"#DDE2EC\"/><circle cx=\"38\" cy=\"9\" r=\"4\" fill=\"#DDE2EC\"/><path d=\"M21 44 L19 24 L37 24 L35 44 Z\" fill=\"#626D88\"/><rect x=\"12\" y=\"44\" width=\"52\" height=\"30\" rx=\"8\" fill=\"#B3261E\"/><rect x=\"58\" y=\"28\" width=\"30\" height=\"46\" rx=\"4\" fill=\"#1F5EFF\"/><rect x=\"64\" y=\"34\" width=\"18\" height=\"14\" rx=\"3\" fill=\"#E4ECFF\"/><path d=\"M4 86 L12 66 L12 86 Z\" fill=\"#D69B0A\"/><circle cx=\"26\" cy=\"82\" r=\"9\" fill=\"#3A4A6B\"/><circle cx=\"50\" cy=\"82\" r=\"9\" fill=\"#3A4A6B\"/><circle cx=\"76\" cy=\"80\" r=\"11\" fill=\"#3A4A6B\"/><circle cx=\"26\" cy=\"82\" r=\"3\" fill=\"#D69B0A\"/><circle cx=\"50\" cy=\"82\" r=\"3\" fill=\"#D69B0A\"/><circle cx=\"76\" cy=\"80\" r=\"3.5\" fill=\"#D69B0A\"/><circle cx=\"25\" cy=\"57\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"41\" cy=\"57\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"25\" cy=\"57\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"41\" cy=\"57\" r=\"3.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "veleiro",
+      "name": "Veleiro",
+      "theme": "transportes",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 8 L50 60 L16 60 Z\" fill=\"#1F5EFF\"/><path d=\"M55 16 L55 60 L82 60 Z\" fill=\"#D69B0A\"/><rect x=\"48\" y=\"6\" width=\"5\" height=\"62\" rx=\"1\" fill=\"#7A5600\"/><path d=\"M10 64 L90 64 L78 84 L22 84 Z\" fill=\"#8A6A4A\"/><path d=\"M2 88 Q14 82 26 88 T50 88 T74 88 T98 88 V96 H2 Z\" fill=\"#8DB4FF\"/><circle cx=\"40\" cy=\"73\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"60\" cy=\"73\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"40\" cy=\"73\" r=\"3\" fill=\"#12213F\"/><circle cx=\"60\" cy=\"73\" r=\"3\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "aviao",
+      "name": "Avião",
+      "theme": "transportes",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M44 48 L58 48 L50 26 L42 26 Z\" fill=\"#1B52E0\"/><path d=\"M8 54 L12 28 L24 28 L30 50 Z\" fill=\"#B3261E\"/><ellipse cx=\"50\" cy=\"54\" rx=\"40\" ry=\"14\" fill=\"#1F5EFF\"/><path d=\"M38 56 L62 56 L50 86 L34 86 Z\" fill=\"#1B52E0\"/><circle cx=\"66\" cy=\"50\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"80\" cy=\"50\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"66\" cy=\"50\" r=\"3\" fill=\"#12213F\"/><circle cx=\"80\" cy=\"50\" r=\"3\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "balao",
+      "name": "Balão",
+      "theme": "transportes",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M42 74 L43 84 M58 74 L57 84\" fill=\"none\" stroke=\"#7A5600\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"40\" r=\"32\" fill=\"#B3261E\"/><path d=\"M24 56 L50 78 L76 56 Z\" fill=\"#B3261E\"/><path d=\"M50 8 Q33 40 50 78 Q67 40 50 8 Z\" fill=\"#FFD84D\"/><rect x=\"40\" y=\"82\" width=\"20\" height=\"14\" rx=\"3\" fill=\"#8A6A4A\"/><circle cx=\"32\" cy=\"40\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"68\" cy=\"40\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"32\" cy=\"40\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"68\" cy=\"40\" r=\"3.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "sol",
+      "name": "Sol",
+      "theme": "natureza",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 4 L58.3 19.1 L73 10.2 L72.6 27.4 L89.8 27 L80.9 41.7 L96 50 L80.9 58.3 L89.8 73 L72.6 72.6 L73 89.8 L58.3 80.9 L50 96 L41.7 80.9 L27 89.8 L27.4 72.6 L10.2 73 L19.1 58.3 L4 50 L19.1 41.7 L10.2 27 L27.4 27.4 L27 10.2 L41.7 19.1 Z\" fill=\"#D69B0A\"/><circle cx=\"50\" cy=\"50\" r=\"29\" fill=\"#FFD84D\"/><circle cx=\"41\" cy=\"46\" r=\"4\" fill=\"#12213F\"/><circle cx=\"59\" cy=\"46\" r=\"4\" fill=\"#12213F\"/><circle cx=\"35\" cy=\"56\" r=\"4\" fill=\"#E07B24\"/><circle cx=\"65\" cy=\"56\" r=\"4\" fill=\"#E07B24\"/></svg>"
+    },
+    {
+      "id": "nuvem",
+      "name": "Nuvem",
+      "theme": "natureza",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"32\" cy=\"58\" r=\"18\" fill=\"#BFD3FF\"/><circle cx=\"54\" cy=\"46\" r=\"23\" fill=\"#BFD3FF\"/><circle cx=\"73\" cy=\"60\" r=\"16\" fill=\"#BFD3FF\"/><rect x=\"18\" y=\"58\" width=\"68\" height=\"20\" rx=\"10\" fill=\"#BFD3FF\"/><circle cx=\"44\" cy=\"59\" r=\"4\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"59\" r=\"4\" fill=\"#12213F\"/><path d=\"M30 88 L27 95 M50 88 L47 95 M70 88 L67 95\" fill=\"none\" stroke=\"#1F5EFF\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+    },
+    {
+      "id": "gota",
+      "name": "Gota",
+      "theme": "natureza",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 6 Q80 48 80 64 A30 30 0 0 1 20 64 Q20 48 50 6 Z\" fill=\"#1F5EFF\"/><ellipse cx=\"33\" cy=\"52\" rx=\"4\" ry=\"9\" fill=\"#8DB4FF\"/><circle cx=\"43\" cy=\"66\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"61\" cy=\"66\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"43\" cy=\"66\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"61\" cy=\"66\" r=\"3.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "chama",
+      "name": "Chama",
+      "theme": "natureza",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 4 Q82 40 78 66 A28 28 0 0 1 22 66 Q18 42 36 28 Q38 46 46 48 Q40 24 50 4 Z\" fill=\"#E07B24\"/><path d=\"M50 42 Q68 60 66 74 A16 16 0 0 1 34 74 Q34 60 50 42 Z\" fill=\"#FFD84D\"/><circle cx=\"44\" cy=\"70\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"56\" cy=\"70\" r=\"3.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "montanha",
+      "name": "Montanha",
+      "theme": "natureza",
+      "slots": [
+        "cabeca",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M48 90 L72 36 L98 90 Z\" fill=\"#7DBF8E\"/><path d=\"M2 90 L40 14 L78 90 Z\" fill=\"#1E9A60\"/><path d=\"M40 14 L51 36 L45 32 L40 38 L35 32 L29 36 Z\" fill=\"#FFFFFF\"/><circle cx=\"32\" cy=\"62\" r=\"4\" fill=\"#12213F\"/><circle cx=\"48\" cy=\"62\" r=\"4\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "lua",
+      "name": "Lua",
+      "theme": "espaco",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M52.6 12.1 A38 38 0 1 0 84 67 A32 32 0 1 1 52.6 12.1 Z\" fill=\"#FFD84D\"/><circle cx=\"24\" cy=\"44\" r=\"4\" fill=\"#12213F\"/><circle cx=\"22\" cy=\"58\" r=\"4\" fill=\"#E07B24\"/><circle cx=\"30\" cy=\"76\" r=\"3\" fill=\"#D69B0A\"/><circle cx=\"42\" cy=\"82\" r=\"2.5\" fill=\"#D69B0A\"/></svg>"
+    },
+    {
+      "id": "planeta",
+      "name": "Planeta",
+      "theme": "espaco",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M6 56 A44 12 0 0 1 94 56\" fill=\"none\" stroke=\"#D69B0A\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"50\" r=\"27\" fill=\"#E07B24\"/><path d=\"M25 40 Q50 46 75 40 L77 46 Q50 52 23 46 Z\" fill=\"#F29A4A\"/><circle cx=\"41\" cy=\"52\" r=\"4\" fill=\"#12213F\"/><circle cx=\"59\" cy=\"52\" r=\"4\" fill=\"#12213F\"/><path d=\"M6 56 A44 12 0 0 0 94 56\" fill=\"none\" stroke=\"#D69B0A\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+    },
+    {
+      "id": "cometa",
+      "name": "Cometa",
+      "theme": "espaco",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M54 38 L6 12 L50 50 Z\" fill=\"#8DB4FF\"/><path d=\"M44 50 L2 50 L44 60 Z\" fill=\"#BFD3FF\"/><path d=\"M52 66 L8 86 L50 58 Z\" fill=\"#8DB4FF\"/><circle cx=\"64\" cy=\"52\" r=\"27\" fill=\"#FFF4D6\"/><circle cx=\"64\" cy=\"52\" r=\"22\" fill=\"#FFD84D\"/><circle cx=\"57\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><circle cx=\"71\" cy=\"50\" r=\"4\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "disco",
+      "name": "Disco voador",
+      "theme": "espaco",
+      "slots": [
+        "cabeca",
+        "pes"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M36 62 L64 62 L82 96 L18 96 Z\" fill=\"#FFF4D6\"/><path d=\"M30 48 Q30 18 50 18 Q70 18 70 48 Z\" fill=\"#BFD3FF\"/><circle cx=\"43\" cy=\"36\" r=\"4\" fill=\"#12213F\"/><circle cx=\"57\" cy=\"36\" r=\"4\" fill=\"#12213F\"/><ellipse cx=\"50\" cy=\"52\" rx=\"46\" ry=\"14\" fill=\"#6B3FA0\"/><circle cx=\"18\" cy=\"53\" r=\"4\" fill=\"#FFD84D\"/><circle cx=\"36\" cy=\"58\" r=\"4\" fill=\"#FFD84D\"/><circle cx=\"64\" cy=\"58\" r=\"4\" fill=\"#FFD84D\"/><circle cx=\"82\" cy=\"53\" r=\"4\" fill=\"#FFD84D\"/></svg>"
+    },
+    {
+      "id": "satelite",
+      "name": "Satélite",
+      "theme": "espaco",
+      "slots": [
+        "cabeca",
+        "maos"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 36 L50 20\" fill=\"none\" stroke=\"#626D88\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"18\" r=\"5\" fill=\"#B3261E\"/><rect x=\"3\" y=\"41\" width=\"30\" height=\"18\" rx=\"2\" fill=\"#1F5EFF\"/><rect x=\"67\" y=\"41\" width=\"30\" height=\"18\" rx=\"2\" fill=\"#1F5EFF\"/><path d=\"M13 41 V59 M23 41 V59 M3 50 H33 M77 41 V59 M87 41 V59 M67 50 H97\" fill=\"none\" stroke=\"#8DB4FF\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"31\" y=\"47\" width=\"8\" height=\"6\" rx=\"1\" fill=\"#626D88\"/><rect x=\"61\" y=\"47\" width=\"8\" height=\"6\" rx=\"1\" fill=\"#626D88\"/><rect x=\"37\" y=\"36\" width=\"26\" height=\"28\" rx=\"4\" fill=\"#D69B0A\"/><circle cx=\"44\" cy=\"49\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"56\" cy=\"49\" r=\"3.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "triangulo",
+      "name": "Triângulo",
+      "theme": "formas",
+      "slots": [
+        "cabeca",
+        "pes"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 8 L94 86 L6 86 Z\" fill=\"#1F5EFF\"/><circle cx=\"41\" cy=\"62\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"59\" cy=\"62\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"41\" cy=\"62\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"59\" cy=\"62\" r=\"3.5\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "quadrado",
+      "name": "Quadrado",
+      "theme": "formas",
+      "slots": [
+        "cabeca",
+        "maos",
+        "pes"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"14\" width=\"72\" height=\"72\" rx=\"6\" fill=\"#B3261E\"/><circle cx=\"38\" cy=\"44\" r=\"7\" fill=\"#FFFFFF\"/><circle cx=\"62\" cy=\"44\" r=\"7\" fill=\"#FFFFFF\"/><circle cx=\"38\" cy=\"44\" r=\"4\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"44\" r=\"4\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "hexagono",
+      "name": "Hexágono",
+      "theme": "formas",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M92 50 L71 86.4 L29 86.4 L8 50 L29 13.6 L71 13.6 Z\" fill=\"#D69B0A\"/><path d=\"M80 50 L65 76 L35 76 L20 50 L35 24 L65 24 Z\" fill=\"#FFD84D\"/><circle cx=\"42\" cy=\"48\" r=\"4\" fill=\"#12213F\"/><circle cx=\"58\" cy=\"48\" r=\"4\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "cubo",
+      "name": "Cubo",
+      "theme": "formas",
+      "slots": [
+        "cabeca",
+        "pes",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 L86 29 L50 48 L14 29 Z\" fill=\"#7DBF8E\"/><path d=\"M14 29 L50 48 L50 92 L14 73 Z\" fill=\"#1E9A60\"/><path d=\"M50 48 L86 29 L86 73 L50 92 Z\" fill=\"#167A4C\"/><circle cx=\"26\" cy=\"55\" r=\"4\" fill=\"#12213F\"/><circle cx=\"39\" cy=\"61\" r=\"4\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "piramide",
+      "name": "Pirâmide",
+      "theme": "formas",
+      "slots": [
+        "cabeca",
+        "costas"
+      ],
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 8 L12 82 L50 92 Z\" fill=\"#FFD84D\"/><path d=\"M50 8 L50 92 L88 82 Z\" fill=\"#D69B0A\"/><circle cx=\"34\" cy=\"66\" r=\"4\" fill=\"#12213F\"/><circle cx=\"44\" cy=\"68\" r=\"4\" fill=\"#12213F\"/></svg>"
+    }
+  ],
+  "items": [
+    {
+      "id": "chapeu",
+      "name": "Chapéu de explorador",
+      "slot": "cabeca",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><ellipse cx=\"32\" cy=\"45\" rx=\"28\" ry=\"8\" fill=\"#9A6B45\"/><path d=\"M16 45 Q16 16 32 16 Q48 16 48 45 Z\" fill=\"#E8A23A\"/><rect x=\"16\" y=\"35\" width=\"32\" height=\"6\" fill=\"#B3261E\"/></svg>"
+    },
+    {
+      "id": "lupa",
+      "name": "Lupa",
+      "slot": "maos",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M36 40 L44 32 L60 50 L52 58 Z\" fill=\"#7E5535\"/><circle cx=\"26\" cy=\"26\" r=\"20\" fill=\"#626D88\"/><circle cx=\"26\" cy=\"26\" r=\"14\" fill=\"#BFD3FF\"/><ellipse cx=\"20\" cy=\"20\" rx=\"5\" ry=\"3\" fill=\"#FFFFFF\" transform=\"rotate(-35 20 20)\"/></svg>"
+    },
+    {
+      "id": "botas",
+      "name": "Botas de trilha",
+      "slot": "pes",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M14 8 H32 V38 H48 Q56 38 56 46 V52 H14 Z\" fill=\"#9A6B45\"/><rect x=\"14\" y=\"16\" width=\"18\" height=\"4\" fill=\"#7E5535\"/><rect x=\"14\" y=\"26\" width=\"18\" height=\"4\" fill=\"#7E5535\"/><rect x=\"12\" y=\"50\" width=\"46\" height=\"8\" rx=\"3\" fill=\"#3A4A6B\"/></svg>"
+    },
+    {
+      "id": "mochila",
+      "name": "Mochila",
+      "slot": "costas",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M22 18 Q22 6 32 6 Q42 6 42 18 H36 Q36 12 32 12 Q28 12 28 18 Z\" fill=\"#3A4A6B\"/><rect x=\"12\" y=\"16\" width=\"40\" height=\"44\" rx=\"10\" fill=\"#1F5EFF\"/><rect x=\"20\" y=\"36\" width=\"24\" height=\"16\" rx=\"4\" fill=\"#1B52E0\"/><rect x=\"26\" y=\"40\" width=\"12\" height=\"3\" rx=\"1.5\" fill=\"#BFD3FF\"/></svg>"
+    },
+    {
+      "id": "coroa",
+      "name": "Coroa",
+      "slot": "cabeca",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M8 50 L10 20 L22 34 L32 12 L42 34 L54 20 L56 50 Z\" fill=\"#D69B0A\"/><rect x=\"8\" y=\"46\" width=\"48\" height=\"8\" rx=\"2\" fill=\"#E8A23A\"/><circle cx=\"32\" cy=\"38\" r=\"4\" fill=\"#B3261E\"/><circle cx=\"19\" cy=\"42\" r=\"3\" fill=\"#1F5EFF\"/><circle cx=\"45\" cy=\"42\" r=\"3\" fill=\"#1E9A60\"/></svg>"
+    },
+    {
+      "id": "regua",
+      "name": "Régua",
+      "slot": "maos",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><rect x=\"4\" y=\"22\" width=\"56\" height=\"20\" rx=\"3\" fill=\"#FFD84D\"/><rect x=\"11\" y=\"22\" width=\"2\" height=\"9\" fill=\"#7A5600\"/><rect x=\"19\" y=\"22\" width=\"2\" height=\"6\" fill=\"#7A5600\"/><rect x=\"27\" y=\"22\" width=\"2\" height=\"9\" fill=\"#7A5600\"/><rect x=\"35\" y=\"22\" width=\"2\" height=\"6\" fill=\"#7A5600\"/><rect x=\"43\" y=\"22\" width=\"2\" height=\"9\" fill=\"#7A5600\"/><rect x=\"51\" y=\"22\" width=\"2\" height=\"6\" fill=\"#7A5600\"/></svg>"
+    },
+    {
+      "id": "tenis",
+      "name": "Tênis",
+      "slot": "pes",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M6 42 Q6 24 20 24 L30 30 Q48 33 56 40 Q60 44 58 48 H6 Z\" fill=\"#B3261E\"/><rect x=\"18\" y=\"29\" width=\"10\" height=\"3\" rx=\"1.5\" fill=\"#FFF4D6\"/><rect x=\"20\" y=\"35\" width=\"10\" height=\"3\" rx=\"1.5\" fill=\"#FFF4D6\"/><rect x=\"4\" y=\"46\" width=\"56\" height=\"8\" rx=\"4\" fill=\"#DDE2EC\"/></svg>"
+    },
+    {
+      "id": "capa",
+      "name": "Capa",
+      "slot": "costas",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M20 8 H44 L58 58 Q32 50 6 58 Z\" fill=\"#8E5BD0\"/><path d=\"M20 8 H44 L40 18 H24 Z\" fill=\"#6B3FA0\"/><circle cx=\"32\" cy=\"12\" r=\"3\" fill=\"#D69B0A\"/></svg>"
+    },
+    {
+      "id": "boina",
+      "name": "Boina",
+      "slot": "cabeca",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><rect x=\"30\" y=\"18\" width=\"4\" height=\"10\" rx=\"2\" fill=\"#B3261E\"/><ellipse cx=\"32\" cy=\"38\" rx=\"26\" ry=\"12\" fill=\"#B3261E\"/><ellipse cx=\"32\" cy=\"45\" rx=\"19\" ry=\"4\" fill=\"#7E5535\"/></svg>"
+    },
+    {
+      "id": "lanterna",
+      "name": "Lanterna",
+      "slot": "maos",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M16 8 H48 L42 28 H22 Z\" fill=\"#626D88\"/><rect x=\"20\" y=\"6\" width=\"24\" height=\"6\" rx=\"2\" fill=\"#FFD84D\"/><rect x=\"24\" y=\"28\" width=\"16\" height=\"30\" rx=\"4\" fill=\"#8790A6\"/><rect x=\"29\" y=\"38\" width=\"6\" height=\"8\" rx=\"2\" fill=\"#D69B0A\"/></svg>"
+    },
+    {
+      "id": "patins",
+      "name": "Patins",
+      "slot": "pes",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M12 10 H28 L30 34 Q48 36 52 40 V46 H12 Z\" fill=\"#1F5EFF\"/><rect x=\"12\" y=\"10\" width=\"16\" height=\"6\" fill=\"#8DB4FF\"/><rect x=\"10\" y=\"44\" width=\"44\" height=\"5\" rx=\"2\" fill=\"#3A4A6B\"/><circle cx=\"18\" cy=\"54\" r=\"5\" fill=\"#E8A23A\"/><circle cx=\"32\" cy=\"54\" r=\"5\" fill=\"#E8A23A\"/><circle cx=\"46\" cy=\"54\" r=\"5\" fill=\"#E8A23A\"/></svg>"
+    },
+    {
+      "id": "asas",
+      "name": "Asas de papel",
+      "slot": "costas",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M30 32 Q10 4 4 30 Q14 44 30 36 Z\" fill=\"#BFD3FF\"/><path d=\"M34 32 Q54 4 60 30 Q50 44 34 36 Z\" fill=\"#BFD3FF\"/><path d=\"M30 33 Q18 20 11 28 Q20 35 30 35 Z\" fill=\"#8DB4FF\"/><path d=\"M34 33 Q46 20 53 28 Q44 35 34 35 Z\" fill=\"#8DB4FF\"/><circle cx=\"32\" cy=\"34\" r=\"4\" fill=\"#1F5EFF\"/></svg>"
+    },
+    {
+      "id": "oculos",
+      "name": "Óculos",
+      "slot": "cabeca",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><rect x=\"2\" y=\"28\" width=\"8\" height=\"4\" rx=\"2\" fill=\"#626D88\"/><rect x=\"54\" y=\"28\" width=\"8\" height=\"4\" rx=\"2\" fill=\"#626D88\"/><rect x=\"26\" y=\"28\" width=\"12\" height=\"4\" rx=\"2\" fill=\"#626D88\"/><circle cx=\"17\" cy=\"33\" r=\"12\" fill=\"#626D88\"/><circle cx=\"47\" cy=\"33\" r=\"12\" fill=\"#626D88\"/><circle cx=\"17\" cy=\"33\" r=\"8\" fill=\"#BFD3FF\"/><circle cx=\"47\" cy=\"33\" r=\"8\" fill=\"#BFD3FF\"/></svg>"
+    },
+    {
+      "id": "bussola",
+      "name": "Bússola",
+      "slot": "maos",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><rect x=\"28\" y=\"4\" width=\"8\" height=\"8\" rx=\"2\" fill=\"#9A6B45\"/><circle cx=\"32\" cy=\"35\" r=\"25\" fill=\"#9A6B45\"/><circle cx=\"32\" cy=\"35\" r=\"19\" fill=\"#FFF4D6\"/><path d=\"M32 18 L37 35 H27 Z\" fill=\"#B3261E\"/><path d=\"M32 52 L37 35 H27 Z\" fill=\"#626D88\"/><circle cx=\"32\" cy=\"35\" r=\"3\" fill=\"#12213F\"/></svg>"
+    },
+    {
+      "id": "chinelos",
+      "name": "Chinelos",
+      "slot": "pes",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><ellipse cx=\"21\" cy=\"34\" rx=\"11\" ry=\"24\" fill=\"#E8A23A\"/><ellipse cx=\"43\" cy=\"34\" rx=\"11\" ry=\"24\" fill=\"#E8A23A\"/><path d=\"M12 22 Q21 34 30 22 L30 28 Q21 40 12 28 Z\" fill=\"#1E9A60\"/><path d=\"M34 22 Q43 34 52 22 L52 28 Q43 40 34 28 Z\" fill=\"#1E9A60\"/></svg>"
+    },
+    {
+      "id": "cachecol",
+      "name": "Cachecol",
+      "slot": "costas",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><rect x=\"8\" y=\"14\" width=\"48\" height=\"14\" rx=\"7\" fill=\"#1E9A60\"/><rect x=\"36\" y=\"22\" width=\"14\" height=\"32\" rx=\"4\" fill=\"#1E9A60\"/><rect x=\"18\" y=\"14\" width=\"5\" height=\"14\" fill=\"#167A4C\"/><rect x=\"36\" y=\"34\" width=\"14\" height=\"5\" fill=\"#167A4C\"/><rect x=\"37\" y=\"54\" width=\"3\" height=\"6\" rx=\"1\" fill=\"#7DBF8E\"/><rect x=\"41.5\" y=\"54\" width=\"3\" height=\"6\" rx=\"1\" fill=\"#7DBF8E\"/><rect x=\"46\" y=\"54\" width=\"3\" height=\"6\" rx=\"1\" fill=\"#7DBF8E\"/></svg>"
+    },
+    {
+      "id": "tiara",
+      "name": "Tiara de estrelas",
+      "slot": "cabeca",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M6 48 Q32 14 58 48 L52 50 Q32 24 12 50 Z\" fill=\"#B48BE6\"/><path d=\"M32 4 L35.5 13 L45 13 L37.5 19 L40.5 28 L32 22.5 L23.5 28 L26.5 19 L19 13 L28.5 13 Z\" fill=\"#D69B0A\"/><circle cx=\"15\" cy=\"36\" r=\"3.5\" fill=\"#FFD84D\"/><circle cx=\"49\" cy=\"36\" r=\"3.5\" fill=\"#FFD84D\"/></svg>"
+    },
+    {
+      "id": "compasso",
+      "name": "Compasso",
+      "slot": "maos",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M30 12 L34 12 L22 58 L18 58 Z\" fill=\"#8790A6\"/><path d=\"M30 12 L34 12 L46 54 L42 54 Z\" fill=\"#8790A6\"/><rect x=\"40\" y=\"50\" width=\"8\" height=\"10\" rx=\"1\" fill=\"#D69B0A\"/><rect x=\"30\" y=\"2\" width=\"4\" height=\"8\" rx=\"2\" fill=\"#626D88\"/><circle cx=\"32\" cy=\"12\" r=\"6\" fill=\"#626D88\"/></svg>"
+    },
+    {
+      "id": "galochas",
+      "name": "Galochas",
+      "slot": "pes",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M12 6 H30 V40 H50 Q56 40 56 48 V56 H12 Z\" fill=\"#FFD84D\"/><rect x=\"12\" y=\"6\" width=\"18\" height=\"6\" fill=\"#D69B0A\"/><rect x=\"12\" y=\"50\" width=\"44\" height=\"6\" rx=\"2\" fill=\"#D69B0A\"/></svg>"
+    },
+    {
+      "id": "paraquedas",
+      "name": "Paraquedas",
+      "slot": "costas",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M5 30 L29 54 L31 54 L8 30 Z\" fill=\"#626D88\"/><path d=\"M59 30 L35 54 L33 54 L56 30 Z\" fill=\"#626D88\"/><rect x=\"31\" y=\"30\" width=\"2\" height=\"24\" fill=\"#626D88\"/><path d=\"M4 30 Q32 -4 60 30 Z\" fill=\"#B3261E\"/><path d=\"M20 30 Q32 4 44 30 Z\" fill=\"#F29A4A\"/><rect x=\"26\" y=\"52\" width=\"12\" height=\"10\" rx=\"2\" fill=\"#9A6B45\"/></svg>"
+    },
+    {
+      "id": "capacete",
+      "name": "Capacete",
+      "slot": "cabeca",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M8 44 Q8 12 32 12 Q56 12 56 44 Z\" fill=\"#1F5EFF\"/><path d=\"M26 13 Q32 12 38 13 L37 44 H27 Z\" fill=\"#8DB4FF\"/><rect x=\"4\" y=\"42\" width=\"56\" height=\"8\" rx=\"4\" fill=\"#3A4A6B\"/></svg>"
+    },
+    {
+      "id": "estrela",
+      "name": "Estrela de bolso",
+      "slot": "maos",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M32 4 L39 23 L59 23 L43 36 L49 57 L32 45 L15 57 L21 36 L5 23 L25 23 Z\" fill=\"#D69B0A\"/><path d=\"M32 18 L35.5 28 L46 28 L37.5 34 L40.5 44 L32 38 L23.5 44 L26.5 34 L18 28 L28.5 28 Z\" fill=\"#FFD84D\"/></svg>"
+    },
+    {
+      "id": "meias",
+      "name": "Meias listradas",
+      "slot": "pes",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M20 4 H36 V38 L52 44 Q59 48 55 56 Q51 61 44 58 L20 50 Z\" fill=\"#1F5EFF\"/><rect x=\"20\" y=\"13\" width=\"16\" height=\"5\" fill=\"#BFD3FF\"/><rect x=\"20\" y=\"25\" width=\"16\" height=\"5\" fill=\"#BFD3FF\"/><rect x=\"18\" y=\"2\" width=\"20\" height=\"6\" rx=\"2\" fill=\"#8DB4FF\"/></svg>"
+    },
+    {
+      "id": "foguete",
+      "name": "Foguete nas costas",
+      "slot": "costas",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M20 30 L10 48 L20 44 Z\" fill=\"#B3261E\"/><path d=\"M44 30 L54 48 L44 44 Z\" fill=\"#B3261E\"/><path d=\"M24 44 L32 61 L40 44 Z\" fill=\"#E8A23A\"/><path d=\"M32 3 Q46 16 44 44 H20 Q18 16 32 3 Z\" fill=\"#DDE2EC\"/><path d=\"M32 3 Q38 8 41 14 H23 Q26 8 32 3 Z\" fill=\"#B3261E\"/><circle cx=\"32\" cy=\"26\" r=\"6\" fill=\"#1F5EFF\"/></svg>"
+    }
+  ],
+  "map": null
+}
