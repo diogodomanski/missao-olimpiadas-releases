@@ -104,6 +104,13 @@
   /* um acento forte por card: o primário do aluno é azul elétrico, o do orientador é marinho tinta */
   button.primary{background:var(--primaria);color:var(--surface);border-color:var(--primaria)}
   button.quiet{background:transparent;border-color:transparent;color:var(--muted)}
+  /* desabilitado: a base não declarava o estado, então o botão inerte saía idêntico ao ativo — o mesmo
+     azul cheio, opacidade 1 e o cursor de mão, que é a metade enganosa: ele promete clique e nada
+     acontece (o "Continuar" antes de escolher o personagem, na Olimpíadas). O grupo inteiro a 50%
+     apaga fundo, texto e borda de uma vez, nas duas missões, nos dois temas e em toda variante, sem
+     nenhuma cor nova; a regra vem depois de .primary e .quiet porque é estado, não variante. Campo e
+     caixa não entram: o navegador já lhes troca o cursor, e o rótulo da seção diz o que falta. */
+  button:disabled{opacity:.5;cursor:default}
   button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible,h2:focus-visible,h3:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
   /* campo nunca herda os 12px do rótulo .f, e --campo nunca desce de 16px onde há iPhone: abaixo disso ele dá zoom */
   /* campo vazio só se enxerga pela borda: --field-line dá 3:1 sobre branco (SC 1.4.11). Card e botão
@@ -461,7 +468,7 @@
 <footer class="shell-footer">
   <!-- O lugar vazio à esquerda é de propósito: é onde entra o que a barra vier a hospedar.
        Não crie div vazia para reservá-lo. -->
-  <div class="in"><p class="versao">versão 13 · 08/10/2026 · obmep-mirim-2 v5</p></div>
+  <div class="in"><p class="versao">versão 47 · 10/10/2026 · obmep-mirim-2 v6</p></div>
 </footer>
 <!-- /build:footer -->
 <script>

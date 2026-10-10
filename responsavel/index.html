@@ -104,6 +104,13 @@
   /* um acento forte por card: o primário do aluno é azul elétrico, o do orientador é marinho tinta */
   button.primary{background:var(--primaria);color:var(--surface);border-color:var(--primaria)}
   button.quiet{background:transparent;border-color:transparent;color:var(--muted)}
+  /* desabilitado: a base não declarava o estado, então o botão inerte saía idêntico ao ativo — o mesmo
+     azul cheio, opacidade 1 e o cursor de mão, que é a metade enganosa: ele promete clique e nada
+     acontece (o "Continuar" antes de escolher o personagem, na Olimpíadas). O grupo inteiro a 50%
+     apaga fundo, texto e borda de uma vez, nas duas missões, nos dois temas e em toda variante, sem
+     nenhuma cor nova; a regra vem depois de .primary e .quiet porque é estado, não variante. Campo e
+     caixa não entram: o navegador já lhes troca o cursor, e o rótulo da seção diz o que falta. */
+  button:disabled{opacity:.5;cursor:default}
   button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible,h2:focus-visible,h3:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
   /* campo nunca herda os 12px do rótulo .f, e --campo nunca desce de 16px onde há iPhone: abaixo disso ele dá zoom */
   /* campo vazio só se enxerga pela borda: --field-line dá 3:1 sobre branco (SC 1.4.11). Card e botão
@@ -375,11 +382,11 @@
   .sec{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:14px;scroll-margin-top:12px}
   .sec > h2{font-size:18px;display:flex;align-items:center;gap:8px}
   .sec > p{margin:8px 0 0}
-  .filho{border-top:1px solid var(--line);padding:14px 0 6px}
-  .filho:first-child{border-top:0;padding-top:6px}
-  .filho h3{font-size:18px;overflow-wrap:anywhere}
-  .filho h3 .ano{font-weight:400;color:var(--muted)}
-  .filho h4{font-size:14px;margin-top:14px;color:var(--muted);font-weight:600}
+  .crianca{border-top:1px solid var(--line);padding:14px 0 6px}
+  .crianca:first-child{border-top:0;padding-top:6px}
+  .crianca h3{font-size:18px;overflow-wrap:anywhere}
+  .crianca h3 .ano{font-weight:400;color:var(--muted)}
+  .crianca h4{font-size:14px;margin-top:14px;color:var(--muted);font-weight:600}
   .fatos{margin-top:8px;font-size:15px;line-height:1.5}
   .fatos p{margin:0;overflow-wrap:anywhere}
   .fatos .passo{font-weight:700;margin-top:6px}
@@ -390,9 +397,11 @@
   .lista li > span{min-width:0;overflow-wrap:anywhere}
   .lista li > .muted{flex:1 1 220px}
   .codigo{font-family:var(--mono);font-size:18px;letter-spacing:.08em;font-weight:700}
-  .filho .actions,.sec .actions{margin-top:10px}
-  .filho form{margin-top:10px}
-  .filho form .f,.sec form .f{margin-top:8px;font-size:14px}
+  .crianca .actions,.sec .actions{margin-top:10px}
+  .crianca form{margin-top:10px}
+  /* o formulário do nome do aparelho entra numa linha própria do <li>, que é flex-wrap */
+  .lista li > form.apelido{flex:1 1 100%}
+  .crianca form .f,.sec form .f{margin-top:8px;font-size:14px}
   label.chk{display:flex;align-items:center;gap:10px;min-height:44px;margin-top:8px;cursor:pointer}
   label.chk input{width:20px;height:20px;margin:0;flex:0 0 auto}
   .destaque{outline:3px solid var(--gold);outline-offset:3px;border-radius:10px;padding:4px 10px;background:var(--gold-soft);color:var(--gold-ink)}
@@ -458,15 +467,15 @@
       <p class="muted" id="semRede" role="status" hidden></p>
     </section>
 
-    <section class="sec" id="filhos" aria-labelledby="filhosTitulo">
-      <h2 id="filhosTitulo">Perfis<button class="help" data-help="filhos" aria-label="Ajuda: perfis">?</button></h2>
-      <div id="listaFilhos"></div>
+    <section class="sec" id="criancas" aria-labelledby="criancasTitulo">
+      <h2 id="criancasTitulo">Perfis<button class="help" data-help="criancas" aria-label="Ajuda: perfis">?</button></h2>
+      <div id="listaCriancas"></div>
     </section>
 
     <section class="sec" id="adicionar" aria-labelledby="adicionarTitulo">
       <h2 id="adicionarTitulo">Novo perfil<button class="help" data-help="adicionar" aria-label="Ajuda: novo perfil">?</button></h2>
       <p class="muted">Um perfil por criança. O nome aparece na tela da criança; o ano escolar separa dois nomes iguais.</p>
-      <div class="actions"><button class="primary" id="adicionarFilho">Adicionar filho</button></div>
+      <div class="actions"><button class="primary" id="adicionarCrianca">Adicionar criança</button></div>
       <form id="novoForm" novalidate hidden>
         <label class="f">Nome da criança<input id="novoNome" maxlength="40" autocomplete="off" autocapitalize="words" spellcheck="false"></label>
         <label class="f">Ano escolar<input id="novoAno" maxlength="20" list="anos" autocomplete="off"></label>
@@ -493,15 +502,21 @@
 <footer class="shell-footer">
   <!-- O lugar vazio à esquerda é de propósito: é onde entra o que a barra vier a hospedar.
        Não crie div vazia para reservá-lo. -->
-  <div class="in"><p class="versao">versão 13 · 08/10/2026 · obmep-mirim-2 v5</p></div>
+  <div class="in"><p class="versao">versão 47 · 10/10/2026 · obmep-mirim-2 v6</p></div>
 </footer>
 <!-- /build:footer -->
 <!-- A entrada, o consentimento e a exclusão, por passos. Sem sessão este diálogo é a página inteira, e
      não fecha nem pelo Esc (BR-31). -->
 <dialog id="conta" aria-labelledby="contaTitulo"><div class="dh"><h2 id="contaTitulo">Entrar</h2></div><div class="db">
+  <!-- O portão legal fechado (SV3): "em breve" antes de qualquer gesto, e não depois do código e do
+       nome. Quem está na lista de exceção segue por "Tenho um convite" — o caminho de sempre, que
+       continua recusando no fim quem não está nela. Não é <form>: não há nada a enviar daqui. -->
+  <div class="contaPasso" data-passo="embreve" hidden>
+    <p class="alert info" id="embreve">Em breve: o modo conectado abre depois da revisão. O app da criança já funciona completo sem conta.</p>
+    <div class="actions"><button type="button" class="quiet" id="temConvite">Tenho um convite</button></div>
+  </div>
   <form class="contaPasso" data-passo="email" novalidate>
     <p id="contaIntro">Esta página é de quem é responsável pela criança. Entre com o seu e-mail: mandamos um código para esse endereço.</p>
-    <p class="alert info" id="embreve" hidden>Em breve: o modo conectado abre depois da revisão. O app da criança já funciona completo sem conta.</p>
     <label class="f">Seu e-mail<input type="email" id="contaEmail" autocomplete="email" maxlength="200" spellcheck="false"></label>
     <div class="actions"><button class="primary" type="submit">Continuar</button></div>
   </form>
@@ -563,7 +578,7 @@
   // `at` só ordena (relógio do aparelho, em ms); toda conta de calendário lê `day`, o dia local do
   // gesto. `cycle` (de cycleOf(pack)) diz a que ciclo uma sessão pertence: o mapa recomeça a cada ciclo
   // (olimpíada × edição), o personagem e os itens não (BR-19). Sessão sem `cycle` é do ciclo atual.
-  const { derive, mergeEvents, addDays, cycleOf, NEUTRAL_STORY } = (() => {
+  const { derive, mergeEvents, addDays, cycleOf, finalePhase, NEUTRAL_STORY } = (() => {
     const TYPES = ["name", "character", "wear", "confirm", "correct", "retry", "reset"];
     const NAME_MAX = 40;
     const NOTEBOOK_WRONG = 2;
@@ -667,8 +682,11 @@
     };
 
     // As fases válidas do pacote, na ordem dele; a do final é a marcada com finale:true, ou a última.
+    // `finalePhase` é pública porque a tela precisa dizer em que dia o final abre, e qual fase é a do
+    // final tem de ser esta regra e não uma cópia dela: "a última" e "a marcada" divergiriam em silêncio
+    // num pacote de três fases. Recebe o pacote, que é o que quem está fora daqui tem na mão.
     const phasesOf = pack => list(pack && pack.phases).filter(p => isObj(p) && isDay(p.date));
-    const finalePhase = phases => phases.find(p => p.finale === true) || phases[phases.length - 1] || null;
+    const finalePhase = pack => { const ps = phasesOf(pack); return ps.find(p => p.finale === true) || ps[ps.length - 1] || null; };
 
     function emptyView(pack) {
       return {
@@ -913,7 +931,7 @@
 
       // 8. O final, a lista de provas e o próximo passo.
       const phases = phasesOf(pack);
-      const fp = finalePhase(phases);
+      const fp = finalePhase(pack);
       view.finale = !!fp && isDay(today) && today >= fp.date;
       const ids = [...examDefs.keys()];
       const notDone = ids.filter(id => !conf.has(id));
@@ -940,7 +958,7 @@
       }
     }
 
-    return { derive, mergeEvents, addDays, cycleOf, NEUTRAL_STORY };
+    return { derive, mergeEvents, addDays, cycleOf, finalePhase, NEUTRAL_STORY };
   })();
   /* /build:derive */
 
@@ -1053,6 +1071,9 @@
   let semRedeDesde = null;         // a vista na tela é a guardada (sem rede)
   let contaPasso = "email", contaEmail = "", contaBloqueia = true, depoisDoConsentimento = null;
   const renomeando = new Set();
+  // O nome do aparelho sendo trocado (SV5): o id do aparelho, não o do perfil — numa família dois
+  // aparelhos do mesmo navegador e sistema só se distinguem por ele, e é da sessão como `renomeando`.
+  const renomeandoAparelho = new Set();
 
   // ---------- toast
   let toastTimer = null;
@@ -1099,13 +1120,16 @@
   function abreConta(passo, { bloqueia = trancado } = {}){
     contaPasso = passo;
     contaBloqueia = bloqueia;
-    const titulos = { email: "Entrar", codigo: "Entrar", nome: "Entrar", consentimento: "O que fica guardado", excluir: "Excluir conta" };
+    const titulos = { embreve: "Em breve", email: "Entrar", codigo: "Entrar", nome: "Entrar", consentimento: "O que fica guardado", excluir: "Excluir conta" };
     $("contaTitulo").textContent = titulos[passo] || "Entrar";
     conta.querySelectorAll(".contaPasso").forEach(el => { el.hidden = el.dataset.passo !== passo; });
     $("consentAgoraNao").hidden = bloqueia;
     contaErro("");
     if (!conta.open) conta.showModal();
-    const alvo = [...conta.querySelectorAll(`.contaPasso[data-passo="${passo}"] input`)].find(el => !el.disabled && el.offsetParent !== null);
+    // `input, button` e não só `input`: o passo "embreve" não tem campo, e trocar de passo sem levar o
+    // foco o deixaria no controle que acabou de ficar escondido. Em todo passo com campo o primeiro
+    // elemento no DOM continua sendo o campo.
+    const alvo = [...conta.querySelectorAll(`.contaPasso[data-passo="${passo}"] input, .contaPasso[data-passo="${passo}"] button`)].find(el => !el.disabled && el.offsetParent !== null);
     if (alvo) alvo.focus();
   }
   function fechaConta(){ if (conta.open) conta.close(); }
@@ -1116,7 +1140,9 @@
   async function pedeCodigo(email){
     const r = await SYNC.requestCode(email);
     if (r.ok) return null;
-    if (r.error === "resend_wait") return `Já foram três códigos em 10 minutos. Espere ${r.seconds || 60} s para pedir outro.`;
+    // resend_wait vem de dois lugares: o limite do motor (três em 10 min) e o do servidor (60 s entre
+    // pedidos). A frase não pode supor qual: no segundo, um código só foi mandado.
+    if (r.error === "resend_wait") return `Espere ${r.seconds || 60} s para pedir outro código.`;
     return ERROS[r.error] || "Não deu para mandar o código agora. Tente de novo.";
   }
   conta.querySelectorAll("form.contaPasso").forEach(fm => fm.addEventListener("submit", async e => {
@@ -1135,7 +1161,6 @@
       contaEmail = email.toLowerCase();
       $("contaPara").textContent = contaEmail;
       $("contaCodigo").value = "";
-      $("embreve").hidden = true;
       abreConta("codigo");
       return;
     }
@@ -1154,8 +1179,10 @@
       if (!$("contaAdulto").checked) { contaErro(ERROS.not_adult); return; }
       const r = await SYNC.verifyCode("", { name: $("contaNome").value.trim(), adult: true });
       if (!r.ok) {
-        // O portão legal ainda fechado (ADR-007): "em breve", e a página volta ao começo.
-        if (r.error === "not_open") { voltaAoEmail(""); $("embreve").hidden = false; return; }
+        // O portão legal ainda fechado (ADR-007): o convite não serve, e a página fica no "em breve" —
+        // não no passo do e-mail com o endereço preenchido, que lia como "tente de novo" (SV3). A conta
+        // que conferiu o código não fica no servidor: o motor a exclui.
+        if (r.error === "not_open") { $("contaCodigo").value = ""; abreConta("embreve", { bloqueia: true }); return; }
         if (r.error === "wrong_role") { voltaAoEmail(ERROS.wrong_role); return; }
         contaErro(ERROS[r.error] || "Não deu para entrar agora. Tente de novo.");
         return;
@@ -1183,6 +1210,24 @@
       toast("Conta excluída");
     }
   }
+  // O portão legal, perguntado ao abrir a página (SV3,
+  // BUG-20261008-portao-fechado-so-depois-do-codigo-e-do-nome). O servidor responde só se o modo está
+  // aberto para todos (`olimp_open()`), nunca quem está na lista de exceção — a lista não se descobre
+  // por tentativa. Fechado, o diálogo passa ao "em breve" antes de qualquer gesto: ninguém de fora
+  // pede um código que não vai servir nem deixa uma conta de autenticação no servidor.
+  //
+  // Duas coisas que ele NÃO faz. **Não espera para abrir o diálogo:** a entrada aparece na hora, como
+  // sempre, e a troca vem quando a resposta chega — sem rede o SDK leva até 20 s para desistir, e a
+  // página ficaria em branco todo esse tempo. **Não troca por cima do que já foi digitado:** se a
+  // resposta chegar depois do primeiro caractere, o caminho continua, e quem seguir até o fim cai no
+  // mesmo "em breve" pelo `create_guardian`. Não saber não é "fechado": uma falha de rede que
+  // dissesse "em breve" mandaria embora justamente quem tem convite.
+  async function perguntaPortao(){
+    const r = await SYNC.gate();
+    if (!r.ok || !isObj(r.data) || r.data.open) return;
+    if (trancado && conta.open && contaPasso === "email" && !$("contaEmail").value.trim()) abreConta("embreve", { bloqueia: true });
+  }
+
   function voltaAoEmail(msg){
     $("contaCodigo").value = "";
     abreConta("email", { bloqueia: true });
@@ -1198,6 +1243,7 @@
     if (!erro) toast("Código reenviado");
   });
   $("contaCorrigir").addEventListener("click", () => { abreConta("email", { bloqueia: true }); $("contaEmail").value = contaEmail; });
+  $("temConvite").addEventListener("click", () => abreConta("email", { bloqueia: true }));
   $("contaAdulto").addEventListener("change", () => { $("contaNomeOk").disabled = !$("contaAdulto").checked; });
   $("consentOk").addEventListener("change", () => { $("consentConcordo").disabled = !$("consentOk").checked; });
   $("consentAgoraNao").addEventListener("click", () => { depoisDoConsentimento = null; fechaConta(); });
@@ -1219,7 +1265,7 @@
       trancado = true;
       limpaLocal();
       semRedeDesde = null;
-      $("listaFilhos").innerHTML = "";
+      $("listaCriancas").innerHTML = "";
       $("ola").textContent = "Olá.";
       $("quemEmail").textContent = "";
       $("emailEstado").textContent = "";
@@ -1290,17 +1336,21 @@
   }
 
   // ---------- desenho
-  function render(){
+  // `volta` é o seletor, dentro do cartão que tinha o foco, do controle para onde o foco vai quando o
+  // gesto fecha quem o tinha. Quem fecha diz; os outros não passam nada.
+  function render(volta){
     if (trancado) return;
     const s = st && st.session;
     $("ola").textContent = s && s.name ? `Olá, ${s.name}.` : "Olá.";
     $("quemEmail").textContent = s && s.email ? s.email : "";
     $("semRede").hidden = semRedeDesde == null;
     $("semRede").textContent = semRedeDesde == null ? "" : `Sem internet agora: os dados mostrados são de ${quando(semRedeDesde)}.`;
-    const lista = $("listaFilhos");
+    const lista = $("listaCriancas");
     const foco = document.activeElement && document.activeElement.closest && document.activeElement.closest("[data-kid]") ? { kid: document.activeElement.closest("[data-kid]").dataset.kid, f: document.activeElement.dataset.f } : null;
-    lista.innerHTML = kids.length ? kids.map(cartao).join("") : `<p class="muted">Nenhum perfil ainda. Use Adicionar filho, logo abaixo.</p>`;
-    if (foco && foco.f) { const el = lista.querySelector(`[data-kid="${CSS.escape(foco.kid)}"] [data-f="${CSS.escape(foco.f)}"]`); if (el) el.focus({ preventScroll: true }); }
+    lista.innerHTML = kids.length ? kids.map(cartao).join("") : `<p class="muted">Nenhum perfil ainda. Use Adicionar criança, logo abaixo.</p>`;
+    // Só mexe no foco quem o tinha aqui dentro: um render de fundo (a volta do `carrega()`) não pode
+    // tirá-lo de onde o responsável está.
+    if (foco) devolveFoco(foco, volta);
     $("emailEstado").textContent = estadoEmail();
   }
   function cartao(k){
@@ -1330,8 +1380,8 @@
         <label class="f">Nome<input data-campo="nome" maxlength="40" value="${esc(nome)}" autocomplete="off"></label>
         <label class="f">Ano escolar<input data-campo="ano" maxlength="20" value="${esc(ano)}" list="anos" autocomplete="off"></label>
         <div class="actions"><button class="primary" type="submit" data-f="salvar-nome">Salvar</button><button type="button" class="quiet" data-acao="renomear-cancelar" data-f="cancelar-nome">Cancelar</button></div></form>` : "";
-    return `<article class="filho" data-kid="${esc(id)}" aria-labelledby="k-${esc(id)}">
-      <h3 id="k-${esc(id)}">${esc(nome)}${ano ? ` <span class="ano">· ${esc(ano)}</span>` : ""}</h3>
+    return `<article class="crianca" data-kid="${esc(id)}" aria-labelledby="k-${esc(id)}">
+      <h3 id="k-${esc(id)}" tabindex="-1">${esc(nome)}${ano ? ` <span class="ano">· ${esc(ano)}</span>` : ""}</h3>
       ${corpo}${devs}${cods}
       <div class="actions"><button data-acao="codigo" data-f="codigo">Gerar código</button><button data-acao="renomear" data-f="renomear">Renomear</button><button class="quiet" data-acao="remover" data-f="remover">Remover</button></div>
       ${ren}
@@ -1347,8 +1397,11 @@
       // Sete dias ou mais sem enviar: o que a página mostra é de antes (US-059 EC-1).
       if (sync != null && Date.now() - sync >= 7 * DIA) partes.push(`dados de ${dm(diaDe(sync))}`);
     }
+    const ren = renomeandoAparelho.has(String(d.id)) ? `<form class="apelido" data-acao="apelido-form" data-device="${esc(d.id)}" novalidate>
+        <label class="f">Nome deste aparelho<input data-campo="apelido" maxlength="40" value="${esc(d.label || "")}" autocomplete="off"></label>
+        <div class="actions"><button class="primary" type="submit" data-f="salvar-apelido:${esc(d.id)}">Salvar</button><button type="button" class="quiet" data-acao="apelido-cancelar" data-device="${esc(d.id)}" data-f="cancelar-apelido:${esc(d.id)}">Cancelar</button></div></form>` : "";
     return `<li data-device="${esc(d.id)}"><span>${esc(d.label || "Aparelho")}</span><span class="muted">${esc(partes.join(" · "))}</span>${fora == null
-      ? `<button data-acao="desligar" data-f="desligar:${esc(d.id)}" data-device="${esc(d.id)}">Desligar</button>` : ""}</li>`;
+      ? `<button data-acao="renomear-aparelho" data-f="renomear-aparelho:${esc(d.id)}" data-device="${esc(d.id)}">Renomear</button><button data-acao="desligar" data-f="desligar:${esc(d.id)}" data-device="${esc(d.id)}">Desligar</button>` : ""}${ren}</li>`;
   }
   // A segunda-feira mais recente até hoje: o dia do envio que a página espera ver registrado.
   function ultimaSegunda(dia){
@@ -1361,6 +1414,9 @@
     const seg = ultimaSegunda(hoje());
     let txt;
     if (!correio) txt = ligado ? "Nenhum e-mail ainda: o primeiro sai na próxima segunda-feira." : "O e-mail de segunda começa quando um aparelho for ligado.";
+    // A oitava semana quieta ainda sai e é a última: o servidor não grava nada para as segundas
+    // pausadas, então é esta linha que tem de dizer como o e-mail volta (US-064 EC-1).
+    else if (correio.state === "sent" && Number(correio.quiet_weeks) >= 8) txt = `Último e-mail: enviado em ${quando(ms(correio.sent_at)) || dm(correio.monday)}. Foi o último por enquanto: 8 semanas sem atividade. Volta sozinho na semana em que houver prova ou caderno.`;
     else if (correio.state === "sent") txt = `Último e-mail: enviado em ${quando(ms(correio.sent_at)) || dm(correio.monday)}.`;
     else if (correio.state === "failed") txt = `Último e-mail: falhou em ${dm(correio.monday)}. Uma nova tentativa sai uma hora depois.`;
     else txt = "Último e-mail: pausado: 8 semanas sem atividade. Volta sozinho na semana em que houver prova ou caderno.";
@@ -1371,8 +1427,21 @@
 
   // ---------- os gestos dos cartões
   function erroDoCartao(art, msg){ const p = art.querySelector("[data-erro]"); p.textContent = msg || ""; p.hidden = !msg; }
+  // Fechar um controle tira do DOM quem tinha o foco: o `data-f` lembrado não acha nó nenhum e o foco
+  // cai no <body>, de onde o Tab seguinte recomeça do topo da página. A ordem é `volta` (o controle que
+  // abriu o que acabou de fechar), o mesmo controle de antes, o título do cartão — que mantém o Tab
+  // dentro dele e diz de quem é o cartão — e, com o cartão fora, Adicionar criança, o botão de criar da
+  // seção. Nunca o botão da linha vizinha: ali o Desligar do outro aparelho fica a um Enter.
+  const voltaDoAparelho = dev => `[data-device="${CSS.escape(dev)}"] [data-acao="renomear-aparelho"]`;
+  function devolveFoco(foco, volta){
+    const cart = $("listaCriancas").querySelector(`[data-kid="${CSS.escape(foco.kid)}"]`);
+    const alvo = cart && ((volta && cart.querySelector(volta))
+      || (foco.f && cart.querySelector(`[data-f="${CSS.escape(foco.f)}"]`))
+      || cart.querySelector("h3"));
+    (alvo || $("adicionarCrianca")).focus({ preventScroll: true });
+  }
   const ERRO_GESTO = { offline: "Precisa de internet. Confira a conexão e tente de novo.", bad_name: "O nome precisa ter pelo menos uma letra.", too_many_kids: "Esta conta já tem 20 perfis, o máximo." };
-  $("listaFilhos").addEventListener("click", async e => {
+  $("listaCriancas").addEventListener("click", async e => {
     const b = e.target.closest("[data-acao]");
     const art = e.target.closest("[data-kid]");
     if (!b || !art || b.tagName === "FORM") return;
@@ -1388,15 +1457,20 @@
         const c = { code: r.data.code, expires_at: r.data.expiresAt };
         k.codes = [...(Array.isArray(k.codes) ? k.codes : []).filter(x => x.code !== c.code), c];
         render();
-        const novo = $("listaFilhos").querySelector(`[data-kid="${CSS.escape(id)}"] [data-f="copiar:${CSS.escape(c.code)}"]`);
+        const novo = $("listaCriancas").querySelector(`[data-kid="${CSS.escape(id)}"] [data-f="copiar:${CSS.escape(c.code)}"]`);
         if (novo) novo.focus();
         toast(`Código para ${k.name}: ${c.code}`);
         carrega();
         return;
       }
       case "copiar": toast(await copia(b.dataset.code) ? "Código copiado" : `Copie à mão: ${b.dataset.code}`); return;
-      case "renomear": renomeando.add(id); render(); { const i = $("listaFilhos").querySelector(`[data-kid="${CSS.escape(id)}"] [data-campo="nome"]`); if (i) i.focus(); } return;
-      case "renomear-cancelar": renomeando.delete(id); render(); return;
+      case "renomear": renomeando.add(id); render(); { const i = $("listaCriancas").querySelector(`[data-kid="${CSS.escape(id)}"] [data-campo="nome"]`); if (i) i.focus(); } return;
+      case "renomear-cancelar": renomeando.delete(id); render('[data-acao="renomear"]'); return;
+      case "renomear-aparelho": renomeandoAparelho.add(b.dataset.device); render();
+        { const i = $("listaCriancas").querySelector(`[data-device="${CSS.escape(b.dataset.device)}"] [data-campo="apelido"]`); if (i) i.focus(); } return;
+      // Salvar e Cancelar fecham o formulário, e com ele o botão que tinha o foco. Volta para o
+      // Renomear da linha.
+      case "apelido-cancelar": renomeandoAparelho.delete(b.dataset.device); render(voltaDoAparelho(b.dataset.device)); return;
       case "remover": {
         const msg = `Remover o perfil de ${k.name}?\n\nSai do servidor: as provas, o caderno, as etapas e o personagem de ${k.name}, os aparelhos ligados e os códigos.\nContinua em cada aparelho: o treino que já está nele, que passa a funcionar sem conta.\n\nRemover agora?`;
         if (!confirm(msg)) return;
@@ -1420,7 +1494,27 @@
       }
     }
   });
-  $("listaFilhos").addEventListener("submit", async e => {
+  // O nome do aparelho (SV5). O cartão se refaz com o nome novo antes da volta do servidor, como o
+  // Renomear do perfil; `carrega()` confirma. Em branco o servidor recusa com `bad_name`, e o
+  // formulário fica aberto: é o nome que distingue dois aparelhos do mesmo navegador e sistema.
+  $("listaCriancas").addEventListener("submit", async e => {
+    const fa = e.target.closest('[data-acao="apelido-form"]'), cart = e.target.closest("[data-kid]");
+    if (!fa || !cart) return;
+    e.preventDefault();
+    const dev = fa.dataset.device;
+    const r = await SYNC.renameDevice(dev, fa.querySelector('[data-campo="apelido"]').value.trim());
+    if (!r.ok) { erroDoCartao(cart, ERRO_GESTO[r.error] || "Não deu para renomear o aparelho agora. Tente de novo."); return; }
+    renomeandoAparelho.delete(dev);
+    const p = progresso.get(cart.dataset.kid), k = kids.find(x => String(x.id) === cart.dataset.kid);
+    for (const lista of [p && p.devices, k && k.devices]) {
+      const d = Array.isArray(lista) ? lista.find(x => String(x.id) === dev) : null;
+      if (d && r.data && r.data.device) d.label = r.data.device.label;
+    }
+    render(voltaDoAparelho(dev));
+    toast("Aparelho renomeado");
+    carrega();
+  });
+  $("listaCriancas").addEventListener("submit", async e => {
     const fm = e.target.closest('[data-acao="renomear-form"]'), art = e.target.closest("[data-kid]");
     if (!fm || !art) return;
     e.preventDefault();
@@ -1430,7 +1524,7 @@
     renomeando.delete(id);
     const k = kids.find(x => String(x.id) === id);
     if (k && r.data && r.data.kid) Object.assign(k, { name: r.data.kid.name, school_year: r.data.kid.school_year });
-    render();
+    render('[data-acao="renomear"]');
     toast("Perfil renomeado");
     carrega();
   });
@@ -1441,12 +1535,12 @@
     $("novoErr").hidden = true;
     $("novoNome").focus();
   }
-  $("adicionarFilho").addEventListener("click", () => {
+  $("adicionarCrianca").addEventListener("click", () => {
     st = SYNC.status();
     if (st.consentNeeded) { depoisDoConsentimento = abreNovo; $("consentOk").checked = false; $("consentConcordo").disabled = true; abreConta("consentimento", { bloqueia: false }); return; }
     abreNovo();
   });
-  $("novoCancelar").addEventListener("click", () => { $("novoForm").hidden = true; $("novoNome").value = ""; $("novoAno").value = ""; $("adicionarFilho").focus(); });
+  $("novoCancelar").addEventListener("click", () => { $("novoForm").hidden = true; $("novoNome").value = ""; $("novoAno").value = ""; $("adicionarCrianca").focus(); });
   $("novoForm").addEventListener("submit", async e => {
     e.preventDefault();
     const nome = $("novoNome").value.trim(), ano = $("novoAno").value.trim();
@@ -1461,7 +1555,10 @@
       return;
     }
     err("");
+    // Esconder o formulário tira o foco do Salvar, e ele cai no <body>: o `render()` abaixo só devolve
+    // o que estava dentro de um cartão. Volta ao botão de criar da seção, como o Cancelar ao lado.
     $("novoForm").hidden = true;
+    $("adicionarCrianca").focus();
     $("novoNome").value = ""; $("novoAno").value = "";
     if (r.data && r.data.kid) kids = [...kids, { ...r.data.kid, devices: [], codes: [], has_linked: false }].sort((a, b) => String(a.name).localeCompare(String(b.name), "pt-BR") || String(a.school_year).localeCompare(String(b.school_year), "pt-BR"));
     render();
@@ -1481,7 +1578,7 @@
   $("excluirConta").addEventListener("click", async () => {
     acoesErro("");
     const nomes = kids.map(k => k.name);
-    const msg = `Excluir a conta?\n\nSai do servidor: a conta, ${nomes.length ? `os perfis (${nomes.join(", ")}), ` : ""}os aparelhos ligados, os códigos e todo o progresso guardado.\nContinua em cada aparelho: o treino que já está nele, que passa a funcionar sem conta.\n\nPara confirmar, mandamos um código novo para o seu e-mail.`;
+    const msg = `Excluir a conta?\n\nSai do servidor: a sua conta de responsável, ${nomes.length ? `os perfis (${nomes.join(", ")}), ` : ""}os aparelhos ligados, os códigos e todo o progresso guardado.\nContinua em cada aparelho: o treino que já está nele, que passa a funcionar sem conta.\n\nPara confirmar, mandamos um código novo para o seu e-mail.`;
     if (!confirm(msg)) return;
     const email = st && st.session ? st.session.email : "";
     const erro = await pedeCodigo(email);
@@ -1501,7 +1598,7 @@
 
   // ---------- a ajuda
   const HELP = {
-    filhos:{t:"Perfis", b:`<p>Cada perfil mostra o que a criança fez nesta semana, o que está pendente e o próximo passo: os mesmos fatos do e-mail de segunda, contados agora.</p><p><b>Gerar código</b> cria um código de 8 letras e números que vale 7 dias e serve uma vez. Digite o código no app da criança, em Dados, Tenho um código.</p><p><b>Desligar</b> para o envio de um aparelho; o treino que está nele continua lá. <b>Remover</b> apaga o perfil do servidor.</p>`},
+    criancas:{t:"Perfis", b:`<p>Cada perfil mostra o que a criança fez nesta semana, o que está pendente e o próximo passo: os mesmos fatos do e-mail de segunda, contados agora.</p><p><b>Gerar código</b> cria um código de 8 letras e números que vale 7 dias e serve uma vez. Digite o código no app da criança, em Dados, Tenho um código.</p><p>Cada aparelho ligado aparece com o nome que mandou ao ligar; <b>Renomear</b>, na linha dele, troca esse nome. Vale a pena dar um nome a cada um ("computador da sala", "tablet"): dois aparelhos do mesmo navegador e do mesmo sistema aparecem iguais sem isso. <b>Desligar</b> para o envio de um aparelho; o treino que está nele continua lá. <b>Remover</b> apaga o perfil do servidor.</p>`},
     adicionar:{t:"Novo perfil", b:`<p>Só o nome e o ano escolar. Antes do primeiro perfil, a página mostra o que fica guardado e pede o seu acordo.</p>`},
     email:{t:"E-mail de segunda", b:`<p>Toda segunda-feira sai um e-mail com o que cada criança fez na semana e o que está pendente. Depois de 8 semanas sem atividade, o envio pausa sozinho.</p>`},
     conta:{t:"Conta", b:`<p><b>Baixar meus dados</b> baixa um arquivo com tudo o que está guardado. <b>Excluir conta</b> apaga tudo do servidor, depois de um código novo no e-mail. <b>Sair</b> apaga deste navegador a cópia da página.</p>`},
@@ -1531,6 +1628,9 @@
     syncOn("sync-data", () => carrega());
     syncOn("sync-notice", n => { if (n && n.kind === "session-ended") { limpaLocal(); st = SYNC.status(); portao(); } });
     portao();
+    // Só na chegada: depois de Sair, a entrada é a do e-mail, porque quem já entrou nesta página com o
+    // portão fechado está na lista de exceção — "em breve" seria falso para essa pessoa.
+    if (trancado) perguntaPortao();
     addEventListener("online", () => { if (!trancado) carrega(); });
   }
 

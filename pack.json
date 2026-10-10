@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "id": "obmep-mirim-2",
-  "version": 5,
-  "publishedAt": "2026-10-08",
+  "version": 6,
+  "publishedAt": "2026-10-09",
   "olympiad": {
     "name": "Olimpíada Mirim",
     "org": "IMPA / OBMEP",
@@ -1146,7 +1146,8 @@
     },
     {
       "id": "costas",
-      "name": "Costas"
+      "name": "Costas",
+      "behind": true
     }
   ],
   "themes": [
@@ -1186,6 +1187,33 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 40,
+          "s": 39
+        },
+        "olhos": {
+          "x": 50,
+          "y": 50,
+          "s": 43
+        },
+        "maos": {
+          "x": 77,
+          "y": 67,
+          "s": 19
+        },
+        "pes": {
+          "x": 50,
+          "y": 96,
+          "s": 20
+        },
+        "costas": {
+          "x": 50,
+          "y": 57,
+          "s": 75
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M22 18 L38 40 L62 40 L78 18 L74 56 Q50 78 26 56 Z\" fill=\"#E07B24\"/><path d=\"M36 58 Q50 72 64 58 Q50 64 36 58 Z\" fill=\"#FFF4D6\"/><circle cx=\"40\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><circle cx=\"60\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><circle cx=\"50\" cy=\"62\" r=\"3\" fill=\"#12213F\"/><ellipse cx=\"50\" cy=\"88\" rx=\"20\" ry=\"8\" fill=\"#E07B24\"/></svg>"
     },
     {
@@ -1197,6 +1225,28 @@
         "maos",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 24,
+          "s": 42
+        },
+        "olhos": {
+          "x": 50,
+          "y": 44,
+          "s": 51
+        },
+        "maos": {
+          "x": 80,
+          "y": 59,
+          "s": 20
+        },
+        "costas": {
+          "x": 50,
+          "y": 58,
+          "s": 80
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><ellipse cx=\"50\" cy=\"58\" rx=\"30\" ry=\"34\" fill=\"#8A6A4A\"/><ellipse cx=\"50\" cy=\"66\" rx=\"18\" ry=\"20\" fill=\"#E8D6B8\"/><circle cx=\"38\" cy=\"44\" r=\"11\" fill=\"#FFFFFF\"/><circle cx=\"62\" cy=\"44\" r=\"11\" fill=\"#FFFFFF\"/><circle cx=\"38\" cy=\"44\" r=\"5\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"44\" r=\"5\" fill=\"#12213F\"/><path d=\"M46 54 L54 54 L50 62 Z\" fill=\"#D69B0A\"/><path d=\"M26 24 L36 34 L28 36 Z M74 24 L64 34 L72 36 Z\" fill=\"#8A6A4A\"/></svg>"
     },
     {
@@ -1208,6 +1258,28 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 84,
+          "y": 44,
+          "s": 28
+        },
+        "olhos": {
+          "x": 83,
+          "y": 52,
+          "s": 26
+        },
+        "pes": {
+          "x": 50,
+          "y": 86,
+          "s": 14
+        },
+        "costas": {
+          "x": 56,
+          "y": 62,
+          "s": 66
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><ellipse cx=\"50\" cy=\"60\" rx=\"34\" ry=\"22\" fill=\"#167A4C\"/><path d=\"M30 60 L50 44 L70 60 L50 76 Z\" fill=\"#1E9A60\"/><circle cx=\"86\" cy=\"54\" r=\"10\" fill=\"#7DBF8E\"/><circle cx=\"89\" cy=\"51\" r=\"2\" fill=\"#12213F\"/><ellipse cx=\"30\" cy=\"82\" rx=\"8\" ry=\"5\" fill=\"#7DBF8E\"/><ellipse cx=\"70\" cy=\"82\" rx=\"8\" ry=\"5\" fill=\"#7DBF8E\"/></svg>"
     },
     {
@@ -1220,6 +1292,33 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 22,
+          "s": 50
+        },
+        "olhos": {
+          "x": 50,
+          "y": 48,
+          "s": 51
+        },
+        "maos": {
+          "x": 86,
+          "y": 63,
+          "s": 25
+        },
+        "pes": {
+          "x": 50,
+          "y": 86,
+          "s": 17
+        },
+        "costas": {
+          "x": 50,
+          "y": 52,
+          "s": 94
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"24\" cy=\"28\" r=\"11\" fill=\"#E8A23A\"/><circle cx=\"76\" cy=\"28\" r=\"11\" fill=\"#E8A23A\"/><circle cx=\"24\" cy=\"28\" r=\"5\" fill=\"#7A5600\"/><circle cx=\"76\" cy=\"28\" r=\"5\" fill=\"#7A5600\"/><circle cx=\"50\" cy=\"54\" r=\"33\" fill=\"#E8A23A\"/><circle cx=\"34\" cy=\"32\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"50\" cy=\"27\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"66\" cy=\"32\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"27\" cy=\"62\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"73\" cy=\"62\" r=\"3.5\" fill=\"#7A5600\"/><ellipse cx=\"50\" cy=\"69\" rx=\"15\" ry=\"11\" fill=\"#FFF4D6\"/><circle cx=\"38\" cy=\"48\" r=\"4\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"48\" r=\"4\" fill=\"#12213F\"/><path d=\"M45 63 L55 63 L50 69 Z\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1231,6 +1330,28 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 26,
+          "s": 50
+        },
+        "olhos": {
+          "x": 50,
+          "y": 50,
+          "s": 51
+        },
+        "pes": {
+          "x": 50,
+          "y": 84,
+          "s": 19
+        },
+        "costas": {
+          "x": 50,
+          "y": 46,
+          "s": 88
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"29\" cy=\"33\" r=\"7\" fill=\"#7E5535\"/><circle cx=\"71\" cy=\"33\" r=\"7\" fill=\"#7E5535\"/><rect x=\"17\" y=\"32\" width=\"66\" height=\"52\" rx=\"24\" fill=\"#9A6B45\"/><rect x=\"29\" y=\"58\" width=\"42\" height=\"26\" rx=\"13\" fill=\"#7E5535\"/><circle cx=\"38\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><ellipse cx=\"44\" cy=\"68\" rx=\"3\" ry=\"2\" fill=\"#12213F\"/><ellipse cx=\"56\" cy=\"68\" rx=\"3\" ry=\"2\" fill=\"#12213F\"/><circle cx=\"50\" cy=\"23\" r=\"9\" fill=\"#E07B24\"/><path d=\"M50 14 Q56 7 62 11 Q56 16 50 14 Z\" fill=\"#1E9A60\"/></svg>"
     },
     {
@@ -1243,6 +1364,33 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 22,
+          "s": 38
+        },
+        "olhos": {
+          "x": 50,
+          "y": 38,
+          "s": 38
+        },
+        "maos": {
+          "x": 77,
+          "y": 55,
+          "s": 22
+        },
+        "pes": {
+          "x": 50,
+          "y": 96,
+          "s": 20
+        },
+        "costas": {
+          "x": 50,
+          "y": 58,
+          "s": 86
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M24 50 Q12 70 24 80 Z\" fill=\"#3A4A6B\"/><path d=\"M76 50 Q88 70 76 80 Z\" fill=\"#3A4A6B\"/><ellipse cx=\"40\" cy=\"92\" rx=\"9\" ry=\"4\" fill=\"#E07B24\"/><ellipse cx=\"60\" cy=\"92\" rx=\"9\" ry=\"4\" fill=\"#E07B24\"/><ellipse cx=\"50\" cy=\"56\" rx=\"28\" ry=\"36\" fill=\"#3A4A6B\"/><ellipse cx=\"50\" cy=\"66\" rx=\"18\" ry=\"24\" fill=\"#FFFFFF\"/><circle cx=\"41\" cy=\"38\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"59\" cy=\"38\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"41\" cy=\"38\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"59\" cy=\"38\" r=\"3.5\" fill=\"#12213F\"/><path d=\"M44 47 L56 47 L50 55 Z\" fill=\"#D69B0A\"/></svg>"
     },
     {
@@ -1254,6 +1402,28 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 45,
+          "y": 22,
+          "s": 27
+        },
+        "olhos": {
+          "x": 44,
+          "y": 35,
+          "s": 26
+        },
+        "pes": {
+          "x": 36,
+          "y": 98,
+          "s": 15
+        },
+        "costas": {
+          "x": 56,
+          "y": 59,
+          "s": 103
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M30 82 L22 98 L42 90 Z\" fill=\"#3A4A6B\"/><ellipse cx=\"38\" cy=\"66\" rx=\"20\" ry=\"24\" fill=\"#3A4A6B\"/><ellipse cx=\"40\" cy=\"60\" rx=\"12\" ry=\"12\" fill=\"#FFF4D6\"/><circle cx=\"40\" cy=\"38\" r=\"18\" fill=\"#3A4A6B\"/><ellipse cx=\"42\" cy=\"50\" rx=\"11\" ry=\"6\" fill=\"#FFF4D6\"/><path d=\"M54 28 Q90 26 95 44 Q80 50 54 46 Z\" fill=\"#E07B24\"/><path d=\"M86 31 Q95 36 95 44 Q90 46 86 46 Z\" fill=\"#B3261E\"/><circle cx=\"45\" cy=\"35\" r=\"7.5\" fill=\"#1F5EFF\"/><circle cx=\"45\" cy=\"35\" r=\"3.5\" fill=\"#12213F\"/><ellipse cx=\"34\" cy=\"92\" rx=\"6\" ry=\"3\" fill=\"#D69B0A\"/><ellipse cx=\"46\" cy=\"92\" rx=\"6\" ry=\"3\" fill=\"#D69B0A\"/></svg>"
     },
     {
@@ -1265,6 +1435,28 @@
         "maos",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 16,
+          "s": 40
+        },
+        "olhos": {
+          "x": 50,
+          "y": 44,
+          "s": 43
+        },
+        "maos": {
+          "x": 79,
+          "y": 61,
+          "s": 25
+        },
+        "costas": {
+          "x": 50,
+          "y": 53,
+          "s": 99
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"21\" y=\"46\" width=\"12\" height=\"38\" rx=\"6\" fill=\"#8E5BD0\"/><rect x=\"36\" y=\"46\" width=\"12\" height=\"46\" rx=\"6\" fill=\"#8E5BD0\"/><rect x=\"52\" y=\"46\" width=\"12\" height=\"46\" rx=\"6\" fill=\"#8E5BD0\"/><rect x=\"67\" y=\"46\" width=\"12\" height=\"38\" rx=\"6\" fill=\"#8E5BD0\"/><circle cx=\"19\" cy=\"82\" r=\"6\" fill=\"#8E5BD0\"/><circle cx=\"81\" cy=\"82\" r=\"6\" fill=\"#8E5BD0\"/><circle cx=\"50\" cy=\"40\" r=\"26\" fill=\"#8E5BD0\"/><circle cx=\"37\" cy=\"25\" r=\"3.5\" fill=\"#B48BE6\"/><circle cx=\"63\" cy=\"27\" r=\"3\" fill=\"#B48BE6\"/><circle cx=\"55\" cy=\"18\" r=\"2.5\" fill=\"#B48BE6\"/><circle cx=\"40\" cy=\"44\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"60\" cy=\"44\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"40\" cy=\"44\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"60\" cy=\"44\" r=\"3.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1275,6 +1467,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 14,
+          "s": 61
+        },
+        "olhos": {
+          "x": 50,
+          "y": 42,
+          "s": 43
+        },
+        "costas": {
+          "x": 50,
+          "y": 50,
+          "s": 107
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"#626D88\"/><circle cx=\"50\" cy=\"50\" r=\"37\" fill=\"#FFFFFF\"/><path d=\"M50 56 L59.5 62.9 L55.9 74.1 L44.1 74.1 L40.5 62.9 Z\" fill=\"#12213F\"/><path d=\"M21 43 L27.7 47.8 L25.1 55.7 L16.9 55.7 L14.3 47.8 Z\" fill=\"#12213F\"/><path d=\"M79 43 L85.7 47.8 L83.1 55.7 L74.9 55.7 L72.3 47.8 Z\" fill=\"#12213F\"/><path d=\"M50 14 L55.7 18.1 L53.5 24.9 L46.5 24.9 L44.3 18.1 Z\" fill=\"#12213F\"/><circle cx=\"40\" cy=\"42\" r=\"4\" fill=\"#12213F\"/><circle cx=\"60\" cy=\"42\" r=\"4\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1285,6 +1494,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 16,
+          "s": 57
+        },
+        "olhos": {
+          "x": 50,
+          "y": 38,
+          "s": 51
+        },
+        "costas": {
+          "x": 50,
+          "y": 50,
+          "s": 106
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"38\" fill=\"#E07B24\"/><path d=\"M12 50 H88 M50 12 V88 M24 22 Q40 50 24 78 M76 22 Q60 50 76 78\" fill=\"none\" stroke=\"#7A5600\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"38\" cy=\"38\" r=\"4.5\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"38\" r=\"4.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1295,6 +1521,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 33,
+          "s": 25
+        },
+        "olhos": {
+          "x": 50,
+          "y": 79,
+          "s": 30
+        },
+        "costas": {
+          "x": 50,
+          "y": 49,
+          "s": 74
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M44 66 Q18 32 24 12 Q38 30 48 66 Z\" fill=\"#FFD84D\"/><path d=\"M52 66 Q62 30 76 12 Q82 32 56 66 Z\" fill=\"#1E9A60\"/><path d=\"M46 66 Q44 26 50 6 Q56 26 54 66 Z\" fill=\"#1F5EFF\"/><rect x=\"32\" y=\"62\" width=\"36\" height=\"9\" rx=\"3\" fill=\"#7A5600\"/><path d=\"M33 70 Q33 92 50 92 Q67 92 67 70 Z\" fill=\"#B3261E\"/><circle cx=\"43\" cy=\"79\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"57\" cy=\"79\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"43\" cy=\"79\" r=\"3\" fill=\"#12213F\"/><circle cx=\"57\" cy=\"79\" r=\"3\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1305,6 +1548,23 @@
         "cabeca",
         "pes"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 45,
+          "y": 38,
+          "s": 68
+        },
+        "olhos": {
+          "x": 45,
+          "y": 51,
+          "s": 38
+        },
+        "pes": {
+          "x": 50,
+          "y": 84,
+          "s": 14
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"20\" y=\"62\" width=\"12\" height=\"7\" rx=\"2\" fill=\"#626D88\"/><rect x=\"68\" y=\"62\" width=\"12\" height=\"7\" rx=\"2\" fill=\"#626D88\"/><rect x=\"6\" y=\"38\" width=\"88\" height=\"26\" rx=\"13\" fill=\"#1F5EFF\"/><path d=\"M70 42 L84 42 Q90 51 84 60 L70 60 Q76 51 70 42 Z\" fill=\"#D69B0A\"/><circle cx=\"26\" cy=\"76\" r=\"9\" fill=\"#D69B0A\"/><circle cx=\"74\" cy=\"76\" r=\"9\" fill=\"#D69B0A\"/><circle cx=\"26\" cy=\"76\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"74\" cy=\"76\" r=\"3.5\" fill=\"#7A5600\"/><circle cx=\"36\" cy=\"51\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"54\" cy=\"51\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"36\" cy=\"51\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"54\" cy=\"51\" r=\"3.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1315,6 +1575,23 @@
         "cabeca",
         "maos"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 42,
+          "y": 10,
+          "s": 46
+        },
+        "olhos": {
+          "x": 42,
+          "y": 40,
+          "s": 34
+        },
+        "maos": {
+          "x": 76,
+          "y": 60,
+          "s": 27
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M56 66 L64 60 L90 92 L82 98 Z\" fill=\"#7A5600\"/><ellipse cx=\"42\" cy=\"40\" rx=\"30\" ry=\"33\" fill=\"#167A4C\"/><ellipse cx=\"42\" cy=\"40\" rx=\"24\" ry=\"27\" fill=\"#E1F5EA\"/><path d=\"M30 20 V60 M42 14 V66 M54 20 V60 M20 30 H64 M18 42 H66 M20 54 H64\" fill=\"none\" stroke=\"#7DBF8E\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"34\" cy=\"40\" r=\"4\" fill=\"#12213F\"/><circle cx=\"50\" cy=\"40\" r=\"4\" fill=\"#12213F\"/><circle cx=\"82\" cy=\"22\" r=\"11\" fill=\"#C9DB3A\"/><path d=\"M74 15 Q82 22 76 31 M88 13 Q82 22 90 30\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
     },
     {
@@ -1326,6 +1603,28 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 12,
+          "s": 53
+        },
+        "olhos": {
+          "x": 50,
+          "y": 68,
+          "s": 90
+        },
+        "pes": {
+          "x": 50,
+          "y": 92,
+          "s": 21
+        },
+        "costas": {
+          "x": 50,
+          "y": 52,
+          "s": 91
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"24\" y=\"80\" width=\"12\" height=\"12\" rx=\"3\" fill=\"#3A4A6B\"/><rect x=\"64\" y=\"80\" width=\"12\" height=\"12\" rx=\"3\" fill=\"#3A4A6B\"/><rect x=\"16\" y=\"12\" width=\"68\" height=\"72\" rx=\"10\" fill=\"#D69B0A\"/><rect x=\"30\" y=\"16\" width=\"40\" height=\"6\" rx=\"2\" fill=\"#7A5600\"/><rect x=\"23\" y=\"26\" width=\"54\" height=\"26\" rx=\"4\" fill=\"#E4ECFF\"/><rect x=\"40\" y=\"62\" width=\"20\" height=\"12\" rx=\"2\" fill=\"#7A5600\"/><circle cx=\"29\" cy=\"68\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"71\" cy=\"68\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"29\" cy=\"68\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"71\" cy=\"68\" r=\"3.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1337,6 +1636,28 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 33,
+          "y": 26,
+          "s": 59
+        },
+        "olhos": {
+          "x": 33,
+          "y": 57,
+          "s": 34
+        },
+        "pes": {
+          "x": 51,
+          "y": 90,
+          "s": 22
+        },
+        "costas": {
+          "x": 46,
+          "y": 48,
+          "s": 113
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"29\" cy=\"14\" r=\"5\" fill=\"#DDE2EC\"/><circle cx=\"38\" cy=\"9\" r=\"4\" fill=\"#DDE2EC\"/><path d=\"M21 44 L19 24 L37 24 L35 44 Z\" fill=\"#626D88\"/><rect x=\"12\" y=\"44\" width=\"52\" height=\"30\" rx=\"8\" fill=\"#B3261E\"/><rect x=\"58\" y=\"28\" width=\"30\" height=\"46\" rx=\"4\" fill=\"#1F5EFF\"/><rect x=\"64\" y=\"34\" width=\"18\" height=\"14\" rx=\"3\" fill=\"#E4ECFF\"/><path d=\"M4 86 L12 66 L12 86 Z\" fill=\"#D69B0A\"/><circle cx=\"26\" cy=\"82\" r=\"9\" fill=\"#3A4A6B\"/><circle cx=\"50\" cy=\"82\" r=\"9\" fill=\"#3A4A6B\"/><circle cx=\"76\" cy=\"80\" r=\"11\" fill=\"#3A4A6B\"/><circle cx=\"26\" cy=\"82\" r=\"3\" fill=\"#D69B0A\"/><circle cx=\"50\" cy=\"82\" r=\"3\" fill=\"#D69B0A\"/><circle cx=\"76\" cy=\"80\" r=\"3.5\" fill=\"#D69B0A\"/><circle cx=\"25\" cy=\"57\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"41\" cy=\"57\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"25\" cy=\"57\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"41\" cy=\"57\" r=\"3.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1347,6 +1668,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 31,
+          "s": 53
+        },
+        "olhos": {
+          "x": 50,
+          "y": 73,
+          "s": 43
+        },
+        "costas": {
+          "x": 50,
+          "y": 51,
+          "s": 121
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 8 L50 60 L16 60 Z\" fill=\"#1F5EFF\"/><path d=\"M55 16 L55 60 L82 60 Z\" fill=\"#D69B0A\"/><rect x=\"48\" y=\"6\" width=\"5\" height=\"62\" rx=\"1\" fill=\"#7A5600\"/><path d=\"M10 64 L90 64 L78 84 L22 84 Z\" fill=\"#8A6A4A\"/><path d=\"M2 88 Q14 82 26 88 T50 88 T74 88 T98 88 V96 H2 Z\" fill=\"#8DB4FF\"/><circle cx=\"40\" cy=\"73\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"60\" cy=\"73\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"40\" cy=\"73\" r=\"3\" fill=\"#12213F\"/><circle cx=\"60\" cy=\"73\" r=\"3\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1357,6 +1695,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 73,
+          "y": 42,
+          "s": 62
+        },
+        "olhos": {
+          "x": 73,
+          "y": 50,
+          "s": 30
+        },
+        "costas": {
+          "x": 49,
+          "y": 56,
+          "s": 80
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M44 48 L58 48 L50 26 L42 26 Z\" fill=\"#1B52E0\"/><path d=\"M8 54 L12 28 L24 28 L30 50 Z\" fill=\"#B3261E\"/><ellipse cx=\"50\" cy=\"54\" rx=\"40\" ry=\"14\" fill=\"#1F5EFF\"/><path d=\"M38 56 L62 56 L50 86 L34 86 Z\" fill=\"#1B52E0\"/><circle cx=\"66\" cy=\"50\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"80\" cy=\"50\" r=\"6\" fill=\"#FFFFFF\"/><circle cx=\"66\" cy=\"50\" r=\"3\" fill=\"#12213F\"/><circle cx=\"80\" cy=\"50\" r=\"3\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1367,6 +1722,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 11,
+          "s": 50
+        },
+        "olhos": {
+          "x": 50,
+          "y": 40,
+          "s": 77
+        },
+        "costas": {
+          "x": 50,
+          "y": 52,
+          "s": 86
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M42 74 L43 84 M58 74 L57 84\" fill=\"none\" stroke=\"#7A5600\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"40\" r=\"32\" fill=\"#B3261E\"/><path d=\"M24 56 L50 78 L76 56 Z\" fill=\"#B3261E\"/><path d=\"M50 8 Q33 40 50 78 Q67 40 50 8 Z\" fill=\"#FFD84D\"/><rect x=\"40\" y=\"82\" width=\"20\" height=\"14\" rx=\"3\" fill=\"#8A6A4A\"/><circle cx=\"32\" cy=\"40\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"68\" cy=\"40\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"32\" cy=\"40\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"68\" cy=\"40\" r=\"3.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1377,6 +1749,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 16,
+          "s": 61
+        },
+        "olhos": {
+          "x": 50,
+          "y": 46,
+          "s": 38
+        },
+        "costas": {
+          "x": 50,
+          "y": 50,
+          "s": 124
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 4 L58.3 19.1 L73 10.2 L72.6 27.4 L89.8 27 L80.9 41.7 L96 50 L80.9 58.3 L89.8 73 L72.6 72.6 L73 89.8 L58.3 80.9 L50 96 L41.7 80.9 L27 89.8 L27.4 72.6 L10.2 73 L19.1 58.3 L4 50 L19.1 41.7 L10.2 27 L27.4 27.4 L27 10.2 L41.7 19.1 Z\" fill=\"#D69B0A\"/><circle cx=\"50\" cy=\"50\" r=\"29\" fill=\"#FFD84D\"/><circle cx=\"41\" cy=\"46\" r=\"4\" fill=\"#12213F\"/><circle cx=\"59\" cy=\"46\" r=\"4\" fill=\"#12213F\"/><circle cx=\"35\" cy=\"56\" r=\"4\" fill=\"#E07B24\"/><circle cx=\"65\" cy=\"56\" r=\"4\" fill=\"#E07B24\"/></svg>"
     },
     {
@@ -1387,6 +1776,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 53,
+          "y": 30,
+          "s": 58
+        },
+        "olhos": {
+          "x": 53,
+          "y": 59,
+          "s": 38
+        },
+        "costas": {
+          "x": 51,
+          "y": 60,
+          "s": 99
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"32\" cy=\"58\" r=\"18\" fill=\"#BFD3FF\"/><circle cx=\"54\" cy=\"46\" r=\"23\" fill=\"#BFD3FF\"/><circle cx=\"73\" cy=\"60\" r=\"16\" fill=\"#BFD3FF\"/><rect x=\"18\" y=\"58\" width=\"68\" height=\"20\" rx=\"10\" fill=\"#BFD3FF\"/><circle cx=\"44\" cy=\"59\" r=\"4\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"59\" r=\"4\" fill=\"#12213F\"/><path d=\"M30 88 L27 95 M50 88 L47 95 M70 88 L67 95\" fill=\"none\" stroke=\"#1F5EFF\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
     },
     {
@@ -1397,6 +1803,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 52,
+          "y": 26,
+          "s": 46
+        },
+        "olhos": {
+          "x": 52,
+          "y": 66,
+          "s": 38
+        },
+        "costas": {
+          "x": 50,
+          "y": 50,
+          "s": 80
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 6 Q80 48 80 64 A30 30 0 0 1 20 64 Q20 48 50 6 Z\" fill=\"#1F5EFF\"/><ellipse cx=\"33\" cy=\"52\" rx=\"4\" ry=\"9\" fill=\"#8DB4FF\"/><circle cx=\"43\" cy=\"66\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"61\" cy=\"66\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"43\" cy=\"66\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"61\" cy=\"66\" r=\"3.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1407,6 +1830,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 28,
+          "s": 43
+        },
+        "olhos": {
+          "x": 50,
+          "y": 70,
+          "s": 26
+        },
+        "costas": {
+          "x": 50,
+          "y": 49,
+          "s": 77
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 4 Q82 40 78 66 A28 28 0 0 1 22 66 Q18 42 36 28 Q38 46 46 48 Q40 24 50 4 Z\" fill=\"#E07B24\"/><path d=\"M50 42 Q68 60 66 74 A16 16 0 0 1 34 74 Q34 60 50 42 Z\" fill=\"#FFD84D\"/><circle cx=\"44\" cy=\"70\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"56\" cy=\"70\" r=\"3.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1418,6 +1858,28 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 40,
+          "y": 36,
+          "s": 54
+        },
+        "olhos": {
+          "x": 40,
+          "y": 62,
+          "s": 34
+        },
+        "pes": {
+          "x": 50,
+          "y": 90,
+          "s": 20
+        },
+        "costas": {
+          "x": 50,
+          "y": 52,
+          "s": 102
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M48 90 L72 36 L98 90 Z\" fill=\"#7DBF8E\"/><path d=\"M2 90 L40 14 L78 90 Z\" fill=\"#1E9A60\"/><path d=\"M40 14 L51 36 L45 32 L40 38 L35 32 L29 36 Z\" fill=\"#FFFFFF\"/><circle cx=\"32\" cy=\"62\" r=\"4\" fill=\"#12213F\"/><circle cx=\"48\" cy=\"62\" r=\"4\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1428,6 +1890,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 31,
+          "y": 24,
+          "s": 30
+        },
+        "olhos": {
+          "x": 29,
+          "y": 44,
+          "s": 27
+        },
+        "costas": {
+          "x": 48,
+          "y": 50,
+          "s": 96
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M52.6 12.1 A38 38 0 1 0 84 67 A32 32 0 1 1 52.6 12.1 Z\" fill=\"#FFD84D\"/><circle cx=\"24\" cy=\"44\" r=\"4\" fill=\"#12213F\"/><circle cx=\"22\" cy=\"58\" r=\"4\" fill=\"#E07B24\"/><circle cx=\"30\" cy=\"76\" r=\"3\" fill=\"#D69B0A\"/><circle cx=\"42\" cy=\"82\" r=\"2.5\" fill=\"#D69B0A\"/></svg>"
     },
     {
@@ -1438,6 +1917,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 28,
+          "s": 58
+        },
+        "olhos": {
+          "x": 50,
+          "y": 52,
+          "s": 38
+        },
+        "costas": {
+          "x": 50,
+          "y": 50,
+          "s": 72
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M6 56 A44 12 0 0 1 94 56\" fill=\"none\" stroke=\"#D69B0A\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"50\" r=\"27\" fill=\"#E07B24\"/><path d=\"M25 40 Q50 46 75 40 L77 46 Q50 52 23 46 Z\" fill=\"#F29A4A\"/><circle cx=\"41\" cy=\"52\" r=\"4\" fill=\"#12213F\"/><circle cx=\"59\" cy=\"52\" r=\"4\" fill=\"#12213F\"/><path d=\"M6 56 A44 12 0 0 0 94 56\" fill=\"none\" stroke=\"#D69B0A\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
     },
     {
@@ -1448,6 +1944,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 64,
+          "y": 26,
+          "s": 48
+        },
+        "olhos": {
+          "x": 64,
+          "y": 50,
+          "s": 30
+        },
+        "costas": {
+          "x": 46,
+          "y": 49,
+          "s": 99
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M54 38 L6 12 L50 50 Z\" fill=\"#8DB4FF\"/><path d=\"M44 50 L2 50 L44 60 Z\" fill=\"#BFD3FF\"/><path d=\"M52 66 L8 86 L50 58 Z\" fill=\"#8DB4FF\"/><circle cx=\"64\" cy=\"52\" r=\"27\" fill=\"#FFF4D6\"/><circle cx=\"64\" cy=\"52\" r=\"22\" fill=\"#FFD84D\"/><circle cx=\"57\" cy=\"50\" r=\"4\" fill=\"#12213F\"/><circle cx=\"71\" cy=\"50\" r=\"4\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1458,6 +1971,23 @@
         "cabeca",
         "pes"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 20,
+          "s": 29
+        },
+        "olhos": {
+          "x": 50,
+          "y": 36,
+          "s": 30
+        },
+        "pes": {
+          "x": 50,
+          "y": 96,
+          "s": 20
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M36 62 L64 62 L82 96 L18 96 Z\" fill=\"#FFF4D6\"/><path d=\"M30 48 Q30 18 50 18 Q70 18 70 48 Z\" fill=\"#BFD3FF\"/><circle cx=\"43\" cy=\"36\" r=\"4\" fill=\"#12213F\"/><circle cx=\"57\" cy=\"36\" r=\"4\" fill=\"#12213F\"/><ellipse cx=\"50\" cy=\"52\" rx=\"46\" ry=\"14\" fill=\"#6B3FA0\"/><circle cx=\"18\" cy=\"53\" r=\"4\" fill=\"#FFD84D\"/><circle cx=\"36\" cy=\"58\" r=\"4\" fill=\"#FFD84D\"/><circle cx=\"64\" cy=\"58\" r=\"4\" fill=\"#FFD84D\"/><circle cx=\"82\" cy=\"53\" r=\"4\" fill=\"#FFD84D\"/></svg>"
     },
     {
@@ -1468,6 +1998,23 @@
         "cabeca",
         "maos"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 34,
+          "s": 32
+        },
+        "olhos": {
+          "x": 50,
+          "y": 49,
+          "s": 26
+        },
+        "maos": {
+          "x": 80,
+          "y": 66,
+          "s": 24
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 36 L50 20\" fill=\"none\" stroke=\"#626D88\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"18\" r=\"5\" fill=\"#B3261E\"/><rect x=\"3\" y=\"41\" width=\"30\" height=\"18\" rx=\"2\" fill=\"#1F5EFF\"/><rect x=\"67\" y=\"41\" width=\"30\" height=\"18\" rx=\"2\" fill=\"#1F5EFF\"/><path d=\"M13 41 V59 M23 41 V59 M3 50 H33 M77 41 V59 M87 41 V59 M67 50 H97\" fill=\"none\" stroke=\"#8DB4FF\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"31\" y=\"47\" width=\"8\" height=\"6\" rx=\"1\" fill=\"#626D88\"/><rect x=\"61\" y=\"47\" width=\"8\" height=\"6\" rx=\"1\" fill=\"#626D88\"/><rect x=\"37\" y=\"36\" width=\"26\" height=\"28\" rx=\"4\" fill=\"#D69B0A\"/><circle cx=\"44\" cy=\"49\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"56\" cy=\"49\" r=\"3.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1478,6 +2025,23 @@
         "cabeca",
         "pes"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 31,
+          "s": 48
+        },
+        "olhos": {
+          "x": 50,
+          "y": 62,
+          "s": 38
+        },
+        "pes": {
+          "x": 50,
+          "y": 86,
+          "s": 20
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 8 L94 86 L6 86 Z\" fill=\"#1F5EFF\"/><circle cx=\"41\" cy=\"62\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"59\" cy=\"62\" r=\"6.5\" fill=\"#FFFFFF\"/><circle cx=\"41\" cy=\"62\" r=\"3.5\" fill=\"#12213F\"/><circle cx=\"59\" cy=\"62\" r=\"3.5\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1489,6 +2053,28 @@
         "maos",
         "pes"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 14,
+          "s": 56
+        },
+        "olhos": {
+          "x": 50,
+          "y": 44,
+          "s": 51
+        },
+        "maos": {
+          "x": 89,
+          "y": 60,
+          "s": 24
+        },
+        "pes": {
+          "x": 50,
+          "y": 86,
+          "s": 19
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"14\" width=\"72\" height=\"72\" rx=\"6\" fill=\"#B3261E\"/><circle cx=\"38\" cy=\"44\" r=\"7\" fill=\"#FFFFFF\"/><circle cx=\"62\" cy=\"44\" r=\"7\" fill=\"#FFFFFF\"/><circle cx=\"38\" cy=\"44\" r=\"4\" fill=\"#12213F\"/><circle cx=\"62\" cy=\"44\" r=\"4\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1499,6 +2085,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 50,
+          "y": 14,
+          "s": 64
+        },
+        "olhos": {
+          "x": 50,
+          "y": 48,
+          "s": 34
+        },
+        "costas": {
+          "x": 50,
+          "y": 50,
+          "s": 98
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M92 50 L71 86.4 L29 86.4 L8 50 L29 13.6 L71 13.6 Z\" fill=\"#D69B0A\"/><path d=\"M80 50 L65 76 L35 76 L20 50 L35 24 L65 24 Z\" fill=\"#FFD84D\"/><circle cx=\"42\" cy=\"48\" r=\"4\" fill=\"#12213F\"/><circle cx=\"58\" cy=\"48\" r=\"4\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1510,6 +2113,28 @@
         "pes",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 32,
+          "y": 19,
+          "s": 56
+        },
+        "olhos": {
+          "x": 32,
+          "y": 58,
+          "s": 28
+        },
+        "pes": {
+          "x": 50,
+          "y": 92,
+          "s": 14
+        },
+        "costas": {
+          "x": 50,
+          "y": 51,
+          "s": 96
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 L86 29 L50 48 L14 29 Z\" fill=\"#7DBF8E\"/><path d=\"M14 29 L50 48 L50 92 L14 73 Z\" fill=\"#1E9A60\"/><path d=\"M50 48 L86 29 L86 73 L50 92 Z\" fill=\"#167A4C\"/><circle cx=\"26\" cy=\"55\" r=\"4\" fill=\"#12213F\"/><circle cx=\"39\" cy=\"61\" r=\"4\" fill=\"#12213F\"/></svg>"
     },
     {
@@ -1520,6 +2145,23 @@
         "cabeca",
         "costas"
       ],
+      "anchors": {
+        "cabeca": {
+          "x": 39,
+          "y": 34,
+          "s": 47
+        },
+        "olhos": {
+          "x": 39,
+          "y": 67,
+          "s": 21
+        },
+        "costas": {
+          "x": 50,
+          "y": 50,
+          "s": 102
+        }
+      },
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 8 L12 82 L50 92 Z\" fill=\"#FFD84D\"/><path d=\"M50 8 L50 92 L88 82 Z\" fill=\"#D69B0A\"/><circle cx=\"34\" cy=\"66\" r=\"4\" fill=\"#12213F\"/><circle cx=\"44\" cy=\"68\" r=\"4\" fill=\"#12213F\"/></svg>"
     }
   ],
@@ -1528,6 +2170,10 @@
       "id": "chapeu",
       "name": "Chapéu de explorador",
       "slot": "cabeca",
+      "pin": [
+        32,
+        45
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><ellipse cx=\"32\" cy=\"45\" rx=\"28\" ry=\"8\" fill=\"#9A6B45\"/><path d=\"M16 45 Q16 16 32 16 Q48 16 48 45 Z\" fill=\"#E8A23A\"/><rect x=\"16\" y=\"35\" width=\"32\" height=\"6\" fill=\"#B3261E\"/></svg>"
     },
     {
@@ -1540,6 +2186,10 @@
       "id": "botas",
       "name": "Botas de trilha",
       "slot": "pes",
+      "pin": [
+        32,
+        58
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M14 8 H32 V38 H48 Q56 38 56 46 V52 H14 Z\" fill=\"#9A6B45\"/><rect x=\"14\" y=\"16\" width=\"18\" height=\"4\" fill=\"#7E5535\"/><rect x=\"14\" y=\"26\" width=\"18\" height=\"4\" fill=\"#7E5535\"/><rect x=\"12\" y=\"50\" width=\"46\" height=\"8\" rx=\"3\" fill=\"#3A4A6B\"/></svg>"
     },
     {
@@ -1552,6 +2202,10 @@
       "id": "coroa",
       "name": "Coroa",
       "slot": "cabeca",
+      "pin": [
+        32,
+        51
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M8 50 L10 20 L22 34 L32 12 L42 34 L54 20 L56 50 Z\" fill=\"#D69B0A\"/><rect x=\"8\" y=\"46\" width=\"48\" height=\"8\" rx=\"2\" fill=\"#E8A23A\"/><circle cx=\"32\" cy=\"38\" r=\"4\" fill=\"#B3261E\"/><circle cx=\"19\" cy=\"42\" r=\"3\" fill=\"#1F5EFF\"/><circle cx=\"45\" cy=\"42\" r=\"3\" fill=\"#1E9A60\"/></svg>"
     },
     {
@@ -1564,6 +2218,10 @@
       "id": "tenis",
       "name": "Tênis",
       "slot": "pes",
+      "pin": [
+        32,
+        54
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M6 42 Q6 24 20 24 L30 30 Q48 33 56 40 Q60 44 58 48 H6 Z\" fill=\"#B3261E\"/><rect x=\"18\" y=\"29\" width=\"10\" height=\"3\" rx=\"1.5\" fill=\"#FFF4D6\"/><rect x=\"20\" y=\"35\" width=\"10\" height=\"3\" rx=\"1.5\" fill=\"#FFF4D6\"/><rect x=\"4\" y=\"46\" width=\"56\" height=\"8\" rx=\"4\" fill=\"#DDE2EC\"/></svg>"
     },
     {
@@ -1576,6 +2234,10 @@
       "id": "boina",
       "name": "Boina",
       "slot": "cabeca",
+      "pin": [
+        32,
+        46
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><rect x=\"30\" y=\"18\" width=\"4\" height=\"10\" rx=\"2\" fill=\"#B3261E\"/><ellipse cx=\"32\" cy=\"38\" rx=\"26\" ry=\"12\" fill=\"#B3261E\"/><ellipse cx=\"32\" cy=\"45\" rx=\"19\" ry=\"4\" fill=\"#7E5535\"/></svg>"
     },
     {
@@ -1588,18 +2250,31 @@
       "id": "patins",
       "name": "Patins",
       "slot": "pes",
+      "pin": [
+        32,
+        59
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M12 10 H28 L30 34 Q48 36 52 40 V46 H12 Z\" fill=\"#1F5EFF\"/><rect x=\"12\" y=\"10\" width=\"16\" height=\"6\" fill=\"#8DB4FF\"/><rect x=\"10\" y=\"44\" width=\"44\" height=\"5\" rx=\"2\" fill=\"#3A4A6B\"/><circle cx=\"18\" cy=\"54\" r=\"5\" fill=\"#E8A23A\"/><circle cx=\"32\" cy=\"54\" r=\"5\" fill=\"#E8A23A\"/><circle cx=\"46\" cy=\"54\" r=\"5\" fill=\"#E8A23A\"/></svg>"
     },
     {
       "id": "asas",
       "name": "Asas de papel",
       "slot": "costas",
+      "pin": [
+        32,
+        40
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M30 32 Q10 4 4 30 Q14 44 30 36 Z\" fill=\"#BFD3FF\"/><path d=\"M34 32 Q54 4 60 30 Q50 44 34 36 Z\" fill=\"#BFD3FF\"/><path d=\"M30 33 Q18 20 11 28 Q20 35 30 35 Z\" fill=\"#8DB4FF\"/><path d=\"M34 33 Q46 20 53 28 Q44 35 34 35 Z\" fill=\"#8DB4FF\"/><circle cx=\"32\" cy=\"34\" r=\"4\" fill=\"#1F5EFF\"/></svg>"
     },
     {
       "id": "oculos",
       "name": "Óculos",
       "slot": "cabeca",
+      "anchor": "olhos",
+      "pin": [
+        32,
+        33
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><rect x=\"2\" y=\"28\" width=\"8\" height=\"4\" rx=\"2\" fill=\"#626D88\"/><rect x=\"54\" y=\"28\" width=\"8\" height=\"4\" rx=\"2\" fill=\"#626D88\"/><rect x=\"26\" y=\"28\" width=\"12\" height=\"4\" rx=\"2\" fill=\"#626D88\"/><circle cx=\"17\" cy=\"33\" r=\"12\" fill=\"#626D88\"/><circle cx=\"47\" cy=\"33\" r=\"12\" fill=\"#626D88\"/><circle cx=\"17\" cy=\"33\" r=\"8\" fill=\"#BFD3FF\"/><circle cx=\"47\" cy=\"33\" r=\"8\" fill=\"#BFD3FF\"/></svg>"
     },
     {
@@ -1612,18 +2287,30 @@
       "id": "chinelos",
       "name": "Chinelos",
       "slot": "pes",
+      "pin": [
+        32,
+        58
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><ellipse cx=\"21\" cy=\"34\" rx=\"11\" ry=\"24\" fill=\"#E8A23A\"/><ellipse cx=\"43\" cy=\"34\" rx=\"11\" ry=\"24\" fill=\"#E8A23A\"/><path d=\"M12 22 Q21 34 30 22 L30 28 Q21 40 12 28 Z\" fill=\"#1E9A60\"/><path d=\"M34 22 Q43 34 52 22 L52 28 Q43 40 34 28 Z\" fill=\"#1E9A60\"/></svg>"
     },
     {
       "id": "cachecol",
       "name": "Cachecol",
       "slot": "costas",
+      "pin": [
+        32,
+        21
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><rect x=\"8\" y=\"14\" width=\"48\" height=\"14\" rx=\"7\" fill=\"#1E9A60\"/><rect x=\"36\" y=\"22\" width=\"14\" height=\"32\" rx=\"4\" fill=\"#1E9A60\"/><rect x=\"18\" y=\"14\" width=\"5\" height=\"14\" fill=\"#167A4C\"/><rect x=\"36\" y=\"34\" width=\"14\" height=\"5\" fill=\"#167A4C\"/><rect x=\"37\" y=\"54\" width=\"3\" height=\"6\" rx=\"1\" fill=\"#7DBF8E\"/><rect x=\"41.5\" y=\"54\" width=\"3\" height=\"6\" rx=\"1\" fill=\"#7DBF8E\"/><rect x=\"46\" y=\"54\" width=\"3\" height=\"6\" rx=\"1\" fill=\"#7DBF8E\"/></svg>"
     },
     {
       "id": "tiara",
       "name": "Tiara de estrelas",
       "slot": "cabeca",
+      "pin": [
+        32,
+        48
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M6 48 Q32 14 58 48 L52 50 Q32 24 12 50 Z\" fill=\"#B48BE6\"/><path d=\"M32 4 L35.5 13 L45 13 L37.5 19 L40.5 28 L32 22.5 L23.5 28 L26.5 19 L19 13 L28.5 13 Z\" fill=\"#D69B0A\"/><circle cx=\"15\" cy=\"36\" r=\"3.5\" fill=\"#FFD84D\"/><circle cx=\"49\" cy=\"36\" r=\"3.5\" fill=\"#FFD84D\"/></svg>"
     },
     {
@@ -1636,18 +2323,30 @@
       "id": "galochas",
       "name": "Galochas",
       "slot": "pes",
+      "pin": [
+        32,
+        56
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M12 6 H30 V40 H50 Q56 40 56 48 V56 H12 Z\" fill=\"#FFD84D\"/><rect x=\"12\" y=\"6\" width=\"18\" height=\"6\" fill=\"#D69B0A\"/><rect x=\"12\" y=\"50\" width=\"44\" height=\"6\" rx=\"2\" fill=\"#D69B0A\"/></svg>"
     },
     {
       "id": "paraquedas",
       "name": "Paraquedas",
       "slot": "costas",
+      "pin": [
+        32,
+        57
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M5 30 L29 54 L31 54 L8 30 Z\" fill=\"#626D88\"/><path d=\"M59 30 L35 54 L33 54 L56 30 Z\" fill=\"#626D88\"/><rect x=\"31\" y=\"30\" width=\"2\" height=\"24\" fill=\"#626D88\"/><path d=\"M4 30 Q32 -4 60 30 Z\" fill=\"#B3261E\"/><path d=\"M20 30 Q32 4 44 30 Z\" fill=\"#F29A4A\"/><rect x=\"26\" y=\"52\" width=\"12\" height=\"10\" rx=\"2\" fill=\"#9A6B45\"/></svg>"
     },
     {
       "id": "capacete",
       "name": "Capacete",
       "slot": "cabeca",
+      "pin": [
+        32,
+        47
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M8 44 Q8 12 32 12 Q56 12 56 44 Z\" fill=\"#1F5EFF\"/><path d=\"M26 13 Q32 12 38 13 L37 44 H27 Z\" fill=\"#8DB4FF\"/><rect x=\"4\" y=\"42\" width=\"56\" height=\"8\" rx=\"4\" fill=\"#3A4A6B\"/></svg>"
     },
     {
@@ -1660,6 +2359,10 @@
       "id": "meias",
       "name": "Meias listradas",
       "slot": "pes",
+      "pin": [
+        32,
+        58
+      ],
       "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><path d=\"M20 4 H36 V38 L52 44 Q59 48 55 56 Q51 61 44 58 L20 50 Z\" fill=\"#1F5EFF\"/><rect x=\"20\" y=\"13\" width=\"16\" height=\"5\" fill=\"#BFD3FF\"/><rect x=\"20\" y=\"25\" width=\"16\" height=\"5\" fill=\"#BFD3FF\"/><rect x=\"18\" y=\"2\" width=\"20\" height=\"6\" rx=\"2\" fill=\"#8DB4FF\"/></svg>"
     },
     {
