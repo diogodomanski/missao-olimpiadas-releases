@@ -1,4 +1,4 @@
-const VERSAO = "47-ec9aa9cc";
+const VERSAO = "50-f14b2594";
 const ARQUIVOS = ["./index.html","./responsavel/index.html","./nota/index.html","./online.js","./app.webmanifest","./icon.png","./icon-192.png"];
 // O service worker do site da Missão Olimpíadas (ADR-006 §6, ADR-012 §2). O
 // `olimpiadas/scripts/build-web.mjs` escreve na frente deste arquivo as duas constantes que ele lê —

@@ -584,6 +584,12 @@
        onde ele já era assim). Cresce a linha, como a lista de fontes do Escolha da Missão ENEM: aqui os
        links ficam lado a lado numa linha que quebra, e área invisível de 44 cobriria o vizinho. */
     .estudo a{min-height:44px;display:inline-flex;align-items:center}
+    /* Os outros dois links da entrada do caderno: `abrir a prova (PDF)` media 16px e `Solução oficial`
+       20px (TO1). Mesmo recurso do link de estudo, e por isso a regra alcança os três de uma vez: eles
+       moram em parágrafo de texto corrido, onde área invisível de 44px cobriria a linha vizinha — a
+       armadilha que o `.tema label::after` da Missão ENEM nomeia. A entrada cresce alguns pixels no
+       celular, que é o preço. Vale também na ficha do resultado da prova, que é a mesma `.entrada`. */
+    .entrada p a{min-height:44px;display:inline-flex;align-items:center}
     .chev::after{content:"";position:absolute;inset:-11px -13px}
   }
 
@@ -768,7 +774,7 @@
 <footer class="shell-footer">
   <!-- O lugar vazio à esquerda é de propósito: é onde entra o que a barra vier a hospedar.
        Não crie div vazia para reservá-lo. -->
-  <div class="in"><p class="versao">versão 47 · 10/10/2026 · obmep-mirim-2 v6</p></div>
+  <div class="in"><p class="versao">versão 50 · 14/10/2026 · obmep-mirim-2 v6</p></div>
 </footer>
 <!-- /build:footer -->
 
