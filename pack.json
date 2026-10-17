@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "obmep-mirim-2",
-  "version": 14,
+  "version": 15,
   "publishedAt": "2026-10-17",
   "olympiad": {
     "name": "Olimpíada Mirim",
@@ -86,7 +86,56 @@
       "adult": "Tratamento da informação"
     }
   ],
-  "links": [],
+  "links": [
+    {
+      "id": "numeros-1",
+      "topic": "numeros",
+      "title": "As quatro contas, passo a passo (Khan Academy)",
+      "url": "https://pt.khanacademy.org/math/pt-mat-prep-4-ano"
+    },
+    {
+      "id": "espaco-1",
+      "topic": "espaco",
+      "title": "Cubo, cone e pirâmide nos objetos (Khan Academy)",
+      "url": "https://pt.khanacademy.org/math/pt-mat-prep-4-ano/x1d2d407ad1f96d2e:padroes-e-formas-geometricas/x1d2d407ad1f96d2e:associar-figuras-geometricas-espaciais-a-objetos"
+    },
+    {
+      "id": "geometria-1",
+      "topic": "geometria",
+      "title": "Figuras planas: o nome de cada uma (Khan Academy)",
+      "url": "https://pt.khanacademy.org/math/basic-geo/basic-geometry-shapes"
+    },
+    {
+      "id": "medidas-1",
+      "topic": "medidas",
+      "title": "Medir comprimento em cm e m (Khan Academy)",
+      "url": "https://pt.khanacademy.org/math/pt-mat-prep-5-ano/x107775500706325c:grandezas-e-medidas-e-probabilidade-e-estatistica/x107775500706325c:comprimento"
+    },
+    {
+      "id": "contagem-1",
+      "topic": "contagem",
+      "title": "Contar todos os jeitos possíveis (Khan Academy)",
+      "url": "https://pt.khanacademy.org/math/pt-mat-prep-5-ano/x107775500706325c:grandezas-e-medidas-e-probabilidade-e-estatistica"
+    },
+    {
+      "id": "padroes-1",
+      "topic": "padroes",
+      "title": "Padrões e formas que se repetem (Khan Academy)",
+      "url": "https://pt.khanacademy.org/math/pt-mat-prep-4-ano/x1d2d407ad1f96d2e:padroes-e-formas-geometricas"
+    },
+    {
+      "id": "fracoes-1",
+      "topic": "fracoes",
+      "title": "Frações: partes de um inteiro (Khan Academy)",
+      "url": "https://pt.khanacademy.org/math/pt-5-ano/numeros-fracoes-5ano"
+    },
+    {
+      "id": "dados-1",
+      "topic": "dados",
+      "title": "Ler e montar gráficos de barras (Khan Academy)",
+      "url": "https://pt.khanacademy.org/math/pt-mat-prep-5-ano/x107775500706325c:grandezas-e-medidas-e-probabilidade-e-estatistica/x107775500706325c:graficos"
+    }
+  ],
   "exams": [
     {
       "id": "2026-1",
