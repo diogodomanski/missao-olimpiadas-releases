@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "id": "obmep-mirim-2",
-  "version": 6,
-  "publishedAt": "2026-10-09",
+  "version": 14,
+  "publishedAt": "2026-10-17",
   "olympiad": {
     "name": "Olimpíada Mirim",
     "org": "IMPA / OBMEP",
@@ -447,91 +447,166 @@
           "n": 1,
           "key": "C",
           "topic": "padroes",
-          "hints": []
+          "hints": [
+            "Volte à tabela grande e ache o 22. Ponha o dedo nele e não tire.",
+            "Quanto muda o número quando você desce uma casa na tabela? E quando anda uma casa para o lado?",
+            "Com essas duas regras, preencha o pedaço recortado a partir do 22 e compare com cada desenho."
+          ],
+          "explanation": "Cada linha da tabela tem dez números, então descer uma casa soma 10 e andar para o lado soma 1. Abaixo do 22 vem o 32; ao lado do 32 vem o 33; abaixo do 33 vem o 43. O pedaço recortado tem 22 em cima, 32 e 33 no meio, e 43 embaixo."
         },
         {
           "n": 2,
           "key": "D",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Anote num papel o preço de cada presente, um embaixo do outro. Assim nenhum fica de fora.",
+            "A pergunta compara dois presentes só: o de maior preço e o de menor preço. Circule esses dois na sua lista.",
+            "Para achar a diferença entre dois preços, faça uma subtração. Arme a conta e comece pelos centavos."
+          ],
+          "explanation": "Na lista de preços, o maior é 177 reais e o menor é 107 reais. A diferença sai de uma subtração: 177 − 107. Os dois têm o mesmo número de centavos, então basta olhar os reais: 177 − 107 = 70. A diferença é de 70 reais."
         },
         {
           "n": 3,
           "key": "C",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Passe o dedo pelo cano de cada bola, do alto até a saída, uma bola de cada vez.",
+            "As três partem no mesmo instante e correm no mesmo ritmo. Então chega primeiro a bola que tem o cano mais curto.",
+            "Depois da saída as bolas ficam em fila. A primeira a chegar vai parar mais longe, e a última fica mais perto do cano."
+          ],
+          "explanation": "Os canos têm comprimentos diferentes, e as bolas correm no mesmo ritmo, então quem faz o percurso mais curto sai na frente. O cano do meio é o mais curto: a bola 2 sai primeiro, depois a bola 1 e por último a bola 3. Na fila, quem sai primeiro é empurrado mais para longe, então a ordem que se enxerga é 3, 1 e 2."
         },
         {
           "n": 4,
           "key": "B",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "As marcas da parede repartem a altura em pedaços do mesmo tamanho. Conte quantos pedaços cabem no atleta de maior altura.",
+            "São 7 pedaços iguais em 175 centímetros. Dá para descobrir quanto mede um pedaço sozinho com uma divisão.",
+            "Agora conte os pedaços até o alto da cabeça do outro atleta e repita a medida de um pedaço esse tanto de vezes."
+          ],
+          "explanation": "A altura do atleta de maior altura ocupa 7 faixas iguais da parede. Como 175 ÷ 7 = 25, cada faixa mede 25 centímetros. O atleta de menor altura alcança 6 faixas, e 6 × 25 = 150. A altura procurada é de 150 centímetros."
         },
         {
           "n": 5,
           "key": "E",
           "topic": "contagem",
-          "hints": []
+          "hints": [
+            "Comece contando as vagas que estão vazias na figura. Marque cada uma com um tracinho no papel.",
+            "Releia o enunciado: dentro de uma mesma vaga, de quantos jeitos diferentes o carro pode ficar?",
+            "São dois jeitos em cada vaga vazia. Para juntar tudo, conte de dois em dois, uma vez para cada vaga — ou faça uma multiplicação."
+          ],
+          "explanation": "Contando os espaços livres do estacionamento, sobram 11 vagas para o carro que chega. Em cada uma delas o carro cabe de dois jeitos, então cada vaga vale 2 escolhas: 2 + 2 + 2 … onze vezes, que é o mesmo que 11 × 2 = 22. São 22 maneiras diferentes."
         },
         {
           "n": 6,
           "key": "A",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "Imagine as quatro figuras recortadas em papel e empilhadas, todas com o centro no mesmo ponto.",
+            "No desenho que sobra, a borda que aparece é sempre a da figura que chega mais longe do centro. Vá girando em volta e pergunte, em cada direção, qual delas chega mais longe.",
+            "Olhe as pontas do losango: as duas figuras ovais passam por cima dessas pontas. E os quatro cantos do quadrado, alguma figura alcança?"
+          ],
+          "explanation": "Empilhadas com o mesmo centro, as figuras escondem umas às outras. As pontas do losango ficam dentro das duas figuras ovais e somem. Os quatro cantos do quadrado, porém, passam para fora de tudo e continuam à vista. Por isso o contorno final junta os quatro cantos pontudos do quadrado com as curvas das figuras ovais."
         },
         {
           "n": 7,
           "key": "D",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "A tabela diz quanto cada tipo de bicho come por dia. Comece contando quantos bichos de cada tipo estão no aquário.",
+            "Dois bichos iguais comem o dobro de um; três comem o triplo. Escreva uma conta para cada linha da tabela.",
+            "Faça as quatro contas separadas, anote os quatro resultados e só então junte tudo numa soma."
+          ],
+          "explanation": "Conte os bichos do aquário e case cada um com a linha da tabela. Um bicho come 25 gramas por dia. Dois comem 15 cada, o que dá 30. Outro come 20. E três comem 10 cada, mais 30. Juntando aos poucos: 25 com 30 vai a 55, mais 20 chega a 75, e mais 30 fecha em 105 gramas por dia."
         },
         {
           "n": 8,
           "key": "D",
           "topic": "padroes",
-          "hints": []
+          "hints": [
+            "Olhe o desenho de uma casinha sozinha, com as medidas marcadas embaixo. Quanto mede essa casinha de uma ponta à outra?",
+            "A faixa inteira mede 30 centímetros. Quantas casinhas desse tamanho cabem nela? Desenhe a faixa toda antes de contar qualquer coisa.",
+            "Conte os palitos por grupos: primeiro os deitados, depois os de pé, depois os inclinados. E repare que duas casinhas vizinhas dividem um palito."
+          ],
+          "explanation": "Somando as duas medidas marcadas embaixo da casinha, cada uma delas ocupa 6 centímetros na horizontal, e 30 ÷ 6 dá 5 casinhas na faixa. Desenhando a faixa inteira e contando por grupos, são 25 palitos deitados, 11 em pé e 15 inclinados, o que soma 51 palitos. Outro caminho: uma casinha sozinha usa 11 palitos e 5 × 11 = 55, mas as vizinhas dividem 4 palitos, então 55 − 4 chega ao mesmo 51."
         },
         {
           "n": 9,
           "key": "A",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Comece pela linha que soma 6. Com três números diferentes, de 1 a 9, quais três podem dar 6?",
+            "Agora olhe a coluna que soma 20. Os maiores números que ainda sobram vão ali embaixo; veja o que resta para a casa de cima.",
+            "Com a linha de cima e a coluna da esquerda preenchidas, vá fechando uma casa de cada vez: teste um número e confira se a soma marcada bate."
+          ],
+          "explanation": "A linha de cima soma 6 com três números diferentes, e só 1, 2 e 3 cabem. A coluna da esquerda soma 20: com os dois maiores que sobram, 9 e 8, a casa de cima dessa coluna tem de ser 3. A segunda linha soma 22 com 6, 7 e 9, então no meio da coluna da esquerda fica o 9. Pondo 6 no centro, algum número se repete, então no centro fica o 7. A linha de cima vira 3, 2, 1 e a de baixo, 8, 5, 4. Na casa cinza fica o 4."
         },
         {
           "n": 10,
           "key": "B",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "O contorno é o caminho que dá a volta na figura inteira. Passe o lápis bem devagar por esse caminho, sem tirar do papel.",
+            "Dois pedaços do caminho estão sem número. Compare cada pedaço com o lado que fica de frente: a medida que falta sai de uma subtração.",
+            "Separe o caminho em dois grupos, os pedaços deitados e os pedaços em pé. Some cada grupo no papel e só depois junte os dois."
+          ],
+          "explanation": "Os pedaços sem número saem por comparação: 4 − 3 = 1 e 3 − 1 = 2. Juntando o que está deitado, dá duas vezes 3 + 4, ou seja, 14 centímetros. Juntando o que está em pé, dá duas vezes 4, ou seja, 8 centímetros. Os dois grupos somados, 14 com 8, fazem a volta inteira medir 22 centímetros."
         },
         {
           "n": 11,
           "key": "D",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "Olhe a borda de cada peça. Toda saliência de uma peça tem um buraco do mesmo formato em outra.",
+            "Procure a peça com o encaixe redondo e branco: só uma outra peça combina com esse encaixe. Comece por esse par.",
+            "Duas peças são iguaizinhas e encaixam uma na outra. Junte os dois pares e, no desenho montado, conte só as figuras cinzas que ficaram com quatro lados do mesmo tamanho."
+          ],
+          "explanation": "As peças se juntam duas a duas: a do encaixe redondo e branco tem uma parceira só, e as duas peças iguais se encaixam entre si. Montado o quebra-cabeça, as metades cinzas se completam e viram figuras inteiras. Contando só as que ficam com os quatro lados do mesmo tamanho, aparecem 3 quadrados dentro do quebra-cabeça."
         },
         {
           "n": 12,
           "key": "C",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Um pingo de cola fica onde dois cubinhos se encostam de cara inteira. Procure esses encontros numa peça de cada vez.",
+            "Conte devagar: para cada cubinho, veja quantos vizinhos estão colados nele. Cuidado para não contar o mesmo encontro duas vezes.",
+            "Peças com o mesmo tanto de cubinhos podem precisar de quantidades de cola diferentes, porque depende de como os cubinhos estão arrumados. Anote o número de cada peça e compare no fim."
+          ],
+          "explanation": "Em cada peça, conte os lugares onde dois cubinhos se encostam: é ali que entra um pingo de cola. As cinco peças, na ordem em que aparecem, pedem 5, 6, 7, 5 e 6 pingos de cola. Gasta mais cola a peça que chega a 7."
         },
         {
           "n": 13,
           "key": "A",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Ponha o dedo na entrada e ande devagar, um trecho de cada vez, até a próxima parede.",
+            "A regra vale sempre que a parede aparece na frente: a curva é para a direita de quem caminha, que nem sempre é a direita do papel.",
+            "Marque o trajeto com lápis, trecho por trecho. Ao chegar numa saída, refaça o caminho de trás para a frente para conferir se nenhuma curva foi pulada."
+          ],
+          "explanation": "Saindo da entrada e virando à direita a cada parede encontrada, Roberto dá uma volta pelo meio do labirinto, passa por corredores estreitos e termina numa das saídas da parede da esquerda, a que fica mais embaixo. Desenhar o trajeto com o lápis ajuda a não pular curva nenhuma."
         },
         {
           "n": 14,
           "key": "D",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "Comece pela peça que tem menos lugares possíveis no quadriculado, e não pela que parece mais fácil de desenhar.",
+            "A peça de dois quadradinhos cabe de dois jeitos. Num desses jeitos sobra um quadradinho solto, e não existe peça desse tamanho para tapar o buraco.",
+            "Com essa peça no lugar certo, as outras vão entrando uma de cada vez, porque a cada passo só resta um encaixe. Vá pintando o quadriculado até chegar ao quadradinho da interrogação."
+          ],
+          "explanation": "A peça de dois quadradinhos cabe de dois jeitos no quadriculado. Um deles deixa um quadradinho sozinho, sem peça que o cubra, então vale o outro. Com essa peça fixada, duas das outras ficam com um lugar só; e, com essas duas no papel, as últimas também. No fim sobra uma única peça capaz de cobrir o quadradinho da interrogação."
         },
         {
           "n": 15,
           "key": "D",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Leia uma pista de cada vez e procure, nas cinco meninas do desenho, quem combina com tudo o que a pista diz.",
+            "Comece pela pista que sobra para uma menina só: essa pista fixa um lugar na fila e já tira as outras meninas daquele lugar.",
+            "Quando a pista disser que duas meninas estão lado a lado, teste as duas ordens possíveis e veja qual combina com o resto das pistas."
+          ],
+          "explanation": "Cada pista junta duas ou três características, e isso basta para achar uma menina por vez. Cléo é a única com laço, boca aberta e também os olhos abertos: fica no meio da fila. Eva, com laço e boca aberta, é a primeira. No fim da fila ficam as duas meninas que uma pista coloca lado a lado: como Ana aparece com os olhos abertos e Duda com a boca aberta, Ana vem antes de Duda. Sobra o segundo lugar para Bia, que de fato tem laço e olhos abertos."
         }
       ]
     },
@@ -546,91 +621,166 @@
           "n": 1,
           "key": "C",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "Olhe a figura pensando só nos triângulos brancos. Os verdes ficam de fora da conta.",
+            "Conte uma linha de cada vez, de cima para baixo. Um mesmo quadradinho pode guardar mais de um triângulo branco.",
+            "Marque a lápis cada triângulo que você já contou, anote o total de cada linha e some as quatro linhas no fim."
+          ],
+          "explanation": "Os quadradinhos estão cortados por riscos atravessados, e cada risco parte o quadradinho em dois triângulos. Contando linha por linha, de cima para baixo, aparecem 3 brancos na primeira linha, 3 na segunda, 3 na terceira e 3 na última. Somando as quatro: 3 + 3 + 3 + 3 = 12 triângulos brancos na figura inteira."
         },
         {
           "n": 2,
           "key": "D",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Antes de tudo, anote num papel quantas bolinhas pretas e quantas brancas há no começo.",
+            "Quando uma branca ganha tinta preta, o grupo preto ganha uma bolinha e o branco perde uma. O total de bolinhas continua igual.",
+            "Pinte de uma em uma no papel e escreva o novo par de números a cada passo, até o grupo preto ficar com duas vezes o do branco."
+          ],
+          "explanation": "São 9 bolinhas ao todo, e esse total não muda: pintar só passa uma bolinha de um grupo para o outro. Para o grupo preto ter duas vezes o branco, os dois precisam ficar com 6 e 3, porque 6 + 3 dá 9 e 6 é duas vezes 3. Começando com 2 pretas, faltam 4 pinceladas para chegar a 6. Confira do outro lado: 7 brancas menos 4 deixam 3."
         },
         {
           "n": 3,
           "key": "A",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "A pilha tem cubinhos escondidos atrás dos outros. Comece olhando só os que encostam na mesa.",
+            "Desenhe a pilha vista de cima e faça um quadradinho para cada cubinho que toca a mesa.",
+            "Dê a volta pelo contorno desse desenho, contando um lado de cada vez, e depois procure se ficou algum cubinho preso num cantinho de dentro."
+          ],
+          "explanation": "Vista de cima, a base da pilha tem forma de C. Dando a volta a partir de um canto: 2 cubinhos na frente, 4 de um lado, 4 atrás e 3 do outro lado, o que dá 13, e ainda há 1 encaixado num cantinho de dentro — ou seja, 14 cubinhos encostam na mesa. Como a pilha inteira tem 21 cubinhos, os 21 − 14 = 7 restantes estão apoiados em cima de outros cubinhos."
         },
         {
           "n": 4,
           "key": "C",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Olhe com calma cada chinelo da figura e descubra de que pé cada um é.",
+            "Separe os chinelos em dois montes no papel: o monte de um pé e o monte do outro. Quantos ficam em cada monte?",
+            "Ninguém deixa dois chinelos do mesmo pé. Monte os pares que der e conte quantos chinelos ficaram sozinhos: cada um veio de mais uma pessoa."
+          ],
+          "explanation": "Na figura aparece 1 chinelo de um pé e 5 chinelos do outro pé. Só dá para montar 1 par completo, que pertence a uma pessoa. Os 4 chinelos que sobram são todos do mesmo pé, então cada um veio de uma pessoa diferente. Juntando: 1 + 4 = 5 pessoas, e com menos gente que isso a figura não se explica."
         },
         {
           "n": 5,
           "key": "A",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "Passe o dedo pelo contorno de cada figura, sem cortar caminho pelo meio.",
+            "O contorno é feito de dois tipos de pedaço: o lado de um quadradinho e o risco atravessado, que é mais comprido que o lado.",
+            "Monte uma tabelinha com duas linhas: quantos lados e quantos riscos atravessados cada figura tem. Depois compare as cinco colunas."
+          ],
+          "explanation": "O contorno de cada figura se reparte em lados de quadradinho e em riscos atravessados, e o risco atravessado é mais comprido que o lado. Contando em cada uma: a primeira tem 6 lados e 4 riscos; a segunda, 4 e 4; a terceira, 6 e 3; a quarta, 6 e 3; a quinta, 6 e 2. A primeira figura empata no maior número de lados e ganha sozinha nos riscos, então o contorno dela é o mais comprido de todos."
         },
         {
           "n": 6,
           "key": "C",
           "topic": "dados",
-          "hints": []
+          "hints": [
+            "Cada barra do desenho é uma matéria, e a letra embaixo diz qual. Ache a barra de Matemática e a de Português em cada gráfico.",
+            "A barra de Português tem de caber duas vezes dentro da de Matemática. Meça com o dedo ou com a borda de um papel.",
+            "Risque os gráficos que não passam nesse teste e repita a medida com a barra de Ciências, que também tem de caber duas vezes."
+          ],
+          "explanation": "São duas condições para o gráfico valer. A primeira: a altura de Matemática é duas vezes a de Português — isso derruba quase todos os desenhos e deixa dois de pé. A segunda: a altura de Matemática também é duas vezes a de Ciências, e entre os dois que sobraram isso acontece em um só. Nesse mesmo desenho, a altura de Matemática fica em três vezes a de Inglês."
         },
         {
           "n": 7,
           "key": "B",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "As peças só saem pelas pontas do fio. Para alcançar uma estrela do meio, tudo o que estiver antes dela sai junto.",
+            "Experimente tirar as peças só pela ponta esquerda e conte as bolinhas que saem; depois faça a mesma conta pela ponta direita.",
+            "Dá para tirar peças pelas duas pontas. Então procure o maior grupo de bolinhas seguidas sem nenhuma estrela no meio: esse grupo pode continuar no fio."
+          ],
+          "explanation": "O colar tem 10 bolinhas, com estrelas espalhadas entre elas. Como as peças saem pelas duas pontas, o que resta no fio é um pedaço do meio, e nesse pedaço não pode haver estrela nenhuma. Então o pedaço salvo é um grupo de bolinhas que fica entre duas estrelas, e o maior desses grupos tem 3 bolinhas. Logo, saem 10 − 3 = 7 bolinhas, e nenhuma estratégia tira menos que isso."
         },
         {
           "n": 8,
           "key": "C",
           "topic": "contagem",
-          "hints": []
+          "hints": [
+            "Anote de um lado as cores das camisetas e do outro as cores das bermudas. Veja quais cores aparecem nos dois lados.",
+            "Escolha uma bermuda e pergunte: quais camisetas podem ir junto sem repetir a cor?",
+            "Repita essa pergunta com cada uma das bermudas, anotando o número de camisetas que sobra em cada caso, e some os números no fim."
+          ],
+          "explanation": "Juliano tem 4 camisetas e 3 bermudas. Para cada bermuda, servem as camisetas de cor diferente: com a bermuda branca ficam 3 camisetas, com a azul ficam 3 e com a cinza, que não tem camiseta da mesma cor, ficam todas as 4. Somando os três casos: 3 + 3 + 4 dá 10 jeitos diferentes de se vestir."
         },
         {
           "n": 9,
           "key": "B",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "A turma inteira é maior que o grupo que levantou a mão. Escreva esses dois números separados.",
+            "Quem gosta das duas matérias levantou a mão duas vezes. Por isso somar as duas listas passa do tamanho da turma.",
+            "Do grupo que levantou a mão, tire quem está na lista de Português. Quem sobra gosta de uma matéria só."
+          ],
+          "explanation": "A turma tem 36, e 35 levantaram a mão ao menos uma vez. Na lista de Português estão 28. Tirando essa lista do grupo que levantou a mão, ficam 35 − 28, que dá 7: são os que levantaram a mão e não estão em Português, ou seja, gostam só de Matemática. Dá para conferir pela outra ponta: 32 gostam de Matemática, e 32 − 7 = 25 gostam das duas matérias."
         },
         {
           "n": 10,
           "key": "A",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "No espelho a esquerda e a direita trocam de lugar, mas o alto e o baixo ficam onde estão.",
+            "Copie o relógio da figura num papel fino e olhe o seu desenho pelo outro lado da folha, contra a luz.",
+            "No desenho desvirado, veja em que número cada ponteiro para: o ponteiro curto conta as horas e o comprido conta os minutos."
+          ],
+          "explanation": "O espelho troca os lados, então um ponteiro que aparece à esquerda está de verdade à direita. O ponteiro comprido aponta para baixo nas duas imagens, e para baixo fica o 6, que vale 30 minutos. O ponteiro curto, depois de desvirar a figura, para logo adiante do 4. Juntando as duas leituras, a hora verdadeira é meia hora depois das 4."
         },
         {
           "n": 11,
           "key": "D",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Desenhe a rua como uma reta e marque nela a casa de cada um, com a distância escrita embaixo.",
+            "Quem mora na casa escolhida não caminha nada. Cada um dos outros caminha a diferença entre a casa própria e a casa escolhida.",
+            "Faça essa soma uma vez para cada casa, anote os cinco resultados em fila e compare com o que a pergunta pede."
+          ],
+          "explanation": "As casas ficam a 10, 30, 50, 60 e 80 metros do começo da rua. Escolhida uma casa, quem mora nela caminha zero e cada um dos outros caminha a diferença até ali. Fazendo a soma para as cinco: na casa de Ana dá 180 metros; na de Beto, 120; na de Cris, 100; na de Duda, 110; na de Enzo, 170."
         },
         {
           "n": 12,
           "key": "E",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Leia uma pista por vez e, a cada pista, risque nas alternativas tudo o que aquela pista não deixa acontecer.",
+            "Quando duas personagens não podem usar a mesma peça e as cores são poucas, a cor que sobra é da terceira personagem.",
+            "Com o chapéu e a gravata já decididos, use as pistas dos sapatos para escolher entre o que ainda não foi riscado."
+          ],
+          "explanation": "A pista dos chapéus diferentes deixa o chapéu verde para Zé Grilo e já derruba duas alternativas. A pista das gravatas iguais entre Pirilampo e Xurupita deixa a gravata azul para Zé Grilo e derruba mais uma. Nas duas últimas pistas, o sapato vermelho de bico amarelo acaba ficando com Xurupita, e para Zé Grilo sobra o sapato branco com bico vermelho."
         },
         {
           "n": 13,
           "key": "B",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Desenhe uma linha do tempo e marque com um traço o começo e o fim de cada esporte.",
+            "Dois esportes que ocupam a mesma faixa de horário não dão para ver ao vivo. Anote quais pares brigam entre si.",
+            "Agora monte a maior lista possível em que nenhum par brigue. Comece pelos esportes que não brigam com ninguém."
+          ],
+          "explanation": "Com os horários desenhados lado a lado dá para ver quais esportes se cruzam. Canoagem, natação e basquete ocupam a mesma faixa, então só um dos três entra na lista. Escolhido um dos três, o vôlei ainda briga com dois outros esportes: de um lado o surfe, do outro o futebol. Montando o que resta, a maior lista possível tem 4 esportes — por exemplo judô, surfe, futebol e uma das três do começo."
         },
         {
           "n": 14,
           "key": "B",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "Conte as linhas e as colunas do quadriculado para descobrir quantas casinhas há ao todo.",
+            "Veja quantas casinhas cada tipo de peça cobre: conte os quadradinhos de uma peça amarela, de uma verde e de uma vermelha.",
+            "Some as casinhas das peças que dá para contar na figura e veja quantas ficam faltando. As que faltam foram cobertas só por peças vermelhas."
+          ],
+          "explanation": "O quadriculado tem 6 linhas e 7 colunas, ou seja, 42 casinhas, e no fim nenhuma fica vazia. As peças que dá para contar cobrem 18 casinhas de amarelo, 8 de verde e 4 de uma vermelha, somando 30. Faltam 42 − 30 = 12 casinhas. Como a peça vermelha cobre 4 casinhas, foram usadas mais 3 vermelhas, e com a que já estava lá chega-se a 4 peças vermelhas."
         },
         {
           "n": 15,
           "key": "C",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "O quadradinho preto é a medida de tudo. Pense em cada parte colorida como um monte desses quadradinhos.",
+            "O pedaço azul mais o quadradinho preto fecham um quadrado. Que número multiplicado por si mesmo dá a área desse quadrado? Repita a ideia com o pedaço amarelo.",
+            "Com os dois lados descobertos, ache o lado do quadrado grande — cuidado, o quadradinho preto é contado nas duas vezes — e tire da área dele as partes que você já conhece."
+          ],
+          "explanation": "Tome o quadradinho preto como 1. O azul com o preto fazem um quadrado de área 16, e como 4 × 4 dá 16, esse lado mede 4. O amarelo com o preto fazem um quadrado de área 9, e como 3 × 3 dá 9, esse lado mede 3. No quadrado grande as duas partes se encostam e o preto entra duas vezes, então o lado grande é 4 + 3 − 1 = 6 e a área, 36. Tirando 15, 8 e 1 sobram 12 para as duas partes cor-de-rosa, iguais: 12 ÷ 2 = 6."
         }
       ]
     },
@@ -645,91 +795,166 @@
           "n": 1,
           "key": "D",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Olhe os dois pratos da balança e escreva num papel o que está em cada um. A balança está parada, então os dois lados pesam a mesma coisa.",
+            "Tem um pedaço de tijolo igual nos dois pratos? Tire esse mesmo pedaço dos dois lados: a balança não se mexe.",
+            "Depois de tirar, sobra um pedacinho de tijolo de um lado e o peso de ferro do outro. Pense em quantos pedacinhos desses cabem num tijolo inteiro."
+          ],
+          "explanation": "A balança parada diz que os dois pratos pesam igual, e tirar a mesma coisa dos dois lados não desequilibra nada. Tirando a metade de tijolo que aparece nos dois pratos, de um lado fica meia peça e do outro fica o peso de 1 quilo: essa metade vale 1 quilo. O tijolo inteiro é feito de duas metades iguais, então pesa 1 + 1 = 2 quilos."
         },
         {
           "n": 2,
           "key": "D",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Conte as coisas por tipo, uma de cada vez: primeiro só os lápis, depois só os apontadores, depois só as borrachas. Anote os três números.",
+            "Cada kit leva um de cada tipo. Qual dos três números é o menor? É esse que manda na quantidade de kits.",
+            "Monte os kits no papel e risque o que foi usado. O que ficar sem risco é a sobra: diga de que tipo é cada peça que sobrou."
+          ],
+          "explanation": "Contando por tipo aparecem sete lápis, seis apontadores e cinco borrachas. Cada kit precisa de um de cada, então o tipo que tem menos é que manda: dá para montar cinco kits. Esses cinco kits gastam cinco lápis, cinco apontadores e cinco borrachas. Sobram dois lápis e um apontador, e nenhuma borracha."
         },
         {
           "n": 3,
           "key": "D",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "Olhe a régua com cuidado: nem o lápis nem o pincel começam no zero. Anote em que número cada um começa e em que número termina.",
+            "O tamanho de cada objeto é o quanto cada um anda na régua: o número do fim menos o número do começo. Faça as duas contas separadas.",
+            "Com os dois tamanhos anotados, veja quanto um passa do outro. Dá para conferir empurrando o lápis até os dois começarem no mesmo risco."
+          ],
+          "explanation": "Na régua o lápis vai do 1 até o 11, então tem 10 centímetros, porque 11 − 1 = 10. O pincel vai do 2 até o 14, então tem 12 centímetros, porque 14 − 2 = 12. A pergunta é quanto um passa do outro: a diferença entre os dois é de 2 centímetros, porque 12 − 10 = 2. Outro jeito de ver: se os dois começassem no mesmo risco da régua, o pincel passaria 2 centímetros da ponta do lápis."
         },
         {
           "n": 4,
           "key": "E",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Pense primeiro no maior número que um dado pode mostrar numa jogada só. Qual seria o maior total possível em três jogadas?",
+            "O total da questão é bem pertinho desse máximo. Tente escrever somas de três números do dado que cheguem nesse total.",
+            "Monte 17 de todos os jeitos que conseguir. Veja qual número aparece em todas as tentativas: esse é o que apareceu com certeza."
+          ],
+          "explanation": "Um dado comum mostra de 1 a 6 pontos, então três jogadas dão no máximo 6 + 6 + 6, que é 18. Para chegar a 17 falta só 1 para esse máximo, e o único jeito é duas jogadas de 6 e uma de 5, em qualquer ordem. Em todas as ordens o 5 está lá. Por isso a face de cinco pontos apareceu com certeza numa das jogadas."
         },
         {
           "n": 5,
           "key": "C",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Compare os dois trens do desenho. Conte os vagões de cada um e veja o que muda de um trem para o outro.",
+            "Os dois trens têm a mesma locomotiva. Então a diferença entre os dois comprimentos é só o vagão a mais. Quanto mede um vagão?",
+            "Volte para o trem de cima: tire do comprimento dele o que os vagões ocupam. O que sobra é a locomotiva."
+          ],
+          "explanation": "Os dois trens do desenho têm a mesma locomotiva; o de baixo tem um vagão a mais. Como um trem mede 45 metros e o outro 34, esse vagão a mais vale 45 − 34, ou seja, 11 metros. O trem de cima é a locomotiva com 2 vagões, e 2 vagões ocupam 11 + 11 = 22 metros. Então a locomotiva tem 12 metros, porque 34 − 22 = 12. Confira no trem de baixo: 12 + 11 + 11 + 11 = 45."
         },
         {
           "n": 6,
           "key": "D",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Leia a regra do enunciado devagar e diga com suas palavras o que uma figura branca precisa ter por perto.",
+            "Vá de cartão em cartão. Em cada um, marque com o lápis quais figuras são brancas e quais são pretas.",
+            "Um cartão obedece quando, tendo figura branca, também tem figura preta. Risque os cartões que obedecem; sobra o que quebra a regra."
+          ],
+          "explanation": "A regra diz que figura branca não anda sozinha: onde aparece uma branca, tem de aparecer também uma preta no mesmo cartão. Olhando cartão por cartão, a maioria cumpre a regra, porque tem branca e preta juntas; e um dos cartões não tem nenhuma figura branca, então nem precisa de preta. Sobra um único cartão com figura branca e nenhuma preta, e é esse que não segue a regra."
         },
         {
           "n": 7,
           "key": "B",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Anote a regra do nariz num papel: cada mentira faz o nariz crescer um tanto, e a verdade faz o nariz voltar ao tamanho do começo.",
+            "No fim o nariz tinha 18 centímetros. Quanto o nariz cresceu desde o começo? Quantas mentiras seguidas cabem nesse crescimento?",
+            "Conte de trás para a frente: as últimas frases foram mentira, porque o nariz ficou grande. A frase logo antes dessas mentiras teve de ser verdade."
+          ],
+          "explanation": "O nariz começou com 3 centímetros e terminou com 18, então cresceu 15. Cada mentira acrescenta 5, e 15 pedem três mentiras seguidas, sem nenhuma verdade no meio — uma verdade faria o nariz voltar para 3. Essas três mentiras só podem ser as três últimas frases, e por isso a frase anterior a elas foi verdade. O que aconteceu na primeira frase não muda o tamanho do fim. Conferindo: 3 + 5 = 8, 8 + 5 = 13 e 13 + 5 = 18."
         },
         {
           "n": 8,
           "key": "B",
           "topic": "contagem",
-          "hints": []
+          "hints": [
+            "Esqueça por um instante as regras da fábrica e liste todas as misturas possíveis: cada tamanho com cada cor. Um desenho em galhos ajuda.",
+            "Quantas misturas a sua lista tem? Conte com calma, sem pular nenhuma.",
+            "Agora volte ao enunciado e risque da lista as misturas que a fábrica não faz. Conte quantas ficaram sem risco."
+          ],
+          "explanation": "São três tamanhos e três cores, e cada tamanho pode vir com cada cor: isso dá nove misturas diferentes, porque 3 × 3 = 9. Escrevendo as nove numa lista em galhos, dá para riscar as que a fábrica não produz. Sobram cinco misturas sem risco, e é isso que a fábrica faz hoje."
         },
         {
           "n": 9,
           "key": "B",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "Siga com o dedo o contorno grosso, o que dá a volta pela figura toda. Conte quantos pedaços retos formam esse contorno.",
+            "Todos esses pedaços têm o mesmo tamanho. Se juntos valem 24 centímetros, quanto mede cada pedaço?",
+            "Agora dê a volta só na parte cinza e conte por quantos pedaços você passa. O risco que corta o cinza no meio fica por dentro e não entra na volta."
+          ],
+          "explanation": "O contorno grosso dá a volta na figura inteira e é feito de 8 pedaços retos do mesmo tamanho. Como juntos valem 24 centímetros, cada pedaço tem 3 centímetros, porque 24 ÷ 8 = 3 — e esse é o lado de cada quadrado e de cada triângulo. Dando a volta só na parte cinza, você passa por 4 pedaços desses; o risco que corta o cinza ao meio fica por dentro e não conta. Então a volta do cinza vale 4 vezes 3, ou seja, 12 centímetros."
         },
         {
           "n": 10,
           "key": "C",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Desenhe cinco lugares em fila, do primeiro ao quinto, e escreva o nome que você já tem certeza onde fica.",
+            "A pista de quem chegou logo atrás de quem pede dois lugares vizinhos. Veja em quais pares de lugares esse encaixe cabe.",
+            "Teste cada encaixe e risque o que briga com as outras pistas. Quando sobrar um jeito só, leia quem ficou em terceiro."
+          ],
+          "explanation": "Abel chegou em 2º, e nem Carlos nem Dudu podem ficar em 3º: então o terceiro lugar é de Beto ou de Emanuel. A pista de Beto logo atrás de Emanuel pede dois lugares vizinhos. Beto em 3º exigiria Emanuel em 2º, e esse lugar já é de Abel. Beto em 5º deixaria o 3º para Carlos ou para Dudu, o que as pistas proíbem. Sobra Beto em 4º, com Emanuel logo à frente, no terceiro lugar."
         },
         {
           "n": 11,
           "key": "C",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Some todos os números da linha que não tem a estrela. Vá somando aos poucos e anote o total.",
+            "Agora some os números já escritos na linha da estrela. Compare os dois totais: qual é maior, e por quanto?",
+            "A estrela vale exatamente o que falta para a linha dela empatar com a outra. Faça a subtração dos dois totais."
+          ],
+          "explanation": "A linha de baixo tem oito números, do 2 até o 9, e todos juntos somam 44. A linha de cima tem os números de 1 a 7 mais a estrela, e esses sete números somam 28. Para as duas linhas ficarem com a mesma soma, a estrela precisa cobrir a diferença: 44 − 28 dá 16. Dá para conferir por outro caminho: os valores de 2 até 7 estão escritos nas duas linhas e podem ser deixados de lado; sobram 1 e a estrela de um lado, 8 e 9 do outro, e como 8 + 9 dá 17, a estrela vale 16."
         },
         {
           "n": 12,
           "key": "B",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Desenhe cinco pontos, um para cada jogador, e ligue com um risco cada dupla que jogou junta.",
+            "Comece por quem jogou mais partidas e por quem jogou menos. Quem jogou com todo mundo já liga todos os pontos uma vez.",
+            "Cada risco vale uma partida para os dois pontos das pontas. Complete os riscos que faltam sem passar do número de partidas de ninguém e depois conte os riscos que chegam ao segundo jogador."
+          ],
+          "explanation": "Desenhe um risco para cada partida. O 5º jogou quatro partidas, ou seja, com todos os outros. Como o 1º jogou uma só, foi essa, e o 1º não jogou com mais ninguém. O 4º precisa de três partidas, e sobram apenas o 2º, o 3º e o 5º para enfrentar. O 3º jogou duas: uma com o 5º e outra com o 4º. Contando os riscos que chegam ao 2º, ficam dois: um com o 4º e outro com o 5º."
         },
         {
           "n": 13,
           "key": "E",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Escreva numa folha os sete dias da semana em fila, na ordem.",
+            "Cada frase usa uma palavra de tempo — ontem, anteontem, amanhã ou o dia depois de amanhã. Para cada frase, ande para trás ou para frente na sua fila e descubra que dia seria hoje.",
+            "Compare os «hoje» que você encontrou. Quase todos caem no mesmo dia; quem apontar para um dia diferente é quem está errado."
+          ],
+          "explanation": "Cada frase pode virar um «então hoje é tal dia». Quem diz que anteontem foi terça está dizendo que hoje é quinta. Quem diz que ontem foi quarta chega na quinta também. Quem chama sexta de amanhã e quem chama sábado de depois de amanhã caem na quinta igual. Como só uma pessoa pode estar errada, hoje é quinta-feira, e quem está errado é Ernesto, a única pessoa cuja frase não cabe nesse dia."
         },
         {
           "n": 14,
           "key": "B",
           "topic": "contagem",
-          "hints": []
+          "hints": [
+            "Separe as flores por tipo. Pense primeiro só nas margaridas: de quantos jeitos dá para repartir as margaridas entre os dois vasos sem deixar vaso vazio?",
+            "Agora faça a mesma pergunta só para as rosas. Anote os dois números que você encontrou.",
+            "Para cada jeito de repartir as margaridas, todos os jeitos de repartir as rosas continuam valendo. Junte os dois números com uma multiplicação."
+          ],
+          "explanation": "Basta decidir o que vai no primeiro vaso, porque o resto cai no segundo. As margaridas podem ser repartidas de dois jeitos: o primeiro vaso fica com uma ou com duas, e ainda sobra margarida para o outro vaso. As rosas podem ser repartidas de três jeitos, com uma, duas ou três no primeiro vaso. Cada escolha de margarida combina com cada escolha de rosa, então são 2 × 3 = 6 jeitos ao todo."
         },
         {
           "n": 15,
           "key": "C",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Anote quantas moedas de cada valor estão na caixa antes de qualquer retirada.",
+            "A pergunta é sobre o que vale com certeza, aconteça o que acontecer. Para derrubar uma frase, basta inventar uma retirada de quatro moedas em que essa frase não valha.",
+            "Teste as frases uma a uma com exemplos. Depois pense no pior caso: tirando moedas de tipos diferentes, quantas dá para tirar antes de repetir um tipo?"
+          ],
+          "explanation": "Na caixa há três tipos de moeda, três de cada. Quase toda frase cai com um exemplo: pode sair, por exemplo, três moedas de 50 centavos junto com uma de 25 — aí não vem nenhuma moeda de 1 real, não vem uma de cada tipo e o total fica em R$ 1,25. E saindo as três moedas de 1 real mais outra qualquer, passa de 3 reais. Uma frase não cai nunca: como só existem três tipos, as três primeiras moedas podem até ser três tipos diferentes, só que a quarta repete um tipo que já saiu."
         }
       ]
     },
@@ -744,91 +969,166 @@
           "n": 1,
           "key": "E",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Faça uma conta de cada vez, no papel, e escreva o resultado ao lado. São cinco contas, então são cinco números para anotar.",
+            "Cuidado com a ordem: quando aparecem vezes e mais na mesma conta, a multiplicação vem primeiro. E qualquer número multiplicado por zero some.",
+            "Com os cinco resultados anotados, compare de dois em dois. Comece olhando quantos algarismos cada resultado tem."
+          ],
+          "explanation": "Todas as contas usam os mesmos algarismos, mas o jeito de juntar muda tudo. Fazendo uma de cada vez: 2 + 0 + 2 − 3 chega a 1; 20 × 2 + 3 chega a 43, porque a multiplicação vem antes; 2 × 0 × 23 chega a 0, porque tudo que multiplica zero vira zero; 20 + 23 chega a 43; e 202 − 3 chega a 199. Comparando os cinco números, o maior de todos é 199, o único que passa de cem."
         },
         {
           "n": 2,
           "key": "D",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "Desenhe julho numa tabela de sete colunas e comece marcando o dia 1 na coluna do sábado.",
+            "De um sábado até o seguinte passam sempre sete dias. Vá somando sete a partir do dia 1 e anote cada dia que cair num sábado.",
+            "Com a lista pronta, olhe os dias que a questão oferece: quase todos estão na sua lista, e um deles não está."
+          ],
+          "explanation": "Se o primeiro dia de julho foi um sábado, basta andar de sete em sete para achar os outros: 1, 8, 15, 22 e 29. Esses são todos os sábados daquele mês. Comparando essa lista com os dias oferecidos, só o dia 27 fica de fora: naquele ano, 27 de julho caiu numa quinta-feira, dois dias antes do sábado 29."
         },
         {
           "n": 3,
           "key": "C",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "Olhe os dois ponteiros do desenho e escreva num papel a hora que esse relógio está marcando.",
+            "Esse relógio anda dez minutos para trás da hora certa, ou seja, mostra uma hora que já passou. Para chegar na hora de verdade, você precisa somar ou tirar esses dez minutos?",
+            "Some os dez minutos à hora que você anotou e imagine o ponteiro comprido andando dois risquinhos para a frente."
+          ],
+          "explanation": "O desenho marca três horas e cinco minutos. Um relógio que anda dez minutos para trás mostra menos tempo do que já passou, então a hora de verdade está à frente: é preciso somar esses dez minutos. Cinco mais dez dá quinze, e a hora continua sendo três. Logo, para marcar certo, o relógio deveria mostrar três horas e quinze minutos."
         },
         {
           "n": 4,
           "key": "C",
           "topic": "padroes",
-          "hints": []
+          "hints": [
+            "Conte quantos quadradinhos pintados tem cada tabuleiro que aparece na figura e escreva os números em fila.",
+            "Olhe de um tabuleiro para o seguinte: quantos quadradinhos pintados aparecem a mais? Esse pulo se repete?",
+            "Com o pulo descoberto, continue a fila até o tabuleiro que está debaixo do pano. Para conferir, conte os pintados de outro jeito: linha por linha."
+          ],
+          "explanation": "Os tabuleiros crescem sempre do mesmo jeito: o de depois tem o de antes no meio e ganha um quadradinho pintado em cada ponta das duas diagonais, ou seja, quatro a mais. Assim a fila fica 5, 9, 13 e, no tabuleiro escondido pelo pano, 13 + 4 = 17. Para conferir por outro caminho: esse tabuleiro tem nove linhas, cada uma com dois quadradinhos pintados, menos a linha do meio, que tem um só. Então são 2 × 8 + 1, que também dá 17."
         },
         {
           "n": 5,
           "key": "D",
           "topic": "padroes",
-          "hints": []
+          "hints": [
+            "Desenhe o corredor com duas fileiras de portas, uma de frente para a outra, e escreva os números de uma fileira de cada vez.",
+            "De um lado os números vão crescendo e do outro vão diminuindo. Comece pelas duas primeiras portas que se olham e anote esse par.",
+            "Anote mais alguns pares e some os dois números de cada um. Essa soma muda de par para par ou é sempre a mesma?"
+          ],
+          "explanation": "Numa fileira ficam os quartos de número ímpar, em ordem crescente; na outra, os de número par, em ordem decrescente. As portas que se olham são então 1 com 20, 3 com 18, 5 com 16, e assim segue. Somando os dois números de qualquer um desses pares, o resultado é sempre 21. Então, para achar quem fica na frente do quarto 17, é só ver quanto falta para 21: 21 − 17 = 4."
         },
         {
           "n": 6,
           "key": "E",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Comece pela sala 1: junte os meninos e as meninas para saber quantos estudantes tem ao todo nessa sala.",
+            "A sala 2 tem o dobro de estudantes da sala 1. Dobrar é juntar o mesmo número duas vezes.",
+            "Do total da sala 2, tire os meninos que a questão diz que estudam lá. O que sobrar são as meninas."
+          ],
+          "explanation": "Na sala 1 estão 8 meninos junto com 6 meninas, o que dá 14 estudantes. Como a sala 2 tem o dobro, são 14 + 14 = 28 estudantes nela. Desses 28 estudantes, oito são meninos, e todas as outras pessoas da turma são meninas: tirando 8 de 28, restam 20."
         },
         {
           "n": 7,
           "key": "B",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "Primeiro descubra quanto tempo dura o caminho de ida: do horário em que Mariazinha sai de casa até o horário em que chega à escola.",
+            "Para contar o tempo entre dois horários, suba primeiro até a hora redonda e conte o resto depois. Lembre que uma hora tem 60 minutos, e não 100.",
+            "A volta demora o mesmo tanto que a ida. Some esse tempo ao horário da saída da escola, e troque cada 60 minutos por uma hora inteira."
+          ],
+          "explanation": "A saída de casa é às 6h24 e a chegada à escola, às 7h52. De 6h24 até 7h24 passa uma hora; de 7h24 até 7h52 passam mais 28 minutos. A ida demora, portanto, uma hora e 28 minutos. A volta demora o mesmo. Saindo da escola às 15h32, uma hora depois são 16h32, e os 28 minutos que faltam fecham a hora: 32 + 28 = 60 minutos, que viram mais uma hora. Então a chegada em casa é às 17h."
         },
         {
           "n": 8,
           "key": "A",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Num dado comum, as faces que ficam de frente uma para a outra somam sempre 7. Escreva os três pares: 1 com 6, 2 com 5, 3 com 4.",
+            "Veja quais faces aparecem no desenho. Risque esses números e também os parceiros de cada um: o que sobrar está em cima e embaixo.",
+            "Sobraram dois números para a face tampada e para a que encosta na mesa. A questão diz algo sobre quantos pontos aparecem na face tampada, e é isso que decide entre os dois números."
+          ],
+          "explanation": "Num dado comum as faces opostas somam 7, então o 1 anda com o 6, o 2 com o 5 e o 3 com o 4. No desenho aparecem a face de quatro pontos e a de dois pontos; do lado escondido de cada uma estão, respectivamente, a de três e a de cinco pontos. Sobram o 1 e o 6 para as duas faces que faltam: a tampada pelo cartão e a que encosta na mesa. Como a de cima tem um número ímpar de pontos, só pode ser a face de um ponto."
         },
         {
           "n": 9,
           "key": "E",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Escreva todos os números numa coluna, do primeiro até o último. São poucos, e ver a lista inteira ajuda mais do que tentar adivinhar.",
+            "A pergunta é quantas vezes o algarismo zero foi escrito, e não quantos números têm zero: um mesmo número pode trazer dois ou três zeros.",
+            "Separe a lista em grupos pela quantidade de zeros de cada número. Conte quantos números caem em cada grupo e some tudo no fim."
+          ],
+          "explanation": "A lista vai de 2000 até 2023, ou seja, 24 números. Só o 2000 traz três zeros, o que já dá 3. Trazem dois zeros os números de 2001 até 2010, que são dez, mais o 2020: onze números com 2 zeros cada um, somando 22. Os demais, de 2011 a 2023 tirando o 2020, são doze números com um zero cada, somando 12. Juntando os três grupos: 3 + 22 + 12 dá 37 zeros escritos."
         },
         {
           "n": 10,
           "key": "B",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Copie a conta no papel, deixando um quadradinho vazio onde a tinta borrou, e mantenha cada algarismo na sua coluna.",
+            "Comece pela coluna da direita, a das unidades: que algarismo somado ao de cima termina no algarismo que aparece no resultado?",
+            "Quando a soma de uma coluna passa de 9, vai 1 para a coluna seguinte. Vá andando para a esquerda, coluna por coluna, sem esquecer desse 1."
+          ],
+          "explanation": "Andando da direita para a esquerda: nas unidades, o número de cima termina em 3 e o resultado termina em 1, então embaixo está o 8, porque 3 + 8 = 11, e o 1 que sobra passa para a coluna vizinha. Nas dezenas, 2 + 2 mais esse 1 dá 5, exatamente o que o resultado mostra, e nada é levado adiante. Nas centenas, 0 + 0 explica o 0 do resultado. Nos milhares, o resultado mostra 7 e embaixo aparece o 2, logo em cima está o 5. Os algarismos escondidos são 8, 0 e 5. A soma dá 8 + 0 + 5 = 13."
         },
         {
           "n": 11,
           "key": "A",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Conte os cubinhos que dá para ver no desenho. A questão diz que são sete, então algum está escondido atrás dos outros.",
+            "A vista de cima mostra quais quadradinhos da mesa ficam cobertos pelos cubinhos. Desenhe num papel quadriculado os lugares que você tem certeza.",
+            "Um cubinho só some da vista se tiver outro na frente, alto o bastante para tapar. Olhe cada formato oferecido: em algum deles sobraria um cubinho aparecendo?"
+          ],
+          "explanation": "São sete cubinhos, mas no desenho dá para contar apenas seis: um está escondido atrás dos outros. A vista de cima é o desenho dos quadradinhos da mesa que ficam ocupados. Agora pense num cubinho que esteja apoiado na mesa num lugar sem nada à frente: um pedaço desse cubinho apareceria no desenho, junto dos que encostam na mesa. É isso que acontece com o formato de letra L: para a vista de cima ter esse formato, um cubinho teria de ficar à mostra. Como esse pedaço não aparece, esse formato está descartado."
         },
         {
           "n": 12,
           "key": "D",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Olhe os quatro números de cada cartão, um em cada lado. Dois cartões só podem ficar juntos se os números que se encostam forem iguais.",
+            "A casa do meio toca as quatro casas de fora ao mesmo tempo. O cartão que ficar ali precisa combinar com quatro cartões de uma vez.",
+            "Experimente um cartão de cada vez na casa do meio e anote que número cada lado passa a exigir. Se nenhum outro cartão tiver aquele número, esse cartão não serve no meio."
+          ],
+          "explanation": "Como os números que se tocam precisam ser iguais, o cartão da casa do meio manda nos quatro vizinhos ao mesmo tempo. Testando um por um, quase todos travam: o cartão que tem 2 na parte de cima exige um vizinho com 2 embaixo, e nenhum outro cartão tem esse 2; o que traz um 9 numa das laterais pede ao lado um vizinho de 9, e esse vizinho não existe. Fica de pé só o cartão com 1 em cima, 1 à esquerda, 5 à direita e 6 embaixo: com esse cartão no meio, os outros quatro acham lugar e a cruz fecha."
         },
         {
           "n": 13,
           "key": "B",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Copie a planificação, recorte e dobre de verdade. Com o cubinho montado na mão é só virar e olhar a face marcada.",
+            "Ao dobrar, as quatro carinhas que estão lado a lado numa fileira dão a volta em torno do cubo, e a última acaba encostando de novo na primeira.",
+            "Veja no cubo montado quais carinhas estão vizinhas da face marcada. Na volta das quatro, a ordem já está decidida pela planificação."
+          ],
+          "explanation": "Dobrando o cartão, cada quadradinho vira uma face do cubo: as quatro carinhas que ficam lado a lado dão a volta em torno dele, e as duas que sobram viram as faces de cima e de baixo. Como essas quatro formam um anel, depois da última vem de novo a primeira. No cubo montado, a carinha brava tem de um lado a carinha que sorri piscando e, do outro lado, só pode ter a primeira carinha triste da fileira, a de sobrancelhas arqueadas. É essa que aparece na face marcada com o ponto de interrogação."
         },
         {
           "n": 14,
           "key": "E",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Pegue um pedaço de massinha em forma de cubo e pense em cortes retos, que atravessam a peça inteira de um lado ao outro.",
+            "Cada corte reto deixa uma superfície nova bem lisa. Olhe uma peça de cada vez e pergunte: dá para chegar nesse formato com um ou dois cortes desses?",
+            "Vá testando os cortes conhecidos: na diagonal, de uma aresta à aresta de lá; pelo meio, separando o cubo em duas caixas iguais; ou dividindo o cubo em oito cubinhos. Marque as peças que você conseguir."
+          ],
+          "explanation": "Quatro das peças saem de um cubo com cortes retos. Um corte na diagonal, indo de uma aresta até a aresta oposta, parte o cubo em duas metades iguais, e duas das figuras são essa mesma metade vista de ângulos diferentes. Dividindo o cubo em oito cubinhos iguais, sai um cubo pequeno. E um corte pelo meio deixa uma metade em forma de caixa; cortando essa metade de novo, sai um quarto do cubo. A peça que sobra não aparece em nenhum desses cortes: não há como tirá-la de um cubo."
         },
         {
           "n": 15,
           "key": "C",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Desenhe a prateleira como uma fileira de tracinhos e marque três tracinhos vizinhos: o livro mais fino, o mais velho e o mais grosso, com o mais velho no meio.",
+            "A questão conta quantos livros ficam de um lado do mais grosso e quantos ficam do outro lado do mais fino. Escreva esses dois números no seu desenho.",
+            "Esses três vizinhos podem estar em duas ordens: o fino na frente ou o grosso na frente. Monte as duas no papel e conte os livros em cada uma."
+          ],
+          "explanation": "O mais velho dos livros fica no meio dos outros dois, sem nenhum livro entre o trio, então há duas ordens possíveis. Com o fino antes e o grosso depois, os 6 livros que ficam de um lado do grosso já contam o fino e o velho, sobrando 4 antes do trio; e os 7 que ficam do outro lado do fino já contam o velho e o grosso, sobrando 5 depois. São então 4 + 3 + 5, que dá 12 livros. Com o grosso antes e o fino depois, sobram 6 de um lado e 7 do outro: 6 + 3 + 7, que dá 16 livros."
         }
       ]
     },
@@ -843,91 +1143,166 @@
           "n": 1,
           "key": "E",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "São cinco contas feitas com os mesmos algarismos. Faça uma de cada vez no papel e escreva o resultado ao lado.",
+            "Repare no que muda de uma conta para outra: às vezes dois algarismos ficam colados e viram um número só. O 2 e o 0 colados formam 20, bem maior que 2 mais 0.",
+            "Com os cinco resultados anotados, compare começando por quantos algarismos cada um tem. Quem tem mais algarismos já sai na frente."
+          ],
+          "explanation": "Todas as contas juntam os mesmos quatro algarismos; o que muda é quais deles ficam colados formando um número maior. Uma de cada vez: 2 + 0 + 2 + 3 chega a 7; 20 + 2 + 3 chega a 25; 2 + 0 + 23 chega a 25; 20 + 23 chega a 43; e 202 + 3 chega a 205. Quanto mais algarismos ficam colados num número só, maior o resultado — por isso o 205 passa longe de todos os outros."
         },
         {
           "n": 2,
           "key": "A",
           "topic": "padroes",
-          "hints": []
+          "hints": [
+            "Olhe a fila inteira e procure o pedaço de desenho que fica voltando. Marque com o dedo onde esse pedaço começa e onde termina.",
+            "Quantas figuras tem o pedaço que se repete? Agora conte quantas figuras Valentina já desenhou na fila.",
+            "A fila parou no meio de um pedaço. Veja qual figura ficou por último e continue dali, na mesma ordem de sempre."
+          ],
+          "explanation": "O desenho volta de quatro em quatro figuras: quadrado, círculo, triângulo escuro e triângulo claro. Na fila de Valentina cabem dois pedaços inteiros, que dão oito figuras, e mais uma: o quadrado que abre o pedaço seguinte. Como esse quadrado já está lá, as três figuras que vêm depois são as outras três do pedaço, na ordem de sempre — o círculo, o triângulo escuro e o triângulo claro."
         },
         {
           "n": 3,
           "key": "C",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Ponha as suas duas mãos na mesa, com as palmas viradas para baixo, e repare de que lado fica o polegar em cada uma.",
+            "Gire a folha devagar enquanto olha um carimbo de cada vez. Girar muda para onde os dedos apontam, mas não troca o polegar de lado.",
+            "Compare cada carimbo com a sua mão esquerda e marque com o lápis os que combinam. Depois conte só os marcados."
+          ],
+          "explanation": "O que separa uma mão da outra é o lado do polegar: numa das mãos o polegar fica de um lado dos outros dedos, na outra fica do lado oposto. Girar o papel muda a direção dos dedos, mas nunca troca o polegar de lado — por isso dá para conferir carimbo por carimbo usando as próprias mãos. Fazendo isso na figura inteira, três carimbos combinam com a mão esquerda de Marília; todos os outros são da mão direita."
         },
         {
           "n": 4,
           "key": "E",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Conte quantas peças estão em cada vareta do ábaco e escreva o número que o ábaco está mostrando agora.",
+            "Cada peça que sai da vareta das unidades diminui 1 do número. Uma peça da vareta das dezenas diminui 10, e uma da vareta das centenas diminui 100.",
+            "Pegue um número oferecido de cada vez e compare com o do ábaco, algarismo por algarismo. Conte quantas peças teriam de sair no total: você procura o número que precisa de duas."
+          ],
+          "explanation": "O ábaco mostra 369: três peças na vareta das centenas, seis na das dezenas e nove na das unidades. Cada peça que sai da unidade tira 1, cada peça da dezena tira 10 e cada peça da centena tira 100. Comparando com 369: para 269 sai uma peça só; para 368 também sai uma só; 258 e 348 pedem três peças cada. Já 268 pede exatamente duas: uma na vareta das centenas e outra na das unidades."
         },
         {
           "n": 5,
           "key": "D",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Comece pela sala 1: junte os dois grupos de alunos para saber quantos alunos essa sala tem ao todo.",
+            "A questão conta que as duas salas têm a mesma quantidade de alunos. Então o total que você achou para a primeira vale também para a segunda.",
+            "Na sala 2 você já sabe o total e já sabe quantas são as meninas. Tire um número do outro para descobrir o grupo que falta."
+          ],
+          "explanation": "Juntando os dois grupos da primeira sala, são 17 alunos, porque 8 + 9 = 17. Como as duas salas têm o mesmo número de alunos, na sala 2 também são 17. Dentro desses 17 estão 6 meninas, e o resto são meninos: 17 − 6 = 11 meninos na sala 2."
         },
         {
           "n": 6,
           "key": "C",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "Escreva no papel uma fila com os números dos dias, começando no 15 e indo até uns 22, um por linha.",
+            "A questão já diz qual é o dia da semana do 16. Escreva esse nome ao lado do 16 e vá seguindo a ordem da semana para baixo, um dia de cada vez.",
+            "Siga a sua fila até aparecer a quarta-feira e veja qual número do mês ficou ao lado dela."
+          ],
+          "explanation": "Hoje é dia 15, e a questão conta que amanhã, dia 16, cai numa sexta-feira. Daí basta descer a lista um dia de cada vez, sem pular nenhum: 17 é sábado, 18 é domingo, 19 é segunda, 20 é terça e 21 é quarta. Então a quarta-feira que a questão procura é o dia 21 do mês."
         },
         {
           "n": 7,
           "key": "D",
           "topic": "fracoes",
-          "hints": []
+          "hints": [
+            "Em cada colar, conte quantas miçangas são pretas e quantas são brancas. Anote os dois números ao lado de cada colar.",
+            "Um terço quer dizer que o colar inteiro se divide em três montinhos do mesmo tamanho, e as pretas ocupam exatamente um desses montinhos.",
+            "Se as pretas formam um montinho dos três, as brancas formam os outros dois. Então as brancas têm de ser o dobro das pretas: procure o colar em que isso acontece."
+          ],
+          "explanation": "Um terço é uma parte de três iguais. Se as pretas formam uma dessas três partes, as outras duas partes são brancas — ou seja, para cada preta existem duas brancas, e o total de brancas fica no dobro do de pretas. Agora é conferir colar por colar: aquele com 3 pretas e 6 brancas fecha a conta, porque o dobro de 3 é 6. Nos outros colares a quantidade de brancas não dá o dobro."
         },
         {
           "n": 8,
           "key": "E",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Numa balança de dois pratos, o prato que desce carrega o lado mais pesado. Olhe cada balança e escreva no papel qual bolinha ganha de qual.",
+            "Com a lista pronta, vá riscando: bolinha que subiu em alguma balança já perdeu para outra, então está fora da disputa pelo primeiro lugar.",
+            "No fim sobra uma bolinha que nunca subiu em balança nenhuma. Confira essa bolinha mais uma vez em cada balança para ter certeza."
+          ],
+          "explanation": "O prato que desce carrega o lado mais pesado. Lendo as balanças uma a uma, dá para montar a lista de quem ganha de quem: a branca ganha da preta, a cinza ganha da branca e a branca com o hexágono ganha da cinza. Toda bolinha que perdeu alguma vez está fora: sai a preta, sai a branca, sai a cinza. Sobra a branca com o hexágono, a única que não perdeu para nenhuma."
         },
         {
           "n": 9,
           "key": "D",
           "topic": "contagem",
-          "hints": []
+          "hints": [
+            "Os algarismos que formam o número 1023 são 1, 0, 2 e 3. Escreva os quatro no papel, bem separados.",
+            "Monte todas as duplas possíveis com esses algarismos e faça a multiplicação de cada dupla. Anote o resultado de cada uma.",
+            "Olhe a sua lista de resultados: alguns números aparecem mais de uma vez. A pergunta é sobre resultados diferentes, então cada número conta uma vez só."
+          ],
+          "explanation": "Com os quatro algarismos dá para montar seis duplas. Toda dupla que tem o zero dá zero, porque zero vezes qualquer coisa é zero. Toda dupla com o 1 devolve o outro algarismo: sai zero, sai dois, sai três. Sobra a dupla do 2 com o 3, que dá seis. Juntando tudo, os números que podem aparecer como resultado são quatro: zero, dois, três e seis. O zero se repete várias vezes, mas conta uma vez só."
         },
         {
           "n": 10,
           "key": "D",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Cada desenho mostra a mesma pilha olhada de um lugar diferente: um por cima, um pela frente e um pelo lado. Veja na figura qual é qual.",
+            "Pegue uma vista de cada vez e vá riscando as pilhas que não combinam com esse desenho. Assim a lista de candidatas vai diminuindo.",
+            "Uma pilha só serve se combinar com as três vistas ao mesmo tempo. Confira as que sobraram em cada uma das três."
+          ],
+          "explanation": "Cada vista mostra a pilha olhada de um lugar. Começando pela de frente, só duas das pilhas oferecidas combinam com o desenho. A de lado, olhada pela direita, combina com todas, então não ajuda a riscar nenhuma. Já a de cima combina com três pilhas. A pilha que Valentina observou é a única que aparece nas três listas ao mesmo tempo: combina de frente, combina de lado e combina de cima."
         },
         {
           "n": 11,
           "key": "C",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Olhe as duas primeiras figuras e escreva ao lado de cada uma quantos blocos deitados e quantos blocos de pé aparecem, junto com a altura que a questão dá.",
+            "Imagine duas cópias da figura do meio, uma empilhada sobre a outra. Nessa pilha dobrada cada tipo de bloco aparece duas vezes, e a altura também dobra.",
+            "Nessa pilha dobrada você já conhece a altura dos dois blocos deitados, que veio da primeira figura. Tire essa parte do total para sobrar só a altura dos dois de pé."
+          ],
+          "explanation": "Na primeira figura, dois blocos deitados um sobre o outro chegam a 5 cm. Na segunda, um bloco deitado com um de pé em cima chega a 8 cm. Imagine duas dessas segundas figuras empilhadas: ficam dois deitados e dois de pé, com 8 + 8 = 16 cm no total. Dentro desses 16 cm já estão os 5 cm dos dois deitados, então os dois blocos de pé juntos medem 16 − 5 = 11 cm."
         },
         {
           "n": 12,
           "key": "E",
           "topic": "dados",
-          "hints": []
+          "hints": [
+            "Volte ao texto da questão e anote num papel quantos copos de água Arlindo bebeu em cada dia, um dia por linha.",
+            "Num gráfico de barras, cada barra é um dia, e quanto mais alta a barra, mais copos naquele dia. Qual dia da sua lista tem o maior número?",
+            "Agora confira um gráfico de cada vez: a altura de cada barra tem de bater com o número que você anotou para aquele dia. Basta um dia errado para o gráfico não servir."
+          ],
+          "explanation": "A questão conta quantos copos Arlindo bebeu em cada um dos três dias: quatro na sexta-feira, cinco no sábado e três no domingo. Num gráfico de barras, cada barra é um dia, e a altura da barra é a quantidade de copos. Então o gráfico procurado é aquele em que a barra do sábado é a mais alta, a da sexta fica no meio e a do domingo é a mais baixa, marcando 5, 4 e 3 copos."
         },
         {
           "n": 13,
           "key": "B",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Comece pelo caso mais simples: imagine que todos os 9 gomos tivessem apenas duas sementes. Quantas sementes seriam ao todo?",
+            "Compare esse total com as 20 sementes que Daniel recolheu de verdade. Quantas sementes estão faltando?",
+            "Um gomo que tem três sementes em vez de duas acrescenta uma semente ao total. Pense em quantos gomos precisam mudar para cobrir o que falta."
+          ],
+          "explanation": "Imagine primeiro que todos os 9 gomos tivessem duas sementes: o total seria 2 × 9 = 18. Mas Daniel recolheu 20, ou seja, 2 sementes a mais. Cada gomo que passa a ter três em vez de duas acrescenta só uma semente ao total, então 2 gomos precisam ter três sementes, e os outros 7 ficam com duas. Conferindo: 7 × 2 + 2 × 3 = 14 + 6 = 20 sementes."
         },
         {
           "n": 14,
           "key": "C",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Desenhe um círculo representando a roda e marque nele as duas cabines que a questão mostra, cada uma de um lado.",
+            "Vá por um dos lados do círculo, de uma cabine marcada até a outra, e conte quantas cabines ficam no caminho entre as duas. A numeração anda de um em um.",
+            "As duas cabines marcadas estão uma bem em frente à outra, então o outro lado da roda tem a mesma quantidade de cabines no caminho. Junte os dois lados e lembre de contar também as duas marcadas."
+          ],
+          "explanation": "As cabines 6 e 21 ficam uma bem em frente à outra na roda. Indo por um dos lados, no caminho entre as duas aparecem as cabines de 7 até 20 — são 14. Como as duas ficam em lados opostos, o outro caminho tem as mesmas 14 cabines. Faltam ainda as duas marcadas. Então a roda tem 14 de um lado, mais 14 do outro, mais as 2 marcadas: 30 cabines ao todo."
         },
         {
           "n": 15,
           "key": "E",
           "topic": "contagem",
-          "hints": []
+          "hints": [
+            "Dê um apelido curto para cada erva e organize a contagem por tamanho: primeiro os chás de uma erva só, depois os de duas, depois os de três e por último o de quatro.",
+            "Para as duplas, escolha uma erva e combine com cada uma das outras, anotando cada dupla. Depois passe para a erva seguinte, sem repetir dupla que já está escrita.",
+            "Tem uma dupla de ervas que Irene nunca mistura. Risque da sua lista todo chá que leve essas duas juntas, seja de duas, de três ou de quatro ervas, e conte o que sobrou."
+          ],
+          "explanation": "Separando por tamanho: com uma erva só saem 4 chás. Com duas ervas dá para montar 6 duplas, mas uma delas junta as duas ervas que Irene nunca mistura, então valem 5. Com três ervas saem 4 combinações, e duas carregam a dupla proibida: valem 2. O chá com as quatro ervas também leva a dupla proibida, então não entra. Somando os grupos que sobraram, 4 mais 5 mais 2, Irene consegue 11 chás diferentes."
         }
       ]
     },
@@ -942,91 +1317,166 @@
           "n": 1,
           "key": "C",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "Olhe primeiro um pentágono sozinho e conte as pontas dele, uma por uma, com o dedo.",
+            "A estrela saiu de dois pentágonos encaixados, um girado sobre o outro. Cada um entrou com as pontas que tinha.",
+            "Junte as pontas de um com as pontas do outro."
+          ],
+          "explanation": "Um pentágono sozinho tem cinco pontas. Ana encaixou dois, um girado sobre o outro, e cada um entrou com as cinco pontas que tinha: 5 e mais 5 dá 10. Para conferir, desenhe os dois pentágonos sobrepostos e marque com o lápis cada pontinha de fora, assim nenhuma é contada duas vezes."
         },
         {
           "n": 2,
           "key": "C",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Desenhe os três pinos lado a lado e escreva quantos discos cada um tem no começo.",
+            "Quando um disco muda de pino, aquele de onde saiu perde um e aquele que recebeu ganha um.",
+            "Faça as duas mudanças uma de cada vez, anotando o número que o ábaco mostra depois de cada uma."
+          ],
+          "explanation": "No começo são 1 disco nas centenas, 4 nas dezenas e 2 nas unidades. Na primeira mudança, um disco sai das dezenas e vai para as unidades: ficam 1, 3 e 3. Na segunda, mais um sai das dezenas e vai para as centenas: ficam 2, 2 e 3. Lendo da esquerda para a direita, o ábaco passa a mostrar duzentos e vinte e três."
         },
         {
           "n": 3,
           "key": "C",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Olhe para que lado aponta o dedão em cada carimbo do papel.",
+            "Ponha as duas mãos na mesa com a palma para baixo: numa delas o dedão aponta para um lado, na outra aponta para o lado contrário.",
+            "Separe os carimbos em dois montes, um de cada mão. Depois pense em quantas crianças deixaram de fazer um dos dois carimbos."
+          ],
+          "explanation": "O carimbo da mão esquerda deixa o dedão apontando para a direita no papel, e com a outra mão acontece o contrário. Entre os 9 carimbos, 3 têm o dedão desse outro lado: saíram de mãos direitas. Sobram 6 carimbos de mão esquerda, ou seja, 6 crianças passaram tinta. Como apenas 3 fizeram também o carimbo da direita, ficam 3 crianças sem esse segundo carimbo."
         },
         {
           "n": 4,
           "key": "C",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Some o peso das bolas de uma caixa e depois o da outra. Anote os dois totais.",
+            "Junte os dois totais num número só. Se as duas caixas vão ficar com o mesmo peso, quanto fica em cada uma?",
+            "Veja quanto falta na caixa mais leve para chegar nesse valor: é esse o peso da bola que muda de caixa."
+          ],
+          "explanation": "Uma caixa soma 9 quilos (as bolas de 1, de 2 e de 6) e a outra soma 15 (as de 1, 2, 3, 4 e 5). Tudo junto dá 24, e metade de 24 é 12. Então cada caixa precisa terminar com 12 quilos. Na caixa de 9 faltam 3, e é por isso que a bola de 3 quilos é a que troca de lugar. Confira do outro lado: tirando 3 de 15 também sobram 12."
         },
         {
           "n": 5,
           "key": "D",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Descubra qual número ficou no alto de cada torre, olhando o desenho de lado.",
+            "Quem olha de cima não enxerga a altura: vê só os números espalhados em roda, cada um no lugar da sua torre.",
+            "Escolha uma torre para começar, gire sempre para o mesmo lado e escreva a ordem dos números. Depois compare com cada desenho."
+          ],
+          "explanation": "De cima aparece só o número do topo de cada torre. São seis torres em volta, e os números que aparecem são dois 2, dois 4, um 3 e um 5 — o que decide tudo é a ordem em que estão. Comece pela torre mais alta, gire sempre para o mesmo lado e anote a volta inteira. Só um dos desenhos tem os números nessa mesma ordem; nos outros, dois vizinhos aparecem trocados."
         },
         {
           "n": 6,
           "key": "A",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "De sete em sete dias o calendário repete o mesmo dia da semana.",
+            "Escreva a fila 1, 8, 15, 22 e 29. Todas essas datas caem no mesmo dia da semana.",
+            "Do dia 29 até o dia 31 faltam dois dias. Ande dois lugares na semana a partir do dia que você descobriu."
+          ],
+          "explanation": "O dia da semana volta a cada 7 dias. Como o ano 2000 começou num sábado, de sete em sete vêm outros sábados: 8, depois 15, depois 22, depois 29. Do 29 ao 31 são dois dias a mais: o 30 cai no domingo e o 31 no dia seguinte. Nem precisa de calendário na mão — basta contar de sete em sete e depois andar os dias que sobram."
         },
         {
           "n": 7,
           "key": "D",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Desenhe os 6 meninos em fila, cada um como um tracinho no papel.",
+            "Conte os vãos que ficam entre um menino e o menino vizinho. São menos vãos do que meninos.",
+            "Cada vão recebe 3 meninas. Multiplique para saber quantas meninas entram e depois junte com os meninos."
+          ],
+          "explanation": "Numa fila de 6 meninos existem 5 vãos — sempre um a menos que o número de meninos. Em cada vão entram 3 meninas, o que dá 15 meninas ao todo. Juntando as meninas com os meninos, a fila fica com 21 crianças. Repare que nas pontas não cabe menina, porque menina só entra entre dois meninos."
         },
         {
           "n": 8,
           "key": "A",
           "topic": "padroes",
-          "hints": []
+          "hints": [
+            "Conte quantos cubinhos tem cada pilha do desenho e escreva os números em fila, na ordem.",
+            "De uma pilha para a seguinte entra uma camada nova por baixo. Quantos cubinhos tem cada camada nova?",
+            "As camadas crescem de um jeito certinho: 1, depois 3, depois 6, depois 10. Descubra a próxima e some todas."
+          ],
+          "explanation": "Cada pilha é a anterior com uma camada nova embaixo. As camadas têm 1, depois 3, depois 6, depois 10 cubinhos — o que entra a mais cresce de um em um: dois, três, quatro. A camada seguinte ganha mais cinco e chega a 15. Para a quinta pilha, some aos poucos: 1 e 3 dão 4; mais 6 dão 10; mais 10 dão 20; mais 15 dão 35 cubinhos."
         },
         {
           "n": 9,
           "key": "E",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "Olhe de perto o pedaço da régua que vai do 0 ao 1 e conte os risquinhos pequenos.",
+            "Conte os risquinhos de 0 até 1 sem esquecer os das duas pontas. Dá mais do que dez.",
+            "Para a régua inteira, multiplique pelo número de centímetros e lembre do risquinho que fecha a ponta final."
+          ],
+          "explanation": "Dentro de cada centímetro cabem 10 pedacinhos de 1 milímetro, e todo pedacinho precisa de risquinho dos dois lados. Por isso, do 0 ao 1 contam-se 11 risquinhos e não 10: a ponta de um pedacinho serve também para o vizinho. Numa régua de 15 centímetros são 150 pedacinhos, e os risquinhos chegam a 151. É como uma cerca: sempre há um poste a mais do que vãos."
         },
         {
           "n": 10,
           "key": "C",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Escreva cada data como um número só, grudando o dia, o mês e o ano, sem as barras.",
+            "Leia esse número de trás para a frente. Ficou igual ao que você escreveu?",
+            "Dá para ir mais rápido: compare o algarismo da ponta com o da outra ponta. Se já forem diferentes, risque aquela data e vá para a próxima."
+          ],
+          "explanation": "A ideia é juntar dia, mês e ano num número só e ver se a leitura de trás para a frente dá o mesmo número. Para não testar tudo, comece pelas pontas: se o algarismo do começo não for igual ao do fim, aquela data já sai. Depois faça o mesmo com o segundo algarismo e o penúltimo. Ajuda lembrar que o mês para no 12, então data com mês maior que isso nem existe — só essa conferida já risca uma das opções."
         },
         {
           "n": 11,
           "key": "E",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Anote as seis figuras numa lista e marque, em cada arrumação, as três que estão viradas para cima.",
+            "Duas figuras que aparecem ao mesmo tempo sobre a mesa estão em cartas diferentes — logo nenhuma das duas fica nas costas da outra.",
+            "Vá riscando: em cada arrumação, risque as figuras que apareceram junto com a figura que você procura. No fim sobra uma só."
+          ],
+          "explanation": "Cada carta tem uma figura de cada lado e nenhuma figura se repete, então são seis ao todo. Quando duas aparecem juntas numa arrumação, estão em cartas diferentes e não podem ser frente e verso da mesma carta. Riscando assim, arrumação por arrumação, sobra uma única figura possível: o Sol e a Terra ficam nos dois lados da mesma carta. Para conferir, monte as três cartas inteiras e veja se as três arrumações continuam valendo."
         },
         {
           "n": 12,
           "key": "B",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Teste cada frase: tente imaginar uma turma de 13 em que aquela frase não valha. Se você conseguir, essa frase não é obrigatória.",
+            "Pense no caso mais espalhado possível: um aniversário em cada mês, até os meses acabarem.",
+            "Depois de ocupar os 12 meses, ainda sobra gente na turma. Em que mês esse aniversário vai cair?"
+          ],
+          "explanation": "O ano tem 12 meses e a turma tem 13 estudantes. Mesmo espalhando ao máximo, com um aniversário em cada mês, fica um estudante de fora — e o aniversário desse último cai num mês que já tinha alguém. Por isso é certo que duas pessoas da turma nasceram no mesmo mês. As outras frases não precisam ser verdade: imagine a turma inteira nascida em janeiro e quase todas deixam de valer."
         },
         {
           "n": 13,
           "key": "C",
           "topic": "fracoes",
-          "hints": []
+          "hints": [
+            "A mesma jarra enche os copos e também enche as garrafas. Então os copos e as garrafas guardam a mesma quantidade de água.",
+            "Reparta os copos igualmente entre as duas garrafas. Quantos copos vale uma garrafa sozinha?",
+            "Agora que uma garrafa já tem o seu valor em copos, pense em três garrafas."
+          ],
+          "explanation": "A jarra cheia dá para 10 copos e dá também para 2 garrafas. Logo, as duas garrafas juntas guardam o mesmo que os 10 copos. Repartindo em partes iguais, uma garrafa vale 5 copos. Com três garrafas são três vezes isso: 15 copos. Dá para desenhar, cinco copinhos embaixo de cada garrafa, e contar tudo no fim."
         },
         {
           "n": 14,
           "key": "B",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Conte quantas faces um cubo tem e quantas aparecem no desenho. Quantas ficam escondidas?",
+            "Patrícia viu o número 2 em alguma face, e esse número não está à vista: então ocupa uma das faces escondidas.",
+            "Sobram duas faces livres, e nelas só entram os números que aparecem no cubo. Teste o caso que dá a menor soma e o que dá a maior."
+          ],
+          "explanation": "Um cubo tem 6 faces e o desenho mostra 3 delas: 1, 1 e 4. Como o número 2 também aparece no cubo, uma das faces escondidas é 2. Ficam duas faces livres, que só podem trazer 1, 2 ou 4. Pondo 1 nas duas, as seis faces chegam ao menor total possível, 10. Pondo 4 nas duas, chegam ao maior, 16. Qualquer outra escolha fica entre esses dois números, então a soma nunca sai dessa faixa."
         },
         {
           "n": 15,
           "key": "B",
           "topic": "logica",
-          "hints": []
+          "hints": [
+            "Copie as três tentativas uma embaixo da outra e, ao lado de cada uma, desenhe as bolinhas que vieram de resposta.",
+            "Procure a tentativa em que todos os algarismos fazem parte da senha: já são os três números que você quer, só falta a ordem.",
+            "Em outra tentativa aparece um algarismo que não serve e outro que está fora do lugar. Descubra qual dos três já está na casa certa."
+          ],
+          "explanation": "Uma das tentativas avisa que os seus três algarismos estão na senha: são 3, 0 e 1, em alguma ordem. Outra mostra que o 5 está fora e que, dos dois restantes, um está na casa certa e o outro não. O 3 não pode ser o que está na casa certa — se estivesse, a outra tentativa teria avisado isso também. Então o certo é o 0, no meio, e sobram o 3 e o 1 para as pontas. Só uma arrumação obedece a todas as pistas: 130."
         }
       ]
     },
@@ -1041,91 +1491,166 @@
           "n": 1,
           "key": "B",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Olhe a borda de cada peça e conte em quantos lados a peça tem recorte para encaixar numa vizinha.",
+            "Uma só das peças tem recorte dos dois lados. Essa não cabe nem no começo nem no fim da fila: o lugar dela é no meio.",
+            "Com a do meio escolhida, experimente as outras duas, uma de cada lado, até os recortes se completarem. Depois leia os três algarismos de uma vez só."
+          ],
+          "explanation": "Só uma peça tem recorte dos dois lados, então essa fica no meio da fila. As outras duas entram uma de cada lado, e os recortes só se completam de um jeito. Montada assim, a fila mostra 4, 8 e 9: o número é 489. Virando a fila inteira de cabeça para baixo, os desenhos deixam de ser algarismos e não dá para ler número nenhum."
         },
         {
           "n": 2,
           "key": "B",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Pegue um pedaço de cada vez e procure esse trecho no traço grande, seguindo a linha com o dedo do começo ao fim.",
+            "Compare pelo formato: bico pontudo, curva redonda, degrau reto. Procure a mesma ordem dessas partes.",
+            "Quando achar um pedaço, marque o lugar com o lápis. No fim, um dos trechos vai sobrar sem lugar."
+          ],
+          "explanation": "Cada alternativa mostra um trecho curto, e quatro deles estão mesmo no traço de Janaína: seguindo a linha com o dedo e marcando o que já foi achado, os quatro aparecem. O que sobra é um par de bicos pontudos, um colado no outro, e por mais que você percorra a linha inteira esse trecho não se encaixa em parte nenhuma dela."
         },
         {
           "n": 3,
           "key": "B",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "A figura dá dois tamanhos: a fila com um carrinho só e a fila com dois carrinhos juntos. Escreva os dois no papel.",
+            "Quanto a fila cresceu quando o segundo carrinho entrou? Esse mesmo tanto se repete a cada carrinho que entra depois.",
+            "Comece pelos setenta do primeiro e vá somando o que cada carrinho seguinte acrescenta. Repare quantos carrinhos entram depois do primeiro."
+          ],
+          "explanation": "Sozinho, o carrinho mede 70 cm; com dois, a fila vai a 80 cm. Então cada carrinho que entra acrescenta 80 menos 70, ou seja, dez centímetros. Numa fila de cinco, o primeiro vale setenta inteiros e os outros quatro acrescentam dez cada um: quatro vezes dez dá quarenta. Somando tudo, a fila mede 110 cm."
         },
         {
           "n": 4,
           "key": "A",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Olhe só a parte dos dentes da chave; o cabo redondo não diz nada sobre a fechadura.",
+            "A chave precisa encarar a fechadura antes de entrar. Gire a chave na sua cabeça, ou gire o papel, até o cabo ficar do lado da mão que vai girar.",
+            "Depois de girar, veja em que altura está cada dente e para que lado cada um aponta. Compare degrau por degrau com cada buraco."
+          ],
+          "explanation": "A chave e a fechadura não estão desenhadas na mesma posição. Para entrar, a chave tem de encarar a porta, e nessa viagem o desenho dos dentes aparece virado: o que estava de um lado passa para o outro. Vale copiar a chave num papel fino e girar o papel até o cabo ficar na mão. Com a chave assim, o recorte dos dentes entra inteiro em um dos buracos; nos outros sobra ou falta degrau."
         },
         {
           "n": 5,
           "key": "B",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "Escreva os sete dias da semana em fila, de domingo a sábado.",
+            "A frase foi dita ontem, e não hoje. Para quem falava ontem, “depois de amanhã” cai em que dia?",
+            "Marque esse dia na fila que você escreveu e volte um dia de cada vez até chegar no de hoje."
+          ],
+          "explanation": "Quem falou, falou ontem. Para quem fala ontem, “depois de amanhã” pula dois dias: um cai em hoje e o outro, no dia seguinte. Então o dia chamado de quarta-feira é o de amanhã. E com quarta-feira amanhã, hoje só pode ser terça-feira. Na fila dos dias dá para conferir: segunda foi o ontem de quem falou, hoje é terça e amanhã, quarta."
         },
         {
           "n": 6,
           "key": "B",
           "topic": "medidas",
-          "hints": []
+          "hints": [
+            "No relógio da figura, repare que um ponteiro é curto e o outro é comprido: um marca a hora, o outro marca os minutos.",
+            "De um número do mostrador até o número vizinho passam cinco minutos. Quantos desses pulinhos cabem em quarenta e cinco minutos?",
+            "Ande para trás a partir da hora que a figura mostra. Quarenta e cinco minutos é quase uma hora inteira, então o ponteiro curto quase chega ao número anterior, mas não chega."
+          ],
+          "explanation": "O ponteiro curto marca a hora e o comprido marca os minutos; de um número ao vizinho são cinco minutos. A figura mostra três horas em ponto, e os pães entraram no forno quarenta e cinco minutos antes disso. Uma hora antes seriam duas em ponto; como faltava um quarto de hora para as três, o horário é duas e quinze. No mostrador, o ponteiro curto fica logo depois do dois e o comprido aponta o três, que é o terceiro pulinho de cinco minutos."
         },
         {
           "n": 7,
           "key": "C",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Na brincadeira, o que vale é a soma dos dedos das duas mãos mostradas, e não os dedos de cada uma separados.",
+            "Paula ficou com par. Então Isabel só ganha se a soma der ímpar — e Paula já mostrou um número par de dedos.",
+            "Some o número de Paula com zero, depois com um, depois com dois, e siga até cinco. Anote quais somas deram ímpar."
+          ],
+          "explanation": "Conta a soma das duas mãos. Paula mostrou quatro dedos, que é número par. Par com par dá par; par com ímpar dá ímpar. Como Isabel precisa de soma ímpar, Isabel tem de mostrar um número ímpar de dedos. Numa mão cabem de zero a cinco dedos, e desses só um, três e cinco são ímpares. Então sobram três jeitos de Isabel mostrar a mão e ganhar."
         },
         {
           "n": 8,
           "key": "E",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Em todas as rodas há o mesmo tanto de cabines, metade branca e metade preta. O que muda de uma roda para a outra é a ordem das cores.",
+            "Escolha uma roda, comece numa cabine branca e dê a volta inteira anotando a cor de cada cabine na ordem.",
+            "Em cada roda, procure o maior grupo de cabines pretas seguidas, sem nenhuma branca no meio. Depois compare esses grupos entre as rodas."
+          ],
+          "explanation": "Todas as rodas têm dez cabines, cinco brancas e cinco pretas; só a ordem muda. Dando a volta em cada roda e anotando as cores, as pretas aparecem em grupos separados pelas brancas. Em quatro rodas esses grupos nunca passam de duas pretas juntas. Numa roda aparece um grupo de três pretas seguidas, e é essa que foge do jeito das outras."
         },
         {
           "n": 9,
           "key": "B",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "Recorte num papel dois triângulos iguais aos do desenho e tente montar cada figura de verdade, com as mãos.",
+            "Olhe os cantos do seu triângulo: algum deles é um canto quadrado, igual ao canto de uma folha de caderno?",
+            "Para fechar um quadrado com dois triângulos iguais, cada um precisaria ter um canto desses. Confira se os seus têm."
+          ],
+          "explanation": "Com dois triângulos iguais aos do desenho saem quatro das montagens: um bem em cima do outro, um de ponta-cabeça sobre o outro formando estrela, dois unidos por um lado e dois encostados por uma ponta só. A que não sai é o quadrado. Um quadrado cortado ao meio na diagonal dá dois triângulos com canto de folha de caderno, um lado em pé e outro deitado. Os triângulos do desenho não têm canto assim, então nunca fecham um quadrado."
         },
         {
           "n": 10,
           "key": "C",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Comece pela idade que a questão já entrega e escreva esse número no papel.",
+            "Ser mais jovem quer dizer ter menos anos. Para achar a idade de Ana, você tira ou soma no número de Carla?",
+            "Com a idade de Ana no papel, veja quem é a mais velha entre Ana e Beatriz e some a diferença do lado certo."
+          ],
+          "explanation": "Carla tem quinze anos, e esse é o número que a questão dá de presente. Ana tem sete anos a menos: quinze menos sete dá oito. Beatriz é a mais velha das duas, com cinco anos a mais que Ana: oito mais cinco dá treze. O cuidado é não trocar o lado da conta — quem é mais jovem fica sempre com o número menor."
         },
         {
           "n": 11,
           "key": "E",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Desenhe no papel a linha de saída e as três bandeiras, com as distâncias que a questão dá entre uma e outra.",
+            "Cada viagem termina de volta na saída, então o caminho de ida se repete na volta.",
+            "Ache primeiro a distância da saída até cada bandeira, somando os pedaços. Depois dobre cada distância e junte as três viagens."
+          ],
+          "explanation": "A primeira bandeira fica a dez metros da saída; ir e voltar dá vinte. A segunda fica dez mais doze, ou seja, vinte e dois metros da saída, e a viagem inteira dá quarenta e quatro. A terceira fica mais quinze metros adiante, a trinta e sete da saída, o que dá setenta e quatro na ida e volta. Somando as três viagens, o total é cento e trinta e oito metros. O erro comum é contar só a ida."
         },
         {
           "n": 12,
           "key": "A",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Experimente cada par de algarismos nos espaços vazios e confira se a soma continua fechando certo.",
+            "Com os dois números montados, pergunte: o quanto um passa do outro? Faça a subtração.",
+            "Repita a subtração em cada alternativa e compare os resultados. Você procura o par cujos números ficam mais pertinho um do outro."
+          ],
+          "explanation": "Em cada alternativa os algarismos que faltam formam dois números que somam sessenta e um. Montando os dois e subtraindo um do outro, as distâncias dão três, cinco, sete e nove. A menor de todas é três, que aparece quando os números são trinta e dois e vinte e nove. Vale guardar a ideia: entre dois números de mesma soma, quanto mais parecidos forem os dois, menor é a diferença."
         },
         {
           "n": 13,
           "key": "C",
           "topic": "espaco",
-          "hints": []
+          "hints": [
+            "Ponha o dedo na casa de Débora e percorra o caminho de cada desenho, sem pular nenhuma esquina.",
+            "Em cada esquina, gire o corpo junto com o dedo: o lado da virada é o lado de quem caminha, não o lado do papel.",
+            "Anote a virada de cada esquina e, no fim do caminho, conte quantas foram para cada lado. Compare com o que a questão pede."
+          ],
+          "explanation": "Em cada desenho o caminho sai da casa de Débora e dobra em algumas esquinas. Para contar certo, imagine que você está dentro do caminho: a esquerda é a sua esquerda, e esse lado muda cada vez que o corpo gira. Fazendo assim caminho por caminho, um deles dá quatro viradas para a esquerda e duas para a direita, que é o combinado da questão. Nos outros aparecem seis viradas para um lado só, ou duas de um lado e quatro do outro."
         },
         {
           "n": 14,
           "key": "A",
           "topic": "geometria",
-          "hints": []
+          "hints": [
+            "A figura de Rosinha está desenhada sobre uma grade inclinada de quadradinhos de um centímetro de lado. Comece procurando os quadradinhos que já estão inteiros dentro da figura.",
+            "Nas bordas sobram pedaços em forma de triângulo, e em outros lugares falta justamente um pedaço assim para fechar um quadradinho.",
+            "Recorte num papel os triângulos que sobram e encaixe cada um no espaço que falta. Depois conte quantos quadradinhos ficaram completos."
+          ],
+          "explanation": "A figura cobre um quadradinho inteiro no meio e, em volta, pedaços de outros quadradinhos. Cada pedaço triangular que sobra de um lado tem exatamente o tamanho do vão que falta do outro: o lado de um centímetro é igual nos dois. Recortando os quatro triângulos das pontas e encaixando cada um no seu vão, fecham-se quatro quadradinhos completos. Com o do meio, a figura de Rosinha vale cinco quadradinhos."
         },
         {
           "n": 15,
           "key": "B",
           "topic": "numeros",
-          "hints": []
+          "hints": [
+            "Primeiro descubra o troco de cada caso: tire o preço do doce do dinheiro que Francisco levou.",
+            "Escreva a lista das moedas que existem: um real, cinquenta centavos, vinte e cinco, dez e cinco.",
+            "Tente montar cada troco com exatamente três moedas. Comece pela maior moeda que cabe e veja se as duas que sobram fecham o resto."
+          ],
+          "explanation": "O troco é o dinheiro levado menos o preço do doce. Em quatro dos preços o troco sai com três moedas: um e cinquenta vira três de cinquenta centavos; um e vinte e cinco vira duas de cinquenta e uma de vinte e cinco; um e vinte vira um real e duas de dez; setenta centavos viram uma de cinquenta e duas de dez. O troco de um e quarenta é que não fecha: começando por um real sobram quarenta centavos para duas moedas, e começando por cinquenta sobram noventa — nenhuma dupla de moedas dá esses valores."
         }
       ]
     }
