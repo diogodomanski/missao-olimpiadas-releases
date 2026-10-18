@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "obmep-mirim-2",
-  "version": 15,
+  "version": 16,
   "publishedAt": "2026-10-17",
   "olympiad": {
     "name": "Olimpíada Mirim",
@@ -1704,7 +1704,40 @@
       ]
     }
   ],
-  "story": null,
+  "story": {
+    "stages": 24,
+    "fragments": [
+      "A estação Mirim vai partir, e a Comandante Íris abre a porta para {nome}. Bipe pisca três vezes e entrega um chapéu de explorador. O caminho até o planeta novo tem 24 estrelas.",
+      "A primeira estrela aparece na tela, com números pequenininhos do lado. Bipe não consegue ler nenhum. Com a lupa, {nome} lê todos, e a nave pode seguir.",
+      "No corredor a gravidade fica baixa e tudo começa a flutuar. Bipe sai rodando devagar pelo teto, rindo. As botas de trilha prendem no chão, e dá para ir até o painel a pé.",
+      "O depósito da nave está cheio de caixas empilhadas. Na caixa de cima há uma mochila do tamanho certo para {nome}. Agora cada coisa nova tem onde ficar guardada.",
+      "A estrela número 5 tem a forma de uma coroa. Bipe pisca sem parar, de tão bonita. A Comandante Íris guarda uma coroa igual para {nome}, no bolso do uniforme.",
+      "O painel pede a distância até a próxima estrela. Bipe mede com a régua e erra por pouco. Na segunda medida sai certo, e a Terra fica para trás pela janela.",
+      "Um cinturão de pedras espaciais aparece na frente da nave. A Comandante Íris desvia em zigue-zague, e quem corre até o painel avisar precisa de tênis. Nenhuma pedra encosta.",
+      "A Lua passa pela janela, grande e cinza. Bipe conta as crateras em voz alta e se perde no número 30. Com a capa da tripulação nos ombros, {nome} conta de novo, mais devagar.",
+      "Uma estação vizinha manda um oi em código: três piscadas, pausa, três piscadas. Bipe responde igual, na mesma ordem. De lá vem de presente uma boina da tripulação.",
+      "A nave passa pelo lado escuro de um planeta e o painel apaga. A lanterna de {nome} acende primeiro. Bipe liga o painel de novo, botão por botão, e a luz volta.",
+      "Uma peça soltou no casco, do lado de fora. Com os patins magnéticos dá para andar lá sem nunca desencostar da nave. Bipe segura a corda e conta até dez.",
+      "A Comandante Íris explica como a nave pega velocidade com a luz do Sol. Para {nome} entender, Bipe dobra um modelo pequeno com asas de papel. O primeiro sistema de estrelas termina aqui.",
+      "O Sol fica enorme na janela, e ninguém pode olhar direto. Com os óculos escuros, {nome} enxerga as manchas na superfície. Bipe anota quantas são.",
+      "A bússola da nave gira sem parar e não decide o rumo. Bipe compara três telas junto com {nome}, e a agulha para quieta. A próxima estrela fica para a esquerda.",
+      "Hora de dormir. Os chinelos ficam ao lado da cama, e a janela fica cheia de estrelas. Bipe pisca bem devagar, como quem boceja.",
+      "O corredor de trás esfriou, e sai fumacinha ao falar. A Comandante Íris traz um cachecol de lã para cada um da tripulação. O de Bipe é bem pequeno.",
+      "Um cometa passa com uma cauda de 17 cores. Bipe conta as cores duas vezes para não errar. A Comandante Íris põe em {nome} uma tiara de estrelas, do mesmo brilho.",
+      "Bipe pisca rápido: o computador achou um caminho mais curto. O desenho do caminho sai todo torto, e um compasso resolve. O segundo sistema de estrelas termina aqui.",
+      "Uma chuva de poeira estelar bate no casco, igual a pedrinha miúda. Quem for até a escotilha calça galochas. Em dez minutos a poeira passa e a nave segue.",
+      "A Comandante Íris tira um paraquedas do armário e explica a descida, passo por passo. Ainda não é hoje: primeiro a nave tem de chegar. Bipe guarda o paraquedas perto da porta.",
+      "O planeta novo aparece na tela, azul de um lado e branco do outro. Bipe ajuda {nome} a fechar o capacete, só para treinar. Falta pouco agora.",
+      "A estrela número 22 é a menor de todas e quase não aparece na tela. A Comandante Íris dá a {nome} uma estrela de bolso, do mesmo tamanho. Serve para não esquecer o caminho.",
+      "A nave entra na órbita do planeta e dá voltas, esperando a hora certa. Bipe conta as voltas: uma, duas, três. As meias listradas são boas para esperar sentado.",
+      "Bipe prende o foguete nas costas de {nome} e confere as fivelas duas vezes. Tudo está pronto na estação. Agora só falta o dia."
+    ],
+    "finale": "A nave pousa devagar, e a porta abre sem pressa. A primeira pegada no planeta novo é de {nome}. Bipe pisca 24 vezes, uma para cada estrela do caminho. A Comandante Íris diz: foi você que trouxe a estação até aqui.",
+    "characters": [
+      "Bipe",
+      "Comandante Íris"
+    ]
+  },
   "slots": [
     {
       "id": "cabeca",
