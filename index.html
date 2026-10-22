@@ -384,7 +384,12 @@
   main{max-width:var(--wide);margin:0 auto;padding:16px 16px 32px}
   h2,h3,h4{margin:0}
   h3{font-size:19px}
-  h4{font-size:15px;margin-top:16px}
+  /* O h4 nunca é menor que o corpo que ele apresenta (DESIGN.md:333, 22/10/2026): ele era 15px sob
+     corpo de 17, em tinta cheia e negrito, numa rampa 22 → 19 → 15 — inversão de hierarquia, não
+     densidade. A saída é a que o orientador da Missão ENEM pratica: o título IGUALA o corpo e o que
+     distingue é o peso e o cinza. São cinco (Itens, Vão para o caderno, Caderno, Questão por questão,
+     Assuntos desta prova), e subir acima do h3 de 19 inverteria a rampa do outro lado. */
+  h4{font-size:var(--corpo);margin-top:16px;color:var(--muted)}
   ul.lista,ol.lista{list-style:none;margin:8px 0 0;padding:0}
   /* Linha que vem do contrato em minúsculas ("precisa de um nome"): o texto fica como o contrato diz,
      e a tela mostra a primeira letra maiúscula. */
@@ -644,9 +649,16 @@
     .imp h2{font-size:20px;margin:0 0 6px}
     .imp-linhas{list-style:none;margin:12px 0 0;padding:0}
     .imp-linhas.duas{columns:2;column-gap:28px}
-    .imp-linhas li{display:flex;align-items:center;gap:8px;padding:5px 0;break-inside:avoid;font-size:15px}
-    .imp-linhas .n{width:26px;text-align:right;font-weight:700}
-    .imp-linhas .bola{display:inline-grid;place-items:center;width:24px;height:24px;border:1.5px solid #12213F;border-radius:50%;font-size:12px}
+    /* A MARCA USA A LARGURA DO PAPEL (22/10/2026, crítica da tela da criança). A linha media 186px de
+       718 úteis da A4 — 25,9%, com 87% da folha em branco —, e a bolha tinha 6,3mm para um lápis de
+       criança de 9 anos. Crescer a marca, e não ligar as duas colunas: medido, `columns:2` com 15
+       questões não alarga a tinta um pixel e derruba a altura usada de 48,7% para 22,7%, concentrando
+       a mesma mancha no quarto de cima (§5 do dossiê, alternativa D). Assim são 274px = 38,2% da
+       largura, 71,6% da altura e 9,0mm de bolha, numa página só — e as 24 questões, que vão em duas
+       colunas de ~345px, continuam cabendo. O teto é o `paginasPDF()` do E2E-024. */
+    .imp-linhas li{display:flex;align-items:center;gap:14px;padding:8px 0;break-inside:avoid;font-size:18px}
+    .imp-linhas .n{width:34px;text-align:right;font-weight:700}
+    .imp-linhas .bola{display:inline-grid;place-items:center;width:34px;height:34px;border:1.5px solid #12213F;border-radius:50%;font-size:16px}
     .imp-resumo pre{white-space:pre-wrap;font:inherit;font-size:14px}
   }
 </style>
@@ -817,7 +829,7 @@
 <footer class="shell-footer">
   <!-- O lugar vazio à esquerda é de propósito: é onde entra o que a barra vier a hospedar.
        Não crie div vazia para reservá-lo. -->
-  <div class="in"><p class="versao">versão 76 · 22/10/2026 · obmep-mirim-2 v16</p></div>
+  <div class="in"><p class="versao">versão 77 · 22/10/2026 · obmep-mirim-2 v16</p></div>
 </footer>
 <!-- /build:footer -->
 
@@ -2289,7 +2301,16 @@
   // **O refazer daqui conta como o do caderno** (`shown` sai de `respostaVista`, não de "o azulejo mostra
   // a chave"): a chave está à vista, mas marcar a letra copiada rende 7 dias e **uma** volta, e a segunda
   // volta — no caderno, onde a chave não aparece — é que decide se a questão foi aprendida (são duas
-  // seguidas, BR-15). Forçar `shown:true` aqui mataria o US-019 EC-3, que existe para ela poder refazer
+  // seguidas, BR-15).
+  //
+  // **O LINK DE ESTUDO É O ÚLTIMO DA FICHA NOS DOIS** (22/10/2026, crítica da tela da criança). Ele
+  // morava dentro de `dicas`, e isso punha o único controle que ENCERRA a sessão — ele abre aba nova —
+  // entre a dica que ela acabou de ler e as letras que vai marcar, no meio da tentativa, para uma
+  // criança sozinha. No caderno o mesmo link sempre esteve por último (`ajudaHTML()`), então esta era
+  // divergência não declarada: o comentário acima enumera as duas diferenças QUERIDAS entre as duas
+  // fichas, e a posição do link não estava entre elas. A ordem das dicas fica como está — no resultado
+  // ela já errou, e isso é dito uma vez no `HELP.provas`. O `Fechar` continua depois, porque é controle
+  // do artigo e não da questão. Forçar `shown:true` aqui mataria o US-019 EC-3, que existe para ela poder refazer
   // antes da data em vez de esperar dois dias; e punir a criança por uma informação que o próprio app
   // pôs na tela é o contrário do que este produto faz.
   function ajudaResultadoHTML(en, v){
@@ -2298,8 +2319,8 @@
     const err = erroEntrada[kr];
     const corpo = h ? resultadoEntrada(en, v)
       : `${letrasCaderno(k, "r:")}<div class="actions"><button class="primary" data-acao="refazer" data-k="${esc(kr)}" data-f="refazer:${esc(kr)}">Confirmar</button></div>${err ? `<p class="err frase" role="alert">${esc(err)}</p>` : ""}`;
-    const dicas = `<div class="dicas">${n ? `<ol class="dicasLista">${hs.slice(0, n).map(d => `<li>${esc(d)}</li>`).join("")}</ol>` : ""}${n < hs.length ? `<div class="actions"><button data-acao="dica" data-k="${esc(kr)}" data-f="dica:${esc(kr)}">${n ? "Mais uma dica" : "Dica"}</button></div>` : ""}${linksHTML(linksDe(en.topic, en.exam, en.q))}</div>`;
-    return `<article class="entrada" id="resultadoAjuda" data-entrada="${esc(kr)}"><p class="ref">Questão ${en.q} · ${esc(rotuloAssunto(en.topic, "child"))}</p><p class="muted">Refaça no papel, na prova impressa, e marque a letra aqui. ${en.due <= hoje() ? "Já está no caderno." : `Volta no caderno em ${dm(en.due)}.`}</p>${dicas}${corpo}<p class="mt"><button class="linkish" data-acao="ajuda-q" data-prova="${esc(en.exam)}" data-q="${en.q}" data-f="fechar-ajuda-q">Fechar</button></p></article>`;
+    const dicas = `<div class="dicas">${n ? `<ol class="dicasLista">${hs.slice(0, n).map(d => `<li>${esc(d)}</li>`).join("")}</ol>` : ""}${n < hs.length ? `<div class="actions"><button data-acao="dica" data-k="${esc(kr)}" data-f="dica:${esc(kr)}">${n ? "Mais uma dica" : "Dica"}</button></div>` : ""}</div>`;
+    return `<article class="entrada" id="resultadoAjuda" data-entrada="${esc(kr)}"><p class="ref">Questão ${en.q} · ${esc(rotuloAssunto(en.topic, "child"))}</p><p class="muted">Refaça no papel, na prova impressa, e marque a letra aqui. ${en.due <= hoje() ? "Já está no caderno." : `Volta no caderno em ${dm(en.due)}.`}</p>${dicas}${corpo}${linksHTML(linksDe(en.topic, en.exam, en.q))}<p class="mt"><button class="linkish" data-acao="ajuda-q" data-prova="${esc(en.exam)}" data-q="${en.q}" data-f="fechar-ajuda-q">Fechar</button></p></article>`;
   }
   function renderCaderno(v){
     const sess = sessaoCaderno(v, hoje(), extraHoje);
@@ -3055,10 +3076,21 @@
   // abas, a versão que espera assume sozinha.
   let swEspera = null, updateInstalando = false, updateEscondida = false;
   function formOpen(){ return !!state.local.open || !!document.querySelector("dialog[open]"); }
+  // A frase da faixa em duas partes: a manchete num <b> de bloco (o desenho vem do base.css, regra
+  // `#updateBanner p b`, que já chega aqui pelo shell) e o corpo num nó de texto que começa pelo
+  // espaço — assim o textContent de #updateSay continua sendo, caractere a caractere, a frase inteira
+  // que a suíte afirma por igualdade. Gêmea do faixaDiz() dos dois apps da Missão ENEM.
+  function faixaDiz(say, manchete, corpo){
+    const b = document.createElement("b");
+    b.textContent = manchete;
+    say.textContent = "";
+    say.append(b);
+    if (corpo) say.append(" " + corpo);
+  }
   function renderUpdate(){
     const faixa = $("updateBanner");
     if (!swEspera || updateEscondida) { faixa.hidden = true; return; }
-    $("updateSay").textContent = "Versão nova pronta. Reiniciar agora ou na próxima abertura?";
+    faixaDiz($("updateSay"), "Versão nova pronta.", "Reiniciar agora ou na próxima abertura?");
     const agora = $("updateNow");
     agora.disabled = updateInstalando;
     agora.textContent = updateInstalando ? "Reiniciando…" : "Reiniciar agora";
