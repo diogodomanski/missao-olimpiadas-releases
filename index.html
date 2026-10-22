@@ -184,6 +184,12 @@
   .alert.info{background:var(--blue-soft);color:var(--blue-ink);border:1px solid var(--blue)}
   #updateBanner{margin:0 0 12px}
   #updateBanner p{margin:0}
+  /* A manchete: a primeira frase da faixa, em <b> de bloco a 16px, como o <b> do .promo — o outro
+     anúncio do sistema. Sem cor própria: --blue-ink já é a tinta da faixa, e um segundo tom ali seria
+     acento. O corpo vem depois, no 14px de .alert, num nó de texto que começa pelo espaço: o
+     textContent de #updateSay continua, caractere a caractere, a frase inteira — é o que as suítes e a
+     documentação citam (faixaDiz() nos dois apps). */
+  #updateBanner p b{display:block;font-size:16px;margin-bottom:2px}
   #updateBanner .actions{margin-top:8px;align-items:center}
   /* Os dois botões são `quiet`, que nasce em --muted: cinza-neblina sobre azul suave é cinza fora do
      tom da superfície, e no escuro chega perto de parecer desabilitado. Sobre superfície colorida o
@@ -411,9 +417,17 @@
   .hoje .ciclo{font-size:13px;opacity:var(--tl);margin-right:40px}
   .hoje .contagem{font-size:15px;font-weight:600;margin-top:2px;margin-right:40px}
   .hoje .quem{display:flex;align-items:center;gap:12px;margin-top:14px}
+  .hoje .quem .eu{min-width:0}
   .hoje .quem h2{font-size:22px;line-height:1.2;min-width:0;overflow-wrap:anywhere}
-  .avatar{flex:0 0 auto;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid var(--hoje-line);display:grid;place-items:center;overflow:hidden}
-  .avatar > svg{width:52px;height:52px}
+  /* O "o que eu construí" (22/10/2026, crítica da tela da criança, pergunta 2). O herói responde "o
+     que eu faço agora" com um painel inteiro; a acumulação tinha 13px cinza numa seção recolhida. O
+     avatar é o ÚNICO lugar permanente onde a coleção aparece, e a 52px um chapéu laranja numa raposa
+     laranja era um borrão — o herói tem a largura de sobra. A contagem de etapas entra ao lado do
+     nome, não um número novo: é o mesmo `v.stages.length` da História. Só a partir de 1, porque este
+     painel nunca mostra contagem do que falta. */
+  .avatar{flex:0 0 auto;width:96px;height:96px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid var(--hoje-line);display:grid;place-items:center;overflow:hidden}
+  .avatar > svg{width:80px;height:80px}
+  .hoje .etapas{font-size:13px;opacity:var(--tl);margin-top:2px}
   .hoje .agora{margin-top:16px;border-top:1px solid var(--hoje-line);padding-top:14px}
   .hoje .rotulo{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:var(--tl)}
   .hoje .manchete{font-size:19px;font-weight:700;line-height:1.3;margin-top:2px;overflow-wrap:anywhere}
@@ -433,7 +447,11 @@
   .sec > header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;cursor:pointer;user-select:none}
   .sec h2{display:flex;align-items:center;gap:8px;font-size:22px}
   .sec > header .sum{font-size:13px;color:var(--muted);min-width:0;overflow-wrap:anywhere}
-  .sec:not(.closed) .sum{display:none}
+  /* `> header`, e não descendente: sem o escopo esta regra alcança TODO `.sum` dentro de uma seção
+     aberta — foi assim que ela escondeu o assunto no cabeçalho recolhido da entrada do caderno, que
+     fica dentro da `#caderno` aberta. A irmã de cima já era escopada; esta tinha ficado para trás.
+     É a armadilha de homônimo do CLAUDE.md, e o conserto é escopar a regra, não renomear a peça. */
+  .sec:not(.closed) > header .sum{display:none}
   .sec > .body{margin-top:10px}
   .sec.closed > .body{display:none}
   .chev{position:relative;width:18px;height:22px;padding:0;border:0;border-radius:4px;background:none;color:var(--muted);font-size:14px;line-height:1;flex:0 0 auto;transition:transform .15s}
@@ -454,12 +472,21 @@
 
   /* A folha de respostas: uma linha por questão, as letras do pacote como alvos de 44px. */
   .folha{margin-top:12px}
-  .linha{display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:4px 0;border-top:1px solid var(--line)}
+  /* A LINHA TEM DE CABER NUMA LINHA SÓ, e a conta é apertada de propósito (22/10/2026, QB1 da
+     suíte). Seis círculos de 44px são 264px que não encolhem — o alvo de toque é o piso —, então o
+     que sobra para o resto da linha são os 38px de 302 (360px de janela) e os 53 de 317 (375px).
+     `gap:2px` (12 nos seis vãos), `.n` em 22+2, e o branco ancorado à direita por `margin-left:auto`
+     em vez de uma margem fixa: 300px. Antes eram 322 e a linha quebrava em TODO telefone até 390px
+     inclusive — 3 linhas a 375, 2 a 390 —, com o traço do branco solto entre duas questões e a folha
+     indo de 794 para 1514px. A 320px não cabe e não há conserto sem baixar o alvo de 44: 264 de
+     botão contra 262 de largura útil. `flex-wrap` fica, que é o que faz 320 degradar em vez de
+     estourar de lado. Quem mexer nestes números mede com `--secao=QB1`. */
+  .linha{display:flex;flex-wrap:wrap;align-items:center;gap:2px;padding:4px 0;border-top:1px solid var(--line)}
   .linha:first-child{border-top:0}
-  .linha .n{flex:0 0 26px;font-weight:700;font-size:15px;text-align:right;margin-right:4px;font-variant-numeric:tabular-nums}
+  .linha .n{flex:0 0 22px;font-weight:700;font-size:15px;text-align:right;margin-right:2px;font-variant-numeric:tabular-nums}
   .letra{width:44px;height:44px;min-width:44px;padding:0;border-radius:50%;font-weight:700;font-size:16px;border:1.5px solid var(--field-line);background:var(--surface);color:var(--ink)}
   .letra[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--surface)}
-  .letra.branco{border-style:dashed;color:var(--muted);margin-left:4px;font-weight:400}
+  .letra.branco{border-style:dashed;color:var(--muted);margin-left:auto;font-weight:400}
   .relogio{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:10px}
   .relogio .tempo{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
   .pergunta{margin-top:12px;background:var(--gold-soft);color:var(--gold-ink);border-radius:10px;padding:10px 12px}
@@ -503,6 +530,19 @@
   /* Caderno */
   .entrada{border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:10px}
   .entrada .ref{font-weight:600;overflow-wrap:anywhere}
+  /* A entrada do caderno é um `<details>`: a pendente de agora abre, as outras ficam na linha do
+     título (ver `renderCaderno`). Fechada é só título + assunto, como o card fechado dos dois apps
+     da Missão ENEM; aberta, o assunto já está no corpo e o resumo sai. */
+  .entrada > summary{cursor:pointer;padding:6px 0;display:flex;align-items:center;flex-wrap:wrap;list-style:none}
+  .entrada > summary::-webkit-details-marker{display:none}
+  /* O ▾ é a afordância, e é o mesmo do `.menu` do shell: com `display:flex` o marcador nativo do
+     `<details>` some, e uma linha que abre ao toque sem nada dizendo que abre é alvo morto — pior
+     aqui, onde quem toca tem 9 anos. À direita, porque o título é o que se lê primeiro. */
+  .entrada > summary::after{content:"\25BE";margin-left:auto;padding-left:8px;font-size:11px;line-height:1;color:var(--muted);flex:0 0 auto;transition:transform .15s}
+  .entrada[open] > summary::after{transform:rotate(180deg)}
+  @media (prefers-reduced-motion:reduce){.entrada > summary::after{transition:none}}
+  .entrada > summary .sum{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+  .entrada[open] > summary .sum{display:none}
   .entrada .letras{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
   .entrada .resultado{margin-top:8px;font-weight:700}
   .entrada .resultado.certo{color:var(--green)}
@@ -590,6 +630,9 @@
        armadilha que o `.tema label::after` da Missão ENEM nomeia. A entrada cresce alguns pixels no
        celular, que é o preço. Vale também na ficha do resultado da prova, que é a mesma `.entrada`. */
     .entrada p a{min-height:44px;display:inline-flex;align-items:center}
+    /* O cabeçalho da entrada do caderno abre e fecha, então é alvo de toque: a conta vai na altura
+       da linha e não em área invisível, porque ele é largura inteira e o vizinho fica a 10px. */
+    .entrada > summary{min-height:44px}
     .chev::after{content:"";position:absolute;inset:-11px -13px}
   }
 
@@ -693,7 +736,7 @@
     <p class="ciclo" id="ciclo"></p>
     <p class="contagem frase" id="contagem"></p>
     <p class="contagem frase" id="confiraData" hidden>confira a data do aparelho</p>
-    <div class="quem"><div class="avatar" id="inicioAvatar" aria-hidden="true"></div><h2 id="saudacao">Oi!</h2></div>
+    <div class="quem"><div class="avatar" id="inicioAvatar" aria-hidden="true"></div><div class="eu"><h2 id="saudacao">Oi!</h2><p class="etapas" id="inicioEtapas" hidden></p></div></div>
     <!-- Só no endereço, com o modo conectado (BR-30): a conta aparece aqui como uma linha e nada mais. -->
     <p class="ligado" id="ligado" hidden></p>
     <p class="ligado" id="conexao" role="status" hidden></p>
@@ -774,7 +817,7 @@
 <footer class="shell-footer">
   <!-- O lugar vazio à esquerda é de propósito: é onde entra o que a barra vier a hospedar.
        Não crie div vazia para reservá-lo. -->
-  <div class="in"><p class="versao">versão 65 · 17/10/2026 · obmep-mirim-2 v16</p></div>
+  <div class="in"><p class="versao">versão 75 · 22/10/2026 · obmep-mirim-2 v16</p></div>
 </footer>
 <!-- /build:footer -->
 
@@ -1673,6 +1716,7 @@
   // sessão, como `extraHoje`: recarregar volta ao quadro, que é onde a criança estava.
   let ajudaQ = null;
   const gruposAbertos = new Set(); // os grupos de Aprendidas abertos: o redesenho não os fecha
+  const entradasAbertas = new Set(); // as entradas pendentes abertas à mão: o redesenho não as fecha
   const erroEntrada = {};
   const MOVIMENTO = !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
   const $ = id => document.getElementById(id);
@@ -1982,9 +2026,47 @@
   const opcoesHTML = (grupo, tema, marcado) => PACK.characters.filter(c => !tema || c.theme === tema)
     .map(c => `<label><input type="radio" name="${grupo}" value="${esc(c.id)}" data-f="${grupo}:${esc(c.id)}"${c.id === marcado ? " checked" : ""}>${c.svg}<span>${esc(c.name)}</span></label>`).join("");
   const fragmentoTexto = (st, v) => str(st.fragment).replace(/\{nome\}/g, nome(v));
+  // VESTIR SOZINHO O QUE CAI EM ENCAIXE VAZIO (22/10/2026, mesma crítica). Com 6 itens por encaixe,
+  // os primeiros prêmios de cada encaixe não têm escolha nenhuma a fazer — o `vestir` ali não é
+  // personalização, é uma taxa de navegação até o fim da História sobre a única coisa que podia
+  // acontecer. Do segundo item de um encaixe em diante há escolha de verdade (chapéu ou coroa), e aí
+  // o `vestir` passa a ser a mecânica que ele foi feito para ser: aqui não se mexe, e o cartão
+  // oferece a troca.
+  // Emite o evento ANTES do `save()` de quem chamou, e nada é vestido num encaixe que o personagem
+  // não tem — `derive()` filtraria de `worn` de qualquer jeito, e gastar o encaixe em silêncio
+  // esconderia o item na troca de personagem.
+  function vesteSozinho(v){
+    const st = v.stages[v.stages.length - 1], it = st && st.item ? itemDe(st.item) : null;
+    if (!it || v.worn[it.slot]) return;
+    const ch = personagemDe(v.character);
+    if (!(ch && Array.isArray(ch.slots) && ch.slots.includes(it.slot))) return;
+    evento(state, "wear", { slot: it.slot, item: it.id });
+  }
+  // O CARTÃO DA ETAPA DIZ A VERDADE SOBRE O ITEM (22/10/2026, crítica da tela da criança, pergunta 1).
+  // Antes dizia só "Você ganhou: Lupa", e nada visível mudava: `derive()` só põe em `worn` o que um
+  // evento `wear` mandou, e `etapa-continuar` apenas navega. Pior, o pacote tem 24 itens em 4
+  // encaixes e **20 dos 33 personagens têm só 2 encaixes** — o personagem mediano veste 12 dos 24 —,
+  // então para metade dos prêmios a promessa não tinha como ser cumprida nunca.
+  // Os três estados saem de `v`, nunca do momento do prêmio, e por isso a frase continua verdadeira
+  // em toda revisita ao resultado daquela prova:
+  //   · vestido  → diz que está com a criança (o avatar do início mostra);
+  //   · encaixe ocupado → "Usar agora" ali mesmo, sem ir até Itens no fim da História;
+  //   · personagem sem o encaixe → diz isso e diz onde o item ficou, que é o que faltava.
+  // O encaixe vazio nem chega aqui: `vesteSozinho()` já vestiu na hora do prêmio.
   function etapaHTML(st, v, anima){
     const it = st.item ? itemDe(st.item) : null;
-    return `<div class="etapa${anima && MOVIMENTO ? " anima" : ""}" data-etapa="${st.k}">${it ? `<div class="item" aria-hidden="true">${it.svg}</div>` : ""}<div><p class="rot">Etapa ${st.k}</p><p>${esc(fragmentoTexto(st, v))}</p>${it ? `<p>Você ganhou: <b>${esc(it.name)}</b></p>` : ""}<button data-acao="etapa-continuar" data-f="etapa:${st.k}">Continuar</button></div></div>`;
+    const ch = it ? personagemDe(v.character) : null;
+    const temEncaixe = !!(it && ch && Array.isArray(ch.slots) && ch.slots.includes(it.slot));
+    const vestido = !!(it && v.worn[it.slot] === it.id);
+    const sl = it ? PACK.slots.find(s => s.id === it.slot) : null;
+    // `Usar agora` divide a linha do `Continuar` em vez de ter `.actions` próprio: empilhados, os
+    // dois liam como dois passos em sequência, e vestir não é passo nenhum — é a alternativa a sair.
+    const usar = it && temEncaixe && !vestido ? `<button data-acao="vestir" data-slot="${esc(it.slot)}" data-item="${esc(it.id)}" data-f="etapa-vestir:${esc(it.id)}">Usar agora</button>` : "";
+    const ganhou = !it ? ""
+      : vestido ? `<p>Você ganhou: <b>${esc(it.name)}</b> · já está com você</p>`
+      : temEncaixe ? `<p>Você ganhou: <b>${esc(it.name)}</b></p>`
+      : `<p>Você ganhou: <b>${esc(it.name)}</b></p><p class="muted">${esc(ch ? ch.name : "O seu personagem")} não usa ${esc(sl ? sl.name.toLowerCase() : "este encaixe")}. Fica guardado nos Itens, na História, até você trocar de personagem.</p>`;
+    return `<div class="etapa${anima && MOVIMENTO ? " anima" : ""}" data-etapa="${st.k}">${it ? `<div class="item" aria-hidden="true">${it.svg}</div>` : ""}<div><p class="rot">Etapa ${st.k}</p><p>${esc(fragmentoTexto(st, v))}</p>${ganhou}<div class="actions">${usar}<button data-acao="etapa-continuar" data-f="etapa:${st.k}">Continuar</button></div></div></div>`;
   }
 
   function renderPrimeiro(){
@@ -2028,6 +2110,9 @@
     const ch = personagemDe(v.character);
     $("inicioAvatar").innerHTML = personagemHTML(ch, v.worn);
     $("inicioAvatar").hidden = !ch;
+    const feitas = v.stages.length, deTodas = v.story && v.story.stages;
+    $("inicioEtapas").hidden = !ch || !deTodas || !feitas;
+    if (!$("inicioEtapas").hidden) $("inicioEtapas").textContent = `${feitas} de ${deTodas} etapas`;
     const mostraFinal = v.finale && state.local.finaleSeen !== CYCLE;
     $("final").hidden = !mostraFinal;
     if (mostraFinal) $("finalTexto").textContent = str(v.story.finale).replace(/\{nome\}/g, nome(v));
@@ -2087,7 +2172,15 @@
     entradas.forEach(en => { const l = porData.get(en.due) || []; l.push(en.q); porData.set(en.due, l); });
     const linhasCaderno = [...porData.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1)).map(([d, qs]) => {
       const nums = qs.map(n => `${n}${branco(n) ? " (em branco)" : ""}`);
-      return `<li>${qs.length === 1 ? `questão ${nums[0]} volta em ${dm(d)}` : `questões ${juntaE(nums)} voltam em ${dm(d)}`}</li>`;
+      // O TEMPO VERBAL SEGUE A DATA (22/10/2026, crítica da tela da criança). O resultado de uma prova
+      // é página que se revisita, e `en.due` era impresso sempre no futuro: com hoje em 15/10 a tela
+      // dizia "voltam em 07/10" de uma questão que estava no caderno havia uma semana, vencida. Lido
+      // ao pé da letra — que é como uma criança de 9 anos lê —, aquilo diz "ainda não voltaram", e o
+      // Caderno é justamente onde ela não ia. Comparação de string basta: as datas são ISO.
+      const chegou = d <= hoje();
+      return `<li>${qs.length === 1
+        ? `questão ${nums[0]} ${chegou ? "já está no caderno" : `volta em ${dm(d)}`}`
+        : `questões ${juntaE(nums)} ${chegou ? "já estão no caderno" : `voltam em ${dm(d)}`}`}</li>`;
     }).join("");
     const caderno = entradas.length
       ? `<h4>Vão para o caderno</h4><p class="mt">${entradas.length === NQ ? "Todas as questões vão voltar no caderno, uma de cada vez." : `${plural(entradas.length, "questão vai", "questões vão")} para o caderno.`}</p><ul class="lista mt" id="resultadoCaderno">${linhasCaderno}</ul>`
@@ -2119,7 +2212,16 @@
     const ajuda = !temAjuda ? ""
       : enAberta ? ajudaResultadoHTML(enAberta, v)
       : `<p class="muted mt" id="resultadoAjudaDica">Toque numa questão marcada com <b>dica</b> para ver a dica e refazer no papel.</p>`;
-    return `${voltarLista}<h3 id="provaTitulo">${esc(nomeProva(id))}</h3><p class="nota" id="nota">${e.score} <small>de ${NQ}</small></p>${m ? `<p class="moldura" id="moldura">${esc(m)}</p>` : ""}<p class="muted">lançada em ${dm(e.day)}${e.corrected ? " · lançamento corrigido" : ""}</p>${st ? etapaHTML(st, v, animarEtapa === st.k) : cheio ? `<p class="mapacheio">${esc(cheio)}</p>` : ""}<h4>Assuntos desta prova</h4>${assuntosHTML(v.topics.perExam[id] || [])}${caderno}<h4>Questão por questão</h4><ol class="lista questoes" id="questoes">${questoes}</ol>${ajuda}<div class="actions"><button data-acao="corrigir" data-prova="${esc(id)}" data-f="corrigir">Corrigir o lançamento</button><button data-acao="imprimir-folha" data-prova="${esc(id)}" data-f="imprimir-folha">Imprimir folha de respostas</button></div>`;
+    // A ORDEM DO FIM DESTA PÁGINA É DELIBERADA (22/10/2026, crítica da tela da criança, pergunta 4).
+    // `Assuntos desta prova` fica DEPOIS da grade, e não antes: numa prova ruim a última tela cheia
+    // eram onze azulejos dizendo "errada" mais os dois botões administrativos, enquanto a moldura e o
+    // cartão da etapa — o que olha para a frente — estavam os dois no topo, por onde ele já passou.
+    // Pela regra do peak-end o fim pesa tanto quanto o pico, então a página termina no que fazer a
+    // seguir. E é aqui que o `v` entra em `assuntosHTML`: sem ele a função não emite a etiqueta
+    // `para treinar` nem os links de estudo (a lista cumulativa sempre passou o `v`; esta não), e o
+    // fim da página virava uma coluna de `0 de 4` sem saída — justamente no ponto mais baixo do
+    // produto, e com oito dos nove assuntos tendo link conferido no pacote.
+    return `${voltarLista}<h3 id="provaTitulo">${esc(nomeProva(id))}</h3><p class="nota" id="nota">${e.score} <small>de ${NQ}</small></p>${m ? `<p class="moldura" id="moldura">${esc(m)}</p>` : ""}<p class="muted">lançada em ${dm(e.day)}${e.corrected ? " · lançamento corrigido" : ""}</p>${st ? etapaHTML(st, v, animarEtapa === st.k) : cheio ? `<p class="mapacheio">${esc(cheio)}</p>` : ""}${caderno}<h4>Questão por questão</h4><ol class="lista questoes" id="questoes">${questoes}</ol>${ajuda}<h4>Assuntos desta prova</h4>${assuntosHTML(v.topics.perExam[id] || [], v)}<div class="actions"><button data-acao="corrigir" data-prova="${esc(id)}" data-f="corrigir">Corrigir o lançamento</button><button data-acao="imprimir-folha" data-prova="${esc(id)}" data-f="imprimir-folha">Imprimir folha de respostas</button></div>`;
   }
   function renderProvas(v){
     const el = $("provasPainel"), o = state.local.open, id = provaVista;
@@ -2167,12 +2269,12 @@
     if (h.shown && h.letter === key) return `<p class="resultado frase">a resposta já estava à vista: vai voltar em 2 dias (${dm(en.due)})</p>`;
     return `<p class="resultado errado frase">errado, a resposta era ${esc(key)} · volta em 2 dias (${dm(en.due)})</p>${h.same ? `<p class="muted frase">foi a mesma resposta da outra vez</p>` : ""}`;
   }
-  function entradaHTML(en, v, feita){
+  function entradaHTML(en, v, feita, aberta){
     const k = chaveQ(en.exam, en.q), ex = exame(en.exam);
     const err = erroEntrada[k];
     const corpo = feita ? resultadoEntrada(en, v)
       : `${letrasCaderno(k, "")}<div class="actions"><button class="primary" data-acao="refazer" data-k="${esc(k)}" data-f="refazer:${esc(k)}">Confirmar</button></div>${err ? `<p class="err frase" role="alert">${esc(err)}</p>` : ""}`;
-    return `<article class="entrada" data-entrada="${esc(k)}"><p class="ref">Prova ${esc(nomeProva(en.exam))} · questão ${en.q}</p><p class="muted">${esc(rotuloAssunto(en.topic, "child"))}${ex.pdf ? ` · <a href="${esc(ex.pdf)}" target="_blank" rel="noopener">abrir a prova (PDF)</a>` : ""}</p>${corpo}${ajudaHTML(en, v)}</article>`;
+    return `<details class="entrada" data-entrada="${esc(k)}"${aberta ? " open" : ""}><summary><span class="ref">Prova ${esc(nomeProva(en.exam))} · questão ${en.q}</span><span class="sum"> · ${esc(rotuloAssunto(en.topic, "child"))}</span></summary><p class="muted">${esc(rotuloAssunto(en.topic, "child"))}${ex.pdf ? ` · <a href="${esc(ex.pdf)}" target="_blank" rel="noopener">abrir a prova (PDF)</a>` : ""}</p>${corpo}${ajudaHTML(en, v)}</details>`;
   }
   // A ficha da questão aberta no resultado da prova (CD4). É a do caderno sem o que o quadro da nota já
   // mostra duas linhas acima: sem "Mostrar a resposta" e sem a solução oficial no lugar da dica — ela só
@@ -2192,7 +2294,7 @@
     const corpo = h ? resultadoEntrada(en, v)
       : `${letrasCaderno(k, "r:")}<div class="actions"><button class="primary" data-acao="refazer" data-k="${esc(kr)}" data-f="refazer:${esc(kr)}">Confirmar</button></div>${err ? `<p class="err frase" role="alert">${esc(err)}</p>` : ""}`;
     const dicas = `<div class="dicas">${n ? `<ol class="dicasLista">${hs.slice(0, n).map(d => `<li>${esc(d)}</li>`).join("")}</ol>` : ""}${n < hs.length ? `<div class="actions"><button data-acao="dica" data-k="${esc(kr)}" data-f="dica:${esc(kr)}">${n ? "Mais uma dica" : "Dica"}</button></div>` : ""}${linksHTML(linksDe(en.topic, en.exam, en.q))}</div>`;
-    return `<article class="entrada" id="resultadoAjuda" data-entrada="${esc(kr)}"><p class="ref">Questão ${en.q} · ${esc(rotuloAssunto(en.topic, "child"))}</p><p class="muted">Refaça no papel, na prova impressa, e marque a letra aqui. Volta no caderno em ${dm(en.due)}.</p>${dicas}${corpo}<p class="mt"><button class="linkish" data-acao="ajuda-q" data-prova="${esc(en.exam)}" data-q="${en.q}" data-f="fechar-ajuda-q">Fechar</button></p></article>`;
+    return `<article class="entrada" id="resultadoAjuda" data-entrada="${esc(kr)}"><p class="ref">Questão ${en.q} · ${esc(rotuloAssunto(en.topic, "child"))}</p><p class="muted">Refaça no papel, na prova impressa, e marque a letra aqui. ${en.due <= hoje() ? "Já está no caderno." : `Volta no caderno em ${dm(en.due)}.`}</p>${dicas}${corpo}<p class="mt"><button class="linkish" data-acao="ajuda-q" data-prova="${esc(en.exam)}" data-q="${en.q}" data-f="fechar-ajuda-q">Fechar</button></p></article>`;
   }
   function renderCaderno(v){
     const sess = sessaoCaderno(v, hoje(), extraHoje);
@@ -2206,8 +2308,23 @@
       let h = "";
       if (!sess.feitas.length && !sess.mostrar.length) h = `<p class="frase" id="cadernoNada">nada para refazer hoje${v.notebook.nextDue ? ` · a próxima volta em ${dm(v.notebook.nextDue)}` : ""}</p>`;
       else {
-        h = `<p class="muted">Refaça cada questão no papel, na prova impressa, e marque a letra aqui.</p>`;
-        h += sess.feitas.map(en => entradaHTML(en, v, true)).join("") + sess.mostrar.map(en => entradaHTML(en, v, false)).join("");
+        // UMA PENDENTE ABERTA POR VEZ (22/10/2026, crítica da tela da criança, pergunta 3). As cinco do
+        // dia abriam inteiras — cinco letras, Confirmar, Dica, Mostrar a resposta e o link de estudo em
+        // cada uma, ~40 controles e cinco tarefas paralelas —, numa tela cuja própria ajuda promete
+        // "até 5 por dia". É o mesmo "agora" do Passo a passo do domingo do orientador: a primeira que
+        // não está feita é a única com corpo, e as outras ficam na linha do título. Confirmar uma a
+        // torna `feita` e o render seguinte abre a de baixo sozinho, sem ninguém decidir nada.
+        // **As feitas ficam abertas:** o corpo delas é o resultado da marcação, que é o retorno do
+        // gesto — fechá-las esconderia justamente o "certo"/"errado, a resposta era X" que acabou de
+        // ser pedido. Elas não têm letra para marcar, então não voltam à conta dos controles.
+        // Abrir uma pendente de baixo à mão fica de pé no redesenho (`entradasAbertas`), senão tocar
+        // Dica nela a fecharia na cara de quem acabou de abrir — o mesmo motivo do `gruposAbertos`.
+        const total = sess.feitas.length + sess.mostrar.length;
+        h = sess.mostrar.length
+          ? `<p class="muted" id="cadernoPasso"><b>Questão ${sess.feitas.length + 1} de ${total}</b> · refaça no papel, na prova impressa, e marque a letra aqui.</p>`
+          : `<p class="muted" id="cadernoPasso"><b>${plural(total, "questão refeita", "questões refeitas")}</b> hoje.</p>`;
+        h += sess.feitas.map(en => entradaHTML(en, v, true, true)).join("")
+          + sess.mostrar.map((en, i) => entradaHTML(en, v, false, i === 0 || entradasAbertas.has(chaveQ(en.exam, en.q)))).join("");
       }
       if (sess.resto > 0) h += `<p class="mt" id="cadernoResto">mais ${sess.amanha} amanhã · <button class="linkish" data-acao="quero-mais" id="queroMais">quero mais</button></p>`;
       el.innerHTML = h;
@@ -2374,7 +2491,7 @@
     const r = confirmSheet(state);
     if (r.err) { folhaErro = r.err; renderAll(); return; }
     const v = vista(state);
-    if (v.stages.length > antes) animarEtapa = v.stages[v.stages.length - 1].k;
+    if (v.stages.length > antes) { animarEtapa = v.stages[v.stages.length - 1].k; vesteSozinho(v); }
     pedirBrancos = false; provaVista = r.event.exam;
     save();
     renderAll();
@@ -2455,7 +2572,7 @@
         if (r.err) { erroEntrada[k] = r.err; keepFocus(() => redesenhaAjuda(b)); break; }
         delete escolha[k];
         const v = vista(state);
-        if (v.stages.length > antes) { novaEtapa = v.stages[v.stages.length - 1]; animarEtapa = novaEtapa.k; }
+        if (v.stages.length > antes) { novaEtapa = v.stages[v.stages.length - 1]; animarEtapa = novaEtapa.k; vesteSozinho(v); }
         save();
         renderAll();
         const art = document.querySelector(`[data-entrada="${CSS.escape(k)}"]`);
@@ -2484,8 +2601,18 @@
       case "quero-mais": extraHoje += 1; renderAll(); break;
       case "vestir": {
         const v = vista(state), slot = b.dataset.slot, item = b.dataset.item;
+        // O "Usar agora" do cartão da etapa NÃO volta depois de vestir (o cartão passa a dizer que o
+        // item está com a criança), então o foco cairia no <body> e o Tab seguinte recomeçaria do topo
+        // da página — a classe de defeito que o `foco.mjs` existe para pegar. O Continuar do mesmo
+        // cartão é o vizinho que fica. Na lista de Itens o botão volta, e o `keepFocus` basta.
+        const naEtapa = !!(b.closest && b.closest(".etapa"));
         evento(state, "wear", { slot, item: v.worn[slot] === item ? null : item });
-        save(); renderAll();
+        save();
+        keepFocus(() => renderAll());
+        if (naEtapa && document.activeElement === document.body) {
+          const c = document.querySelector('.etapa [data-acao="etapa-continuar"]');
+          if (c) c.focus({ preventScroll: true });
+        }
         break;
       }
     }
@@ -2564,6 +2691,7 @@
     if (alvo === "caderno") openAndGo("caderno");
     else { openAndGo("provas"); if (alvo === "folha") focaLinha(Math.max(1, state.local.open.answers.findIndex(a => !a) + 1)); }
   });
+  $("cadernoHoje").addEventListener("toggle", e => { const d = e.target; if (d.dataset && d.dataset.entrada) d.open ? entradasAbertas.add(d.dataset.entrada) : entradasAbertas.delete(d.dataset.entrada); }, true);
   $("aprendidasLista").addEventListener("toggle", e => { const d = e.target; if (d.dataset && d.dataset.grupo) d.open ? gruposAbertos.add(d.dataset.grupo) : gruposAbertos.delete(d.dataset.grupo); }, true);
   $("porGosto").addEventListener("click", () => {
     openAndGo("aprendidas");

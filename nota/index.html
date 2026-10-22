@@ -184,6 +184,12 @@
   .alert.info{background:var(--blue-soft);color:var(--blue-ink);border:1px solid var(--blue)}
   #updateBanner{margin:0 0 12px}
   #updateBanner p{margin:0}
+  /* A manchete: a primeira frase da faixa, em <b> de bloco a 16px, como o <b> do .promo — o outro
+     anúncio do sistema. Sem cor própria: --blue-ink já é a tinta da faixa, e um segundo tom ali seria
+     acento. O corpo vem depois, no 14px de .alert, num nó de texto que começa pelo espaço: o
+     textContent de #updateSay continua, caractere a caractere, a frase inteira — é o que as suítes e a
+     documentação citam (faixaDiz() nos dois apps). */
+  #updateBanner p b{display:block;font-size:16px;margin-bottom:2px}
   #updateBanner .actions{margin-top:8px;align-items:center}
   /* Os dois botões são `quiet`, que nasce em --muted: cinza-neblina sobre azul suave é cinza fora do
      tom da superfície, e no escuro chega perto de parecer desabilitado. Sobre superfície colorida o
@@ -468,7 +474,7 @@
 <footer class="shell-footer">
   <!-- O lugar vazio à esquerda é de propósito: é onde entra o que a barra vier a hospedar.
        Não crie div vazia para reservá-lo. -->
-  <div class="in"><p class="versao">versão 65 · 17/10/2026 · obmep-mirim-2 v16</p></div>
+  <div class="in"><p class="versao">versão 75 · 22/10/2026 · obmep-mirim-2 v16</p></div>
 </footer>
 <!-- /build:footer -->
 <script>
