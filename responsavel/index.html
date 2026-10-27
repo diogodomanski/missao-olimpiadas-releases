@@ -140,15 +140,21 @@
   @supports (height:1dvh){dialog{max-height:calc(100dvh - 32px)}}
   dialog::backdrop{background:var(--scrim)}
   dialog .dh{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 18px 8px}
-  dialog .dh h2{margin:0;font-size:17px}
+  /* O h2 pode carregar texto digitado pelo usuário (o título de um tema no cabeçalho do #code), e
+     palavra sem espaço não quebra sozinha: sem anywhere ela estica a linha e o dialog, que é
+     overflow:auto, ganha rolagem HORIZONTAL. Com anywhere o mínimo automático já encolhe, então o
+     item de flex não precisa de min-width:0 — medido, os números são idênticos com e sem ele. */
+  dialog .dh h2{margin:0;font-size:17px;overflow-wrap:anywhere}
   dialog .db{padding:0 18px 18px;font-size:14px;line-height:1.55}
   dialog .db p{margin:8px 0}
   dialog .db ul{margin:6px 0;padding-left:18px}
   dialog .db li{margin:4px 0}
   dialog .db code{background:var(--bg);padding:1px 6px;border-radius:6px;font-size:13px}
 
-  /* O toast pousa acima da barra de baixo, não sobre ela: --footer já é a altura toda dela. */
-  .toast{position:fixed;left:0;right:0;bottom:calc(var(--footer) + 16px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100vw - 32px);margin:0 auto;background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:99px;font-size:14px;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s;z-index:3}
+  /* O toast pousa acima da barra de baixo, não sobre ela: --footer já é a altura toda dela. Ele também
+     mostra texto digitado pelo usuário (nome de repertório, título de tema), e o max-width recorta o
+     max-content: sem anywhere o fim da frase fica fora da cápsula. */
+  .toast{position:fixed;left:0;right:0;bottom:calc(var(--footer) + 16px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100vw - 32px);margin:0 auto;background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:99px;font-size:14px;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s;z-index:3;overflow-wrap:anywhere}
   .toast.show{opacity:1}
   .toast b{font-weight:700}
   @media (prefers-reduced-motion:reduce){.toast{transition:none}}
@@ -508,7 +514,7 @@
 <footer class="shell-footer">
   <!-- O lugar vazio à esquerda é de propósito: é onde entra o que a barra vier a hospedar.
        Não crie div vazia para reservá-lo. -->
-  <div class="in"><p class="versao">versão 82 · 26/10/2026 · obmep-mirim-2 v16</p></div>
+  <div class="in"><p class="versao">versão 83 · 26/10/2026 · obmep-mirim-2 v16</p></div>
 </footer>
 <!-- /build:footer -->
 <!-- A entrada, o consentimento e a exclusão, por passos. Sem sessão este diálogo é a página inteira, e
