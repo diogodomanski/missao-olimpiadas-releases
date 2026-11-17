@@ -1,0 +1,91 @@
+{
+  "configVersion": 1,
+  "timestamp": 1794873600000,
+  "index": "/missao-olimpiadas-releases/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/missao-olimpiadas-releases/404.html",
+        "/missao-olimpiadas-releases/app.webmanifest",
+        "/missao-olimpiadas-releases/chunk-C3QACpI9.js",
+        "/missao-olimpiadas-releases/chunk-Cn7TiJiC.js",
+        "/missao-olimpiadas-releases/chunk-DALEjaSM.js",
+        "/missao-olimpiadas-releases/chunk-xbDI-uqk.js",
+        "/missao-olimpiadas-releases/chunk-xcrYbga-.js",
+        "/missao-olimpiadas-releases/icon-192.png",
+        "/missao-olimpiadas-releases/icon.png",
+        "/missao-olimpiadas-releases/index.html",
+        "/missao-olimpiadas-releases/main.js",
+        "/missao-olimpiadas-releases/ngsw-worker.js",
+        "/missao-olimpiadas-releases/nota/index.html",
+        "/missao-olimpiadas-releases/online.js",
+        "/missao-olimpiadas-releases/responsavel/index.html",
+        "/missao-olimpiadas-releases/safety-worker.js",
+        "/missao-olimpiadas-releases/styles.css",
+        "/missao-olimpiadas-releases/worker-basic.min.js"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "pacote",
+      "patterns": [
+        "\\/pack\\.json"
+      ],
+      "strategy": "freshness",
+      "maxSize": 4,
+      "maxAge": 86400000,
+      "timeoutMs": 3000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/missao-olimpiadas-releases/404.html": "3f970f0531f0de712e080f91195937c337ecbda0",
+    "/missao-olimpiadas-releases/app.webmanifest": "e3dbeb97376cdc1b589759d223f2562aef9135cf",
+    "/missao-olimpiadas-releases/chunk-C3QACpI9.js": "1204b9d0a668d28490239f8bdc65675925aa3a63",
+    "/missao-olimpiadas-releases/chunk-Cn7TiJiC.js": "f2b04213f8c9029acb950bd49f4d915b50c0a1f1",
+    "/missao-olimpiadas-releases/chunk-DALEjaSM.js": "c23bac1ffe3b1fca5f323cf374fc8c0a3c824fdb",
+    "/missao-olimpiadas-releases/chunk-xbDI-uqk.js": "b03260d64edd62ab36e2f82496e31d00c977ccaf",
+    "/missao-olimpiadas-releases/chunk-xcrYbga-.js": "b5b9785b799e9dc7a2c0ca88459ea32b43521e93",
+    "/missao-olimpiadas-releases/icon-192.png": "0eac32504911b57964088ea7199f5ab36905d88d",
+    "/missao-olimpiadas-releases/icon.png": "cca011dcb653c092d1f9b4f090bcb4f4dab97162",
+    "/missao-olimpiadas-releases/index.html": "3f970f0531f0de712e080f91195937c337ecbda0",
+    "/missao-olimpiadas-releases/main.js": "3b32427708c7c4b9471df4b093fe1cc033130c6a",
+    "/missao-olimpiadas-releases/ngsw-worker.js": "7fccd317063594c2f6bd94ba421abe197a609dca",
+    "/missao-olimpiadas-releases/nota/index.html": "3f970f0531f0de712e080f91195937c337ecbda0",
+    "/missao-olimpiadas-releases/online.js": "0a4bae5a232b594bf5e4fb0630367cce311da7e1",
+    "/missao-olimpiadas-releases/responsavel/index.html": "3f970f0531f0de712e080f91195937c337ecbda0",
+    "/missao-olimpiadas-releases/safety-worker.js": "3b3c24f5fca13ee61325298c2009282aeef273c7",
+    "/missao-olimpiadas-releases/styles.css": "5e0511bc70ccccc77029293a4b9af8b6625a4a50",
+    "/missao-olimpiadas-releases/worker-basic.min.js": "3b3c24f5fca13ee61325298c2009282aeef273c7"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
